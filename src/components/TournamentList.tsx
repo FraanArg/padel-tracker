@@ -6,6 +6,8 @@ import TournamentCard from './TournamentCard';
 import { Tournament } from '@/lib/padel';
 import { cn } from '@/lib/utils';
 
+import LiveTicker from './LiveTicker';
+
 interface TournamentListProps {
     liveTournaments: Tournament[];
     upcomingTournaments: Tournament[];
@@ -13,96 +15,81 @@ interface TournamentListProps {
 }
 
 export default function TournamentList({ liveTournaments, upcomingTournaments, pastTournaments }: TournamentListProps) {
-    const [activeTab, setActiveTab] = useState<'live' | 'upcoming' | 'past'>(
+    const [activeTab, setActiveTab] = useState<'live' | 'upcoming' | 'previous'>(
         liveTournaments.length > 0 ? 'live' : 'upcoming'
     );
     const [visibleCount, setVisibleCount] = useState(10);
 
     const getActiveList = () => {
         if (activeTab === 'live') return liveTournaments;
-        if (activeTab === 'upcoming') return upcomingTournaments;
-        return pastTournaments;
+        if (activeTab === 'previous') return pastTournaments;
+        return upcomingTournaments;
     };
 
-    const activeTournaments = getActiveList();
-    const visibleTournaments = activeTournaments.slice(0, visibleCount);
-    const hasMore = visibleCount < activeTournaments.length;
-
-    const handleLoadMore = () => {
-        setVisibleCount(prev => prev + 10);
-    };
-
-    const handleTabChange = (tab: 'live' | 'upcoming' | 'past') => {
-        setActiveTab(tab);
-        setVisibleCount(10); // Reset count on tab change
-    };
+    const activeList = getActiveList();
+    const visibleTournaments = activeList.slice(0, visibleCount);
+    const hasMore = visibleCount < activeList.length;
 
     return (
-        <div className="space-y-8">
+        <div className="space-y-6">
             {/* Tabs */}
-            <div className="flex items-center space-x-6 border-b border-slate-200 dark:border-slate-800 pb-1 overflow-x-auto">
+            <div className="flex space-x-1 overflow-x-auto pb-2 scrollbar-hide">
                 <button
-                    onClick={() => handleTabChange('live')}
-                    className={cn(
-                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex items-center gap-2 flex-shrink-0",
-                        activeTab === 'live'
-                            ? "text-red-500"
-                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
-                    )}
+                    onClick={() => { setActiveTab('live'); setVisibleCount(10); }}
+                    className={`
+                        relative px-4 py-2 rounded-full text-sm font-bold transition-all flex-shrink-0 flex items-center
+                        ${activeTab === 'live'
+                            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md'
+                            : 'bg-transparent text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10'}
+                    `}
                 >
-                    <span className="relative flex h-2.5 w-2.5">
-                        <span className={cn("animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75", activeTab !== 'live' && "hidden")}></span>
-                        <span className={cn("relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500", activeTab !== 'live' && "bg-slate-400")}></span>
+                    {/* Pulsating Dot for Live Tab */}
+                    <span className="relative flex h-2 w-2 mr-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
-                    Live
-                    {activeTab === 'live' && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500 rounded-t-full" />
-                    )}
-                </button>
-
-                <button
-                    onClick={() => handleTabChange('upcoming')}
-                    className={cn(
-                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex-shrink-0",
-                        activeTab === 'upcoming'
-                            ? "text-blue-600 dark:text-blue-400"
-                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
-                    )}
-                >
-                    Upcoming
-                    {activeTab === 'upcoming' && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-t-full" />
-                    )}
+                    LIVE
                 </button>
                 <button
-                    onClick={() => handleTabChange('past')}
-                    className={cn(
-                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex-shrink-0",
-                        activeTab === 'past'
-                            ? "text-blue-600 dark:text-blue-400"
-                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
-                    )}
+                    onClick={() => { setActiveTab('upcoming'); setVisibleCount(10); }}
+                    className={`
+                        px-4 py-2 rounded-full text-sm font-bold transition-all flex-shrink-0
+                        ${activeTab === 'upcoming'
+                            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md'
+                            : 'bg-transparent text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10'}
+                    `}
                 >
-                    Previous
-                    {activeTab === 'past' && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-t-full" />
-                    )}
+                    UPCOMING
+                </button>
+                <button
+                    onClick={() => { setActiveTab('previous'); setVisibleCount(10); }}
+                    className={`
+                        px-4 py-2 rounded-full text-sm font-bold transition-all flex-shrink-0
+                        ${activeTab === 'previous'
+                            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md'
+                            : 'bg-transparent text-slate-500 hover:bg-slate-100 dark:hover:bg-white/10'}
+                    `}
+                >
+                    PREVIOUS
                 </button>
             </div>
 
+            {/* Live Ticker (Only visible on Live tab) */}
+            {activeTab === 'live' && (
+                <LiveTicker tournaments={liveTournaments} />
+            )}
+
             {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 {visibleTournaments.map((tournament) => (
                     <TournamentCard key={tournament.id} tournament={tournament} />
                 ))}
             </div>
 
             {/* Empty State */}
-            {activeTournaments.length === 0 && (
-                <div className="text-center py-20">
-                    <p className="text-slate-400 dark:text-slate-500">
-                        No {activeTab} tournaments found.
-                    </p>
+            {activeList.length === 0 && (
+                <div className="text-center py-12 bg-gray-50 dark:bg-white/5 rounded-2xl border border-dashed border-gray-200 dark:border-white/10">
+                    <p className="text-slate-500 font-medium">No tournaments found in this section.</p>
                 </div>
             )}
 
@@ -110,8 +97,8 @@ export default function TournamentList({ liveTournaments, upcomingTournaments, p
             {hasMore && (
                 <div className="flex justify-center pt-4">
                     <button
-                        onClick={handleLoadMore}
-                        className="px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm active:scale-95"
+                        onClick={() => setVisibleCount(prev => prev + 10)}
+                        className="px-6 py-2 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-sm font-bold text-slate-600 dark:text-white hover:bg-gray-50 dark:hover:bg-white/20 transition-colors shadow-sm"
                     >
                         Load More
                     </button>
