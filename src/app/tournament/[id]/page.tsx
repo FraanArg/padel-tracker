@@ -39,7 +39,7 @@ export default async function TournamentPage({
                     Back
                 </Link>
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Matches</h1>
+                    <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{data.tournamentName || 'Matches'}</h1>
                     <div className="flex items-center gap-2 mt-1 text-slate-500 dark:text-slate-400 font-medium">
                         <Calendar className="w-4 h-4" />
                         <span>{data.days.find(d => d.url === data.activeDayUrl)?.text || 'Today'}</span>
@@ -54,8 +54,8 @@ export default async function TournamentPage({
                         key={d.url}
                         href={`/tournament/${id}?day=${encodeURIComponent(d.url)}`}
                         className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${d.url === data.activeDayUrl
-                                ? 'bg-black dark:bg-white text-white dark:text-black shadow-md transform scale-105'
-                                : 'bg-white dark:bg-[#202020] text-slate-500 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200 border border-gray-100 dark:border-white/5'
+                            ? 'bg-black dark:bg-white text-white dark:text-black shadow-md transform scale-105'
+                            : 'bg-white dark:bg-[#202020] text-slate-500 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-slate-200 border border-gray-100 dark:border-white/5'
                             }`}
                     >
                         {d.text}
@@ -64,17 +64,118 @@ export default async function TournamentPage({
             </div>
 
             {/* Matches List */}
-            <div className="space-y-4">
+            <div className="space-y-8">
                 {data.matches.length > 0 ? (
-                    data.matches.map((match: any, i: number) => (
-                        <MatchCard key={i} match={match} />
-                    ))
+                    (() => {
+                        // Group matches by court
+                        const matchesByCourt: Record<string, any[]> = {};
+                        const noCourtMatches: any[] = [];
+
+                        data.matches.forEach((match: any) => {
+                            if (match.court) {
+                                if (!matchesByCourt[match.court]) {
+                                    matchesByCourt[match.court] = [];
+                                }
+                                matchesByCourt[match.court].push(match);
+                            } else {
+                                noCourtMatches.push(match);
+                            }
+                        });
+
+                        // Sort courts? Maybe alphabetically or by priority if we knew it.
+                        // For now, just keys.
+                        const courts = Object.keys(matchesByCourt).sort();
+
+                        return (
+                            <>
+                                {courts.map(court => (
+                                    <div key={court} className="space-y-4">
+                                        <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">{court}</h2>
+                                        <div className="space-y-4">
+                                            {(() => {
+                                                let lastTime: Date | null = null;
+                                                return matchesByCourt[court].map((match: any, i: number) => {
+                                                    let estimatedTime = match.time;
+                                                    let isEstimated = false;
+
+                                                    if (match.time) {
+                                                        const [h, m] = match.time.split(':').map(Number);
+                                                        const d = new Date();
+                                                        d.setHours(h, m, 0, 0);
+                                                        lastTime = d;
+                                                    } else if (lastTime) {
+                                                        const nextTime = new Date(lastTime.getTime() + 75 * 60000);
+                                                        lastTime = nextTime;
+                                                        estimatedTime = nextTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+                                                        isEstimated = true;
+                                                    }
+
+                                                    return (
+                                                        <MatchCard
+                                                            key={`${court}-${i}`}
+                                                            match={{
+                                                                ...match,
+                                                                time: estimatedTime,
+                                                                isEstimated,
+                                                                tournament: { name: data.tournamentName || 'Tournament' }
+                                                            }}
+                                                            tournamentId={id}
+                                                        />
+                                                    );
+                                                });
+                                            })()}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {noCourtMatches.length > 0 && (
+                                    <div className="space-y-4">
+                                        {courts.length > 0 && <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">Other Matches</h2>}
+                                        <div className="space-y-4">
+                                            {(() => {
+                                                let lastTime: Date | null = null;
+                                                return noCourtMatches.map((match: any, i: number) => {
+                                                    let estimatedTime = match.time;
+                                                    let isEstimated = false;
+
+                                                    if (match.time) {
+                                                        const [h, m] = match.time.split(':').map(Number);
+                                                        const d = new Date();
+                                                        d.setHours(h, m, 0, 0);
+                                                        lastTime = d;
+                                                    } else if (lastTime) {
+                                                        const nextTime = new Date(lastTime.getTime() + 75 * 60000);
+                                                        lastTime = nextTime;
+                                                        estimatedTime = nextTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+                                                        isEstimated = true;
+                                                    }
+
+                                                    return (
+                                                        <MatchCard
+                                                            key={`nocourt-${i}`}
+                                                            match={{
+                                                                ...match,
+                                                                time: estimatedTime,
+                                                                isEstimated,
+                                                                tournament: { name: data.tournamentName || 'Tournament' }
+                                                            }}
+                                                            tournamentId={id}
+                                                        />
+                                                    );
+                                                });
+                                            })()}
+                                        </div>
+                                    </div>
+                                )}
+                            </>
+                        );
+                    })()
                 ) : (
                     <div className="text-center py-20 bg-white dark:bg-[#202020] rounded-3xl border border-gray-100 dark:border-white/5 border-dashed">
                         <p className="text-slate-400 dark:text-slate-500 font-medium">No matches scheduled for this day.</p>
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }

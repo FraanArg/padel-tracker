@@ -1,0 +1,86 @@
+Fetching matches...
+Checking player: "D. Brea Senesi"
+Checking player: "G. Triay Pons (1)"
+  Found seed: 1
+Team 1 Seed: 1
+Checking player: "A. Osoro Ulrich"
+Checking player: "V. Iglesias Segador (9)"
+  Found seed: 9
+Team 2 Seed: 9
+Checking player: "G. Alfonso"
+Checking player: "C. Gutierrez (15)"
+  Found seed: 15
+Team 1 Seed: 15
+Checking player: "A. Galan"
+Checking player: "F. Chingotto (2)"
+  Found seed: 2
+Team 2 Seed: 2
+Checking player: "C. Fernandez Sanchez"
+Checking player: "B. Gonzalez Fernandez (3)"
+  Found seed: 3
+Team 1 Seed: 3
+Checking player: "L. Sainz Pelegri"
+Checking player: "R. Eugenio Barrera (11)"
+  Found seed: 11
+Team 2 Seed: 11
+Checking player: "A. Coello"
+Checking player: "A. Tapia (1)"
+  Found seed: 1
+Team 1 Seed: 1
+Checking player: "J. Gonzalez"
+Checking player: "F. Guerrero (7)"
+  Found seed: 7
+Team 2 Seed: 7
+Checking player: "M. Guinart España"
+Checking player: "V. Virseda Sanchez (8)"
+  Found seed: 8
+Team 1 Seed: 8
+Checking player: "B. Caldera Sanchez"
+Checking player: "C. Goenaga Garcia (10)"
+  Found seed: 10
+Team 2 Seed: 10
+Checking player: "J. Garcia"
+Checking player: "J. Barahona (11)"
+  Found seed: 11
+Team 1 Seed: 11
+Checking player: "L. Roman Augsburguer"
+Checking player: "J. Lebron (5)"
+  Found seed: 5
+Team 2 Seed: 5
+Checking player: "C. Jensen"
+Checking player: "A. Alonso De Villa (6)"
+  Found seed: 6
+Team 1 Seed: 6
+Checking player: "J. Castello Lopez"
+Checking player: "L. Rufo Ortiz (13)"
+  Found seed: 13
+Team 2 Seed: 13
+Checking player: "J. Sanz"
+Checking player: "F. Navarro (6)"
+  Found seed: 6
+Team 1 Seed: 6
+Checking player: "F. Stupaczuk"
+Checking player: "M. Di Nenno (4)"
+  Found seed: 4
+Team 2 Seed: 4
+Found 8 matches.
+Match 1:
+  Team 1: ["D. Brea Senesi","G. Triay Pons"] (Seed: "undefined")
+  Team 2: ["A. Osoro Ulrich","V. Iglesias Segador"] (Seed: "undefined")
+  Raw: Scheduled D. Brea Senesi / G. Triay Pons vs A. Osoro Ulrich / V. Iglesias Segador
+Match 2:
+  Team 1: ["G. Alfonso","C. Gutierrez"] (Seed: "undefined")
+  Team 2: ["A. Galan","F. Chingotto"] (Seed: "undefined")
+  Raw: Scheduled G. Alfonso / C. Gutierrez vs A. Galan / F. Chingotto
+Match 3:
+  Team 1: ["C. Fernandez Sanchez","B. Gonzalez Fernandez"] (Seed: "undefined")
+  Team 2: ["L. Sainz Pelegri","R. Eugenio Barrera"] (Seed: "undefined")
+  Raw: Scheduled C. Fernandez Sanchez / B. Gonzalez Fernandez vs L. Sainz Pelegri / R. Eugenio Barrera
+Match 4:
+  Team 1: ["A. Coello","A. Tapia"] (Seed: "undefined")
+  Team 2: ["J. Gonzalez","F. Guerrero"] (Seed: "undefined")
+  Raw: Scheduled A. Coello / A. Tapia vs J. Gonzalez / F. Guerrero
+Match 5:
+  Team 1: ["M. Guinart España","V. Virseda Sanchez"] (Seed: "undefined")
+  Team 2: ["B. Caldera Sanchez","C. Goenaga Garcia"] (Seed: "undefined")
+  Raw: Scheduled M. Guinart España / V. Virseda Sanchez vs B. Caldera Sanchez / C. Goenaga Garcia

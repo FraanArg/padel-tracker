@@ -1,10 +1,11 @@
 import FavoriteButton from './FavoriteButton';
+import Link from 'next/link';
 
 interface MatchProps {
     raw: string;
 }
 
-export default function MatchCard({ match }: { match: any }) {
+export default function MatchCard({ match, tournamentId }: { match: any, tournamentId?: string }) {
     // Use structured data if available
     const team1 = match.team1 && match.team1.length > 0 ? match.team1.join(' / ') : '';
     const team2 = match.team2 && match.team2.length > 0 ? match.team2.join(' / ') : '';
@@ -16,70 +17,169 @@ export default function MatchCard({ match }: { match: any }) {
     // Check if live
     const isLive = match.status && (match.status.includes('Set') || match.status.includes('Game') || match.status.includes('Tie'));
 
-    return (
-        <div className="bg-white dark:bg-[#202020] rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 dark:border-white/5 overflow-hidden hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300">
-            {isParsable ? (
-                <div className="flex flex-col md:flex-row items-stretch">
-                    {/* Status Strip */}
-                    <div className={`h-1 md:h-auto md:w-1.5 ${isLive ? 'bg-red-500 animate-pulse' : 'bg-gray-200 dark:bg-white/10'}`} />
+    // Time conversion logic
+    let localTime = '';
+    let tournamentTime = match.time;
 
-                    <div className="flex-1 p-5 flex flex-col gap-4">
-                        {/* Header / Status */}
-                        <div className="flex justify-between items-center">
-                            <span className="text-[11px] font-bold tracking-widest text-gray-400 dark:text-gray-500 uppercase">
-                                {match.status || 'Scheduled'}
-                            </span>
-                            {isLive && (
-                                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 text-[10px] font-bold uppercase tracking-wider rounded-full">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                                    Live
+    if (match.time && match.timezone) {
+        try {
+            // Create a date object for today with the match time in the tournament timezone
+            // This is an approximation since we don't have the full date in the match object easily available here
+            // But for "Today's" matches it works. For future matches, it might be slightly off if DST changes, but acceptable.
+            const now = new Date();
+            const [hours, minutes] = match.time.split(':').map(Number);
+
+            // We need to construct a string that Date.parse or Intl can handle, or use a library.
+            // Since we don't have date-fns-tz, we'll use a heuristic.
+
+            // 1. Get UTC time of the match
+            // We can use Intl.DateTimeFormat to find the offset of the tournament timezone
+            const getOffset = (timeZone: string) => {
+                const date = new Date();
+                const str = date.toLocaleString('en-US', { timeZone, timeZoneName: 'longOffset' });
+                const match = str.match(/GMT([+-]\d{2}):?(\d{2})?/);
+                if (!match) return 0;
+                const h = parseInt(match[1], 10);
+                const m = match[2] ? parseInt(match[2], 10) : 0;
+                return h * 60 + (h < 0 ? -m : m);
+            };
+
+            const tournamentOffset = getOffset(match.timezone);
+            const localOffset = -now.getTimezoneOffset(); // in minutes
+
+            const diffMinutes = localOffset - tournamentOffset;
+
+            const matchDate = new Date();
+            matchDate.setHours(hours, minutes, 0, 0);
+            matchDate.setMinutes(matchDate.getMinutes() + diffMinutes);
+
+            localTime = matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+        } catch (e) {
+            console.error('Error converting time', e);
+        }
+    }
+
+    return (
+        <div className="relative overflow-hidden rounded-xl bg-[var(--card-bg)] border border-[var(--card-border)] p-4 transition-all hover:bg-gray-50 dark:hover:bg-white/5">
+            {isParsable ? (
+                <>
+                    {/* Status Strip */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-1 ${isLive ? 'bg-red-500 animate-pulse' : 'bg-transparent'}`} />
+
+                    <div className="flex flex-col gap-3 pl-2">
+                        {/* Header: Tournament & Status */}
+                        <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-400">
+                            <div className="flex flex-col gap-0.5 overflow-hidden">
+                                <div className="flex items-center gap-2">
+                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis font-bold">{match.tournament?.name || 'Tournament'}</span>
+                                    {match.category && (
+                                        <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-gray-200 dark:bg-white/10 text-[10px] normal-case tracking-normal text-black dark:text-gray-200 font-bold">
+                                            {match.category === 'Women' && <span>🚺</span>}
+                                            {match.category === 'Men' && <span>🚹</span>}
+                                            <span>{match.category}</span>
+                                        </div>
+                                    )}
+                                    {match.round && (
+                                        <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-[10px] normal-case tracking-normal text-blue-700 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800/50">
+                                            <span>{match.round}</span>
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="flex items-center gap-2 text-[10px] text-slate-500 dark:text-gray-500 font-medium normal-case">
+                                    {match.location && <span>📍 {match.location}</span>}
+                                    {match.court && <span>🏟️ {match.court}</span>}
+                                </div>
+                            </div>
+
+                            {isLive ? (
+                                <span className="text-red-600 dark:text-red-500 animate-pulse flex items-center gap-1 font-bold">
+                                    <span>●</span> Live
                                 </span>
+                            ) : (
+                                <div className="flex flex-col items-end gap-0.5">
+                                    <div className="flex items-center gap-1.5">
+                                        {match.isEstimated && <span className="text-[9px] font-bold text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 px-1 rounded uppercase tracking-wider">Est</span>}
+                                        <span className="text-[9px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-wider">Local</span>
+                                        <span className="text-black dark:text-white font-black text-sm">{tournamentTime || 'Upcoming'}</span>
+                                    </div>
+                                    {localTime && localTime !== tournamentTime && (
+                                        <div className="flex items-center gap-1.5">
+                                            <span className="text-[9px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-wider">Yours</span>
+                                            <span className="text-slate-900 dark:text-gray-300 font-bold text-xs">
+                                                {localTime}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         </div>
 
                         {/* Teams & Score */}
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div className="flex items-center justify-between gap-4">
                             {/* Team 1 */}
-                            <div className="flex-1">
-                                <div className="font-medium text-slate-900 dark:text-slate-100 text-lg leading-snug tracking-tight">
-                                    {match.team1.map((p: string, i: number) => (
-                                        <div key={i} className={`group/player flex items-center gap-2 ${i === 0 ? "mb-0.5" : "text-slate-600 dark:text-slate-400"}`}>
-                                            <span>{p}</span>
-                                            <FavoriteButton playerName={p} />
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="flex-1 text-right">
+                                {match.team1.map((p: string, i: number) => (
+                                    <div key={i} className={`flex items-center justify-end gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
+                                        {i === 0 && match.team1Seed && (
+                                            <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">
+                                                {match.team1Seed}
+                                            </span>
+                                        )}
+                                        {tournamentId ? (
+                                            <Link
+                                                href={`/tournament/${tournamentId}/player/${encodeURIComponent(p)}`}
+                                                className="font-bold text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
+                                            >
+                                                {p}
+                                            </Link>
+                                        ) : (
+                                            <span className="font-bold text-[15px] leading-tight text-black dark:text-white">{p}</span>
+                                        )}
+                                        <FavoriteButton playerName={p} />
+                                    </div>
+                                ))}
                             </div>
 
-                            {/* VS / Score */}
-                            <div className="flex flex-col items-center justify-center min-w-[100px]">
+                            {/* Score / VS */}
+                            <div className="min-w-[80px] flex justify-center">
                                 {score ? (
-                                    <div className="text-xl font-mono font-medium text-slate-900 dark:text-slate-100 bg-gray-50 dark:bg-white/5 px-4 py-2 rounded-lg tracking-widest border border-gray-100 dark:border-white/5">
+                                    <div className="px-3 py-1 rounded-md bg-gray-100 dark:bg-white/10 font-mono text-sm font-bold tracking-widest text-black dark:text-white border border-gray-300 dark:border-white/10">
                                         {score}
                                     </div>
                                 ) : (
-                                    <div className="text-gray-300 dark:text-gray-600 font-bold text-xs tracking-widest">VS</div>
+                                    <span className="text-xs font-black text-slate-400 dark:text-gray-600 opacity-70">VS</span>
                                 )}
                             </div>
 
                             {/* Team 2 */}
-                            <div className="flex-1 md:text-right">
-                                <div className="font-medium text-slate-900 dark:text-slate-100 text-lg leading-snug tracking-tight">
-                                    {match.team2.map((p: string, i: number) => (
-                                        <div key={i} className={`group/player flex items-center gap-2 md:justify-end ${i === 0 ? "mb-0.5" : "text-slate-600 dark:text-slate-400"}`}>
-                                            <div className="md:order-2">{p}</div>
-                                            <div className="md:order-1">
-                                                <FavoriteButton playerName={p} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="flex-1 text-left">
+                                {match.team2.map((p: string, i: number) => (
+                                    <div key={i} className={`flex items-center justify-start gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
+                                        <FavoriteButton playerName={p} />
+                                        {tournamentId ? (
+                                            <Link
+                                                href={`/tournament/${tournamentId}/player/${encodeURIComponent(p)}`}
+                                                className="font-bold text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
+                                            >
+                                                {p}
+                                            </Link>
+                                        ) : (
+                                            <span className="font-bold text-[15px] leading-tight text-black dark:text-white">{p}</span>
+                                        )}
+                                        {i === 0 && match.team2Seed && (
+                                            <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">
+                                                {match.team2Seed}
+                                            </span>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                </div>
+                </>
             ) : (
-                <div className="p-5 text-slate-600 dark:text-slate-400 font-medium text-sm">
+                <div className="p-4 text-[var(--text-secondary)] text-sm font-medium text-center">
                     {match.raw}
                 </div>
             )}

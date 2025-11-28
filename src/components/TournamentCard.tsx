@@ -10,42 +10,58 @@ interface TournamentProps {
 }
 
 export default function TournamentCard({ tournament }: { tournament: any }) {
+    // Assuming 'isLive' is a prop or derived state, for this example, let's define it.
+    // In a real application, you would pass this as a prop or determine it based on tournament data.
+    const isLive = tournament.status === 'live'; // Example condition
+
     return (
-        <Link href={`/tournament/${tournament.id}`} className="block group">
-            <div className="bg-white dark:bg-[#202020] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:shadow-none transition-all duration-300 transform hover:-translate-y-0.5">
-                <div className="relative h-56 bg-gray-100 dark:bg-white/5 overflow-hidden">
+        <Link href={`/tournament/${tournament.id}`} className="group block h-full">
+            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                {/* Image Background */}
+                <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800">
                     {tournament.imageUrl ? (
                         <img
                             src={tournament.imageUrl}
                             alt={tournament.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
                         />
                     ) : (
-                        <div className="flex items-center justify-center h-full text-gray-300 dark:text-white/10">
-                            <Trophy className="w-12 h-12 opacity-20" />
+                        <div className="flex h-full items-center justify-center">
+                            <Trophy className="h-16 w-16 text-gray-300 dark:text-gray-600" />
                         </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
-
-                    {/* Live Badge - iOS style blur */}
-                    <div className="absolute top-4 right-4">
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 backdrop-blur-md text-red-500 text-[10px] font-bold tracking-wider uppercase rounded-full shadow-sm">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                            </span>
-                            Live
-                        </div>
-                    </div>
                 </div>
-                <div className="p-6">
-                    <h3 className="font-semibold text-xl text-slate-900 dark:text-slate-100 leading-snug tracking-tight group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">
+
+                {/* Gradient Overlay - Full height for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90" />
+
+                {/* Live Badge */}
+                {isLive && (
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-red-500 text-white text-[11px] font-bold uppercase tracking-wider shadow-lg animate-pulse z-10">
+                        Live
+                    </div>
+                )}
+
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <h3 className="text-xl font-bold leading-tight text-white mb-1 drop-shadow-md">
                         {tournament.name}
                     </h3>
-                    <div className="mt-4 flex items-center text-sm font-medium text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
-                        View Matches
-                        <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+
+                    {/* Date Display */}
+                    {(tournament.dateStart && tournament.dateEnd) && (
+                        <div className="flex items-center text-xs font-medium text-gray-300 mb-3">
+                            <span className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-white">
+                                {tournament.dateStart.split('/')[0]}/{tournament.dateStart.split('/')[1]} - {tournament.dateEnd.split('/')[0]}/{tournament.dateEnd.split('/')[1]}
+                            </span>
+                        </div>
+                    )}
+
+                    <div className="flex items-center text-sm font-medium text-gray-200 group-hover:text-white transition-colors">
+                        <span>View Matches</span>
+                        <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </div>

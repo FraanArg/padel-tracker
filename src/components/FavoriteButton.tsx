@@ -37,10 +37,10 @@ export default function FavoriteButton({ playerName }: FavoriteButtonProps) {
         <button
             onClick={toggleFavorite}
             className={clsx(
-                "p-1.5 rounded-full transition-all opacity-0 group-hover/player:opacity-100 focus:opacity-100",
+                "p-1.5 rounded-full transition-all",
                 isFavorite
-                    ? "text-red-500 bg-red-50 dark:bg-red-500/10 opacity-100"
-                    : "text-slate-300 dark:text-slate-600 hover:text-red-500 hover:bg-slate-100 dark:hover:bg-white/10"
+                    ? "text-red-500 bg-red-50 dark:bg-red-500/10"
+                    : "text-slate-400 dark:text-slate-500 hover:text-red-500 hover:bg-slate-100 dark:hover:bg-white/10"
             )}
             title={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
