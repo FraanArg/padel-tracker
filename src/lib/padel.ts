@@ -12,6 +12,7 @@ export interface Tournament {
     dateEnd?: string;
     status?: 'live' | 'upcoming' | 'finished';
     month?: string;
+    parsedDate?: Date;
 }
 
 export interface Match {
@@ -94,6 +95,10 @@ export async function getCalendarTournaments(): Promise<Tournament[]> {
         const $ = cheerio.load(data);
         const tournaments: Tournament[] = [];
         let currentMonth = '';
+        const currentYear = new Date().getFullYear(); // Assuming calendar is for current/next year
+        // Heuristic: if month is earlier than current month, it might be next year, but usually calendar pages are for a specific year.
+        // For now, let's assume the calendar page is for 2025 as seen in the text "Calendars 2025".
+        const year = 2025;
 
         $('.loop-container').children().each((_, element) => {
             const tag = $(element).prop('tagName');
@@ -107,11 +112,13 @@ export async function getCalendarTournaments(): Promise<Tournament[]> {
                 // Try to find name in following sibling link or text
                 let name = link.next().text().trim();
                 if (!name) name = link.parent().text().trim(); // Fallback
-                // Clean up name (remove "GO TO EVENT" etc if mixed)
-                name = name.replace(/GO TO EVENT/i, '').trim();
 
-                // If name is still empty or just "GO TO EVENT", try to extract from URL
-                if (!name || name === 'GO TO EVENT') {
+                // CRITICAL FIX: Clean up name to remove HTML tags or "GO TO EVENT"
+                // Sometimes the text content includes the raw HTML of the image due to WP issues
+                name = name.replace(/<[^>]*>/g, '').replace(/GO TO EVENT/i, '').trim();
+
+                // If name is still empty or looks like a URL/garbage, try to extract from URL
+                if (!name || name.length < 3 || name.includes('http')) {
                     const urlParts = eventUrl?.split('/').filter(Boolean);
                     const slug = urlParts?.[urlParts.length - 1];
                     name = slug ? slug.replace(/-/g, ' ').toUpperCase() : 'Unknown Tournament';
@@ -121,13 +128,30 @@ export async function getCalendarTournaments(): Promise<Tournament[]> {
 
                 if (eventUrl && name) {
                     const id = eventUrl.split('/').filter(Boolean).pop() || '';
+
+                    // Construct a date object from the Month header
+                    // We don't have exact days in the calendar view usually, so we default to the 1st of the month for sorting
+                    // unless we can find a date string in the text.
+                    let dateStart = '';
+                    let dateObj = new Date();
+
+                    if (currentMonth) {
+                        const monthIndex = new Date(`${currentMonth} 1, 2000`).getMonth();
+                        if (!isNaN(monthIndex)) {
+                            dateObj = new Date(year, monthIndex, 1);
+                            dateStart = `${currentMonth} ${year}`;
+                        }
+                    }
+
                     tournaments.push({
                         name,
                         url: eventUrl,
                         imageUrl,
                         id,
                         month: currentMonth,
-                        status: 'upcoming'
+                        status: 'upcoming',
+                        dateStart, // Display string
+                        parsedDate: dateObj // For filtering
                     });
                 }
             }
@@ -161,12 +185,35 @@ export async function getTournaments(): Promise<Tournament[]> {
                         const wrapper = $(element).closest('.wrapper-events');
                         const dateText = wrapper.find('.date-event').text().trim();
                         const name = wrapper.find('.name-event').text().trim();
-                        // const locationText = wrapper.find('.place-event').text().trim();
 
                         if (eventUrl && name) {
                             const id = eventUrl.split('/').filter(Boolean).pop() || '';
 
-                            // Assume live page items are 'live' for now, or check dates if needed
+                            // Parse Spanish Date: "24 AL 30 DE NOV"
+                            // Spanish Months Mapping
+                            const esMonths: Record<string, number> = {
+                                'ENE': 0, 'FEB': 1, 'MAR': 2, 'ABR': 3, 'MAY': 4, 'JUN': 5,
+                                'JUL': 6, 'AGO': 7, 'SEP': 8, 'OCT': 9, 'NOV': 10, 'DIC': 11
+                            };
+
+                            let parsedDate = new Date();
+                            // Try to extract the month and day
+                            // Regex for "DD ... DE MMM"
+                            const match = dateText.match(/(\d+).*DE\s+([A-Z]+)/i);
+                            if (match) {
+                                const day = parseInt(match[1]);
+                                const monthStr = match[2].toUpperCase().substring(0, 3);
+                                const month = esMonths[monthStr];
+                                if (month !== undefined) {
+                                    const year = new Date().getFullYear(); // Assume current year
+                                    parsedDate = new Date(year, month, day);
+                                }
+                            }
+
+                            // Determine status based on date
+                            // If end date is in the past, it's 'finished'.
+                            // For now, we trust the /live/ page contains active or very recent events.
+                            // We can use a threshold (e.g., finished less than 2 days ago is still "live" or "recent")
                             const status = 'live';
 
                             tournaments.push({
@@ -175,7 +222,8 @@ export async function getTournaments(): Promise<Tournament[]> {
                                 imageUrl,
                                 id,
                                 dateStart: dateText,
-                                status
+                                status,
+                                parsedDate
                             });
                         }
                     });
@@ -189,16 +237,24 @@ export async function getTournaments(): Promise<Tournament[]> {
         ]);
 
         // Merge and Deduplicate
-        // Priority: Live Data > Calendar Data
         const tournamentMap = new Map<string, Tournament>();
 
         // Add Calendar data first
         calendarData.forEach(t => tournamentMap.set(t.id, t));
 
-        // Overwrite with Live data (so we get the 'live' status and specific dates)
+        // Overwrite with Live data
         liveData.forEach(t => tournamentMap.set(t.id, t));
 
-        return Array.from(tournamentMap.values());
+        const allTournaments = Array.from(tournamentMap.values());
+
+        // Return all tournaments sorted by date
+        // We filter in the UI component instead
+        return allTournaments.sort((a, b) => {
+            // Sort by date
+            const dateA = a.parsedDate?.getTime() || 0;
+            const dateB = b.parsedDate?.getTime() || 0;
+            return dateA - dateB;
+        });
 
     } catch (error) {
         console.error('Error fetching tournaments:', error);

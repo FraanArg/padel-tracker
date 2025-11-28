@@ -14,7 +14,7 @@ export default function TournamentCard({ tournament }: { tournament: any }) {
 
     return (
         <Link href={`/tournament/${tournament.id}`} className="group block h-full">
-            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-inner">
                 {/* Image Background */}
                 <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800">
                     {tournament.imageUrl ? (

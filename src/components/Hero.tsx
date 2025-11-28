@@ -39,14 +39,14 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <Link
                                 href="/rankings"
-                                className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"
+                                className="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-blue-50 transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center"
                             >
                                 <Trophy className="w-5 h-5 mr-2 text-blue-600" />
                                 View Rankings
                             </Link>
                             <Link
                                 href="/compare"
-                                className="px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10 flex items-center justify-center"
+                                className="px-8 py-4 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-all backdrop-blur-sm border border-white/10 flex items-center justify-center active:scale-95"
                             >
                                 Compare Players
                                 <ArrowRight className="w-5 h-5 ml-2" />
