@@ -89,20 +89,21 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                             <Trophy className="w-32 h-32 text-white drop-shadow-lg relative z-10" />
                         )}
                         {nextTournament && (
-                            <Link href={`/tournament/${nextTournament.id}`}>
-                                <motion.div
-                                    animate={{ y: [0, -10, 0] }}
-                                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                    className="absolute -bottom-6 -left-6 bg-white p-3 rounded-xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer z-20 max-w-[240px]"
-                                >
-                                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <Calendar className="w-4 h-4 text-green-600" />
+                            <Link href={`/tournament/${nextTournament.id}`} className="absolute bottom-0 left-0 right-0 z-20">
+                                <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-4 border-t border-white/10 transition-colors hover:bg-white dark:hover:bg-slate-900">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <Calendar className="w-5 h-5 text-green-600 dark:text-green-400" />
+                                        </div>
+                                        <div className="min-w-0 flex-1">
+                                            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mb-0.5">Next Event</div>
+                                            <div className="text-sm font-bold text-slate-900 dark:text-white leading-tight truncate pr-2">
+                                                {nextTournament.name}
+                                            </div>
+                                        </div>
+                                        <ArrowRight className="w-4 h-4 text-slate-400" />
                                     </div>
-                                    <div className="min-w-0">
-                                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Next Event</div>
-                                        <div className="text-xs font-bold text-slate-900 leading-tight line-clamp-2">{nextTournament.name}</div>
-                                    </div>
-                                </motion.div>
+                                </div>
                             </Link>
                         )}
                     </div>
