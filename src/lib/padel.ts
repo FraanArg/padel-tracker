@@ -10,6 +10,8 @@ export interface Tournament {
     id: string;
     dateStart?: string;
     dateEnd?: string;
+    status?: 'live' | 'upcoming' | 'finished';
+    month?: string;
 }
 
 export interface Match {
@@ -84,81 +86,120 @@ function getTournamentMetadata(tournamentName: string): { timezone?: string, loc
     return {};
 }
 
-export async function getTournaments(): Promise<Tournament[]> {
+export async function getCalendarTournaments(): Promise<Tournament[]> {
     try {
-        const { data } = await axios.get('https://www.padelfip.com/live/', {
+        const { data } = await axios.get('https://www.padelfip.com/calendar/', {
             headers: { 'User-Agent': USER_AGENT }
         });
         const $ = cheerio.load(data);
         const tournaments: Tournament[] = [];
+        let currentMonth = '';
 
-        $('.cover-category-event').each((_, element) => {
-            const img = $(element);
-            const link = img.closest('a');
-            const eventUrl = link.attr('href');
+        $('.loop-container').children().each((_, element) => {
+            const tag = $(element).prop('tagName');
+            if (tag === 'H2') {
+                currentMonth = $(element).text().trim();
+            } else if ($(element).find('.cover-category-event').length > 0) {
+                const img = $(element).find('.cover-category-event');
+                const link = img.closest('a');
+                const eventUrl = link.attr('href');
 
-            let imageUrl = img.attr('data-src') || img.attr('data-lazy-src') || img.attr('src') || '';
-            if (imageUrl?.startsWith('data:')) {
-                const srcset = img.attr('srcset');
-                if (srcset) {
-                    imageUrl = srcset.split(' ')[0];
+                // Try to find name in following sibling link or text
+                let name = link.next().text().trim();
+                if (!name) name = link.parent().text().trim(); // Fallback
+                // Clean up name (remove "GO TO EVENT" etc if mixed)
+                name = name.replace(/GO TO EVENT/i, '').trim();
+
+                // If name is still empty or just "GO TO EVENT", try to extract from URL
+                if (!name || name === 'GO TO EVENT') {
+                    const urlParts = eventUrl?.split('/').filter(Boolean);
+                    const slug = urlParts?.[urlParts.length - 1];
+                    name = slug ? slug.replace(/-/g, ' ').toUpperCase() : 'Unknown Tournament';
                 }
-            }
 
-            // Clean image URL to get full resolution
-            // Remove dimensions like -212x300, -150x150, etc.
-            if (imageUrl) {
-                imageUrl = imageUrl.replace(/-\d+x\d+(\.[a-zA-Z]+)$/, '$1');
-            }
+                let imageUrl = img.attr('data-src') || img.attr('data-lazy-src') || img.attr('src') || '';
 
-            const container = link.parent();
-            const article = img.closest('article');
-            const articleText = article.text().replace(/\s+/g, ' ').trim();
-
-            // Extract dates
-            let dateStart = '';
-            let dateEnd = '';
-            const dateMatch = articleText.match(/From (\d{2}\/\d{2}\/\d{4}) to (\d{2}\/\d{2}\/\d{4})/);
-            if (dateMatch) {
-                dateStart = dateMatch[1];
-                dateEnd = dateMatch[2];
-            }
-
-            // Strategy 1: Get name from the title attribute of the main link
-            let name = link.attr('title') || link.attr('aria-label') || 'Unknown Tournament';
-
-            // Strategy 2: If not found, look for text links (fallback)
-            if (name === 'Unknown Tournament') {
-                container.find('a').each((_, el) => {
-                    const t = $(el).text().trim();
-                    const href = $(el).attr('href');
-                    if (t && t.toUpperCase() !== 'GO TO EVENT' && t.toUpperCase() !== 'LIVE' && href === eventUrl && $(el).find('img').length === 0) {
-                        name = t;
-                    }
-                });
-            }
-
-            // Strategy 3: Look for headers
-            if (name === 'Unknown Tournament') {
-                const header = container.find('h1, h2, h3, h4, h5, h6').first();
-                if (header.length) name = header.text().trim();
-            }
-
-            if (eventUrl && imageUrl) {
-                if (!tournaments.some(t => t.url === eventUrl)) {
+                if (eventUrl && name) {
+                    const id = eventUrl.split('/').filter(Boolean).pop() || '';
                     tournaments.push({
                         name,
                         url: eventUrl,
                         imageUrl,
-                        id: eventUrl.split('/').filter(Boolean).pop() || 'unknown',
-                        dateStart,
-                        dateEnd
+                        id,
+                        month: currentMonth,
+                        status: 'upcoming'
                     });
                 }
             }
         });
-
         return tournaments;
+    } catch (error) {
+        console.error('Error fetching calendar tournaments:', error);
+        return [];
+    }
+}
+
+export async function getTournaments(): Promise<Tournament[]> {
+    try {
+        // Fetch both sources in parallel
+        const [liveData, calendarData] = await Promise.all([
+            (async () => {
+                try {
+                    const { data } = await axios.get('https://www.padelfip.com/live/', {
+                        headers: { 'User-Agent': USER_AGENT }
+                    });
+                    const $ = cheerio.load(data);
+                    const tournaments: Tournament[] = [];
+
+                    $('.cover-category-event').each((_, element) => {
+                        const img = $(element);
+                        const link = img.closest('a');
+                        const eventUrl = link.attr('href');
+
+                        let imageUrl = img.attr('data-src') || img.attr('data-lazy-src') || img.attr('src') || '';
+
+                        const wrapper = $(element).closest('.wrapper-events');
+                        const dateText = wrapper.find('.date-event').text().trim();
+                        const name = wrapper.find('.name-event').text().trim();
+                        // const locationText = wrapper.find('.place-event').text().trim();
+
+                        if (eventUrl && name) {
+                            const id = eventUrl.split('/').filter(Boolean).pop() || '';
+
+                            // Assume live page items are 'live' for now, or check dates if needed
+                            const status = 'live';
+
+                            tournaments.push({
+                                name,
+                                url: eventUrl,
+                                imageUrl,
+                                id,
+                                dateStart: dateText,
+                                status
+                            });
+                        }
+                    });
+                    return tournaments;
+                } catch (e) {
+                    console.error('Error fetching live tournaments:', e);
+                    return [];
+                }
+            })(),
+            getCalendarTournaments()
+        ]);
+
+        // Merge and Deduplicate
+        // Priority: Live Data > Calendar Data
+        const tournamentMap = new Map<string, Tournament>();
+
+        // Add Calendar data first
+        calendarData.forEach(t => tournamentMap.set(t.id, t));
+
+        // Overwrite with Live data (so we get the 'live' status and specific dates)
+        liveData.forEach(t => tournamentMap.set(t.id, t));
+
+        return Array.from(tournamentMap.values());
+
     } catch (error) {
         console.error('Error fetching tournaments:', error);
         return [];

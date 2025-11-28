@@ -10,9 +10,7 @@ interface TournamentProps {
 }
 
 export default function TournamentCard({ tournament }: { tournament: any }) {
-    // Assuming 'isLive' is a prop or derived state, for this example, let's define it.
-    // In a real application, you would pass this as a prop or determine it based on tournament data.
-    const isLive = tournament.status === 'live'; // Example condition
+    const isLive = tournament.status === 'live';
 
     return (
         <Link href={`/tournament/${tournament.id}`} className="group block h-full">
