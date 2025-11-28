@@ -10,7 +10,7 @@ export default function Navbar() {
                     <div className="bg-[var(--foreground)] text-[var(--background)] p-1.5 rounded-lg transition-transform group-hover:scale-110">
                         <Trophy className="w-4 h-4" />
                     </div>
-                    <span className="font-bold text-lg tracking-tight text-[var(--foreground)]">Padel Tracker</span>
+                    <span className="font-bold text-lg tracking-tight text-[var(--foreground)] hidden sm:block">Padel Tracker</span>
                 </Link>
 
                 <div className="flex items-center gap-2">

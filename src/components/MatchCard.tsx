@@ -116,11 +116,11 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                         </div>
 
                         {/* Teams & Score */}
-                        <div className="flex items-center justify-between gap-4">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                             {/* Team 1 */}
-                            <div className="flex-1 text-right">
+                            <div className="flex-1 w-full md:w-auto flex md:block flex-col items-center md:items-end text-center md:text-right">
                                 {match.team1.map((p: string, i: number) => (
-                                    <div key={i} className={`flex items-center justify-end gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
+                                    <div key={i} className={`flex items-center justify-center md:justify-end gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
                                         {i === 0 && match.team1Seed && (
                                             <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">
                                                 {match.team1Seed}
@@ -129,12 +129,12 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                                         {tournamentId ? (
                                             <Link
                                                 href={`/tournament/${tournamentId}/player/${encodeURIComponent(p)}`}
-                                                className="font-bold text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
+                                                className="font-bold text-[14px] md:text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
                                             >
                                                 {p}
                                             </Link>
                                         ) : (
-                                            <span className="font-bold text-[15px] leading-tight text-black dark:text-white">{p}</span>
+                                            <span className="font-bold text-[14px] md:text-[15px] leading-tight text-black dark:text-white">{p}</span>
                                         )}
                                         <FavoriteButton playerName={p} />
                                     </div>
@@ -142,7 +142,7 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                             </div>
 
                             {/* Score / VS */}
-                            <div className="min-w-[80px] flex justify-center">
+                            <div className="min-w-[80px] flex justify-center my-2 md:my-0">
                                 {score ? (
                                     <div className="px-3 py-1 rounded-md bg-gray-100 dark:bg-white/10 font-mono text-sm font-bold tracking-widest text-black dark:text-white border border-gray-300 dark:border-white/10">
                                         {score}
@@ -153,19 +153,19 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                             </div>
 
                             {/* Team 2 */}
-                            <div className="flex-1 text-left">
+                            <div className="flex-1 w-full md:w-auto flex md:block flex-col items-center md:items-start text-center md:text-left">
                                 {match.team2.map((p: string, i: number) => (
-                                    <div key={i} className={`flex items-center justify-start gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
+                                    <div key={i} className={`flex items-center justify-center md:justify-start gap-2 ${i === 0 ? "mb-1" : "text-slate-700 dark:text-gray-400"}`}>
                                         <FavoriteButton playerName={p} />
                                         {tournamentId ? (
                                             <Link
                                                 href={`/tournament/${tournamentId}/player/${encodeURIComponent(p)}`}
-                                                className="font-bold text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
+                                                className="font-bold text-[14px] md:text-[15px] leading-tight text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:underline decoration-2 underline-offset-2 transition-all"
                                             >
                                                 {p}
                                             </Link>
                                         ) : (
-                                            <span className="font-bold text-[15px] leading-tight text-black dark:text-white">{p}</span>
+                                            <span className="font-bold text-[14px] md:text-[15px] leading-tight text-black dark:text-white">{p}</span>
                                         )}
                                         {i === 0 && match.team2Seed && (
                                             <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-white/5 px-1.5 py-0.5 rounded border border-slate-200 dark:border-white/10">

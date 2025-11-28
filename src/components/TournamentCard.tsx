@@ -44,14 +44,14 @@ export default function TournamentCard({ tournament }: { tournament: any }) {
                 )}
 
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                    <h3 className="text-xl font-bold leading-tight text-white mb-1 drop-shadow-md">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 z-10">
+                    <h3 className="text-lg md:text-xl font-bold leading-tight text-white mb-1 drop-shadow-md line-clamp-2">
                         {tournament.name}
                     </h3>
 
                     {/* Date Display */}
                     {(tournament.dateStart && tournament.dateEnd) && (
-                        <div className="flex items-center text-xs font-medium text-gray-300 mb-3">
+                        <div className="flex items-center text-xs font-medium text-gray-300 mb-2 md:mb-3">
                             <span className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-white">
                                 {tournament.dateStart.split('/')[0]}/{tournament.dateStart.split('/')[1]} - {tournament.dateEnd.split('/')[0]}/{tournament.dateEnd.split('/')[1]}
                             </span>
