@@ -1,5 +1,6 @@
 import { getTournaments } from '@/lib/padel';
 import TournamentCard from '@/components/TournamentCard';
+import Hero from '@/components/Hero';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -10,10 +11,14 @@ export default async function Home() {
     <main className="min-h-screen pb-20">
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
 
+        <Hero />
+
         {/* Header */}
-        <div className="space-y-1">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Tournaments</h1>
-          <p className="text-slate-500 dark:text-slate-400 font-medium">Live and upcoming events</p>
+        <div className="space-y-1 px-2">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+            <span className="w-2 h-8 bg-blue-500 rounded-full inline-block"></span>
+            All Tournaments
+          </h2>
         </div>
 
         {/* Tournament Grid */}

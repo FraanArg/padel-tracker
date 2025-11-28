@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTournaments, getMatches } from '@/lib/padel';
+import { getTournaments, getMatches, Match } from '@/lib/padel';
 
 export async function POST(request: Request) {
     try {
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
                     const pName = player.toLowerCase();
                     return normalizedFavorites.some(fav => pName.includes(fav));
                 });
-            }).map(match => ({
+            }).map((match: Match) => ({
                 ...match,
                 tournament: {
                     name: tournament.name,

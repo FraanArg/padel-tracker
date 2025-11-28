@@ -1,3 +1,4 @@
+import AutoRefresh from '@/components/AutoRefresh';
 import { getMatches, getAllMatches, Match } from "@/lib/padel";
 import MatchCard from "@/components/MatchCard";
 import TournamentDraw from "@/components/TournamentDraw";
@@ -233,6 +234,7 @@ export default async function TournamentPage({
                     </div>
                 </>
             )}
+            <AutoRefresh />
         </div >
     );
 }

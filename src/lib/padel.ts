@@ -165,7 +165,19 @@ export async function getTournaments(): Promise<Tournament[]> {
     }
 }
 
+// Cache for matches: URL -> { data: any, timestamp: number }
+const matchesCache: Record<string, { data: any, timestamp: number }> = {};
+const CACHE_DURATION = 120 * 1000; // 120 seconds
+
 export async function getMatches(url: string, dayUrl?: string) {
+    const cacheKey = `${url}|${dayUrl || ''}`;
+    const now = Date.now();
+
+    if (matchesCache[cacheKey] && (now - matchesCache[cacheKey].timestamp < CACHE_DURATION)) {
+        // console.log('Serving from cache:', cacheKey);
+        return matchesCache[cacheKey].data;
+    }
+
     try {
         let activeDayUrl = dayUrl;
         let tournamentId = '';
@@ -420,23 +432,27 @@ export async function getMatches(url: string, dayUrl?: string) {
                         team2Seed
                     });
                 } else {
-                    matches.push({ raw: team1Row.text() + ' ' + team2Row.text() });
+                    const container = statsLink.closest('div, li');
+                    matches.push({ raw: container.text().replace(/\s+/g, ' ').trim() });
                 }
-            } else {
-                const container = statsLink.closest('div, li');
-                matches.push({ raw: container.text().replace(/\s+/g, ' ').trim() });
             }
         });
 
-        return {
+        const result = {
+            matches,
+            days,
             tournamentId,
             widgetId,
-            days,
             activeDayUrl,
-            matches,
             tournamentName
         };
 
+        matchesCache[cacheKey] = {
+            data: result,
+            timestamp: Date.now()
+        };
+
+        return result;
     } catch (error) {
         if (axios.isAxiosError(error)) {
             console.error(`Error fetching matches for URL ${url}:`, error.message, 'Status:', error.response?.status, 'URL:', error.config?.url);
@@ -800,7 +816,7 @@ export async function getAllMatches(url: string) {
         }
 
         // Fetch all days in parallel (limit concurrency if needed)
-        const matchPromises = days.map(day => getMatches(url, day.url));
+        const matchPromises = days.map((day: { text: string, url: string }) => getMatches(url, day.url));
         const results = await Promise.all(matchPromises);
 
         // Combine all matches
