@@ -62,7 +62,7 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="hidden md:block relative"
                 >
-                    <div className="relative w-72 h-72 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md overflow-hidden">
+                    <div className="relative w-64 h-80 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md overflow-hidden group hover:rotate-0 transition-all duration-500">
                         {/* Map Image Placeholder - Will be replaced by generated image */}
                         <div className="absolute inset-0 bg-blue-500/20"></div>
 
@@ -70,18 +70,24 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                             src="https://www.padelfip.com/wp-content/uploads/2024/02/LOGO-PREMIER-PADEL-2024-1.png"
                             alt="Premier Padel Logo"
                             fill
-                            className="object-contain opacity-20 mix-blend-overlay p-8 z-20"
+                            className="object-contain opacity-20 mix-blend-overlay z-0"
                         />
 
-                        {/* Map Image */}
-                        <Image
-                            src="/images/acapulco-map.png"
-                            alt="Acapulco Map"
-                            fill
-                            className="object-cover opacity-90"
-                        />
-
-                        {/* Floating Badge */}
+                        {/* Dynamic Tournament Image */}
+                        {nextTournament?.imageUrl ? (
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src={nextTournament.imageUrl}
+                                    alt={nextTournament.name}
+                                    fill
+                                    className="object-cover"
+                                />
+                                {/* Gradient Overlay for text readability at bottom */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            </div>
+                        ) : (
+                            <Trophy className="w-32 h-32 text-white drop-shadow-lg relative z-10" />
+                        )}
                         {nextTournament && (
                             <Link href={`/tournament/${nextTournament.id}`}>
                                 <motion.div
