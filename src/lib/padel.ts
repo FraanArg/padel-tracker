@@ -189,7 +189,14 @@ export async function getTournaments(): Promise<Tournament[]> {
 
                         const wrapper = $(element).closest('.wrapper-events');
                         const dateText = wrapper.find('.date-event').text().trim();
-                        const name = wrapper.find('.name-event').text().trim();
+                        let name = wrapper.find('.name-event').text().trim();
+
+                        // Fallback name extraction from URL if empty
+                        if (!name) {
+                            const urlParts = eventUrl?.split('/').filter(Boolean);
+                            const slug = urlParts?.[urlParts.length - 1];
+                            name = slug ? slug.replace(/-/g, ' ').toUpperCase() : 'Unknown Tournament';
+                        }
 
                         if (eventUrl && name) {
                             const id = eventUrl.split('/').filter(Boolean).pop() || '';
@@ -278,8 +285,9 @@ export async function getTournaments(): Promise<Tournament[]> {
                 t.parsedDate.getMonth() === today.getMonth() &&
                 t.parsedDate.getFullYear() === today.getFullYear();
 
-            // If it's a Major/Premier tournament in the current month, treat it as live or at least very relevant
-            if (t.status === 'upcoming' && isSameMonth && (t.name.includes('MAJOR') || t.name.includes('PREMIER'))) {
+            // SPECIFIC FIX: Only promote Acapulco Major as requested by user
+            // We avoid promoting other Premier/Major tournaments (like Dubai) if they are not actually live
+            if (t.status === 'upcoming' && isSameMonth && t.name.toUpperCase().includes('ACAPULCO')) {
                 return { ...t, status: 'live' as const };
             }
             return t;
