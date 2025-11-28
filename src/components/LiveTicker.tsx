@@ -44,20 +44,20 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
             try {
                 const res = await fetch(`/api/matches?url=${encodeURIComponent(selected.url)}`);
                 const data = await res.json();
-                
+
                 // Filter for active matches if possible, or just show all "Live" ones
                 // The scraper might return 'live' status matches.
                 // If no status is 'live', maybe show the most recent ones?
                 // Let's show matches that are NOT 'finished' or are 'live'
-                const activeMatches = data.matches.filter((m: Match) => 
-                    m.status?.toLowerCase() === 'live' || 
+                const activeMatches = data.matches.filter((m: Match) =>
+                    m.status?.toLowerCase() === 'live' ||
                     m.status?.toLowerCase().includes('set') ||
                     (m.score && m.score.length > 0 && m.status !== 'finished')
                 );
 
                 // If no active matches found, maybe show the last few finished ones?
                 // For now, let's stick to active.
-                setMatches(activeMatches.length > 0 ? activeMatches : data.matches.slice(0, 5)); 
+                setMatches(activeMatches.length > 0 ? activeMatches : data.matches.slice(0, 5));
                 setLastUpdated(new Date());
             } catch (error) {
                 console.error('Error fetching live matches:', error);
@@ -87,6 +87,24 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         );
     }
 
+    // Helper to parse name (get surname)
+    const getSurname = (fullName: string) => {
+        // Remove initial (e.g. "A. Galan" -> "Galan")
+        // Also handle "Alejandro Galan" -> "Galan"
+        // Usually format is "I. Surname" or "Name Surname"
+        const parts = fullName.split(' ');
+        if (parts.length > 1) {
+            // If first part is an initial (ends with dot or length 1)
+            if (parts[0].endsWith('.') || parts[0].length === 1) {
+                return parts.slice(1).join(' ');
+            }
+            // Otherwise return last part? Or everything after first?
+            // "Alejandro Galan Romo" -> "Galan Romo"
+            return parts.slice(1).join(' ');
+        }
+        return fullName;
+    };
+
     if (matches.length === 0) return null;
 
     return (
@@ -109,9 +127,9 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
             {/* Horizontal Scroll Container */}
             <div className="flex overflow-x-auto pb-4 gap-3 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
                 {matches.map((match, i) => (
-                    <div 
-                        key={i} 
-                        className="flex-none w-[280px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center"
+                    <div
+                        key={i}
+                        className="flex-none w-[320px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center flex flex-col justify-between"
                     >
                         <div className="flex justify-between items-start mb-3">
                             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
@@ -124,20 +142,46 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                             )}
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-3 flex-grow">
                             {/* Team 1 */}
                             <div className="flex justify-between items-center">
-                                <div className="text-sm font-bold text-slate-900 dark:text-white truncate max-w-[180px]">
-                                    {match.team1?.map(p => p.split(' ')[0]).join('/') || 'Team 1'}
+                                <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
+                                    {match.team1?.map((p, idx) => (
+                                        <div key={idx} className="flex items-center space-x-1">
+                                            {match.team1Flags?.[idx] && (
+                                                <img
+                                                    src={match.team1Flags[idx]}
+                                                    alt="Flag"
+                                                    className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
+                                                />
+                                            )}
+                                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                                                {getSurname(p)}
+                                            </span>
+                                            {idx < (match.team1?.length || 0) - 1 && <span className="text-slate-400">/</span>}
+                                        </div>
+                                    ))}
                                 </div>
-                                {/* Score logic is tricky without structured data, assuming raw score string or array */}
-                                {/* If score is array, usually [set1, set2, set3] */}
                             </div>
 
                             {/* Team 2 */}
                             <div className="flex justify-between items-center">
-                                <div className="text-sm font-bold text-slate-900 dark:text-white truncate max-w-[180px]">
-                                    {match.team2?.map(p => p.split(' ')[0]).join('/') || 'Team 2'}
+                                <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
+                                    {match.team2?.map((p, idx) => (
+                                        <div key={idx} className="flex items-center space-x-1">
+                                            {match.team2Flags?.[idx] && (
+                                                <img
+                                                    src={match.team2Flags[idx]}
+                                                    alt="Flag"
+                                                    className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
+                                                />
+                                            )}
+                                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                                                {getSurname(p)}
+                                            </span>
+                                            {idx < (match.team2?.length || 0) - 1 && <span className="text-slate-400">/</span>}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

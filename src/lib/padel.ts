@@ -26,6 +26,8 @@ export interface Match {
     court?: string;
     team1?: string[];
     team2?: string[];
+    team1Flags?: string[];
+    team2Flags?: string[];
     score?: string[];
     status?: string;
     team1Seed?: string;
@@ -468,9 +470,17 @@ export async function getMatches(url: string, dayUrl?: string) {
             if (team1Row.length > 0 && team2Row.length > 0) {
                 // Extract players for Team 1
                 let team1Players = team1Row.find('.line-thin').map((_, p) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
+                let team1Flags = team1Row.find('.line-thin').map((_, p) => {
+                    const src = $m(p).parent().find('img').attr('src');
+                    return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
+                }).get();
 
                 // Extract players for Team 2
                 let team2Players = team2Row.find('.line-thin').map((_, p) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
+                let team2Flags = team2Row.find('.line-thin').map((_, p) => {
+                    const src = $m(p).parent().find('img').attr('src');
+                    return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
+                }).get();
 
                 // Extract seeds
                 let team1Seed = '';
@@ -609,6 +619,8 @@ export async function getMatches(url: string, dayUrl?: string) {
                         raw: raw.replace(/\s+/g, ' ').trim(),
                         team1: team1Players,
                         team2: team2Players,
+                        team1Flags,
+                        team2Flags,
                         score: formattedScore,
                         status: cleanStatus,
                         time,
