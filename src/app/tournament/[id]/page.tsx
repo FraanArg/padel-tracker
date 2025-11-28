@@ -39,7 +39,7 @@ export default async function TournamentPage({
                     Back
                 </Link>
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{data.tournamentName || 'Matches'}</h1>
+                    <h1 className="text-xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">{data.tournamentName || 'Matches'}</h1>
                     <div className="flex items-center gap-2 mt-1 text-slate-500 dark:text-slate-400 font-medium">
                         <Calendar className="w-4 h-4" />
                         <span>{data.days.find(d => d.url === data.activeDayUrl)?.text || 'Today'}</span>
