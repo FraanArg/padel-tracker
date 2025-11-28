@@ -69,12 +69,12 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
 
                     <div className="flex flex-col gap-3 pl-2">
                         {/* Header: Tournament & Status */}
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-400">
-                            <div className="flex flex-col gap-1 overflow-hidden w-full md:w-auto">
-                                <div className="font-bold text-xs md:text-[11px] truncate pr-2">
+                        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-slate-900 dark:text-gray-400">
+                            <div className="flex flex-col items-center md:items-start gap-1 overflow-hidden w-full md:w-auto">
+                                <div className="font-bold text-xs md:text-[11px] truncate pr-0 md:pr-2 text-center md:text-left">
                                     {match.tournament?.name || 'Tournament'}
                                 </div>
-                                <div className="flex flex-wrap items-center gap-2">
+                                <div className="flex flex-wrap justify-center md:justify-start items-center gap-2">
                                     {match.category && (
                                         <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-gray-200 dark:bg-white/10 text-[10px] normal-case tracking-normal text-black dark:text-gray-200 font-bold">
                                             {match.category === 'Women' && <span>🚺</span>}
@@ -95,11 +95,11 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                             </div>
 
                             {isLive ? (
-                                <span className="text-red-600 dark:text-red-500 animate-pulse flex items-center gap-1 font-bold self-end md:self-auto mt-1 md:mt-0">
+                                <span className="text-red-600 dark:text-red-500 animate-pulse flex items-center gap-1 font-bold mt-1 md:mt-0">
                                     <span>●</span> Live
                                 </span>
                             ) : (
-                                <div className="flex flex-row md:flex-col items-center md:items-end gap-3 md:gap-0.5 self-end md:self-auto mt-1 md:mt-0 bg-slate-50 dark:bg-white/5 md:bg-transparent px-2 py-1 md:p-0 rounded md:rounded-none border md:border-none border-slate-100 dark:border-white/5">
+                                <div className="flex flex-row md:flex-col items-center md:items-end gap-3 md:gap-0.5 mt-1 md:mt-0 bg-slate-50 dark:bg-white/5 md:bg-transparent px-2 py-1 md:p-0 rounded md:rounded-none border md:border-none border-slate-100 dark:border-white/5">
                                     <div className="flex items-center gap-1.5">
                                         {match.isEstimated && <span className="text-[9px] font-bold text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-900/30 px-1 rounded uppercase tracking-wider">Est</span>}
                                         <span className="text-[9px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-wider">Local</span>
