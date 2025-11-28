@@ -5,7 +5,9 @@ import { Trophy, Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Hero() {
+import { Tournament } from '@/lib/padel';
+
+export default function Hero({ nextTournament }: { nextTournament?: Tournament }) {
     return (
         <div className="relative w-full overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 shadow-2xl mb-12">
             {/* Background Pattern */}
@@ -60,30 +62,43 @@ export default function Hero() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="hidden md:block relative"
                 >
-                    <div className="relative w-72 h-72 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md">
+                    <div className="relative w-72 h-72 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md overflow-hidden">
+                        {/* Map Image Placeholder - Will be replaced by generated image */}
+                        <div className="absolute inset-0 bg-blue-500/20"></div>
+
                         <Image
                             src="https://www.padelfip.com/wp-content/uploads/2024/02/LOGO-PREMIER-PADEL-2024-1.png"
                             alt="Premier Padel Logo"
                             fill
-                            className="object-contain opacity-20 mix-blend-overlay p-8"
+                            className="object-contain opacity-20 mix-blend-overlay p-8 z-20"
                         />
 
-                        <Trophy className="w-32 h-32 text-white drop-shadow-lg" />
+                        {/* Map Image */}
+                        <Image
+                            src="/images/acapulco-map.png"
+                            alt="Acapulco Map"
+                            fill
+                            className="object-cover opacity-90"
+                        />
 
                         {/* Floating Badge */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3"
-                        >
-                            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                <Calendar className="w-5 h-5 text-green-600" />
-                            </div>
-                            <div>
-                                <div className="text-xs text-slate-400 font-bold uppercase">Next Event</div>
-                                <div className="text-sm font-bold text-slate-900">Acapulco P1</div>
-                            </div>
-                        </motion.div>
+                        {nextTournament && (
+                            <Link href={`/tournament/${nextTournament.id}`}>
+                                <motion.div
+                                    animate={{ y: [0, -10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                                    className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer z-20"
+                                >
+                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                        <Calendar className="w-5 h-5 text-green-600" />
+                                    </div>
+                                    <div>
+                                        <div className="text-xs text-slate-400 font-bold uppercase">Next Event</div>
+                                        <div className="text-sm font-bold text-slate-900">{nextTournament.name}</div>
+                                    </div>
+                                </motion.div>
+                            </Link>
+                        )}
                     </div>
                 </motion.div>
             </div>

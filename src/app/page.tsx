@@ -11,7 +11,7 @@ export default async function Home() {
     <main className="min-h-screen pb-20">
       <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
 
-        <Hero />
+        <Hero nextTournament={tournaments[0]} />
 
         {/* Header */}
         <div className="space-y-1 px-2">
