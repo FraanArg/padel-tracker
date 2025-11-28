@@ -126,6 +126,9 @@ export async function getCalendarTournaments(): Promise<Tournament[]> {
 
                 let imageUrl = img.attr('data-src') || img.attr('data-lazy-src') || img.attr('src') || '';
 
+                // FIX: Remove resolution suffix (e.g. -212x300) to get high quality image
+                imageUrl = imageUrl.replace(/-\d+x\d+(?=\.[a-z]+$)/i, '');
+
                 if (eventUrl && name) {
                     const id = eventUrl.split('/').filter(Boolean).pop() || '';
 
@@ -181,6 +184,8 @@ export async function getTournaments(): Promise<Tournament[]> {
                         const eventUrl = link.attr('href');
 
                         let imageUrl = img.attr('data-src') || img.attr('data-lazy-src') || img.attr('src') || '';
+                        // FIX: Remove resolution suffix (e.g. -212x300) to get high quality image
+                        imageUrl = imageUrl.replace(/-\d+x\d+(?=\.[a-z]+$)/i, '');
 
                         const wrapper = $(element).closest('.wrapper-events');
                         const dateText = wrapper.find('.date-event').text().trim();
