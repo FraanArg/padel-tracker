@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PlayerRanking } from '@/lib/padel';
 import { Trophy, Medal } from 'lucide-react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 export default function RankingsView({ men, women }: { men: PlayerRanking[], women: PlayerRanking[] }) {
     const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
@@ -68,11 +69,15 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-4">
                                             {player.imageUrl ? (
-                                                <img
-                                                    src={player.imageUrl}
-                                                    alt={player.name}
-                                                    className="w-12 h-12 rounded-full object-cover border-2 border-slate-100 dark:border-slate-700 group-hover:scale-110 transition-transform"
-                                                />
+                                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-700">
+                                                    <Image
+                                                        src={player.imageUrl}
+                                                        alt={player.name}
+                                                        fill
+                                                        className="object-cover group-hover:scale-110 transition-transform"
+                                                        sizes="48px"
+                                                    />
+                                                </div>
                                             ) : (
                                                 <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-2 border-slate-200 dark:border-slate-700">
                                                     <Trophy className="w-5 h-5 text-slate-400" />
@@ -82,7 +87,15 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
                                                 <div className="font-bold text-slate-900 dark:text-white text-base">{player.name}</div>
                                                 <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                                                     {player.flagUrl && (
-                                                        <img src={player.flagUrl} alt={player.country} className="w-4 h-auto rounded-sm shadow-sm" />
+                                                        <div className="relative w-4 h-3 rounded-sm overflow-hidden shadow-sm">
+                                                            <Image
+                                                                src={player.flagUrl}
+                                                                alt={player.country}
+                                                                fill
+                                                                className="object-cover"
+                                                                sizes="16px"
+                                                            />
+                                                        </div>
                                                     )}
                                                     {player.country}
                                                 </div>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Trophy, Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
@@ -60,7 +61,13 @@ export default function Hero() {
                     className="hidden md:block relative"
                 >
                     <div className="relative w-72 h-72 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md">
-                        <div className="absolute inset-0 bg-[url('https://www.padelfip.com/wp-content/uploads/2024/02/LOGO-PREMIER-PADEL-2024-1.png')] bg-center bg-contain bg-no-repeat opacity-20 mix-blend-overlay"></div>
+                        <Image
+                            src="https://www.padelfip.com/wp-content/uploads/2024/02/LOGO-PREMIER-PADEL-2024-1.png"
+                            alt="Premier Padel Logo"
+                            fill
+                            className="object-contain opacity-20 mix-blend-overlay p-8"
+                        />
+
                         <Trophy className="w-32 h-32 text-white drop-shadow-lg" />
 
                         {/* Floating Badge */}

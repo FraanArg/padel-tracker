@@ -565,18 +565,148 @@ export interface TournamentResult {
     points: string;
 }
 
-let rankingsCache: { men: PlayerRanking[], women: PlayerRanking[] } | null = null;
-let rankingsPromise: Promise<{ men: PlayerRanking[], women: PlayerRanking[] }> | null = null;
+
+// Cache for rankings to avoid hitting the server too often
+let rankingsCache: {
+    data: { men: PlayerRanking[], women: PlayerRanking[] },
+    timestamp: number
+} | null = null;
+const RANKINGS_CACHE_DURATION = 60 * 60 * 1000; // 1 hour
+
 
 async function getCachedRankings() {
-    if (rankingsCache) return rankingsCache;
-    if (rankingsPromise) return rankingsPromise;
+    if (rankingsCache && (Date.now() - rankingsCache.timestamp < RANKINGS_CACHE_DURATION)) {
+        return rankingsCache.data;
+    }
+    return getRankings();
+}
 
-    rankingsPromise = getRankings().then(res => {
-        rankingsCache = res;
-        return res;
-    });
-    return rankingsPromise;
+export async function getRankings(): Promise<{ men: PlayerRanking[], women: PlayerRanking[] }> {
+    // Check cache
+    if (rankingsCache && (Date.now() - rankingsCache.timestamp < RANKINGS_CACHE_DURATION)) {
+        console.log('Returning cached rankings');
+        return rankingsCache.data;
+    }
+
+    try {
+        const [menResponse, womenResponse] = await Promise.all([
+            axios.get('https://www.padelfip.com/ranking-male/', { headers: { 'User-Agent': USER_AGENT } }),
+            axios.get('https://www.padelfip.com/ranking-female/', { headers: { 'User-Agent': USER_AGENT } })
+        ]);
+
+        const processRankings = async (data: any, gender: 'male' | 'female') => {
+            const $ = cheerio.load(data);
+            const rankings: PlayerRanking[] = [];
+
+            // 1. Top Players (Slider/Grid) - usually top 20
+            // We need to fetch their profile pages to get the "round" image (og:image)
+            // instead of the action shot.
+            const topPlayers: { element: any, rank: string }[] = [];
+
+            // Helper to clean rank string
+            const cleanRank = (text: string) => text.replace(/\D/g, '');
+
+            $('.slider__item, .playerGrid__item').each((_, element) => {
+                const rankText = $(element).find('.slider__number, .playerGrid__number').text().trim();
+                const rank = cleanRank(rankText);
+                if (rank) {
+                    topPlayers.push({ element, rank });
+                }
+            });
+
+            // Process top players in parallel (limit concurrency if needed, but 20 is small)
+            const topPlayerPromises = topPlayers.map(async ({ element, rank }) => {
+                const el = $(element);
+                const name = el.find('.slider__name, .playerGrid__name').text().trim();
+                const points = el.find('.slider__pointTNumber, .playerGrid__pointTNumber').text().trim();
+                const country = el.find('.slider__country, .playerGrid__country').text().trim();
+                const flagUrl = el.find('.slider__flag img, .playerGrid__flag img').attr('src') || '';
+
+                // Default action shot (fallback)
+                let imageUrl = el.find('.slider__img img, .playerGrid__img img').attr('data-src') ||
+                    el.find('.slider__img img, .playerGrid__img img').attr('src') || '';
+
+                // Try to fetch profile for better image
+                const profileLink = el.find('a').attr('href');
+                if (profileLink) {
+                    try {
+                        const { data: profileData } = await axios.get(profileLink, {
+                            headers: { 'User-Agent': USER_AGENT },
+                            timeout: 5000 // Short timeout to not block everything
+                        });
+                        const $profile = cheerio.load(profileData);
+                        const ogImage = $profile('meta[property="og:image"]').attr('content');
+                        if (ogImage) {
+                            imageUrl = ogImage;
+                        }
+                    } catch (err) {
+                        console.warn(`Failed to fetch profile for ${name}:`, err);
+                    }
+                }
+
+                return {
+                    rank,
+                    name,
+                    points,
+                    country,
+                    imageUrl,
+                    flagUrl
+                };
+            });
+
+            const topPlayersData = await Promise.all(topPlayerPromises);
+            rankings.push(...topPlayersData);
+
+            // 2. Table Players (Rank 21+)
+            $('.data-body-row').each((_, element) => {
+                const row = $(element);
+                const rank = cleanRank(row.find('.data-rank-cell').text().trim());
+                const name = row.find('.data-player-img-name .data-title').text().trim();
+                const points = row.find('.data-points').text().trim();
+                const country = row.find('.country-name').text().trim();
+
+                // Table images are usually already the "round" style (or close to it)
+                const imageUrl = row.find('.data-player-img-name img').attr('data-src') ||
+                    row.find('.data-player-img-name img').attr('src') || '';
+
+                const flagUrl = row.find('.flag-country img').attr('data-src') ||
+                    row.find('.flag-country img').attr('src') || '';
+
+                if (rank && name) {
+                    rankings.push({
+                        rank,
+                        name,
+                        points,
+                        country,
+                        imageUrl,
+                        flagUrl
+                    });
+                }
+            });
+
+            // Sort by rank numerically
+            return rankings.sort((a, b) => parseInt(a.rank) - parseInt(b.rank));
+        };
+
+        const [men, women] = await Promise.all([
+            processRankings(menResponse.data, 'male'),
+            processRankings(womenResponse.data, 'female')
+        ]);
+
+        const result = { men, women };
+
+        // Update cache
+        rankingsCache = {
+            data: result,
+            timestamp: Date.now()
+        };
+
+        return result;
+
+    } catch (error) {
+        console.error('Error fetching rankings:', error);
+        return { men: [], women: [] };
+    }
 }
 
 export async function getPlayerExtendedProfile(name: string): Promise<PlayerRanking & { recentResults: TournamentResult[] } | null> {
@@ -633,7 +763,7 @@ export async function getPlayerExtendedProfile(name: string): Promise<PlayerRank
 
                     return {
                         rank,
-                        name: cleanName, // Use the original clean name or the one from profile?
+                        name: cleanName,
                         points,
                         country,
                         imageUrl,
@@ -657,8 +787,8 @@ export async function getPlayerExtendedProfile(name: string): Promise<PlayerRank
         const lowerName = cleanName.toLowerCase();
 
         // Find best match
-        const match = men.find(p => p.name.toLowerCase().includes(lowerName)) ||
-            women.find(p => p.name.toLowerCase().includes(lowerName));
+        const match = men.find((p: PlayerRanking) => p.name.toLowerCase().includes(lowerName)) ||
+            women.find((p: PlayerRanking) => p.name.toLowerCase().includes(lowerName));
 
         if (match) {
             // Try fetching with the full name from rankings
@@ -681,130 +811,6 @@ export async function getPlayerExtendedProfile(name: string): Promise<PlayerRank
     }
 }
 
-export async function getRankings(): Promise<{ men: PlayerRanking[], women: PlayerRanking[] }> {
-    try {
-        // Fetch both male and female rankings
-        const [maleResponse, femaleResponse] = await Promise.all([
-            axios.get('https://www.padelfip.com/ranking-male/', { headers: { 'User-Agent': USER_AGENT } }),
-            axios.get('https://www.padelfip.com/ranking-female/', { headers: { 'User-Agent': USER_AGENT } })
-        ]);
-
-        const parseRankings = (html: string): PlayerRanking[] => {
-            const $ = cheerio.load(html);
-            const list: PlayerRanking[] = [];
-
-            // 1. Parse Slider Items (Top Players)
-            $('.slider__overall').each((_, el) => {
-                const slider = $(el);
-                const rankText = slider.find('.slider__number').text().trim();
-                const rank = rankText.split(' ')[0];
-
-                const name = slider.find('.slider__name').text().trim();
-
-                const points = slider.find('.slider__pointTNumber').text().trim();
-
-                const country = slider.find('.slider__country').text().trim();
-
-                // Extract flag URL
-                let flagUrl = '';
-                const flagImg = slider.find('.slider__flag img');
-                flagUrl = flagImg.attr('data-src') || flagImg.attr('src') || '';
-
-                // Find player image (exclude flag image)
-                let imageUrl = '';
-                slider.find('img').each((_, img) => {
-                    const alt = $(img).attr('alt') || '';
-                    const src = $(img).attr('data-src') || $(img).attr('src') || '';
-                    // Flag usually has 3 letter country code as alt, player has name
-                    if (alt.length > 3 && src) {
-                        imageUrl = src;
-                    }
-                });
-
-                if (name && rank) {
-                    list.push({
-                        rank,
-                        name,
-                        points,
-                        country,
-                        imageUrl,
-                        flagUrl
-                    });
-                }
-            });
-
-            // 2. Parse Table Rows (Rest of players)
-            $('table tr').each((_, el) => {
-                const row = $(el);
-                const cells = row.find('td');
-                if (cells.length >= 4) {
-                    const rankText = $(cells[0]).text().trim();
-                    const rank = rankText.split(' ')[0];
-
-                    const nameCell = $(cells[1]);
-                    let name = nameCell.text().trim();
-                    let imageUrl = '';
-
-                    // Check if the name cell contains escaped HTML (starts with <img)
-                    if (name.startsWith('<img')) {
-                        const $inner = cheerio.load(name);
-                        const img = $inner('img');
-                        imageUrl = img.attr('src') || '';
-                        if (img.attr('srcset')) {
-                            imageUrl = img.attr('srcset')?.split(' ')[0] || imageUrl;
-                        }
-                        name = $inner.text().trim();
-                    } else {
-                        // Normal HTML structure
-                        const img = nameCell.find('img');
-                        imageUrl = img.attr('src') || '';
-                        if (img.attr('srcset')) {
-                            imageUrl = img.attr('srcset')?.split(' ')[0] || imageUrl;
-                        }
-                    }
-
-                    const countryCell = $(cells[2]);
-                    let country = countryCell.text().trim();
-                    let flagUrl = '';
-
-                    // Check if country cell contains escaped HTML
-                    if (country.startsWith('<img')) {
-                        const $inner = cheerio.load(country);
-                        const img = $inner('img');
-                        flagUrl = img.attr('src') || '';
-                        country = $inner.text().trim();
-                    } else {
-                        const img = countryCell.find('img');
-                        flagUrl = img.attr('src') || '';
-                    }
-
-                    const points = $(cells[3]).text().trim();
-
-                    if (name && rank) {
-                        list.push({
-                            rank,
-                            name,
-                            points,
-                            country,
-                            imageUrl,
-                            flagUrl
-                        });
-                    }
-                }
-            });
-            return list;
-        };
-
-        const men = parseRankings(maleResponse.data);
-        const women = parseRankings(femaleResponse.data);
-
-        return { men, women };
-    } catch (error) {
-        console.error('Error fetching rankings:', error);
-        return { men: [], women: [] };
-    }
-}
-
 
 export async function getAllMatches(url: string) {
     try {
@@ -821,9 +827,6 @@ export async function getAllMatches(url: string) {
 
         // Combine all matches
         const allMatches = results.flatMap(r => ('matches' in r ? r.matches : []));
-
-        // Deduplicate matches (sometimes same match appears on multiple days if rescheduled?)
-        // Or just trust the source.
 
         return { matches: allMatches, days, tournamentName };
     } catch (error) {

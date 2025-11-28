@@ -5,6 +5,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   // @ts-ignore
   turbopack: {},
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.padelfip.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default withPWA({
