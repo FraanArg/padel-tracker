@@ -1,5 +1,6 @@
 import FavoriteButton from './FavoriteButton';
 import Link from 'next/link';
+import MatchPreview from './MatchPreview';
 
 interface MatchProps {
     raw: string;
@@ -144,7 +145,7 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                             </div>
 
                             {/* Score / VS */}
-                            <div className="min-w-[80px] flex justify-center my-2 md:my-0">
+                            <div className="min-w-[80px] flex flex-col items-center justify-center my-2 md:my-0 gap-2">
                                 {score ? (
                                     <div className="px-3 py-1 rounded-md bg-gray-100 dark:bg-white/10 font-mono text-sm font-bold tracking-widest text-black dark:text-white border border-gray-300 dark:border-white/10">
                                         {score}
@@ -152,6 +153,7 @@ export default function MatchCard({ match, tournamentId }: { match: any, tournam
                                 ) : (
                                     <span className="text-xs font-black text-slate-400 dark:text-gray-600 opacity-70">VS</span>
                                 )}
+                                <MatchPreview match={match} />
                             </div>
 
                             {/* Team 2 */}

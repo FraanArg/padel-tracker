@@ -27,7 +27,10 @@ export interface Match {
     status?: string;
     team1Seed?: string;
     team2Seed?: string;
+    tournament?: { name: string };
 }
+
+// ... existing code ...
 
 const TOURNAMENT_METADATA: Record<string, { timezone: string, location: string }> = {
     'MEXICO': { timezone: 'America/Mexico_City', location: 'Acapulco, Mexico' },
@@ -451,6 +454,7 @@ export interface PlayerRanking {
     country: string;
     imageUrl: string;
     flagUrl?: string;
+    recentResults?: TournamentResult[];
 }
 
 // Helper to get flag emoji from country code
@@ -521,7 +525,8 @@ export async function getPlayerProfile(name: string): Promise<PlayerRanking | nu
                         points: points || '-',
                         country: country || '-',
                         imageUrl,
-                        flagUrl: ''
+                        flagUrl: '',
+                        recentResults: []
                     };
                 }
             } catch (e) {
@@ -532,6 +537,130 @@ export async function getPlayerProfile(name: string): Promise<PlayerRanking | nu
         return null;
     } catch (error) {
         console.error('Error fetching player profile:', error);
+        return null;
+    }
+}
+
+export interface TournamentResult {
+    tournament: string;
+    category: string;
+    date: string;
+    round: string;
+    points: string;
+}
+
+let rankingsCache: { men: PlayerRanking[], women: PlayerRanking[] } | null = null;
+let rankingsPromise: Promise<{ men: PlayerRanking[], women: PlayerRanking[] }> | null = null;
+
+async function getCachedRankings() {
+    if (rankingsCache) return rankingsCache;
+    if (rankingsPromise) return rankingsPromise;
+
+    rankingsPromise = getRankings().then(res => {
+        rankingsCache = res;
+        return res;
+    });
+    return rankingsPromise;
+}
+
+export async function getPlayerExtendedProfile(name: string): Promise<PlayerRanking & { recentResults: TournamentResult[] } | null> {
+    try {
+        // 1. Try direct fetch with various slug combinations
+        const normalize = (str: string) => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim();
+        const cleanName = name.replace(/\s*\(\d+\)|\s*\(WC\)|\s*\(Q\)|\s*\(LL\)/gi, '').trim();
+
+        const tryFetch = async (targetName: string) => {
+            const parts = normalize(targetName).split(/\s+/);
+            const slugs = [
+                parts.join('-'),
+                parts.slice(0, 2).join('-'),
+                parts.join('-') + '-segador',
+                parts[0] + '-' + parts[parts.length - 1],
+            ];
+            if (parts.length > 2) slugs.push(parts[0] + '-' + parts[1]);
+            const uniqueSlugs = [...new Set(slugs)];
+
+            for (const slug of uniqueSlugs) {
+                const url = `https://www.padelfip.com/player/${slug}/`;
+                try {
+                    const { data } = await axios.get(url, {
+                        headers: { 'User-Agent': USER_AGENT },
+                        validateStatus: status => status === 200
+                    });
+
+                    const $ = cheerio.load(data);
+
+                    const description = $('meta[name="description"]').attr('content') || '';
+                    const rankMatch = description.match(/Ranking:\s*(\d+)/i);
+                    const pointsMatch = description.match(/Points:\s*(\d+)/i);
+                    const rank = rankMatch ? rankMatch[1] : '-';
+                    const points = pointsMatch ? pointsMatch[1] : '-';
+
+                    let imageUrl = $('meta[property="og:image"]').attr('content') || '';
+                    if (!imageUrl) imageUrl = $('.wp-post-image').attr('src') || '';
+                    const country = $('.player-country').text().trim() || '-';
+
+                    const recentResults: TournamentResult[] = [];
+                    $('table tr').each((i, row) => {
+                        if (i === 0) return;
+                        const cells = $(row).find('td');
+                        if (cells.length >= 5) {
+                            recentResults.push({
+                                tournament: $(cells[0]).text().trim(),
+                                category: $(cells[1]).text().trim(),
+                                date: $(cells[2]).text().trim(),
+                                round: $(cells[3]).text().trim(),
+                                points: $(cells[4]).text().trim()
+                            });
+                        }
+                    });
+
+                    return {
+                        rank,
+                        name: cleanName, // Use the original clean name or the one from profile?
+                        points,
+                        country,
+                        imageUrl,
+                        flagUrl: '',
+                        recentResults
+                    };
+
+                } catch (e) {
+                    // Continue
+                }
+            }
+            return null;
+        };
+
+        // Attempt 1: Direct
+        let profile = await tryFetch(cleanName);
+        if (profile) return profile;
+
+        // Attempt 2: Resolve name via rankings
+        const { men, women } = await getCachedRankings();
+        const lowerName = cleanName.toLowerCase();
+
+        // Find best match
+        const match = men.find(p => p.name.toLowerCase().includes(lowerName)) ||
+            women.find(p => p.name.toLowerCase().includes(lowerName));
+
+        if (match) {
+            // Try fetching with the full name from rankings
+            profile = await tryFetch(match.name);
+            if (profile) return profile;
+
+            // If fetch fails but we have ranking data, return partial profile?
+            // Better than nothing, but we miss recentResults.
+            // Let's return what we have from ranking + empty results
+            return {
+                ...match,
+                recentResults: []
+            };
+        }
+
+        return null;
+    } catch (error) {
+        console.error('Error fetching extended profile:', error);
         return null;
     }
 }
@@ -660,3 +789,29 @@ export async function getRankings(): Promise<{ men: PlayerRanking[], women: Play
     }
 }
 
+
+export async function getAllMatches(url: string) {
+    try {
+        // First get the days
+        const { days, tournamentId, tournamentName } = await getMatches(url);
+
+        if (!days || days.length === 0) {
+            return { matches: [], days: [], tournamentName: '' };
+        }
+
+        // Fetch all days in parallel (limit concurrency if needed)
+        const matchPromises = days.map(day => getMatches(url, day.url));
+        const results = await Promise.all(matchPromises);
+
+        // Combine all matches
+        const allMatches = results.flatMap(r => ('matches' in r ? r.matches : []));
+
+        // Deduplicate matches (sometimes same match appears on multiple days if rescheduled?)
+        // Or just trust the source.
+
+        return { matches: allMatches, days, tournamentName };
+    } catch (error) {
+        console.error('Error fetching all matches:', error);
+        return { matches: [], days: [], tournamentName: '' };
+    }
+}
