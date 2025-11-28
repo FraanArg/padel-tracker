@@ -265,7 +265,45 @@ export async function getTournaments(): Promise<Tournament[]> {
         // 1. Status: Live > Upcoming > Finished
         // 2. Importance (for Live/Upcoming): Major > P1 > P2...
         // 3. Date: Sooner > Later
-        return allTournaments.sort((a, b) => {
+        return allTournaments.map(t => {
+            // Logic to promote "Upcoming" events to "Live" if they are in the current month/week
+            // especially for Major tournaments which might be listed in the calendar but not yet on the live page
+            const today = new Date();
+            const isSameMonth = t.parsedDate &&
+                t.parsedDate.getMonth() === today.getMonth() &&
+                t.parsedDate.getFullYear() === today.getFullYear();
+
+            // If it's a Major/Premier tournament in the current month, treat it as live or at least very relevant
+            if (t.status === 'upcoming' && isSameMonth && (t.name.includes('MAJOR') || t.name.includes('PREMIER'))) {
+                return { ...t, status: 'live' as const };
+            }
+            return t;
+        }).filter(t => {
+            // Filter out past tournaments
+            // We keep 'live' tournaments regardless of date
+            if (t.status === 'live') return true;
+
+            // For upcoming events, we want to keep them if they are in the future OR in the current month
+            // If parsedDate is valid:
+            if (t.parsedDate) {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                // If the tournament is in the past (before today), filter it out
+                // UNLESS it's in the current month (we might want to show recent/ongoing events that aren't marked live yet)
+                // But for "Upcoming" tab, we usually want strictly future.
+                // However, the issue was "Acapulco" (Nov) being filtered out on Nov 28.
+                // Nov 1 < Nov 28, so it was filtered.
+
+                // Let's keep it if it's in the current month or future
+                const isCurrentMonth = t.parsedDate.getMonth() === today.getMonth() &&
+                    t.parsedDate.getFullYear() === today.getFullYear();
+
+                if (t.parsedDate < today && !isCurrentMonth) return false;
+            }
+
+            return true;
+        }).sort((a, b) => {
             // 1. Status Priority
             const statusScore = (status?: string) => {
                 if (status === 'live') return 3;
