@@ -30,28 +30,9 @@ export default async function Home() {
 
         <Hero nextTournament={tournaments[0]} />
 
-        {/* Live Tournaments Section */}
-        {liveTournaments.length > 0 && (
-          <div className="space-y-6">
-            <div className="space-y-1 px-2">
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                </span>
-                Live Now
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {liveTournaments.map((tournament) => (
-                <TournamentCard key={tournament.id} tournament={tournament} />
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Upcoming & Past Tournaments */}
         <TournamentList
+          liveTournaments={liveTournaments}
           upcomingTournaments={upcomingTournaments}
           pastTournaments={pastTournaments}
         />

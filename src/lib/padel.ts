@@ -247,12 +247,53 @@ export async function getTournaments(): Promise<Tournament[]> {
 
         const allTournaments = Array.from(tournamentMap.values());
 
-        // Return all tournaments sorted by date
-        // We filter in the UI component instead
+        // Helper to get importance score (Higher is better)
+        const getImportance = (name: string) => {
+            const n = name.toUpperCase();
+            if (n.includes('MAJOR')) return 4;
+            if (n.includes('P1')) return 3;
+            if (n.includes('P2')) return 2;
+            if (n.includes('FIP PLATINUM')) return 1.5;
+            if (n.includes('FIP GOLD')) return 1.4;
+            if (n.includes('FIP STAR')) return 1.3;
+            if (n.includes('FIP RISE')) return 1.2;
+            if (n.includes('FIP PROMOTION')) return 1.1;
+            return 1;
+        };
+
+        // Return all tournaments sorted by:
+        // 1. Status: Live > Upcoming > Finished
+        // 2. Importance (for Live/Upcoming): Major > P1 > P2...
+        // 3. Date: Sooner > Later
         return allTournaments.sort((a, b) => {
-            // Sort by date
+            // 1. Status Priority
+            const statusScore = (status?: string) => {
+                if (status === 'live') return 3;
+                if (status === 'upcoming') return 2;
+                return 1; // finished
+            };
+
+            const scoreA = statusScore(a.status);
+            const scoreB = statusScore(b.status);
+
+            if (scoreA !== scoreB) return scoreB - scoreA; // Descending status
+
+            // 2. Importance Priority (only if both are live or both are upcoming)
+            if (scoreA === scoreB && scoreA > 1) {
+                const impA = getImportance(a.name);
+                const impB = getImportance(b.name);
+                if (impA !== impB) return impB - impA; // Descending importance
+            }
+
+            // 3. Date Priority
             const dateA = a.parsedDate?.getTime() || 0;
             const dateB = b.parsedDate?.getTime() || 0;
+
+            // For upcoming, we want sooner first (ascending date)
+            // For finished, we want most recent first (descending date)
+            if (a.status === 'finished') {
+                return dateB - dateA;
+            }
             return dateA - dateB;
         });
 

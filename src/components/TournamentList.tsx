@@ -7,15 +7,24 @@ import { Tournament } from '@/lib/padel';
 import { cn } from '@/lib/utils';
 
 interface TournamentListProps {
+    liveTournaments: Tournament[];
     upcomingTournaments: Tournament[];
     pastTournaments: Tournament[];
 }
 
-export default function TournamentList({ upcomingTournaments, pastTournaments }: TournamentListProps) {
-    const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
+export default function TournamentList({ liveTournaments, upcomingTournaments, pastTournaments }: TournamentListProps) {
+    const [activeTab, setActiveTab] = useState<'live' | 'upcoming' | 'past'>(
+        liveTournaments.length > 0 ? 'live' : 'upcoming'
+    );
     const [visibleCount, setVisibleCount] = useState(10);
 
-    const activeTournaments = activeTab === 'upcoming' ? upcomingTournaments : pastTournaments;
+    const getActiveList = () => {
+        if (activeTab === 'live') return liveTournaments;
+        if (activeTab === 'upcoming') return upcomingTournaments;
+        return pastTournaments;
+    };
+
+    const activeTournaments = getActiveList();
     const visibleTournaments = activeTournaments.slice(0, visibleCount);
     const hasMore = visibleCount < activeTournaments.length;
 
@@ -23,7 +32,7 @@ export default function TournamentList({ upcomingTournaments, pastTournaments }:
         setVisibleCount(prev => prev + 10);
     };
 
-    const handleTabChange = (tab: 'upcoming' | 'past') => {
+    const handleTabChange = (tab: 'live' | 'upcoming' | 'past') => {
         setActiveTab(tab);
         setVisibleCount(10); // Reset count on tab change
     };
@@ -31,11 +40,30 @@ export default function TournamentList({ upcomingTournaments, pastTournaments }:
     return (
         <div className="space-y-8">
             {/* Tabs */}
-            <div className="flex items-center space-x-4 border-b border-slate-200 dark:border-slate-800 pb-1">
+            <div className="flex items-center space-x-6 border-b border-slate-200 dark:border-slate-800 pb-1 overflow-x-auto">
+                <button
+                    onClick={() => handleTabChange('live')}
+                    className={cn(
+                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex items-center gap-2 flex-shrink-0",
+                        activeTab === 'live'
+                            ? "text-red-500"
+                            : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                    )}
+                >
+                    <span className="relative flex h-2.5 w-2.5">
+                        <span className={cn("animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75", activeTab !== 'live' && "hidden")}></span>
+                        <span className={cn("relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500", activeTab !== 'live' && "bg-slate-400")}></span>
+                    </span>
+                    Live
+                    {activeTab === 'live' && (
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500 rounded-t-full" />
+                    )}
+                </button>
+
                 <button
                     onClick={() => handleTabChange('upcoming')}
                     className={cn(
-                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative",
+                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex-shrink-0",
                         activeTab === 'upcoming'
                             ? "text-blue-600 dark:text-blue-400"
                             : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
@@ -49,7 +77,7 @@ export default function TournamentList({ upcomingTournaments, pastTournaments }:
                 <button
                     onClick={() => handleTabChange('past')}
                     className={cn(
-                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative",
+                        "pb-3 text-sm font-bold uppercase tracking-wider transition-colors relative flex-shrink-0",
                         activeTab === 'past'
                             ? "text-blue-600 dark:text-blue-400"
                             : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
