@@ -62,7 +62,7 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="hidden md:block relative"
                 >
-                    <div className="relative w-64 h-80 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md overflow-hidden group hover:rotate-0 transition-all duration-500">
+                    <div className="relative w-72 h-96 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-2xl rotate-6 shadow-2xl flex items-center justify-center border border-white/20 backdrop-blur-md overflow-hidden group hover:rotate-0 transition-all duration-500">
                         {/* Map Image Placeholder - Will be replaced by generated image */}
                         <div className="absolute inset-0 bg-blue-500/20"></div>
 
@@ -93,14 +93,14 @@ export default function Hero({ nextTournament }: { nextTournament?: Tournament }
                                 <motion.div
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                    className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer z-20"
+                                    className="absolute -bottom-6 -left-6 bg-white p-3 rounded-xl shadow-xl flex items-center gap-3 hover:scale-105 transition-transform cursor-pointer z-20 max-w-[240px]"
                                 >
-                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                        <Calendar className="w-5 h-5 text-green-600" />
+                                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <Calendar className="w-4 h-4 text-green-600" />
                                     </div>
-                                    <div>
-                                        <div className="text-xs text-slate-400 font-bold uppercase">Next Event</div>
-                                        <div className="text-sm font-bold text-slate-900 max-w-[140px] leading-tight line-clamp-2">{nextTournament.name}</div>
+                                    <div className="min-w-0">
+                                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Next Event</div>
+                                        <div className="text-xs font-bold text-slate-900 leading-tight line-clamp-2">{nextTournament.name}</div>
                                     </div>
                                 </motion.div>
                             </Link>
