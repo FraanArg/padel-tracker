@@ -1,7 +1,7 @@
 import AutoRefresh from '@/components/AutoRefresh';
 import { getMatches, getAllMatches, Match } from "@/lib/padel";
 import MatchCard from "@/components/MatchCard";
-import TournamentDraw from "@/components/TournamentDraw";
+import Bracket from "@/components/Bracket";
 import Link from "next/link";
 import { ArrowLeft, Calendar, GitGraph, List } from "lucide-react";
 
@@ -98,7 +98,7 @@ export default async function TournamentPage({
             </div>
 
             {isDrawView ? (
-                <TournamentDraw matches={data.matches} />
+                <Bracket matches={data.matches} />
             ) : (
                 <>
                     {/* Day Navigation */}

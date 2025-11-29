@@ -15,9 +15,10 @@ interface PlayerSearchProps {
     label: string;
     onSelect: (player: Player | null) => void;
     selectedPlayer: Player | null;
+    placeholder?: string;
 }
 
-export default function PlayerSearch({ label, onSelect, selectedPlayer }: PlayerSearchProps) {
+export default function PlayerSearch({ label, onSelect, selectedPlayer, placeholder }: PlayerSearchProps) {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<Player[]>([]);
     const [loading, setLoading] = useState(false);
@@ -97,7 +98,7 @@ export default function PlayerSearch({ label, onSelect, selectedPlayer }: Player
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onFocus={() => query.length >= 2 && setIsOpen(true)}
-                    placeholder="Search player..."
+                    placeholder={placeholder || "Search player..."}
                     className="w-full pl-10 pr-4 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-slate-900 dark:text-white placeholder:text-slate-400"
                 />
                 {loading && (

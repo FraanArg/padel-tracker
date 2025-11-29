@@ -89,20 +89,32 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
 
     // Helper to parse name (get surname)
     const getSurname = (fullName: string) => {
-        // Remove initial (e.g. "A. Galan" -> "Galan")
-        // Also handle "Alejandro Galan" -> "Galan"
-        // Usually format is "I. Surname" or "Name Surname"
         const parts = fullName.split(' ');
         if (parts.length > 1) {
-            // If first part is an initial (ends with dot or length 1)
             if (parts[0].endsWith('.') || parts[0].length === 1) {
                 return parts.slice(1).join(' ');
             }
-            // Otherwise return last part? Or everything after first?
-            // "Alejandro Galan Romo" -> "Galan Romo"
             return parts.slice(1).join(' ');
         }
         return fullName;
+    };
+
+    // Helper to parse scores
+    const parseScores = (score: string[] | undefined) => {
+        if (!score || score.length === 0) return { t1: [], t2: [] };
+
+        const t1: string[] = [];
+        const t2: string[] = [];
+
+        score.forEach(set => {
+            const parts = set.split('-');
+            if (parts.length === 2) {
+                t1.push(parts[0]);
+                t2.push(parts[1]);
+            }
+        });
+
+        return { t1, t2 };
     };
 
     if (matches.length === 0) return null;
@@ -126,74 +138,100 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
 
             {/* Horizontal Scroll Container */}
             <div className="flex overflow-x-auto pb-4 gap-3 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-                {matches.map((match, i) => (
-                    <div
-                        key={i}
-                        className="flex-none w-[320px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center flex flex-col justify-between"
-                    >
-                        <div className="flex justify-between items-start mb-3">
-                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                                {match.round || 'Match'}
-                            </div>
-                            {match.status === 'live' && (
-                                <div className="px-1.5 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase">
-                                    Live
-                                </div>
-                            )}
-                        </div>
+                {matches.map((match, i) => {
+                    const { t1: t1Scores, t2: t2Scores } = parseScores(match.score);
 
-                        <div className="space-y-3 flex-grow">
-                            {/* Team 1 */}
-                            <div className="flex justify-between items-center">
-                                <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
-                                    {match.team1?.map((p, idx) => (
-                                        <div key={idx} className="flex items-center space-x-1">
-                                            {match.team1Flags?.[idx] && (
-                                                <img
-                                                    src={match.team1Flags[idx]}
-                                                    alt="Flag"
-                                                    className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
-                                                />
-                                            )}
-                                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
-                                                {getSurname(p)}
-                                            </span>
-                                            {idx < (match.team1?.length || 0) - 1 && <span className="text-slate-400">/</span>}
-                                        </div>
-                                    ))}
+                    return (
+                        <div
+                            key={i}
+                            className="flex-none w-[340px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center flex flex-col justify-between"
+                        >
+                            <div className="flex justify-between items-start mb-3">
+                                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                                    {match.round || 'Match'}
                                 </div>
+                                {match.status === 'live' && (
+                                    <div className="px-1.5 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase">
+                                        Live
+                                    </div>
+                                )}
                             </div>
 
-                            {/* Team 2 */}
-                            <div className="flex justify-between items-center">
-                                <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
-                                    {match.team2?.map((p, idx) => (
-                                        <div key={idx} className="flex items-center space-x-1">
-                                            {match.team2Flags?.[idx] && (
-                                                <img
-                                                    src={match.team2Flags[idx]}
-                                                    alt="Flag"
-                                                    className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
-                                                />
-                                            )}
-                                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
-                                                {getSurname(p)}
-                                            </span>
-                                            {idx < (match.team2?.length || 0) - 1 && <span className="text-slate-400">/</span>}
-                                        </div>
-                                    ))}
+                            <div className="flex items-center justify-between">
+                                {/* Players Column */}
+                                <div className="space-y-3 flex-grow min-w-0 pr-4">
+                                    {/* Team 1 */}
+                                    <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
+                                        {match.team1?.map((p, idx) => (
+                                            <div key={idx} className="flex items-center space-x-1">
+                                                {match.team1Flags?.[idx] && (
+                                                    <img
+                                                        src={match.team1Flags[idx]}
+                                                        alt="Flag"
+                                                        className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
+                                                    />
+                                                )}
+                                                <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                                                    {getSurname(p)}
+                                                </span>
+                                                {idx < (match.team1?.length || 0) - 1 && <span className="text-slate-400">/</span>}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Team 2 */}
+                                    <div className="flex flex-wrap items-center gap-y-1 gap-x-2">
+                                        {match.team2?.map((p, idx) => (
+                                            <div key={idx} className="flex items-center space-x-1">
+                                                {match.team2Flags?.[idx] && (
+                                                    <img
+                                                        src={match.team2Flags[idx]}
+                                                        alt="Flag"
+                                                        className="w-4 h-3 object-cover rounded-[1px] shadow-sm flex-shrink-0"
+                                                    />
+                                                )}
+                                                <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+                                                    {getSurname(p)}
+                                                </span>
+                                                {idx < (match.team2?.length || 0) - 1 && <span className="text-slate-400">/</span>}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Scores Column */}
+                                <div className="flex space-x-1">
+                                    {t1Scores.map((s1, idx) => {
+                                        const s2 = t2Scores[idx];
+                                        // Simple heuristic: bold the higher score
+                                        // Need to handle tiebreaks "7(4)" vs "6"
+                                        const n1 = parseInt(s1);
+                                        const n2 = parseInt(s2);
+                                        const isT1Winning = !isNaN(n1) && !isNaN(n2) && n1 > n2;
+                                        const isT2Winning = !isNaN(n1) && !isNaN(n2) && n2 > n1;
+
+                                        // Highlight current set (last one)
+                                        const isCurrentSet = idx === t1Scores.length - 1;
+                                        const textColor = isCurrentSet
+                                            ? "text-slate-900 dark:text-white"
+                                            : "text-slate-400 dark:text-slate-500";
+
+                                        return (
+                                            <div key={idx} className="flex flex-col items-center justify-center w-8 space-y-3">
+                                                <span className={`text-lg font-mono ${textColor} ${isT1Winning ? 'font-bold' : 'font-medium'}`}>
+                                                    {s1}
+                                                </span>
+                                                <span className={`text-lg font-mono ${textColor} ${isT2Winning ? 'font-bold' : 'font-medium'}`}>
+                                                    {s2}
+                                                </span>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
-
-                        {/* Score Display */}
-                        <div className="mt-3 pt-3 border-t border-gray-100 dark:border-white/5 flex justify-end">
-                            <div className="font-mono text-lg font-bold text-blue-600 dark:text-blue-400 tracking-widest">
-                                {match.score?.join(' ') || 'vs'}
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

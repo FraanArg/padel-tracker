@@ -1,0 +1,3561 @@
+{
+  "id": "qatar-major-premier-padel-2025",
+  "name": "QATAR MAJOR PREMIER PADEL 2025 | Padel FIP",
+  "year": 2025,
+  "matches": [
+    {
+      "raw": "Completed I. Ramirez / R. Coello Manso vs M. Al Khanji / A. Hassan (WC) 6-1 6-3",
+      "team1": [
+        "I. Ramirez",
+        "R. Coello Manso"
+      ],
+      "team2": [
+        "M. Al Khanji",
+        "A. Hassan (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg",
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "00:53",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Guichard / D. Demian Cuello vs F. Behbehani / A. Redha (WC) 6-1 6-3",
+      "team1": [
+        "D. Guichard",
+        "D. Demian Cuello"
+      ],
+      "team2": [
+        "F. Behbehani",
+        "A. Redha (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/KUW.jpg",
+        "https://widget.matchscorerlive.com/images/flags/KUW.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "00:44",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Cordoba / G. Graziotti vs N. Moragues Moltò / M. Sintes Villalonga 5-7 6-2 7-61",
+      "team1": [
+        "M. Cordoba",
+        "G. Graziotti"
+      ],
+      "team2": [
+        "N. Moragues Moltò",
+        "M. Sintes Villalonga"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-2",
+        "7-61"
+      ],
+      "status": "Completed",
+      "time": "02:07",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed Á. Melendez Amaya / F. Dominguez vs A. Olsson / D. Windahl 6-4 7-65",
+      "team1": [
+        "Á. Melendez Amaya",
+        "F. Dominguez"
+      ],
+      "team2": [
+        "A. Olsson",
+        "D. Windahl"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "6-4",
+        "7-65"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Ramirez / R. Coello Manso vs J. Ignacio Rubini / M. Lamperti 65-7 3-6",
+      "team1": [
+        "I. Ramirez",
+        "R. Coello Manso"
+      ],
+      "team2": [
+        "J. Ignacio Rubini",
+        "M. Lamperti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "65-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:30",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Schuck Silva / K. Hechenberger vs A. Santamaria Landa / J. Soto (WC) 6-4 6-0",
+      "team1": [
+        "M. Schuck Silva",
+        "K. Hechenberger"
+      ],
+      "team2": [
+        "A. Santamaria Landa",
+        "J. Soto (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SUI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Cassetta / J. Gonzalez vs E. Arija Ochoa De Alda / B. Castro Garcia 6-3 6-4",
+      "team1": [
+        "M. Cassetta",
+        "J. Gonzalez"
+      ],
+      "team2": [
+        "E. Arija Ochoa De Alda",
+        "B. Castro Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Lopez Diaz / A. Martinez Sanjuan vs L. Montañez Marco / A. Ortiz Gasco 3-6 7-65 6-0",
+      "team1": [
+        "N. Lopez Diaz",
+        "A. Martinez Sanjuan"
+      ],
+      "team2": [
+        "L. Montañez Marco",
+        "A. Ortiz Gasco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "7-65",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "02:33",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Montesi / L. Perez Parra (SR) vs A. Blanco Rojo / R. Lopez Lopez 4-6 2-6",
+      "team1": [
+        "M. Montesi",
+        "L. Perez Parra (SR)"
+      ],
+      "team2": [
+        "A. Blanco Rojo",
+        "R. Lopez Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:11",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed F. Insa Sotillo / A. Jerez Carnero vs T. Bueno / R. Mendez 5-7 4-6",
+      "team1": [
+        "F. Insa Sotillo",
+        "A. Jerez Carnero"
+      ],
+      "team2": [
+        "T. Bueno",
+        "R. Mendez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed G. Andrade / J. Gallifa Beltri vs S. Pujals Perez / D. Valenzuela 2-6 2-6",
+      "team1": [
+        "G. Andrade",
+        "J. Gallifa Beltri"
+      ],
+      "team2": [
+        "S. Pujals Perez",
+        "D. Valenzuela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:45",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed D. Torssell / J. Palma La Cruz vs M. Koek / S. Weterings 1-6 0-6",
+      "team1": [
+        "D. Torssell",
+        "J. Palma La Cruz"
+      ],
+      "team2": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/TUR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/VEN.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:44",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed C. Castillon Gamez / C. Navarro Björk vs C. Rose / A. Gibson 4-6 7-5 2-1",
+      "team1": [
+        "C. Castillon Gamez",
+        "C. Navarro Björk"
+      ],
+      "team2": [
+        "C. Rose",
+        "A. Gibson"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "score": [
+        "4-6",
+        "7-5",
+        "2-1"
+      ],
+      "status": "Completed",
+      "time": "02:31",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Vasquez / A. Axelsson vs M. Cordoba / G. Graziotti 3-6 6-2 5-7",
+      "team1": [
+        "S. Vasquez",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "M. Cordoba",
+        "G. Graziotti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-2",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:43",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Castillo Velarde / P. Araus Lopez vs X. Clasca Vidiella / N. Vivancos 2-6 6-4 4-6",
+      "team1": [
+        "C. Castillo Velarde",
+        "P. Araus Lopez"
+      ],
+      "team2": [
+        "X. Clasca Vidiella",
+        "N. Vivancos"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "6-4",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:52",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed C. Geens / T. Leygue vs D. Guichard / D. Demian Cuello 5-7 6-4 6-0",
+      "team1": [
+        "C. Geens",
+        "T. Leygue"
+      ],
+      "team2": [
+        "D. Guichard",
+        "D. Demian Cuello"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-4",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:52",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Cordoba / G. Graziotti vs J. Ignacio Rubini / M. Lamperti 3-6 4-4",
+      "team1": [
+        "M. Cordoba",
+        "G. Graziotti"
+      ],
+      "team2": [
+        "J. Ignacio Rubini",
+        "M. Lamperti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-4"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Schuck Silva / K. Hechenberger vs A. Blanco Rojo / R. Lopez Lopez 3-6 1-6",
+      "team1": [
+        "M. Schuck Silva",
+        "K. Hechenberger"
+      ],
+      "team2": [
+        "A. Blanco Rojo",
+        "R. Lopez Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SUI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed Á. Melendez Amaya / F. Dominguez vs G. Arnaldos Serrano / F. Ramirez Navas 6-3 6-2",
+      "team1": [
+        "Á. Melendez Amaya",
+        "F. Dominguez"
+      ],
+      "team2": [
+        "G. Arnaldos Serrano",
+        "F. Ramirez Navas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed A. Perez Momha / A. Varo Ramos vs S. Pujals Perez / D. Valenzuela 6-4 3-6 2-3",
+      "team1": [
+        "A. Perez Momha",
+        "A. Varo Ramos"
+      ],
+      "team2": [
+        "S. Pujals Perez",
+        "D. Valenzuela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "3-6",
+        "2-3"
+      ],
+      "status": "Completed",
+      "time": "02:02",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed M. Cassetta / J. Gonzalez vs T. Bueno / R. Mendez 4-6 64-7",
+      "team1": [
+        "M. Cassetta",
+        "J. Gonzalez"
+      ],
+      "team2": [
+        "T. Bueno",
+        "R. Mendez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed N. Lopez Diaz / A. Martinez Sanjuan vs M. Koek / S. Weterings 7-65 3-6 6-3",
+      "team1": [
+        "N. Lopez Diaz",
+        "A. Martinez Sanjuan"
+      ],
+      "team2": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [
+        "7-65",
+        "3-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:48",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed C. Geens / T. Leygue vs D. Gil / V. Mena 6-4 3-6 6-2",
+      "team1": [
+        "C. Geens",
+        "T. Leygue"
+      ],
+      "team2": [
+        "D. Gil",
+        "V. Mena"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "3-6",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:48",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed C. Castillon Gamez / C. Navarro Björk vs X. Clasca Vidiella / N. Vivancos 7-5 2-6 7-5",
+      "team1": [
+        "C. Castillon Gamez",
+        "C. Navarro Björk"
+      ],
+      "team2": [
+        "X. Clasca Vidiella",
+        "N. Vivancos"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "2-6",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "03:04",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed N. Canovas Paredes / J. Velasco Postiguillo vs N. Aguilar Carrillo / T. Navarro lopez-Barajas 6-4 6-4",
+      "team1": [
+        "N. Canovas Paredes",
+        "J. Velasco Postiguillo"
+      ],
+      "team2": [
+        "N. Aguilar Carrillo",
+        "T. Navarro lopez-Barajas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:36",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Mouriño / A. Fernandez vs A. Patiniotis / D. Gala Sanchez 4-6 2-6",
+      "team1": [
+        "F. Mouriño",
+        "A. Fernandez"
+      ],
+      "team2": [
+        "A. Patiniotis",
+        "D. Gala Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:31",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Collado Losada / D. Santigosa Sastre vs J. Jimenez Casas / R. Moyano 4-6 4-6",
+      "team1": [
+        "G. Collado Losada",
+        "D. Santigosa Sastre"
+      ],
+      "team2": [
+        "J. Jimenez Casas",
+        "R. Moyano"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:33",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Ruiz Soto / G. Marchetti vs J. Montes Cabruja / J. Polo Bautista 1-6 6-3 6-1",
+      "team1": [
+        "S. Ruiz Soto",
+        "G. Marchetti"
+      ],
+      "team2": [
+        "J. Montes Cabruja",
+        "J. Polo Bautista"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "6-3",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:28",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Moya / J. Rico vs P. Hernandez Alvarez / R. Valenzuela 0-6 0-3",
+      "team1": [
+        "J. Moya",
+        "J. Rico"
+      ],
+      "team2": [
+        "P. Hernandez Alvarez",
+        "R. Valenzuela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-3"
+      ],
+      "status": "Completed",
+      "time": "00:31",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Del Castillo / I. Piotto Albornoz vs M. Saadon Alkuwari / H. Waly (WC) 6-1 6-2",
+      "team1": [
+        "M. Del Castillo",
+        "I. Piotto Albornoz"
+      ],
+      "team2": [
+        "M. Saadon Alkuwari",
+        "H. Waly (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg",
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:48",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed R. Abdulla / A. Alhijji (WC) vs A. Sans / M. Quilez 0-6 0-6",
+      "team1": [
+        "R. Abdulla",
+        "A. Alhijji (WC)"
+      ],
+      "team2": [
+        "A. Sans",
+        "M. Quilez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg",
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:39",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Soriano Perez / M. Arellano Navarro vs F. Al Nabhani / M. Portillo Perez (WC) 6-0 6-1",
+      "team1": [
+        "A. Soriano Perez",
+        "M. Arellano Navarro"
+      ],
+      "team2": [
+        "F. Al Nabhani",
+        "M. Portillo Perez (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/OMA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "00:40",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Garcia Garcia / F. Cabeza Teres vs A. Ayats / P. Garcia Rodrigo 2-6 4-6",
+      "team1": [
+        "D. Garcia Garcia",
+        "F. Cabeza Teres"
+      ],
+      "team2": [
+        "A. Ayats",
+        "P. Garcia Rodrigo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:24",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Cruz Belluati / I. Sager vs J. Rico / A. Gutierrez 7-65 5-7 7-61",
+      "team1": [
+        "J. Cruz Belluati",
+        "I. Sager"
+      ],
+      "team2": [
+        "J. Rico",
+        "A. Gutierrez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-65",
+        "5-7",
+        "7-61"
+      ],
+      "status": "Completed",
+      "time": "02:20",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. El Nimr / M. Hakim (WC) vs M. Rodriguez Abajo / R. Eugenio Barrera 2-6 1-6",
+      "team1": [
+        "L. El Nimr",
+        "M. Hakim (WC)"
+      ],
+      "team2": [
+        "M. Rodriguez Abajo",
+        "R. Eugenio Barrera"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:40",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Ortega / C. Marti vs M. Nawaf / R. Nawaf (WC) 64-7 6-0 6-3",
+      "team1": [
+        "M. Ortega",
+        "C. Marti"
+      ],
+      "team2": [
+        "M. Nawaf",
+        "R. Nawaf (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg",
+        "https://widget.matchscorerlive.com/images/flags/QAT.jpg"
+      ],
+      "score": [
+        "64-7",
+        "6-0",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:47",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Gallardo Salvado / C. Casali vs S. Bellver Fructuoso / L. Godallier 6-4 3-6 2-6",
+      "team1": [
+        "A. Gallardo Salvado",
+        "C. Casali"
+      ],
+      "team2": [
+        "S. Bellver Fructuoso",
+        "L. Godallier"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "6-4",
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "02:00",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Huete Hernandez / D. Perino vs C. Geens / T. Leygue (Q) 62-7 2-6",
+      "team1": [
+        "M. Huete Hernandez",
+        "D. Perino"
+      ],
+      "team2": [
+        "C. Geens",
+        "T. Leygue (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "62-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:23",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Peralta Exposito / A. Cañellas Rodero vs A. Nogueira / M. Fassio Goyeneche 5-7 4-6",
+      "team1": [
+        "L. Peralta Exposito",
+        "A. Cañellas Rodero"
+      ],
+      "team2": [
+        "A. Nogueira",
+        "M. Fassio Goyeneche"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "5-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:51",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Benitez Lara / J. Martinez vs L. Hernandez Quesada / I. Jofre 4-6 5-7",
+      "team1": [
+        "M. Benitez Lara",
+        "J. Martinez"
+      ],
+      "team2": [
+        "L. Hernandez Quesada",
+        "I. Jofre"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:25",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Blanco Rojo / R. Lopez Lopez (Q) vs E. Carnicero Martin / B. Las Heras 2-6 4-6",
+      "team1": [
+        "A. Blanco Rojo",
+        "R. Lopez Lopez (Q)"
+      ],
+      "team2": [
+        "E. Carnicero Martin",
+        "B. Las Heras"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Torre / A. Cepero vs Á. Melendez Amaya / F. Dominguez (Q) 5-7 6-4 6-3",
+      "team1": [
+        "E. Torre",
+        "A. Cepero"
+      ],
+      "team2": [
+        "Á. Melendez Amaya",
+        "F. Dominguez (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:30",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Esbri / S. Oria vs V. Ruiz / F. Gil 3-6 6-4 3-6",
+      "team1": [
+        "J. Esbri",
+        "S. Oria"
+      ],
+      "team2": [
+        "V. Ruiz",
+        "F. Gil"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-4",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:11",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Perez Ortiz / M. Merino Saez vs L. Arruabarrena / J. Bidahorria 7-64 6-2",
+      "team1": [
+        "A. Perez Ortiz",
+        "M. Merino Saez"
+      ],
+      "team2": [
+        "L. Arruabarrena",
+        "J. Bidahorria"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-64",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:56",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Borrero / M. Calvo Santamaria vs N. Lopez Diaz / A. Martinez Sanjuan (Q) 7-64 66-7 6-3",
+      "team1": [
+        "M. Borrero",
+        "M. Calvo Santamaria"
+      ],
+      "team2": [
+        "N. Lopez Diaz",
+        "A. Martinez Sanjuan (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "66-7",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "03:15",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Munoz / I. Vilariño Gestoso vs G. Rubio / P. Lijo 3-6 2-6",
+      "team1": [
+        "J. Munoz",
+        "I. Vilariño Gestoso"
+      ],
+      "team2": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:01",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Lujan Rodriguez / C. Mesa Salazar vs L. Manquillo Alarza / P. Martinez Fortun 65-7 6-2 4-6",
+      "team1": [
+        "L. Lujan Rodriguez",
+        "C. Mesa Salazar"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "65-7",
+        "6-2",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "03:02",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Barrera De La Fuente / M. Caparros Maldonado vs C. Castillon Gamez / C. Navarro Björk (Q) 6-4 6-3",
+      "team1": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team2": [
+        "C. Castillon Gamez",
+        "C. Navarro Björk (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:38",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Pujals Perez / D. Valenzuela (Q) vs S. Saiz Vallejo / M. Lobo 2-6 6-2 2-6",
+      "team1": [
+        "S. Pujals Perez",
+        "D. Valenzuela (Q)"
+      ],
+      "team2": [
+        "S. Saiz Vallejo",
+        "M. Lobo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "6-2",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:56",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Gil / V. Mena (LL) vs J. Valdes / E. Sanchez Chamero 1-6 5-7",
+      "team1": [
+        "D. Gil",
+        "V. Mena (LL)"
+      ],
+      "team2": [
+        "J. Valdes",
+        "E. Sanchez Chamero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/CHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:08",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Ignacio Rubini / M. Lamperti (Q) vs M. Deus / N. Deus 3-6 4-6",
+      "team1": [
+        "J. Ignacio Rubini",
+        "M. Lamperti (Q)"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Bueno / R. Mendez (Q) vs E. Goenaga / T. Zapata 6-4 6-4",
+      "team1": [
+        "T. Bueno",
+        "R. Mendez (Q)"
+      ],
+      "team2": [
+        "E. Goenaga",
+        "T. Zapata"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:24",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Sainz Pelegri / P. Llaguno Zielinski vs N. Canovas Paredes / J. Velasco Postiguillo 7-64 7-5",
+      "team1": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team2": [
+        "N. Canovas Paredes",
+        "J. Velasco Postiguillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "02:25",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Hernandez Alvarez / R. Valenzuela vs J. Nieto / M. Yanguas 64-7 4-6",
+      "team1": [
+        "P. Hernandez Alvarez",
+        "R. Valenzuela"
+      ],
+      "team2": [
+        "J. Nieto",
+        "M. Yanguas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "64-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:44",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed E. Torre / A. Cepero vs F. Chingotto / A. Galan 1-6 1-6",
+      "team1": [
+        "E. Torre",
+        "A. Cepero"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:49",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs G. Rubio / P. Lijo 6-4 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs A. Sans / M. Quilez 64-7 6-1 6-0",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "A. Sans",
+        "M. Quilez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "64-7",
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Perez Ortiz / M. Merino Saez vs A. Osoro Ulrich / J. Castello Lopez 6-3 6-4",
+      "team1": [
+        "A. Perez Ortiz",
+        "M. Merino Saez"
+      ],
+      "team2": [
+        "A. Osoro Ulrich",
+        "J. Castello Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:24",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Alonso De Villa / A. Ustero Prieto vs S. Ruiz Soto / G. Marchetti 6-3 6-2",
+      "team1": [
+        "A. Alonso De Villa",
+        "A. Ustero Prieto"
+      ],
+      "team2": [
+        "S. Ruiz Soto",
+        "G. Marchetti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Garrido / M. Di Nenno vs J. Valdes / E. Sanchez Chamero 6-3 6-2",
+      "team1": [
+        "J. Garrido",
+        "M. Di Nenno"
+      ],
+      "team2": [
+        "J. Valdes",
+        "E. Sanchez Chamero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/CHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Ayats / P. Garcia Rodrigo vs F. Navarro / L. Bergamini 3-6 4-6",
+      "team1": [
+        "A. Ayats",
+        "P. Garcia Rodrigo"
+      ],
+      "team2": [
+        "F. Navarro",
+        "L. Bergamini"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed A. Patiniotis / D. Gala Sanchez vs V. Libaak / J. Tello 6-2 7-64",
+      "team1": [
+        "A. Patiniotis",
+        "D. Gala Sanchez"
+      ],
+      "team2": [
+        "V. Libaak",
+        "J. Tello"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-2",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "01:28",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed T. Icardo Alcorisa / C. Jensen vs S. Saiz Vallejo / M. Lobo 6-3 7-5",
+      "team1": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team2": [
+        "S. Saiz Vallejo",
+        "M. Lobo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:55",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Jimenez Casas / R. Moyano vs P. Cardona / L. Augsburger 3-6 5-7",
+      "team1": [
+        "J. Jimenez Casas",
+        "R. Moyano"
+      ],
+      "team2": [
+        "P. Cardona",
+        "L. Augsburger"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed S. Bellver Fructuoso / L. Godallier vs B. Caldera Sanchez / C. Goenaga Garcia 3-6 5-7",
+      "team1": [
+        "S. Bellver Fructuoso",
+        "L. Godallier"
+      ],
+      "team2": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:25",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed C. Geens / T. Leygue (Q) vs A. Ruiz / A. Chozas 2-6 4-6",
+      "team1": [
+        "C. Geens",
+        "T. Leygue (Q)"
+      ],
+      "team2": [
+        "A. Ruiz",
+        "A. Chozas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "00:59",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "9"
+    },
+    {
+      "raw": "Completed M. Borrero / M. Calvo Santamaria vs L. Martinez Gomez / L. Rufo Ortiz 7-62 6-3",
+      "team1": [
+        "M. Borrero",
+        "M. Calvo Santamaria"
+      ],
+      "team2": [
+        "L. Martinez Gomez",
+        "L. Rufo Ortiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-62",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:41",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "11"
+    },
+    {
+      "raw": "Completed J. Cruz Belluati / I. Sager vs J. Garcia / J. Barahona 7-64 2-6 6-0",
+      "team1": [
+        "J. Cruz Belluati",
+        "I. Sager"
+      ],
+      "team2": [
+        "J. Garcia",
+        "J. Barahona"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "2-6",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:54",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "14"
+    },
+    {
+      "raw": "Completed M. Guinart España / V. Iglesias Segador vs E. Carnicero Martin / B. Las Heras 3-6 6-1 6-3",
+      "team1": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team2": [
+        "E. Carnicero Martin",
+        "B. Las Heras"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:49",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Alonso / A. Arroyo vs M. Ortega / C. Marti 6-4 6-3",
+      "team1": [
+        "E. Alonso",
+        "A. Arroyo"
+      ],
+      "team2": [
+        "M. Ortega",
+        "C. Marti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:20",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed V. Riera / M. Marrero vs M. Barrera De La Fuente / M. Caparros Maldonado 68-7 3-6",
+      "team1": [
+        "V. Riera",
+        "M. Marrero"
+      ],
+      "team2": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "68-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:00",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Rodriguez Abajo / R. Eugenio Barrera vs A. Martinez / A. Collombon 4-6 66-7",
+      "team1": [
+        "M. Rodriguez Abajo",
+        "R. Eugenio Barrera"
+      ],
+      "team2": [
+        "A. Martinez",
+        "A. Collombon"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "4-6",
+        "66-7"
+      ],
+      "status": "Completed",
+      "time": "01:31",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "15"
+    },
+    {
+      "raw": "Completed L. Campagnolo / M. Sanchez vs L. Hernandez Quesada / I. Jofre 6-3 6-4",
+      "team1": [
+        "L. Campagnolo",
+        "M. Sanchez"
+      ],
+      "team2": [
+        "L. Hernandez Quesada",
+        "I. Jofre"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:12",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Soriano Perez / M. Arellano Navarro vs A. Salazar Bengoechea / V. Virseda 1-6 0-6",
+      "team1": [
+        "A. Soriano Perez",
+        "M. Arellano Navarro"
+      ],
+      "team2": [
+        "A. Salazar Bengoechea",
+        "V. Virseda"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:54",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed T. Bueno / R. Mendez (Q) vs F. Guerrero / J. Bautista 1-6 3-6",
+      "team1": [
+        "T. Bueno",
+        "R. Mendez (Q)"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Bautista"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "12"
+    },
+    {
+      "raw": "Completed J. Diestro / J. Ruiz vs M. Del Castillo / I. Piotto Albornoz 4-6 5-7",
+      "team1": [
+        "J. Diestro",
+        "J. Ruiz"
+      ],
+      "team2": [
+        "M. Del Castillo",
+        "I. Piotto Albornoz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:34",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "16",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Nogueira / M. Fassio Goyeneche vs M. Talavan / K. Sharifova 2-6 0-6",
+      "team1": [
+        "A. Nogueira",
+        "M. Fassio Goyeneche"
+      ],
+      "team2": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "score": [
+        "2-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "01:13",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed L. Aguirre / G. Alfonso vs M. Deus / N. Deus 611-7 4-6",
+      "team1": [
+        "L. Aguirre",
+        "G. Alfonso"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "611-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:48",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "15",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Orsi / N. Rodriguez vs L. Manquillo Alarza / P. Martinez Fortun 6-1 6-3",
+      "team1": [
+        "C. Orsi",
+        "N. Rodriguez"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "14",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Leal / C. Gutierrez vs V. Ruiz / F. Gil 3-6 6-4 2-6",
+      "team1": [
+        "J. Leal",
+        "C. Gutierrez"
+      ],
+      "team2": [
+        "V. Ruiz",
+        "F. Gil"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-4",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "02:03",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Barrera De La Fuente / M. Caparros Maldonado vs B. Gonzalez Fernandez / C. Fernandez Sanchez 1-6 5-7",
+      "team1": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team2": [
+        "B. Gonzalez Fernandez",
+        "C. Fernandez Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:23",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs M. Talavan / K. Sharifova 6-0 6-0",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "score": [
+        "6-0",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Cruz Belluati / I. Sager 6-2 6-4",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Cruz Belluati",
+        "I. Sager"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "00:49",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Garrido / M. Di Nenno vs F. Guerrero / J. Bautista 7-62 1-6 6-1",
+      "team1": [
+        "J. Garrido",
+        "M. Di Nenno"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Bautista"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-62",
+        "1-6",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:46",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "12"
+    },
+    {
+      "raw": "Completed M. Ortega Gallego / S. Araujo vs A. Martinez / A. Collombon 6-2 5-2",
+      "team1": [
+        "M. Ortega Gallego",
+        "S. Araujo"
+      ],
+      "team2": [
+        "A. Martinez",
+        "A. Collombon"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "6-2",
+        "5-2"
+      ],
+      "status": "Completed",
+      "time": "01:09",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "15"
+    },
+    {
+      "raw": "Completed M. Guinart España / V. Iglesias Segador vs G. Triay Pons / D. Brea Senesi 6-2 4-6 1-6",
+      "team1": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-2",
+        "4-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "02:12",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed L. Campagnolo / M. Sanchez vs F. Chingotto / A. Galan 5-7 3-6",
+      "team1": [
+        "L. Campagnolo",
+        "M. Sanchez"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:33",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed V. Ruiz / F. Gil vs F. Navarro / L. Bergamini 1-6 0-6",
+      "team1": [
+        "V. Ruiz",
+        "F. Gil"
+      ],
+      "team2": [
+        "F. Navarro",
+        "L. Bergamini"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed L. Sainz Pelegri / P. Llaguno Zielinski vs M. Borrero / M. Calvo Santamaria 6-2 1-6 5-0",
+      "team1": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team2": [
+        "M. Borrero",
+        "M. Calvo Santamaria"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "1-6",
+        "5-0"
+      ],
+      "status": "Completed",
+      "time": "01:42",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Del Castillo / I. Piotto Albornoz vs J. Nieto / M. Yanguas 0-6 0-6",
+      "team1": [
+        "M. Del Castillo",
+        "I. Piotto Albornoz"
+      ],
+      "team2": [
+        "J. Nieto",
+        "M. Yanguas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:44",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Alonso De Villa / A. Ustero Prieto vs B. Caldera Sanchez / C. Goenaga Garcia 2-6 2-6",
+      "team1": [
+        "A. Alonso De Villa",
+        "A. Ustero Prieto"
+      ],
+      "team2": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed M. Deus / N. Deus vs P. Cardona / L. Augsburger 4-6 3-6",
+      "team1": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team2": [
+        "P. Cardona",
+        "L. Augsburger"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:13",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs A. Patiniotis / D. Gala Sanchez 6-3 6-4",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "A. Patiniotis",
+        "D. Gala Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:28",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Icardo Alcorisa / C. Jensen vs A. Perez Ortiz / M. Merino Saez 6-2 6-4",
+      "team1": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team2": [
+        "A. Perez Ortiz",
+        "M. Merino Saez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:28",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Orsi / N. Rodriguez vs A. Salazar Bengoechea / V. Virseda 6-1 3-6 5-7",
+      "team1": [
+        "C. Orsi",
+        "N. Rodriguez"
+      ],
+      "team2": [
+        "A. Salazar Bengoechea",
+        "V. Virseda"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "02:11",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "14",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed E. Alonso / A. Arroyo vs A. Ruiz / A. Chozas 3-6 6-3 6-4",
+      "team1": [
+        "E. Alonso",
+        "A. Arroyo"
+      ],
+      "team2": [
+        "A. Ruiz",
+        "A. Chozas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "02:16",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "9"
+    },
+    {
+      "raw": "Completed B. Caldera Sanchez / C. Goenaga Garcia vs G. Triay Pons / D. Brea Senesi 2-6 5-7",
+      "team1": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:32",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "10",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs T. Icardo Alcorisa / C. Jensen 7-5 6-1",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-5",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:31",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "9"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs P. Cardona / L. Augsburger 6-4 6-4",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "P. Cardona",
+        "L. Augsburger"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:18",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed E. Alonso / A. Arroyo vs F. Chingotto / A. Galan 1-6 4-6",
+      "team1": [
+        "E. Alonso",
+        "A. Arroyo"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:17",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed L. Sainz Pelegri / P. Llaguno Zielinski vs B. Gonzalez Fernandez / C. Fernandez Sanchez 3-6 3-6",
+      "team1": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team2": [
+        "B. Gonzalez Fernandez",
+        "C. Fernandez Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed M. Ortega Gallego / S. Araujo vs A. Salazar Bengoechea / V. Virseda 6-2 2-6 4-6",
+      "team1": [
+        "M. Ortega Gallego",
+        "S. Araujo"
+      ],
+      "team2": [
+        "A. Salazar Bengoechea",
+        "V. Virseda"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "2-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "02:24",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs J. Nieto / M. Yanguas 63-7 6-4 5-7",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "J. Nieto",
+        "M. Yanguas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "63-7",
+        "6-4",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "02:47",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed J. Garrido / M. Di Nenno vs F. Navarro / L. Bergamini 4-6 6-4 3-6",
+      "team1": [
+        "J. Garrido",
+        "M. Di Nenno"
+      ],
+      "team2": [
+        "F. Navarro",
+        "L. Bergamini"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "score": [
+        "4-6",
+        "6-4",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:15",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed A. Salazar Bengoechea / V. Virseda vs G. Triay Pons / D. Brea Senesi 0-6 7-66 1-6",
+      "team1": [
+        "A. Salazar Bengoechea",
+        "V. Virseda"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "7-66",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "02:09",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs B. Gonzalez Fernandez / C. Fernandez Sanchez 6-2 5-7 6-4",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "B. Gonzalez Fernandez",
+        "C. Fernandez Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "5-7",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "02:36",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Nieto / M. Yanguas 6-2 7-5",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Nieto",
+        "M. Yanguas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:20",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed F. Navarro / L. Bergamini vs F. Chingotto / A. Galan 3-6 5-7",
+      "team1": [
+        "F. Navarro",
+        "L. Bergamini"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:37",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs G. Triay Pons / D. Brea Senesi 4-6 4-6",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:38",
+      "timezone": "Asia/Qatar",
+      "category": "Women",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs F. Chingotto / A. Galan 7-64 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Asia/Qatar",
+      "category": "Men",
+      "round": "Final",
+      "location": "Doha, Qatar",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    }
+  ],
+  "archivedAt": "2025-11-29T00:15:50.089Z"
+}

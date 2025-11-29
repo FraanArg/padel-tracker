@@ -1,0 +1,2643 @@
+{
+  "id": "cupra-germany-premier-padel-p2-castello-dusseldorf-2025",
+  "name": "CUPRA GERMANY PREMIER PADEL P2 2025 | Padel FIP",
+  "year": 2025,
+  "matches": [
+    {
+      "raw": "Completed G. Fino / M. Lupon Martinez vs V. Libaak / F. Dal Bianco 0-6 4-6",
+      "team1": [
+        "G. Fino",
+        "M. Lupon Martinez"
+      ],
+      "team2": [
+        "V. Libaak",
+        "F. Dal Bianco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "00:56",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed A. Marques / M. Sintes Villalonga vs D. Catini / S. Indomenico 6-1 6-2",
+      "team1": [
+        "A. Marques",
+        "M. Sintes Villalonga"
+      ],
+      "team2": [
+        "D. Catini",
+        "S. Indomenico"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:43",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Gil / R. Pereyra vs M. Arce Simo / P. Lijó 5-7 6-3 3-6",
+      "team1": [
+        "D. Gil",
+        "R. Pereyra"
+      ],
+      "team2": [
+        "M. Arce Simo",
+        "P. Lijó"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-3",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:08",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed P. Miñano Ortinez / V. Mena vs V. Sioulis / P. Ferrao 6-1 6-0",
+      "team1": [
+        "P. Miñano Ortinez",
+        "V. Mena"
+      ],
+      "team2": [
+        "V. Sioulis",
+        "P. Ferrao"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GRE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "00:38",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Schadeck / L. Lesne vs N. Alonso / P. Cuesta 0-6 1-6",
+      "team1": [
+        "T. Schadeck",
+        "L. Lesne"
+      ],
+      "team2": [
+        "N. Alonso",
+        "P. Cuesta"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:35",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed H. Garcia Martinez / A. Martinez Lopez vs D. Arredondo García / P. Reina Ambel 6-3 2-6 3-6",
+      "team1": [
+        "H. Garcia Martinez",
+        "A. Martinez Lopez"
+      ],
+      "team2": [
+        "D. Arredondo García",
+        "P. Reina Ambel"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/MEX.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:39",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed B. Van Opstal / A. Rodriguez rodriguez-Manzaneque vs R. Tornelli Contreras / L. Abbate 6-2 6-2",
+      "team1": [
+        "B. Van Opstal",
+        "A. Rodriguez rodriguez-Manzaneque"
+      ],
+      "team2": [
+        "R. Tornelli Contreras",
+        "L. Abbate"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Jerez Carnero / A. Axelsson vs D. Lingen / J. Trümpler (WC) 6-0 6-3",
+      "team1": [
+        "A. Jerez Carnero",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "D. Lingen",
+        "J. Trümpler (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "00:41",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Arija / R. Manrique Nuño vs P. Sanchez Vicente / M. Morales 1-6 2-6",
+      "team1": [
+        "E. Arija",
+        "R. Manrique Nuño"
+      ],
+      "team2": [
+        "P. Sanchez Vicente",
+        "M. Morales"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:44",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Fernandez / P. Garcia Rodrigo vs P. Sanchez Vicente / M. Morales 6-3 6-2",
+      "team1": [
+        "A. Fernandez",
+        "P. Garcia Rodrigo"
+      ],
+      "team2": [
+        "P. Sanchez Vicente",
+        "M. Morales"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed B. Van Opstal / A. Rodriguez rodriguez-Manzaneque vs J. Belluati / A. Montiel Caruso 63-7 3-6",
+      "team1": [
+        "B. Van Opstal",
+        "A. Rodriguez rodriguez-Manzaneque"
+      ],
+      "team2": [
+        "J. Belluati",
+        "A. Montiel Caruso"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "63-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Fernandez Garcia / E. Terranova vs C. Fassio Goyeneche / L. Peralta Exposito 5-7 7-68 65-7",
+      "team1": [
+        "M. Fernandez Garcia",
+        "E. Terranova"
+      ],
+      "team2": [
+        "C. Fassio Goyeneche",
+        "L. Peralta Exposito"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "7-68",
+        "65-7"
+      ],
+      "status": "Completed",
+      "time": "03:08",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed N. Alonso / P. Cuesta vs V. Libaak / F. Dal Bianco 3-6 1-6",
+      "team1": [
+        "N. Alonso",
+        "P. Cuesta"
+      ],
+      "team2": [
+        "V. Libaak",
+        "F. Dal Bianco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:54",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed N. Merten / C. Boehnke (WC) vs M. Arce Simo / P. Lijó 1-6 1-6",
+      "team1": [
+        "N. Merten",
+        "C. Boehnke (WC)"
+      ],
+      "team2": [
+        "M. Arce Simo",
+        "P. Lijó"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:42",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Jerez Carnero / A. Axelsson vs P. Miñano Ortinez / V. Mena 6-3 6-3",
+      "team1": [
+        "A. Jerez Carnero",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "P. Miñano Ortinez",
+        "V. Mena"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Koek / S. Weterings vs M. Zaccagnini / M. Gallego Castaño 6-1 6-2",
+      "team1": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team2": [
+        "M. Zaccagnini",
+        "M. Gallego Castaño"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Bogarin / L. Mañero Baeza vs M. Nolten / K. Rodriguez Vidal 2-6 64-7",
+      "team1": [
+        "L. Bogarin",
+        "L. Mañero Baeza"
+      ],
+      "team2": [
+        "M. Nolten",
+        "K. Rodriguez Vidal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Marques / M. Sintes Villalonga vs F. Mouriño / E. Mouriño 65-7 65-7",
+      "team1": [
+        "A. Marques",
+        "M. Sintes Villalonga"
+      ],
+      "team2": [
+        "F. Mouriño",
+        "E. Mouriño"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "65-7",
+        "65-7"
+      ],
+      "status": "Completed",
+      "time": "02:18",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Martinez Fortun / J. Montes Cabruja vs R. Van Der Hoek / P. Bernard",
+      "team1": [
+        "P. Martinez Fortun",
+        "J. Montes Cabruja"
+      ],
+      "team2": [
+        "R. Van Der Hoek",
+        "P. Bernard"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "13:30",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed R. Piltcher / A. Lopez Moral vs L. Luján Rodríguez / L. Manquillo Alarza 3-6 6-3 6-1",
+      "team1": [
+        "R. Piltcher",
+        "A. Lopez Moral"
+      ],
+      "team2": [
+        "L. Luján Rodríguez",
+        "L. Manquillo Alarza"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-3",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:42",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Fernandez / P. Garcia Rodrigo vs V. Libaak / F. Dal Bianco 6-4 610-7 0-6",
+      "team1": [
+        "A. Fernandez",
+        "P. Garcia Rodrigo"
+      ],
+      "team2": [
+        "V. Libaak",
+        "F. Dal Bianco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "610-7",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "02:26",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed N. Sermant / A. Buscaino vs N. Aguilar Carrillo / J. Polo Bautista 3-6 3-6",
+      "team1": [
+        "N. Sermant",
+        "A. Buscaino"
+      ],
+      "team2": [
+        "N. Aguilar Carrillo",
+        "J. Polo Bautista"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Perez Ortiz / M. Borrero Fernández De La Puente vs C. Fassio Goyeneche / L. Peralta Exposito 6-4 6-0",
+      "team1": [
+        "A. Perez Ortiz",
+        "M. Borrero Fernández De La Puente"
+      ],
+      "team2": [
+        "C. Fassio Goyeneche",
+        "L. Peralta Exposito"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed M. Koek / S. Weterings vs R. Piltcher / A. Lopez Moral 3-6 1-6",
+      "team1": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team2": [
+        "R. Piltcher",
+        "A. Lopez Moral"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Mouriño / E. Mouriño vs M. Arce Simo / P. Lijó 1-6 3-6",
+      "team1": [
+        "F. Mouriño",
+        "E. Mouriño"
+      ],
+      "team2": [
+        "M. Arce Simo",
+        "P. Lijó"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Jerez Carnero / A. Axelsson vs J. Belluati / A. Montiel Caruso 2-6 3-6",
+      "team1": [
+        "A. Jerez Carnero",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "J. Belluati",
+        "A. Montiel Caruso"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:16",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed L. Aguirre / A. Chozas vs D. Gala / L. Campagnolo 3-6 61-7",
+      "team1": [
+        "L. Aguirre",
+        "A. Chozas"
+      ],
+      "team2": [
+        "D. Gala",
+        "L. Campagnolo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "score": [
+        "3-6",
+        "61-7"
+      ],
+      "status": "Completed",
+      "time": "01:52",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Arruabarrena / J. Bidahorria vs C. Goenaga Garcia / B. Caldera Sanchez 4-6 5-7",
+      "team1": [
+        "L. Arruabarrena",
+        "J. Bidahorria"
+      ],
+      "team2": [
+        "C. Goenaga Garcia",
+        "B. Caldera Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:56",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Castello Lopez / L. Rufo Ortiz vs N. Canovas Paredes / M. Rodriguez Abajo 6-3 63-7 2-6",
+      "team1": [
+        "J. Castello Lopez",
+        "L. Rufo Ortiz"
+      ],
+      "team2": [
+        "N. Canovas Paredes",
+        "M. Rodriguez Abajo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "63-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "02:46",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Tello / P. Cardona vs A. Torre / A. Cepero 6-3 6-4",
+      "team1": [
+        "J. Tello",
+        "P. Cardona"
+      ],
+      "team2": [
+        "A. Torre",
+        "A. Cepero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:12",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Nieto Ruiz / M. Yanguas vs A. Fernandez Lancha / I. Sager 6-2 7-65",
+      "team1": [
+        "J. Nieto Ruiz",
+        "M. Yanguas"
+      ],
+      "team2": [
+        "A. Fernandez Lancha",
+        "I. Sager"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "7-65"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Fernandez / P. Garcia Rodrigo (LL) vs A. Galan / F. Chingotto 1-6 3-6",
+      "team1": [
+        "A. Fernandez",
+        "P. Garcia Rodrigo (LL)"
+      ],
+      "team2": [
+        "A. Galan",
+        "F. Chingotto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed D. Arredondo Garcia / P. Reina Ambel vs M. Nolten / K. Rodriguez Vidal 6-2 4-6 7-67",
+      "team1": [
+        "D. Arredondo Garcia",
+        "P. Reina Ambel"
+      ],
+      "team2": [
+        "M. Nolten",
+        "K. Rodriguez Vidal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/MEX.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "4-6",
+        "7-67"
+      ],
+      "status": "Completed",
+      "time": "02:08",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Martinez Fortun / J. Montes Cabruja vs S. Bellver Fructuoso / A. Cañellas Rodero 6-4 7-64",
+      "team1": [
+        "P. Martinez Fortun",
+        "J. Montes Cabruja"
+      ],
+      "team2": [
+        "S. Bellver Fructuoso",
+        "A. Cañellas Rodero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "01:55",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed M. Di Nenno / L. Roman Augsburguer vs M. Sanchez Aguero / F. Gil Morales 6-3 7-5",
+      "team1": [
+        "M. Di Nenno",
+        "L. Roman Augsburguer"
+      ],
+      "team2": [
+        "M. Sanchez Aguero",
+        "F. Gil Morales"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Velasco Postiguillo / R. Eugenio Barrera vs L. Sainz Pelegri / P. Llaguno Zielinski 3-6 6-3 7-5",
+      "team1": [
+        "J. Velasco Postiguillo",
+        "R. Eugenio Barrera"
+      ],
+      "team2": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-3",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "02:29",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Deus / N. Deus vs G. Figuerola Santiago / A. Reca (WC) 6-2 6-0",
+      "team1": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team2": [
+        "G. Figuerola Santiago",
+        "A. Reca (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "00:55",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Collombon / A. Martinez vs V. Kurz / D. Andrejszki (WC) 6-2 6-1",
+      "team1": [
+        "A. Collombon",
+        "A. Martinez"
+      ],
+      "team2": [
+        "V. Kurz",
+        "D. Andrejszki (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg",
+        "https://widget.matchscorerlive.com/images/flags/HUN.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "00:58",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Orsi / M. Fassio Goyeneche vs R. Piltcher / A. Lopez Moral (Q) 7-64 7-69",
+      "team1": [
+        "C. Orsi",
+        "M. Fassio Goyeneche"
+      ],
+      "team2": [
+        "R. Piltcher",
+        "A. Lopez Moral (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "7-69"
+      ],
+      "status": "Completed",
+      "time": "02:23",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Bautista / S. Pineda Cabello vs F. Guerrero / J. Leal 1-6 2-6",
+      "team1": [
+        "J. Bautista",
+        "S. Pineda Cabello"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Perez Ortiz / M. Borrero (Q) vs A. Osoro Ulrich / V. Iglesias Segador 2-6 62-7",
+      "team1": [
+        "A. Perez Ortiz",
+        "M. Borrero (Q)"
+      ],
+      "team2": [
+        "A. Osoro Ulrich",
+        "V. Iglesias Segador"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "62-7"
+      ],
+      "status": "Completed",
+      "time": "01:36",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs G. Collado Losada / P. Hernandez Alvarez 7-5 7-5",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "G. Collado Losada",
+        "P. Hernandez Alvarez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:49",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Lindmeyer / M. Wunner (WC) vs T. Zapata / F. Cabeza Teres 0-6 2-6",
+      "team1": [
+        "J. Lindmeyer",
+        "M. Wunner (WC)"
+      ],
+      "team2": [
+        "T. Zapata",
+        "F. Cabeza Teres"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Diestro / J. Esbri 6-1 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Diestro",
+        "J. Esbri"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:45",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Jimenez Casas / F. Dominguez vs F. Stupaczuk / J. Lebron 5-7 1-6",
+      "team1": [
+        "J. Jimenez Casas",
+        "F. Dominguez"
+      ],
+      "team2": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed P. Martinez Fortun / J. Montes Cabruja (Q) vs M. Caparros Maldonado / M. Barrera De La Fuente 6-1 64-7 2-6",
+      "team1": [
+        "P. Martinez Fortun",
+        "J. Montes Cabruja (Q)"
+      ],
+      "team2": [
+        "M. Caparros Maldonado",
+        "M. Barrera De La Fuente"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "64-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "03:06",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Arce Simo / P. Lijo (Q) vs A. Patiniotis / J. Moya 7-63 6-0",
+      "team1": [
+        "M. Arce Simo",
+        "P. Lijo (Q)"
+      ],
+      "team2": [
+        "A. Patiniotis",
+        "J. Moya"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-63",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "01:12",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Aguilar Carrillo / J. Polo Bautista (Q) vs L. Martinez Gomez / G. Marchetti 2-4",
+      "team1": [
+        "N. Aguilar Carrillo",
+        "J. Polo Bautista (Q)"
+      ],
+      "team2": [
+        "L. Martinez Gomez",
+        "G. Marchetti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "2-4"
+      ],
+      "status": "Completed",
+      "time": "00:33",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed V. Libaak / F. Dal Bianco (Q) vs I. Jofre / A. Arroyo 3-6 1-6",
+      "team1": [
+        "V. Libaak",
+        "F. Dal Bianco (Q)"
+      ],
+      "team2": [
+        "I. Jofre",
+        "A. Arroyo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:08",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Arredondo Garcia / P. Reina Ambel (Q) vs L. Bergamini / F. Navarro 1-6 2-6",
+      "team1": [
+        "D. Arredondo Garcia",
+        "P. Reina Ambel (Q)"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/MEX.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed E. Goenaga / L. Hernandez Quesada vs A. Ruiz Granados / V. Ruiz 1-6 6-4 3-6",
+      "team1": [
+        "E. Goenaga",
+        "L. Hernandez Quesada"
+      ],
+      "team2": [
+        "A. Ruiz Granados",
+        "V. Ruiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "6-4",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:54",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Garcia / J. Barahona vs J. Belluati / A. Montiel Caruso (Q) 7-5 4-6 6-3",
+      "team1": [
+        "J. Garcia",
+        "J. Barahona"
+      ],
+      "team2": [
+        "J. Belluati",
+        "A. Montiel Caruso (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-5",
+        "4-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:54",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Goenaga Garcia / B. Caldera Sanchez vs C. Fernandez Sanchez / B. Gonzalez Fernandez 2-6 2-6",
+      "team1": [
+        "C. Goenaga Garcia",
+        "B. Caldera Sanchez"
+      ],
+      "team2": [
+        "C. Fernandez Sanchez",
+        "B. Gonzalez Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed J. Nieto Ruiz / M. Yanguas vs D. Gala / L. Campagnolo 6-1 6-1",
+      "team1": [
+        "J. Nieto Ruiz",
+        "M. Yanguas"
+      ],
+      "team2": [
+        "D. Gala",
+        "L. Campagnolo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:07",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Osoro Ulrich / V. Iglesias Segador vs A. Sanchez Fallada / P. Josemaria Martin 2-6 2-6",
+      "team1": [
+        "A. Osoro Ulrich",
+        "V. Iglesias Segador"
+      ],
+      "team2": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Deus / N. Deus vs A. Galan / F. Chingotto 0-6 2-6",
+      "team1": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team2": [
+        "A. Galan",
+        "F. Chingotto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Ustero Prieto / S. Araujo vs A. Collombon / A. Martinez 6-3 6-1",
+      "team1": [
+        "A. Ustero Prieto",
+        "S. Araujo"
+      ],
+      "team2": [
+        "A. Collombon",
+        "A. Martinez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "00:59",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Tello / P. Cardona vs L. Bergamini / F. Navarro 4-6 3-6",
+      "team1": [
+        "J. Tello",
+        "P. Cardona"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:03",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed M. Ortega Gallego / T. Icardo Alcorisa vs M. Caparros Maldonado / M. Barrera De La Fuente 6-2 6-3",
+      "team1": [
+        "M. Ortega Gallego",
+        "T. Icardo Alcorisa"
+      ],
+      "team2": [
+        "M. Caparros Maldonado",
+        "M. Barrera De La Fuente"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:23",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Di Nenno / L. Roman Augsburguer vs M. Arce Simo / P. Lijo (Q) 6-4 6-4",
+      "team1": [
+        "M. Di Nenno",
+        "L. Roman Augsburguer"
+      ],
+      "team2": [
+        "M. Arce Simo",
+        "P. Lijo (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:27",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Canovas Paredes / M. Rodriguez Abajo vs A. Salazar Bengoechea / M. Calvo 0-6 2-6",
+      "team1": [
+        "N. Canovas Paredes",
+        "M. Rodriguez Abajo"
+      ],
+      "team2": [
+        "A. Salazar Bengoechea",
+        "M. Calvo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed T. Zapata / F. Cabeza Teres vs F. Stupaczuk / J. Lebron 1-6 0-6",
+      "team1": [
+        "T. Zapata",
+        "F. Cabeza Teres"
+      ],
+      "team2": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:46",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs A. Ruiz / V. Ruiz 6-3 6-3",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "A. Ruiz",
+        "V. Ruiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:05",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Garcia / J. Barahona 6-1 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Garcia",
+        "J. Barahona"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:51",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Triay Pons / D. Brea Senesi vs L. Martinez Gomez / G. Marchetti 6-1 6-0",
+      "team1": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team2": [
+        "L. Martinez Gomez",
+        "G. Marchetti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "00:46",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Orsi / M. Fassio Goyeneche vs M. Guinart España / V. Virseda Sanchez 3-6 4-6",
+      "team1": [
+        "C. Orsi",
+        "M. Fassio Goyeneche"
+      ],
+      "team2": [
+        "M. Guinart España",
+        "V. Virseda Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:27",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed C. Jensen / A. Alonso De Villa vs J. Velasco Postiguillo / R. Eugenio Barrera 6-4 6-1",
+      "team1": [
+        "C. Jensen",
+        "A. Alonso De Villa"
+      ],
+      "team2": [
+        "J. Velasco Postiguillo",
+        "R. Eugenio Barrera"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Jofre / A. Arroyo vs F. Guerrero / J. Leal 3-6 4-6",
+      "team1": [
+        "I. Jofre",
+        "A. Arroyo"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed C. Jensen / A. Alonso De Villa vs A. Sanchez Fallada / P. Josemaria Martin 0-6 6-4 1-6",
+      "team1": [
+        "C. Jensen",
+        "A. Alonso De Villa"
+      ],
+      "team2": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "6-4",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "02:04",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Ortega Gallego / T. Icardo Alcorisa vs C. Fernandez Sanchez / B. Gonzalez Fernandez 3-6 6-4 6-4",
+      "team1": [
+        "M. Ortega Gallego",
+        "T. Icardo Alcorisa"
+      ],
+      "team2": [
+        "C. Fernandez Sanchez",
+        "B. Gonzalez Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "02:44",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs F. Guerrero / J. Leal 7-5 7-64",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "01:28",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed G. Triay Pons / D. Brea Senesi vs M. Guinart España / V. Virseda Sanchez 6-2 6-1",
+      "team1": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team2": [
+        "M. Guinart España",
+        "V. Virseda Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:01",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed J. Nieto Ruiz / M. Yanguas vs L. Bergamini / F. Navarro 6-1 6-4",
+      "team1": [
+        "J. Nieto Ruiz",
+        "M. Yanguas"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed M. Di Nenno / L. Roman Augsburguer vs A. Galan / F. Chingotto 1-6 4-6",
+      "team1": [
+        "M. Di Nenno",
+        "L. Roman Augsburguer"
+      ],
+      "team2": [
+        "A. Galan",
+        "F. Chingotto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "1-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:08",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Ustero Prieto / S. Araujo vs A. Salazar Bengoechea / M. Calvo 7-5 3-6 7-62",
+      "team1": [
+        "A. Ustero Prieto",
+        "S. Araujo"
+      ],
+      "team2": [
+        "A. Salazar Bengoechea",
+        "M. Calvo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "3-6",
+        "7-62"
+      ],
+      "status": "Completed",
+      "time": "02:45",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed J. Gonzalez / J. Sanz vs F. Stupaczuk / J. Lebron 7-5 6-4",
+      "team1": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team2": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:31",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Ustero Prieto / S. Araujo vs A. Sanchez Fallada / P. Josemaria Martin 5-7 4-6",
+      "team1": [
+        "A. Ustero Prieto",
+        "S. Araujo"
+      ],
+      "team2": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "02:00",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed G. Triay Pons / D. Brea Senesi vs M. Ortega Gallego / T. Icardo Alcorisa 6-4 7-5",
+      "team1": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team2": [
+        "M. Ortega Gallego",
+        "T. Icardo Alcorisa"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "02:06",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Gonzalez / J. Sanz 6-1 6-3",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed J. Nieto Ruiz / M. Yanguas vs A. Galan / F. Chingotto 1-6 2-6",
+      "team1": [
+        "J. Nieto Ruiz",
+        "M. Yanguas"
+      ],
+      "team2": [
+        "A. Galan",
+        "F. Chingotto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "1-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:59",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed G. Triay Pons / D. Brea Senesi vs A. Sanchez Fallada / P. Josemaria Martin 6-4 4-6 6-3",
+      "team1": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team2": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "4-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "03:20",
+      "timezone": "Europe/Berlin",
+      "category": "Women",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs A. Galan / F. Chingotto 67-7 2-6",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "A. Galan",
+        "F. Chingotto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "67-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:38",
+      "timezone": "Europe/Berlin",
+      "category": "Men",
+      "round": "Final",
+      "location": "Germany",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    }
+  ],
+  "archivedAt": "2025-11-29T00:17:47.532Z"
+}

@@ -1,0 +1,1816 @@
+{
+  "id": "asuncion-premier-padel-p2-2024",
+  "name": "ASUNCION PREMIER PADEL P2 2024 | Padel FIP",
+  "year": 2025,
+  "matches": [
+    {
+      "raw": "Completed T. Santos / S. Masoumi Lari vs F. Alhooli / H. Alkokhardi (WC)",
+      "team1": [
+        "T. Santos",
+        "S. Masoumi Lari"
+      ],
+      "team2": [
+        "F. Alhooli",
+        "H. Alkokhardi (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Mehio / M. Morjan vs F. Alhooli / H. Alkokhardi (WC)",
+      "team1": [
+        "M. Mehio",
+        "M. Morjan"
+      ],
+      "team2": [
+        "F. Alhooli",
+        "H. Alkokhardi (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg",
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Avdieiev / C. Carro Pita vs A. Rami / R. Gaston Perez 6-4 2-6 2-6",
+      "team1": [
+        "A. Avdieiev",
+        "C. Carro Pita"
+      ],
+      "team2": [
+        "A. Rami",
+        "R. Gaston Perez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UKR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Rami / R. Gaston Perez vs P. Fearon / T. Main 6-4 6-4",
+      "team1": [
+        "A. Rami",
+        "R. Gaston Perez"
+      ],
+      "team2": [
+        "P. Fearon",
+        "T. Main"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/JAM.jpg",
+        "https://widget.matchscorerlive.com/images/flags/RSA.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Chiodi Appel / B. Cosmin Constantin (1 - WC) vs P. Potasch / M. Ketfi",
+      "team1": [
+        "C. Chiodi Appel",
+        "B. Cosmin Constantin (1 - WC)"
+      ],
+      "team2": [
+        "P. Potasch",
+        "M. Ketfi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ROU.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SVK.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Muñoz Lozano / S. Saggiorato (WC) vs G. Derosas / A. Nejad Marian 6-3 1-6 3-6",
+      "team1": [
+        "M. Muñoz Lozano",
+        "S. Saggiorato (WC)"
+      ],
+      "team2": [
+        "G. Derosas",
+        "A. Nejad Marian"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg"
+      ],
+      "score": [
+        "6-3",
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Alhashimi / M. Elbanna vs I. Donate Murcia / C. Musial Navarro 0-6 0-6",
+      "team1": [
+        "M. Alhashimi",
+        "M. Elbanna"
+      ],
+      "team2": [
+        "I. Donate Murcia",
+        "C. Musial Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Rubio / P. Lijo vs M. Noschese / B. Zhang 6-1 6-1",
+      "team1": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team2": [
+        "M. Noschese",
+        "B. Zhang"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/CHN.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Neykov / R. Rodriguez Alonso vs F. Al Janahi / M. Al Janahi 6-2 3-6 6-3",
+      "team1": [
+        "T. Neykov",
+        "R. Rodriguez Alonso"
+      ],
+      "team2": [
+        "F. Al Janahi",
+        "M. Al Janahi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BUL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "6-2",
+        "3-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Agra / G. Rey vs I. Metwally / A. Taher (WC)",
+      "team1": [
+        "J. Agra",
+        "G. Rey"
+      ],
+      "team2": [
+        "I. Metwally",
+        "A. Taher (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/PHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SUI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed H. Bernard / C. Pelt vs A. Alarif / E. Herrero Del Riego 6-4 3-6 2-6",
+      "team1": [
+        "H. Bernard",
+        "C. Pelt"
+      ],
+      "team2": [
+        "A. Alarif",
+        "E. Herrero Del Riego"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/LUX.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Icardo / F. Jurado Sosa vs A. Alaqili / S. Alhammadi (WC) 6-1 6-0",
+      "team1": [
+        "S. Icardo",
+        "F. Jurado Sosa"
+      ],
+      "team2": [
+        "A. Alaqili",
+        "S. Alhammadi (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Chernaya / A. Guryanova vs I. Shemyakina / C. Smith 6-0 6-1",
+      "team1": [
+        "I. Chernaya",
+        "A. Guryanova"
+      ],
+      "team2": [
+        "I. Shemyakina",
+        "C. Smith"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ARM.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UKR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Potasch / M. Ketfi (Q) vs M. Muñoz Lozano / S. Saggiorato (LL) 1-6 0-6",
+      "team1": [
+        "P. Potasch",
+        "M. Ketfi (Q)"
+      ],
+      "team2": [
+        "M. Muñoz Lozano",
+        "S. Saggiorato (LL)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SVK.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Corpas Bermudez / D. Villalta Aguilar vs C. Marshall / S. Mendonça 6-2 6-1",
+      "team1": [
+        "A. Corpas Bermudez",
+        "D. Villalta Aguilar"
+      ],
+      "team2": [
+        "C. Marshall",
+        "S. Mendonça"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Bois / M. Martinez Martinez vs Y. Flynn / J. Lucas 6-2 6-1",
+      "team1": [
+        "M. Bois",
+        "M. Martinez Martinez"
+      ],
+      "team2": [
+        "Y. Flynn",
+        "J. Lucas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/IRL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/PHI.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Scheduled O. Salem / O. Zaher vs P. Fearon / T. Main (LL)",
+      "team1": [
+        "O. Salem",
+        "O. Zaher"
+      ],
+      "team2": [
+        "P. Fearon",
+        "T. Main (LL)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/JAM.jpg",
+        "https://widget.matchscorerlive.com/images/flags/RSA.jpg"
+      ],
+      "score": [],
+      "status": "Scheduled",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Al Janahi / R. Walid vs Y. Hossam / J. Lacamoire 0-6 2-6",
+      "team1": [
+        "M. Al Janahi",
+        "R. Walid"
+      ],
+      "team2": [
+        "Y. Hossam",
+        "J. Lacamoire"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed C. De Soroa Jimenez / L. Dionisio Laureano vs N. Rohde / G. Sol Perez 6-1 7-64",
+      "team1": [
+        "C. De Soroa Jimenez",
+        "L. Dionisio Laureano"
+      ],
+      "team2": [
+        "N. Rohde",
+        "G. Sol Perez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/DEN.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-1",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Asimakopoulos / P. Balafas vs M. Gonzalez / C. Gutierrez 3-6 2-6",
+      "team1": [
+        "A. Asimakopoulos",
+        "P. Balafas"
+      ],
+      "team2": [
+        "M. Gonzalez",
+        "C. Gutierrez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/GRE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GRE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Chaveli Canovas / J. Tupayachi Llanos vs F. Alhooli / H. Alkokhardi (Q) 6-0 6-0",
+      "team1": [
+        "A. Chaveli Canovas",
+        "J. Tupayachi Llanos"
+      ],
+      "team2": [
+        "F. Alhooli",
+        "H. Alkokhardi (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Shahdoor / L. Suhail vs Z. Abed Alhameed / L. Nassar 6-3 6-2",
+      "team1": [
+        "A. Shahdoor",
+        "L. Suhail"
+      ],
+      "team2": [
+        "Z. Abed Alhameed",
+        "L. Nassar"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Ramirez / R. Coello Manso vs A. Bettineschi / A. Jimenez Juanas 2-3",
+      "team1": [
+        "I. Ramirez",
+        "R. Coello Manso"
+      ],
+      "team2": [
+        "A. Bettineschi",
+        "A. Jimenez Juanas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-3"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Ahli / M. Al Janahi (WC) vs S. Nieto Simon / D. Simon Tomas 3-6 2-6",
+      "team1": [
+        "A. Ahli",
+        "M. Al Janahi (WC)"
+      ],
+      "team2": [
+        "S. Nieto Simon",
+        "D. Simon Tomas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "20:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed O. Al-Taei / J. Rodriguez Marquez vs G. Derosas / A. Nejad Marian (Q) 1-6 1-6",
+      "team1": [
+        "O. Al-Taei",
+        "J. Rodriguez Marquez"
+      ],
+      "team2": [
+        "G. Derosas",
+        "A. Nejad Marian (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/OMA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg"
+      ],
+      "score": [
+        "1-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Blanco Dopazo / C. Garcia Blanco vs N. Cordoba / M. Quereda Moreno 0-3",
+      "team1": [
+        "D. Blanco Dopazo",
+        "C. Garcia Blanco"
+      ],
+      "team2": [
+        "N. Cordoba",
+        "M. Quereda Moreno"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-3"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Benz / D. Casanova Bataller vs A. Rami / R. Gaston Perez (Q) 7-64 2-6 5-7",
+      "team1": [
+        "D. Benz",
+        "D. Casanova Bataller"
+      ],
+      "team2": [
+        "A. Rami",
+        "R. Gaston Perez (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-64",
+        "2-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Ahmed / J. Saas vs M. Deus / N. Deus 2-6 1-6",
+      "team1": [
+        "A. Ahmed",
+        "J. Saas"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SUD.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "2-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Talavan / K. Sharifova vs A. Alawadhi / B. De Decker (WC) 6-1 6-0",
+      "team1": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team2": [
+        "A. Alawadhi",
+        "B. De Decker (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Icardo / F. Jurado Sosa vs A. Alarif / E. Herrero Del Riego 6-0 6-1",
+      "team1": [
+        "S. Icardo",
+        "F. Jurado Sosa"
+      ],
+      "team2": [
+        "A. Alarif",
+        "E. Herrero Del Riego"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Talavan / K. Sharifova vs D. Torssell / A. Santana Trujillo 6-0 6-0",
+      "team1": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team2": [
+        "D. Torssell",
+        "A. Santana Trujillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/TUR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Icardo / F. Jurado Sosa vs M. Deus / N. Deus 2-6 3-6",
+      "team1": [
+        "S. Icardo",
+        "F. Jurado Sosa"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed J. Agra / G. Rey vs A. Shahdoor / L. Suhail 6-0 6-0",
+      "team1": [
+        "J. Agra",
+        "G. Rey"
+      ],
+      "team2": [
+        "A. Shahdoor",
+        "L. Suhail"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/PHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SUI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Rubio / P. Lijo vs A. Corpas Bermudez / D. Villalta Aguilar 6-2 6-1",
+      "team1": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team2": [
+        "A. Corpas Bermudez",
+        "D. Villalta Aguilar"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Donate Murcia / C. Musial Navarro vs M. Koek / S. Weterings 2-6 0-6",
+      "team1": [
+        "I. Donate Murcia",
+        "C. Musial Navarro"
+      ],
+      "team2": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [
+        "2-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed G. Rubio / P. Lijo vs S. Nieto Simon / D. Simon Tomas 6-1 6-3",
+      "team1": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team2": [
+        "S. Nieto Simon",
+        "D. Simon Tomas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Lopez Arias De Saavedra / K. Ozawa vs D. Torssell / A. Santana Trujillo 7-64 3-6 2-6",
+      "team1": [
+        "A. Lopez Arias De Saavedra",
+        "K. Ozawa"
+      ],
+      "team2": [
+        "D. Torssell",
+        "A. Santana Trujillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/JPN.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/TUR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-64",
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Rami / R. Gaston Perez (Q) vs S. Nieto Simon / D. Simon Tomas",
+      "team1": [
+        "A. Rami",
+        "R. Gaston Perez (Q)"
+      ],
+      "team2": [
+        "S. Nieto Simon",
+        "D. Simon Tomas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/LIB.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Ryzhova / M. Vega vs L. Manquillo Alarza / P. Martinez Fortun 1-6 0-6",
+      "team1": [
+        "A. Ryzhova",
+        "M. Vega"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed N. Cordoba / M. Quereda Moreno vs M. Gonzalez / C. Gutierrez 63-7 2-6",
+      "team1": [
+        "N. Cordoba",
+        "M. Quereda Moreno"
+      ],
+      "team2": [
+        "M. Gonzalez",
+        "C. Gutierrez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "63-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed I. Donate Murcia / C. Musial Navarro vs C. De Soroa Jimenez / L. Dionisio Laureano 7-5 64-7 6-2",
+      "team1": [
+        "I. Donate Murcia",
+        "C. Musial Navarro"
+      ],
+      "team2": [
+        "C. De Soroa Jimenez",
+        "L. Dionisio Laureano"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "64-7",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Derosas / A. Nejad Marian (Q) vs N. Cordoba / M. Quereda Moreno 2-6 64-7",
+      "team1": [
+        "G. Derosas",
+        "A. Nejad Marian (Q)"
+      ],
+      "team2": [
+        "N. Cordoba",
+        "M. Quereda Moreno"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Neizvestnaya / A. Santamaria Landa vs J. Agra / G. Rey 61-7 6-3 6-1",
+      "team1": [
+        "A. Neizvestnaya",
+        "A. Santamaria Landa"
+      ],
+      "team2": [
+        "J. Agra",
+        "G. Rey"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/PHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SUI.jpg"
+      ],
+      "score": [
+        "61-7",
+        "6-3",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed Y. Hossam / J. Lacamoire vs Y. Hossam / J. Lacamoire 4-6 1-6",
+      "team1": [
+        "Y. Hossam",
+        "J. Lacamoire"
+      ],
+      "team2": [
+        "Y. Hossam",
+        "J. Lacamoire"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed I. Chernaya / A. Guryanova vs M. Koek / S. Weterings 0-6 0-6",
+      "team1": [
+        "I. Chernaya",
+        "A. Guryanova"
+      ],
+      "team2": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ARM.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Chaveli Canovas / J. Tupayachi Llanos vs M. Gonzalez / C. Gutierrez 2-6 1-6",
+      "team1": [
+        "A. Chaveli Canovas",
+        "J. Tupayachi Llanos"
+      ],
+      "team2": [
+        "M. Gonzalez",
+        "C. Gutierrez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Neizvestnaya / A. Santamaria Landa vs M. Bois / M. Martinez Martinez 6-3 7-5",
+      "team1": [
+        "A. Neizvestnaya",
+        "A. Santamaria Landa"
+      ],
+      "team2": [
+        "M. Bois",
+        "M. Martinez Martinez"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Bettineschi / A. Jimenez Juanas vs M. Muñoz Lozano / S. Saggiorato (LL) 2-6 6-2 6-1",
+      "team1": [
+        "A. Bettineschi",
+        "A. Jimenez Juanas"
+      ],
+      "team2": [
+        "M. Muñoz Lozano",
+        "S. Saggiorato (LL)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Martin Ortiz / J. Tilbrook vs A. Ryzhova / M. Vega 0-6 0-6",
+      "team1": [
+        "P. Martin Ortiz",
+        "J. Tilbrook"
+      ],
+      "team2": [
+        "A. Ryzhova",
+        "M. Vega"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/RSA.jpg"
+      ],
+      "team2Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Neykov / R. Rodriguez Alonso vs M. Deus / N. Deus",
+      "team1": [
+        "T. Neykov",
+        "R. Rodriguez Alonso"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BUL.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed S. Bayazidi / H. Hana vs L. Manquillo Alarza / P. Martinez Fortun",
+      "team1": [
+        "S. Bayazidi",
+        "H. Hana"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/IRI.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "14:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Talavan / K. Sharifova vs M. Koek / S. Weterings 6-2 6-3",
+      "team1": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team2": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "12:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed G. Rubio / P. Lijo vs M. Gonzalez / C. Gutierrez 7-64 6-4",
+      "team1": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team2": [
+        "M. Gonzalez",
+        "C. Gutierrez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-64",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed Y. Hossam / J. Lacamoire vs M. Deus / N. Deus 4-6 6-2 3-6",
+      "team1": [
+        "Y. Hossam",
+        "J. Lacamoire"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/EGY.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "4-6",
+        "6-2",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Neizvestnaya / A. Santamaria Landa vs L. Manquillo Alarza / P. Martinez Fortun 2-6 0-6",
+      "team1": [
+        "A. Neizvestnaya",
+        "A. Santamaria Landa"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "12:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Talavan / K. Sharifova vs L. Manquillo Alarza / P. Martinez Fortun 7-5 6-3",
+      "team1": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team2": [
+        "L. Manquillo Alarza",
+        "P. Martinez Fortun"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "13:00",
+      "timezone": "America/Asuncion",
+      "category": "Women",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed G. Rubio / P. Lijo vs M. Deus / N. Deus 3-6 2-6",
+      "team1": [
+        "G. Rubio",
+        "P. Lijo"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Asuncion",
+      "category": "Men",
+      "round": "Final",
+      "location": "Asuncion, Paraguay",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    }
+  ],
+  "archivedAt": "2025-11-28T23:54:05.843Z"
+}

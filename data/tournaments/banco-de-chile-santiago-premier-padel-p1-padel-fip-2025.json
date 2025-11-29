@@ -1,0 +1,2800 @@
+{
+  "id": "banco-de-chile-santiago-premier-padel-p1-2024",
+  "name": "BANCO DE CHILE SANTIAGO PREMIER PADEL P1 | Padel FIP",
+  "year": 2025,
+  "matches": [
+    {
+      "raw": "Completed J. Florensa Hernandez / A. Sanchez Arriaga vs B. Santos Colmenar / M. Morales Krueck 6-4 6-3",
+      "team1": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga"
+      ],
+      "team2": [
+        "B. Santos Colmenar",
+        "M. Morales Krueck"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GER.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed Y. Verdu Ruiz / S. Anton Romero vs E. Estreder Tolosa / L. Zarzoso Fabra 6-0 6-4",
+      "team1": [
+        "Y. Verdu Ruiz",
+        "S. Anton Romero"
+      ],
+      "team2": [
+        "E. Estreder Tolosa",
+        "L. Zarzoso Fabra"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Muñoz Zurita / M. Muñoz Zurita vs Y. Verdu Ruiz / S. Anton Romero 6-4 6-2",
+      "team1": [
+        "A. Muñoz Zurita",
+        "M. Muñoz Zurita"
+      ],
+      "team2": [
+        "Y. Verdu Ruiz",
+        "S. Anton Romero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Mazzeo Rubi / M. Martinez Perez vs G. Ferrero Bayarri / R. Diaz Lopez 6-0 6-2",
+      "team1": [
+        "J. Mazzeo Rubi",
+        "M. Martinez Perez"
+      ],
+      "team2": [
+        "G. Ferrero Bayarri",
+        "R. Diaz Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed O. Guiral Mallart / A. Sola Alba vs L. Orduña Dejoz / D. Beneyto Sanchez 6-3 6-2",
+      "team1": [
+        "O. Guiral Mallart",
+        "A. Sola Alba"
+      ],
+      "team2": [
+        "L. Orduña Dejoz",
+        "D. Beneyto Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed V. Ribes Tierno / J. Descals Carbonell vs P. Gonzalez Martin / A. Garcia Calahorro 2-6 3-6",
+      "team1": [
+        "V. Ribes Tierno",
+        "J. Descals Carbonell"
+      ],
+      "team2": [
+        "P. Gonzalez Martin",
+        "A. Garcia Calahorro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed D. Lopez De Mota Ibañez / L. Saiz Gonzalez vs H. Lorenzo Serrano / A. Alamillo Alcaide",
+      "team1": [
+        "D. Lopez De Mota Ibañez",
+        "L. Saiz Gonzalez"
+      ],
+      "team2": [
+        "H. Lorenzo Serrano",
+        "A. Alamillo Alcaide"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "11"
+    },
+    {
+      "raw": "Completed J. Mazzeo Rubi / M. Martinez Perez vs F. Serrano Basaldua / S. Duran Heras 6-0 6-3",
+      "team1": [
+        "J. Mazzeo Rubi",
+        "M. Martinez Perez"
+      ],
+      "team2": [
+        "F. Serrano Basaldua",
+        "S. Duran Heras"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Salamanca Fernandez / D. Sardina Serrano vs A. Del Saz Garcia / G. Camara Rodriguez 4-6 3-6",
+      "team1": [
+        "I. Salamanca Fernandez",
+        "D. Sardina Serrano"
+      ],
+      "team2": [
+        "A. Del Saz Garcia",
+        "G. Camara Rodriguez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed I. Marin / A. Garcia De Vinuesa vs O. Guiral Mallart / A. Sola Alba",
+      "team1": [
+        "I. Marin",
+        "A. Garcia De Vinuesa"
+      ],
+      "team2": [
+        "O. Guiral Mallart",
+        "A. Sola Alba"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Garcia Caro / J. Bolumar Orti vs A. Del Saz Garcia / G. Camara Rodriguez 6-0 4-6 2-6",
+      "team1": [
+        "J. Garcia Caro",
+        "J. Bolumar Orti"
+      ],
+      "team2": [
+        "A. Del Saz Garcia",
+        "G. Camara Rodriguez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed M. Blanco Dorao / A. Jauregui Sadaba vs L. Miró Garrido / A. Tur Checa 6-4 7-65",
+      "team1": [
+        "M. Blanco Dorao",
+        "A. Jauregui Sadaba"
+      ],
+      "team2": [
+        "L. Miró Garrido",
+        "A. Tur Checa"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "7-65"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed D. Domenech / A. Ortuño De Pablo vs L. Orduña Dejoz / D. Beneyto Sanchez 4-6 2-6",
+      "team1": [
+        "D. Domenech",
+        "A. Ortuño De Pablo"
+      ],
+      "team2": [
+        "L. Orduña Dejoz",
+        "D. Beneyto Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed G. Molina garcía-Muro / P. Alonso vs H. Lorenzo Serrano / A. Alamillo Alcaide 64-7 2-6",
+      "team1": [
+        "G. Molina garcía-Muro",
+        "P. Alonso"
+      ],
+      "team2": [
+        "H. Lorenzo Serrano",
+        "A. Alamillo Alcaide"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "64-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": "11"
+    },
+    {
+      "raw": "Completed J. Montalban Martin / J. Angles Ponce vs J. Esteve Medina / L. Berenguer 6-0 6-0",
+      "team1": [
+        "J. Montalban Martin",
+        "J. Angles Ponce"
+      ],
+      "team2": [
+        "J. Esteve Medina",
+        "L. Berenguer"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed G. Molina garcía-Muro / P. Alonso vs B. Romero Lang / M. Giribaldi 7-5 6-4",
+      "team1": [
+        "G. Molina garcía-Muro",
+        "P. Alonso"
+      ],
+      "team2": [
+        "B. Romero Lang",
+        "M. Giribaldi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "7-5",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Calleja Pulido / I. Boluda Pitarch vs J. Florensa Hernandez / A. Sanchez Arriaga 3-6 61-7",
+      "team1": [
+        "P. Calleja Pulido",
+        "I. Boluda Pitarch"
+      ],
+      "team2": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "61-7"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "16",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Prevert / R. Günter Tremiño Zarse vs M. Perez Gonzalez / M. Tabuena Lopez 2-6 1-6",
+      "team1": [
+        "A. Prevert",
+        "R. Günter Tremiño Zarse"
+      ],
+      "team2": [
+        "M. Perez Gonzalez",
+        "M. Tabuena Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "15"
+    },
+    {
+      "raw": "Completed F. Serrano Basaldua / S. Duran Heras vs I. Gil Sampere / A. Alvarez 6-0 6-3",
+      "team1": [
+        "F. Serrano Basaldua",
+        "S. Duran Heras"
+      ],
+      "team2": [
+        "I. Gil Sampere",
+        "A. Alvarez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ECU.jpg"
+      ],
+      "score": [
+        "6-0",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "14"
+    },
+    {
+      "raw": "Completed A. Muñoz Zurita / M. Muñoz Zurita vs P. Gonzalez Martin / A. Garcia Calahorro 6-4 6-2",
+      "team1": [
+        "A. Muñoz Zurita",
+        "M. Muñoz Zurita"
+      ],
+      "team2": [
+        "P. Gonzalez Martin",
+        "A. Garcia Calahorro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed J. Garcia Caro / J. Bolumar Orti vs D. Gomez Fernandez / D. Tudela 6-1 6-3",
+      "team1": [
+        "J. Garcia Caro",
+        "J. Bolumar Orti"
+      ],
+      "team2": [
+        "D. Gomez Fernandez",
+        "D. Tudela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Calleja Pulido / I. Boluda Pitarch vs I. Garcia Sanchez / D. Bracho Hombre 6-1 6-1",
+      "team1": [
+        "P. Calleja Pulido",
+        "I. Boluda Pitarch"
+      ],
+      "team2": [
+        "I. Garcia Sanchez",
+        "D. Bracho Hombre"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "16",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Aguirre Sanchez / D. Esteban Esposito vs M. Blanco Dorao / A. Jauregui Sadaba 1-6 5-7",
+      "team1": [
+        "N. Aguirre Sanchez",
+        "D. Esteban Esposito"
+      ],
+      "team2": [
+        "M. Blanco Dorao",
+        "A. Jauregui Sadaba"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Aguirre Sanchez / D. Esteban Esposito vs P. Espinosa Vidal / M. Gallego Martínez",
+      "team1": [
+        "N. Aguirre Sanchez",
+        "D. Esteban Esposito"
+      ],
+      "team2": [
+        "P. Espinosa Vidal",
+        "M. Gallego Martínez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Florensa Hernandez / A. Sanchez Arriaga vs J. Mesa Arenas / M. Geli Sanchez 6-2 6-1",
+      "team1": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga"
+      ],
+      "team2": [
+        "J. Mesa Arenas",
+        "M. Geli Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "11:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed J. Montalban Martin / J. Angles Ponce vs M. Perez Gonzalez / M. Tabuena Lopez 6-4 6-2",
+      "team1": [
+        "J. Montalban Martin",
+        "J. Angles Ponce"
+      ],
+      "team2": [
+        "M. Perez Gonzalez",
+        "M. Tabuena Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "17:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "15"
+    },
+    {
+      "raw": "Completed J. Mazzeo Rubi / M. Martinez Perez vs O. Guiral Mallart / A. Sola Alba 6-4 7-65",
+      "team1": [
+        "J. Mazzeo Rubi",
+        "M. Martinez Perez"
+      ],
+      "team2": [
+        "O. Guiral Mallart",
+        "A. Sola Alba"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/.jpg"
+      ],
+      "score": [
+        "6-4",
+        "7-65"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Mayoral Estrada / S. Gamez vs A. Medina Tomas / A. Tejedor Garcia Rayo 1-6 7-65 4-6",
+      "team1": [
+        "M. Mayoral Estrada",
+        "S. Gamez"
+      ],
+      "team2": [
+        "A. Medina Tomas",
+        "A. Tejedor Garcia Rayo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "7-65",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Romera Barcelo / M. Gonzalez Blanco vs P. Cuesta Gomez / I. Alonso Chillaron 6-3 7-66",
+      "team1": [
+        "J. Romera Barcelo",
+        "M. Gonzalez Blanco"
+      ],
+      "team2": [
+        "P. Cuesta Gomez",
+        "I. Alonso Chillaron"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "7-66"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Martinez Brito / C. Sánchez Nombela vs S. Martinez Diaz / C. Zufia Laraudogoitia 6-4 1-6 3-6",
+      "team1": [
+        "E. Martinez Brito",
+        "C. Sánchez Nombela"
+      ],
+      "team2": [
+        "S. Martinez Diaz",
+        "C. Zufia Laraudogoitia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Rico / D. Garcia Garcia vs H. Lorenzo Serrano / A. Alamillo Alcaide (LL) 6-4 6-3",
+      "team1": [
+        "J. Rico",
+        "D. Garcia Garcia"
+      ],
+      "team2": [
+        "H. Lorenzo Serrano",
+        "A. Alamillo Alcaide (LL)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Montalban Martin / J. Angles Ponce vs A. Del Saz Garcia / G. Camara Rodriguez 4-6 64-7",
+      "team1": [
+        "J. Montalban Martin",
+        "J. Angles Ponce"
+      ],
+      "team2": [
+        "A. Del Saz Garcia",
+        "G. Camara Rodriguez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed D. Chamli / C. Miret Llorach vs M. Mora Sanz / C. Marin Rios 6-3 2-6 6-3",
+      "team1": [
+        "D. Chamli",
+        "C. Miret Llorach"
+      ],
+      "team2": [
+        "M. Mora Sanz",
+        "C. Marin Rios"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/TUN.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "2-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Mazzeo Rubi / M. Martinez Perez (Q) vs A. Marques Berdonce / F. Ramirez Navas 7-65 6-0",
+      "team1": [
+        "J. Mazzeo Rubi",
+        "M. Martinez Perez (Q)"
+      ],
+      "team2": [
+        "A. Marques Berdonce",
+        "F. Ramirez Navas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-65",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed S. Garrido Rodríguez / A. Muñoz Sanchez vs K. Yegoreychenko / O. Kyrpot 6-4 3-6 6-3",
+      "team1": [
+        "S. Garrido Rodríguez",
+        "A. Muñoz Sanchez"
+      ],
+      "team2": [
+        "K. Yegoreychenko",
+        "O. Kyrpot"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UKR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/UKR.jpg"
+      ],
+      "score": [
+        "6-4",
+        "3-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Quereda Moreno / A. Tasa Van Beek vs J. Seurin / A. Rodriguez rodriguez-Manzaneque 7-6 0-6 6-3",
+      "team1": [
+        "M. Quereda Moreno",
+        "A. Tasa Van Beek"
+      ],
+      "team2": [
+        "J. Seurin",
+        "A. Rodriguez rodriguez-Manzaneque"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-6",
+        "0-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Muñoz Zurita / M. Muñoz Zurita vs M. Blanco Dorao / A. Jauregui Sadaba 6-2 3-6 5-7",
+      "team1": [
+        "A. Muñoz Zurita",
+        "M. Muñoz Zurita"
+      ],
+      "team2": [
+        "M. Blanco Dorao",
+        "A. Jauregui Sadaba"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Alvarez Castro / L. Montañez Marco vs L. Bahurel / F. Ligi",
+      "team1": [
+        "C. Alvarez Castro",
+        "L. Montañez Marco"
+      ],
+      "team2": [
+        "L. Bahurel",
+        "F. Ligi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed R. Fernandez Sansano / A. Martinez Espi vs R. Cuevas Tornero / J. Guerrero Escarcena 7-5 6-4",
+      "team1": [
+        "R. Fernandez Sansano",
+        "A. Martinez Espi"
+      ],
+      "team2": [
+        "R. Cuevas Tornero",
+        "J. Guerrero Escarcena"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed R. Petit Segarra / M. Cuadron Florez vs S. Oliveras Gonzalez / C. Sanchez Vera 3-6 2-6",
+      "team1": [
+        "R. Petit Segarra",
+        "M. Cuadron Florez"
+      ],
+      "team2": [
+        "S. Oliveras Gonzalez",
+        "C. Sanchez Vera"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed I. Tellez Rodriguez / P. Villaroya Lazaro (WC) vs A. Del Saz Garcia / G. Camara Rodriguez (Q) 6-3 6-4",
+      "team1": [
+        "I. Tellez Rodriguez",
+        "P. Villaroya Lazaro (WC)"
+      ],
+      "team2": [
+        "A. Del Saz Garcia",
+        "G. Camara Rodriguez (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed H. Lorenzo Serrano / A. Alamillo Alcaide vs J. Florensa Hernandez / A. Sanchez Arriaga 0-6 1-6",
+      "team1": [
+        "H. Lorenzo Serrano",
+        "A. Alamillo Alcaide"
+      ],
+      "team2": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Perez Cabeza / A. Ronco Lopez vs P. Sanchez Vicente / M. Morales Domenech 3-6 2-6",
+      "team1": [
+        "C. Perez Cabeza",
+        "A. Ronco Lopez"
+      ],
+      "team2": [
+        "P. Sanchez Vicente",
+        "M. Morales Domenech"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Rivas Garcia / P. Reina Ambel vs D. Rutgersson / M. Bjorkman 6-4 6-2",
+      "team1": [
+        "S. Rivas Garcia",
+        "P. Reina Ambel"
+      ],
+      "team2": [
+        "D. Rutgersson",
+        "M. Bjorkman"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Esteban Barroso / P. Gonzalez Neria vs B. Castro Garcia / P. Araujo 3-6 6-4 3-6",
+      "team1": [
+        "S. Esteban Barroso",
+        "P. Gonzalez Neria"
+      ],
+      "team2": [
+        "B. Castro Garcia",
+        "P. Araujo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "3-6",
+        "6-4",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed E. Arija Ochoa De Alda / R. Manrique Nuño vs P. Aliaga / D. Dorta Diaz 4-6 5-7",
+      "team1": [
+        "E. Arija Ochoa De Alda",
+        "R. Manrique Nuño"
+      ],
+      "team2": [
+        "P. Aliaga",
+        "D. Dorta Diaz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed S. Tulupov / M. Gonzalez vs J. Martinez Sanchis / M. Martin Cano 1-6 0-6",
+      "team1": [
+        "S. Tulupov",
+        "M. Gonzalez"
+      ],
+      "team2": [
+        "J. Martinez Sanchis",
+        "M. Martin Cano"
+      ],
+      "team1Flags": [
+        "",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Santamaria Landa / D. Toledo Jovani vs P. Torres Fluxà / P. Manglano Perez 6-3 6-3",
+      "team1": [
+        "A. Santamaria Landa",
+        "D. Toledo Jovani"
+      ],
+      "team2": [
+        "P. Torres Fluxà",
+        "P. Manglano Perez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Florensa Hernandez / A. Sanchez Arriaga (Q) vs A. Sanchez Contreras / M. Soto 6-1 6-0",
+      "team1": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga (Q)"
+      ],
+      "team2": [
+        "A. Sanchez Contreras",
+        "M. Soto"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/CHI.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Darboure / M. Llorens Gioda vs M. Amelie Dardaine / N. Molina Sanchez 3-6 1-6",
+      "team1": [
+        "F. Darboure",
+        "M. Llorens Gioda"
+      ],
+      "team2": [
+        "M. Amelie Dardaine",
+        "N. Molina Sanchez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Hannema / A. Ibarrola vs A. Blanco Sollet / L. Mañero Cervo Baeza 5-7 2-6",
+      "team1": [
+        "I. Hannema",
+        "A. Ibarrola"
+      ],
+      "team2": [
+        "A. Blanco Sollet",
+        "L. Mañero Cervo Baeza"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed Y. Kushima / E. Marais vs A. Valls Izquierdo / A. Valls Izquierdo 3-6 0-6",
+      "team1": [
+        "Y. Kushima",
+        "E. Marais"
+      ],
+      "team2": [
+        "A. Valls Izquierdo",
+        "A. Valls Izquierdo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/JPN.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Blanco Dorao / A. Jauregui Sadaba (Q) vs J. Gama Gonzalez / B. Vera Lopez 4-6 4-6",
+      "team1": [
+        "M. Blanco Dorao",
+        "A. Jauregui Sadaba (Q)"
+      ],
+      "team2": [
+        "J. Gama Gonzalez",
+        "B. Vera Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Masferrer / A. Roglan Pons vs P. Raichman / M. Joris 64-7 610-7",
+      "team1": [
+        "J. Masferrer",
+        "A. Roglan Pons"
+      ],
+      "team2": [
+        "P. Raichman",
+        "M. Joris"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "64-7",
+        "610-7"
+      ],
+      "status": "Completed",
+      "time": "15:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed E. Boix Gonzalez / S. Gutierrez Ruiz vs M. Delgado Medina / M. Vera Cebollero 0-6 0-6",
+      "team1": [
+        "E. Boix Gonzalez",
+        "S. Gutierrez Ruiz"
+      ],
+      "team2": [
+        "M. Delgado Medina",
+        "M. Vera Cebollero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "16:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Muñoz Zurita / M. Muñoz Zurita (LL) vs J. Bastos Veltri / L. Bogarin 0-6 0-6",
+      "team1": [
+        "A. Muñoz Zurita",
+        "M. Muñoz Zurita (LL)"
+      ],
+      "team2": [
+        "J. Bastos Veltri",
+        "L. Bogarin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "18:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Ordoñez Romero / N. Ollero Ramirez vs M. Munera Vila / S. Martin Marin 3-6 65-7",
+      "team1": [
+        "C. Ordoñez Romero",
+        "N. Ollero Ramirez"
+      ],
+      "team2": [
+        "M. Munera Vila",
+        "S. Martin Marin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "65-7"
+      ],
+      "status": "Completed",
+      "time": "19:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Rico / D. Garcia Garcia vs A. Blanco Sollet / L. Mañero Cervo Baeza 6-4 6-2",
+      "team1": [
+        "J. Rico",
+        "D. Garcia Garcia"
+      ],
+      "team2": [
+        "A. Blanco Sollet",
+        "L. Mañero Cervo Baeza"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Vano / L. Peralta Exposito vs S. Martinez Diaz / C. Zufia Laraudogoitia 6-1 6-1",
+      "team1": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team2": [
+        "S. Martinez Diaz",
+        "C. Zufia Laraudogoitia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Rico / D. Garcia Garcia vs P. Aliaga / D. Dorta Diaz 6-4 64-7 4-6",
+      "team1": [
+        "J. Rico",
+        "D. Garcia Garcia"
+      ],
+      "team2": [
+        "P. Aliaga",
+        "D. Dorta Diaz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "64-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed I. Tellez Rodriguez / P. Villaroya Lazaro (WC) vs P. Raichman / M. Joris 6-4 611-7 4-6",
+      "team1": [
+        "I. Tellez Rodriguez",
+        "P. Villaroya Lazaro (WC)"
+      ],
+      "team2": [
+        "P. Raichman",
+        "M. Joris"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "6-4",
+        "611-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed M. Amelie Dardaine / N. Molina Sanchez vs M. Portillo Perez / L. Fernandez Lopez 6-4 2-6 3-6",
+      "team1": [
+        "M. Amelie Dardaine",
+        "N. Molina Sanchez"
+      ],
+      "team2": [
+        "M. Portillo Perez",
+        "L. Fernandez Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed L. Vano / L. Peralta Exposito vs S. Oliveras Gonzalez / C. Sanchez Vera 6-2 3-6 6-1",
+      "team1": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team2": [
+        "S. Oliveras Gonzalez",
+        "C. Sanchez Vera"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "3-6",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed R. Fernandez Sansano / A. Martinez Espi vs J. Mazzeo Rubi / M. Martinez Perez (Q) 6-4 6-3",
+      "team1": [
+        "R. Fernandez Sansano",
+        "A. Martinez Espi"
+      ],
+      "team2": [
+        "J. Mazzeo Rubi",
+        "M. Martinez Perez (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed V. Atencia Basilio / M. Lopez Fuertes vs M. Munera Vila / S. Martin Marin 5-7 2-6",
+      "team1": [
+        "V. Atencia Basilio",
+        "M. Lopez Fuertes"
+      ],
+      "team2": [
+        "M. Munera Vila",
+        "S. Martin Marin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Romera Barcelo / M. Gonzalez Blanco vs R. Fernandez Sansano / A. Martinez Espi 2-6 7-64 6-0",
+      "team1": [
+        "J. Romera Barcelo",
+        "M. Gonzalez Blanco"
+      ],
+      "team2": [
+        "R. Fernandez Sansano",
+        "A. Martinez Espi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "7-64",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Romera Barcelo / M. Gonzalez Blanco vs S. Rivas Garcia / P. Reina Ambel 4-6 7-65 7-65",
+      "team1": [
+        "J. Romera Barcelo",
+        "M. Gonzalez Blanco"
+      ],
+      "team2": [
+        "S. Rivas Garcia",
+        "P. Reina Ambel"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "7-65",
+        "7-65"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Garrido Rodríguez / A. Muñoz Sanchez vs S. Oliveras Gonzalez / C. Sanchez Vera 3-6 4-6",
+      "team1": [
+        "S. Garrido Rodríguez",
+        "A. Muñoz Sanchez"
+      ],
+      "team2": [
+        "S. Oliveras Gonzalez",
+        "C. Sanchez Vera"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed M. Munera Vila / S. Martin Marin vs M. Portillo Perez / L. Fernandez Lopez 3-6 4-6",
+      "team1": [
+        "M. Munera Vila",
+        "S. Martin Marin"
+      ],
+      "team2": [
+        "M. Portillo Perez",
+        "L. Fernandez Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Cañellas Rodero / A. Cañellas vs A. Medina Tomas / A. Tejedor Garcia Rayo 6-3 6-4",
+      "team1": [
+        "A. Cañellas Rodero",
+        "A. Cañellas"
+      ],
+      "team2": [
+        "A. Medina Tomas",
+        "A. Tejedor Garcia Rayo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Sanchez Vicente / M. Morales Domenech vs J. Gama Gonzalez / B. Vera Lopez 6-4 6-4",
+      "team1": [
+        "P. Sanchez Vicente",
+        "M. Morales Domenech"
+      ],
+      "team2": [
+        "J. Gama Gonzalez",
+        "B. Vera Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Martinez Sanchis / M. Martin Cano vs B. Castro Garcia / P. Araujo 4-6 3-6",
+      "team1": [
+        "J. Martinez Sanchis",
+        "M. Martin Cano"
+      ],
+      "team2": [
+        "B. Castro Garcia",
+        "P. Araujo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "4-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed D. Chamli / C. Miret Llorach vs C. Alvarez Castro / L. Montañez Marco 4-6 6-4 4-6",
+      "team1": [
+        "D. Chamli",
+        "C. Miret Llorach"
+      ],
+      "team2": [
+        "C. Alvarez Castro",
+        "L. Montañez Marco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/TUN.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "6-4",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Martinez Sanchis / M. Martin Cano vs J. Bastos Veltri / L. Bogarin 7-63 6-4",
+      "team1": [
+        "J. Martinez Sanchis",
+        "M. Martin Cano"
+      ],
+      "team2": [
+        "J. Bastos Veltri",
+        "L. Bogarin"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-63",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Cañellas Rodero / A. Cañellas vs C. Alvarez Castro / L. Montañez Marco 6-4 6-2",
+      "team1": [
+        "A. Cañellas Rodero",
+        "A. Cañellas"
+      ],
+      "team2": [
+        "C. Alvarez Castro",
+        "L. Montañez Marco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Valls Izquierdo / A. Valls Izquierdo vs C. Lucendo Millan / T. Louisa Norton 2-6 2-6",
+      "team1": [
+        "A. Valls Izquierdo",
+        "A. Valls Izquierdo"
+      ],
+      "team2": [
+        "C. Lucendo Millan",
+        "T. Louisa Norton"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed J. Florensa Hernandez / A. Sanchez Arriaga (Q) vs B. Castro Garcia / P. Araujo 4-6 2-6",
+      "team1": [
+        "J. Florensa Hernandez",
+        "A. Sanchez Arriaga (Q)"
+      ],
+      "team2": [
+        "B. Castro Garcia",
+        "P. Araujo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed P. Sanchez Vicente / M. Morales Domenech vs P. Raichman / M. Joris 7-61 1-6 7-63",
+      "team1": [
+        "P. Sanchez Vicente",
+        "M. Morales Domenech"
+      ],
+      "team2": [
+        "P. Raichman",
+        "M. Joris"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "7-61",
+        "1-6",
+        "7-63"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Santamaria Landa / D. Toledo Jovani vs M. Delgado Medina / M. Vera Cebollero 4-6 63-7",
+      "team1": [
+        "A. Santamaria Landa",
+        "D. Toledo Jovani"
+      ],
+      "team2": [
+        "M. Delgado Medina",
+        "M. Vera Cebollero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "63-7"
+      ],
+      "status": "Completed",
+      "time": "11:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Quereda Moreno / A. Tasa Van Beek vs P. Aliaga / D. Dorta Diaz 3-6 3-6",
+      "team1": [
+        "M. Quereda Moreno",
+        "A. Tasa Van Beek"
+      ],
+      "team2": [
+        "P. Aliaga",
+        "D. Dorta Diaz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "12:30",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed M. Delgado Medina / M. Vera Cebollero vs C. Lucendo Millan / T. Louisa Norton 4-6 7-5 6-2",
+      "team1": [
+        "M. Delgado Medina",
+        "M. Vera Cebollero"
+      ],
+      "team2": [
+        "C. Lucendo Millan",
+        "T. Louisa Norton"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "score": [
+        "4-6",
+        "7-5",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "19:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Cañellas Rodero / A. Cañellas vs M. Portillo Perez / L. Fernandez Lopez 6-2 5-7 6-3",
+      "team1": [
+        "A. Cañellas Rodero",
+        "A. Cañellas"
+      ],
+      "team2": [
+        "M. Portillo Perez",
+        "L. Fernandez Lopez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "5-7",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed P. Aliaga / D. Dorta Diaz vs B. Castro Garcia / P. Araujo 6-2 6-3",
+      "team1": [
+        "P. Aliaga",
+        "D. Dorta Diaz"
+      ],
+      "team2": [
+        "B. Castro Garcia",
+        "P. Araujo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed L. Vano / L. Peralta Exposito vs A. Cañellas Rodero / A. Cañellas 7-5 2-6 3-6",
+      "team1": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team2": [
+        "A. Cañellas Rodero",
+        "A. Cañellas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "16:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed P. Aliaga / D. Dorta Diaz vs J. Romera Barcelo / M. Gonzalez Blanco 3-6 5-7",
+      "team1": [
+        "P. Aliaga",
+        "D. Dorta Diaz"
+      ],
+      "team2": [
+        "J. Romera Barcelo",
+        "M. Gonzalez Blanco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed L. Vano / L. Peralta Exposito vs M. Delgado Medina / M. Vera Cebollero 6-4 6-0",
+      "team1": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team2": [
+        "M. Delgado Medina",
+        "M. Vera Cebollero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-0"
+      ],
+      "status": "Completed",
+      "time": "10:00",
+      "timezone": "America/Santiago",
+      "category": "Women",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Sanchez Vicente / M. Morales Domenech vs J. Romera Barcelo / M. Gonzalez Blanco 7-69 2-6 66-7",
+      "team1": [
+        "P. Sanchez Vicente",
+        "M. Morales Domenech"
+      ],
+      "team2": [
+        "J. Romera Barcelo",
+        "M. Gonzalez Blanco"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-69",
+        "2-6",
+        "66-7"
+      ],
+      "status": "Completed",
+      "time": "",
+      "timezone": "America/Santiago",
+      "category": "Men",
+      "round": "Final",
+      "location": "Santiago, Chile",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    }
+  ],
+  "archivedAt": "2025-11-28T23:54:21.838Z"
+}

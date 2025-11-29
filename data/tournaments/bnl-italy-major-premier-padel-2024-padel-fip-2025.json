@@ -1,0 +1,3818 @@
+{
+  "id": "bnl-italy-major-premier-padel-2023",
+  "name": "BNL ITALY MAJOR PREMIER PADEL 2024 | Padel FIP",
+  "year": 2025,
+  "matches": [
+    {
+      "raw": "Completed P. Araujo / B. Castro Garcia vs R. Sinicropi / J. Ruiz (WC) 7-65 7-64",
+      "team1": [
+        "P. Araujo",
+        "B. Castro Garcia"
+      ],
+      "team2": [
+        "R. Sinicropi",
+        "J. Ruiz (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-65",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "01:43",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Tinti / S. Giuliani (WC) vs G. Nunes / M. Solbes 4-6 7-5 6-3",
+      "team1": [
+        "A. Tinti",
+        "S. Giuliani (WC)"
+      ],
+      "team2": [
+        "G. Nunes",
+        "M. Solbes"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "7-5",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:44",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Garcia Trella / N. Lopez Diaz vs C. Baldi / A. Gibson 7-65 6-4",
+      "team1": [
+        "L. Garcia Trella",
+        "N. Lopez Diaz"
+      ],
+      "team2": [
+        "C. Baldi",
+        "A. Gibson"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "score": [
+        "7-65",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "02:07",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Schuck Silva / P. Ribeiro vs C. Aima / G. Rosi (WC) 65-7 1-6",
+      "team1": [
+        "M. Schuck Silva",
+        "P. Ribeiro"
+      ],
+      "team2": [
+        "C. Aima",
+        "G. Rosi (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "65-7",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:38",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Garcia Bassas / C. Marti vs M. Aragon Herrera / A. Jerez Carnero 64-7 7-60 6-3",
+      "team1": [
+        "A. Garcia Bassas",
+        "C. Marti"
+      ],
+      "team2": [
+        "M. Aragon Herrera",
+        "A. Jerez Carnero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "64-7",
+        "7-60",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:13",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed B. Blanqué / J. Bergeron vs A. Marques / M. Gonzalez 6-2 7-5",
+      "team1": [
+        "B. Blanqué",
+        "J. Bergeron"
+      ],
+      "team2": [
+        "A. Marques",
+        "M. Gonzalez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:23",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed R. Piltcher / A. Ortiz Gascó vs R. Lopez Lopez / A. Lopez Moral 6-3 3-6 64-7",
+      "team1": [
+        "R. Piltcher",
+        "A. Ortiz Gascó"
+      ],
+      "team2": [
+        "R. Lopez Lopez",
+        "A. Lopez Moral"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "3-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "02:29",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed C. Navarro Björk / C. Touly vs M. Montesi / C. Castillo Velarde 6-3 6-4",
+      "team1": [
+        "C. Navarro Björk",
+        "C. Touly"
+      ],
+      "team2": [
+        "M. Montesi",
+        "C. Castillo Velarde"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:17",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Melendez Amaya / V. Mena vs D. Guichard / A. Luque 6-3 63-7 3-6",
+      "team1": [
+        "P. Melendez Amaya",
+        "V. Mena"
+      ],
+      "team2": [
+        "D. Guichard",
+        "A. Luque"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-3",
+        "63-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:03",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. Gil / I. Ramirez Del Campo vs F. Insa Sotillo / R. Coello Manso 3-6 4-6",
+      "team1": [
+        "D. Gil",
+        "I. Ramirez Del Campo"
+      ],
+      "team2": [
+        "F. Insa Sotillo",
+        "R. Coello Manso"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Koek / S. Weterings vs C. Serrano Gonzalez / C. Ramme Coellar 6-2 7-5",
+      "team1": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team2": [
+        "C. Serrano Gonzalez",
+        "C. Ramme Coellar"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/MEX.jpg"
+      ],
+      "score": [
+        "6-2",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:43",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed N. Vivancos / X. Clasca Vidiella vs L. Vano / L. Peralta Exposito 3-6 4-6",
+      "team1": [
+        "N. Vivancos",
+        "X. Clasca Vidiella"
+      ],
+      "team2": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:20",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed M. Sintes Villalonga / N. Moragues Moltò vs G. Arnaldos Serrano / A. Rodriguez Martinez 62-7 3-6",
+      "team1": [
+        "M. Sintes Villalonga",
+        "N. Moragues Moltò"
+      ],
+      "team2": [
+        "G. Arnaldos Serrano",
+        "A. Rodriguez Martinez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "62-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:12",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Castillo Valverde / C. Jorge Alfaro vs A. Olsson / D. Windahl 7-5 2-6 5-7",
+      "team1": [
+        "P. Castillo Valverde",
+        "C. Jorge Alfaro"
+      ],
+      "team2": [
+        "A. Olsson",
+        "D. Windahl"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "7-5",
+        "2-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:47",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Lucendo / A. Blanco Rojo vs A. Martinez / A. Dominguez Gracia 65-7 0-6",
+      "team1": [
+        "C. Lucendo",
+        "A. Blanco Rojo"
+      ],
+      "team2": [
+        "A. Martinez",
+        "A. Dominguez Gracia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "65-7",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed M. Portillo Pérez / L. Fernandez Lopez vs S. Pujals Perez / D. Valenzuela 3-6 3-6",
+      "team1": [
+        "M. Portillo Pérez",
+        "L. Fernandez Lopez"
+      ],
+      "team2": [
+        "S. Pujals Perez",
+        "D. Valenzuela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q1",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed A. Tinti / S. Giuliani (WC) vs J. Rubini / M. Lamperti 3-6 4-6",
+      "team1": [
+        "A. Tinti",
+        "S. Giuliani (WC)"
+      ],
+      "team2": [
+        "J. Rubini",
+        "M. Lamperti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "00:56",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Fernandez Lancha / E. Jensen Sirvent vs G. Arnaldos Serrano / A. Rodriguez Martinez 7-66 7-68",
+      "team1": [
+        "A. Fernandez Lancha",
+        "E. Jensen Sirvent"
+      ],
+      "team2": [
+        "G. Arnaldos Serrano",
+        "A. Rodriguez Martinez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-66",
+        "7-68"
+      ],
+      "status": "Completed",
+      "time": "01:44",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Garcia Trella / N. Lopez Diaz vs A. Martinez / A. Dominguez Gracia 3-6 4-6",
+      "team1": [
+        "L. Garcia Trella",
+        "N. Lopez Diaz"
+      ],
+      "team2": [
+        "A. Martinez",
+        "A. Dominguez Gracia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:33",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed F. Ramirez Navas / A. Axelsson vs J. Rubini / M. Lamperti 6-4 6-4",
+      "team1": [
+        "F. Ramirez Navas",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "J. Rubini",
+        "M. Lamperti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Fernandez Lancha / E. Jensen Sirvent vs T. Bueno / R. Mendez 6-3 3-0",
+      "team1": [
+        "A. Fernandez Lancha",
+        "E. Jensen Sirvent"
+      ],
+      "team2": [
+        "T. Bueno",
+        "R. Mendez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "3-0"
+      ],
+      "status": "Completed",
+      "time": "00:42",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed S. Vasquez / C. Geens vs P. Araujo / B. Castro Garcia 6-3 6-2",
+      "team1": [
+        "S. Vasquez",
+        "C. Geens"
+      ],
+      "team2": [
+        "P. Araujo",
+        "B. Castro Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:59",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Insa Sotillo / R. Coello Manso vs M. Huete Hernandez / D. Perino 7-66 2-6 3-6",
+      "team1": [
+        "F. Insa Sotillo",
+        "R. Coello Manso"
+      ],
+      "team2": [
+        "M. Huete Hernandez",
+        "D. Perino"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-66",
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:25",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed C. Aima / G. Rosi (WC) vs L. Vano / L. Peralta Exposito 4-6 2-6",
+      "team1": [
+        "C. Aima",
+        "G. Rosi (WC)"
+      ],
+      "team2": [
+        "L. Vano",
+        "L. Peralta Exposito"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed S. Vasquez / C. Geens vs B. Blanqué / J. Bergeron 3-6 4-6",
+      "team1": [
+        "S. Vasquez",
+        "C. Geens"
+      ],
+      "team2": [
+        "B. Blanqué",
+        "J. Bergeron"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/BEL.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:06",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Olsson / D. Windahl vs M. Huete Hernandez / D. Perino 7-66 7-64",
+      "team1": [
+        "A. Olsson",
+        "D. Windahl"
+      ],
+      "team2": [
+        "M. Huete Hernandez",
+        "D. Perino"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-66",
+        "7-64"
+      ],
+      "status": "Completed",
+      "time": "01:49",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q3",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed F. Ramirez Navas / A. Axelsson vs D. Guichard / A. Luque 6-3 6-2",
+      "team1": [
+        "F. Ramirez Navas",
+        "A. Axelsson"
+      ],
+      "team2": [
+        "D. Guichard",
+        "A. Luque"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:15",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "6",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Garcia Bassas / C. Marti vs T. Bueno / R. Mendez 3-6 7-5 64-7",
+      "team1": [
+        "A. Garcia Bassas",
+        "C. Marti"
+      ],
+      "team2": [
+        "T. Bueno",
+        "R. Mendez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "7-5",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "01:54",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed C. Navarro Björk / C. Touly vs S. Pujals Perez / D. Valenzuela 2-6 5-7",
+      "team1": [
+        "C. Navarro Björk",
+        "C. Touly"
+      ],
+      "team2": [
+        "S. Pujals Perez",
+        "D. Valenzuela"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "2-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:15",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "8"
+    },
+    {
+      "raw": "Completed B. Blanqué / J. Bergeron vs M. Castaño / N. Suescun 7-63 6-4",
+      "team1": [
+        "B. Blanqué",
+        "J. Bergeron"
+      ],
+      "team2": [
+        "M. Castaño",
+        "N. Suescun"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-63",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:27",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "7"
+    },
+    {
+      "raw": "Completed A. Garcia Jimenez / C. Medina Murphy vs A. Olsson / D. Windahl 4-6 6-4 4-6",
+      "team1": [
+        "A. Garcia Jimenez",
+        "C. Medina Murphy"
+      ],
+      "team2": [
+        "A. Olsson",
+        "D. Windahl"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/GBR.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "4-6",
+        "6-4",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:57",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Koek / S. Weterings vs R. Lopez Lopez / A. Lopez Moral 4-6 6-2 3-6",
+      "team1": [
+        "M. Koek",
+        "S. Weterings"
+      ],
+      "team2": [
+        "R. Lopez Lopez",
+        "A. Lopez Moral"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg",
+        "https://widget.matchscorerlive.com/images/flags/NED.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "6-2",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:17",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Q2",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "5",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Patiniotis / D. Gala vs L. Campagnolo / I. Sager 4-6 62-7",
+      "team1": [
+        "A. Patiniotis",
+        "D. Gala"
+      ],
+      "team2": [
+        "L. Campagnolo",
+        "I. Sager"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "62-7"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Aguirre / G. Alfonso vs I. Piotto Albornoz / J. Rico 3-6 65-7",
+      "team1": [
+        "L. Aguirre",
+        "G. Alfonso"
+      ],
+      "team2": [
+        "I. Piotto Albornoz",
+        "J. Rico"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "65-7"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Casali Vannicelli / A. Gallardo Salvado vs B. Las Heras / G. Marchetti 4-6 5-7",
+      "team1": [
+        "C. Casali Vannicelli",
+        "A. Gallardo Salvado"
+      ],
+      "team2": [
+        "B. Las Heras",
+        "G. Marchetti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:37",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Saiz Vallejo / M. Lobo vs J. Velasco Postiguillo / N. Canovas Paredes 7-612 4-6 61-7",
+      "team1": [
+        "S. Saiz Vallejo",
+        "M. Lobo"
+      ],
+      "team2": [
+        "J. Velasco Postiguillo",
+        "N. Canovas Paredes"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-612",
+        "4-6",
+        "61-7"
+      ],
+      "status": "Completed",
+      "time": "02:54",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Cassetta / J. Gonzalez vs B. Blanque / J. Bergeron (Q) 6-2 6-2",
+      "team1": [
+        "M. Cassetta",
+        "J. Gonzalez"
+      ],
+      "team2": [
+        "B. Blanque",
+        "J. Bergeron (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Leygue / J. Moya Sos vs M. Deus / N. Deus 6-4 1-1",
+      "team1": [
+        "T. Leygue",
+        "J. Moya Sos"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-4",
+        "1-1"
+      ],
+      "status": "Completed",
+      "time": "01:13",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed L. Arruabarrena / J. Bidahorria vs A. Cañellas Rodero / A. Soriano Perez 6-3 6-1",
+      "team1": [
+        "L. Arruabarrena",
+        "J. Bidahorria"
+      ],
+      "team2": [
+        "A. Cañellas Rodero",
+        "A. Soriano Perez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:07",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Cremona / G. Graziotti (WC) vs S. Iacovino / L. Di Giovanni (WC) 68-7 6-4 3-6",
+      "team1": [
+        "S. Cremona",
+        "G. Graziotti (WC)"
+      ],
+      "team2": [
+        "S. Iacovino",
+        "L. Di Giovanni (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "68-7",
+        "6-4",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:07",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Barrera De La Fuente / M. Caparros Maldonado vs J. Montes Cabruja / M. Arellano Navarro 6-3 63-7 6-3",
+      "team1": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team2": [
+        "J. Montes Cabruja",
+        "M. Arellano Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "63-7",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:23",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Abbate / A. Montiel Caruso (WC) vs P. Lijó / J. Belluati 64-7 3-6",
+      "team1": [
+        "F. Abbate",
+        "A. Montiel Caruso (WC)"
+      ],
+      "team2": [
+        "P. Lijó",
+        "J. Belluati"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "64-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:17",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Errani / G. Dal Pozzo (WC) vs S. Bellver Fructuoso / M. Rodriguez Abajo 66-7 5-7",
+      "team1": [
+        "S. Errani",
+        "G. Dal Pozzo (WC)"
+      ],
+      "team2": [
+        "S. Bellver Fructuoso",
+        "M. Rodriguez Abajo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "66-7",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "02:14",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Martinez Fortun / L. Manquillo Alarza vs C. Pappacena / M. Parmigiani (WC) 6-1 6-3",
+      "team1": [
+        "P. Martinez Fortun",
+        "L. Manquillo Alarza"
+      ],
+      "team2": [
+        "C. Pappacena",
+        "M. Parmigiani (WC)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:11",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Nogueira / M. Fassio Goyeneche vs C. Fassio Goyeneche / M. Gomez Rivas 6-2 6-1",
+      "team1": [
+        "A. Nogueira",
+        "M. Fassio Goyeneche"
+      ],
+      "team2": [
+        "C. Fassio Goyeneche",
+        "M. Gomez Rivas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "01:04",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed R. Moyano / F. Cabeza Teres vs F. Mouriño / A. Fernandez 6-4 6-4",
+      "team1": [
+        "R. Moyano",
+        "F. Cabeza Teres"
+      ],
+      "team2": [
+        "F. Mouriño",
+        "A. Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Hernandez Alvarez / R. Valenzuela vs A. Fernandez Lancha / E. Jensen Sirvent (Q) 7-611 62-7 5-7",
+      "team1": [
+        "P. Hernandez Alvarez",
+        "R. Valenzuela"
+      ],
+      "team2": [
+        "A. Fernandez Lancha",
+        "E. Jensen Sirvent (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "7-611",
+        "62-7",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "02:39",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Perez Momha / A. Varo Ramos vs J. Polo Bautista / N. Aguilar Carrillo 7-60 4-6 64-7",
+      "team1": [
+        "A. Perez Momha",
+        "A. Varo Ramos"
+      ],
+      "team2": [
+        "J. Polo Bautista",
+        "N. Aguilar Carrillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-60",
+        "4-6",
+        "64-7"
+      ],
+      "status": "Completed",
+      "time": "02:48",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed I. Vilariño Gestoso / S. Oria vs J. Martinez / M. Benitez Lara 5-7 6-2 5-7",
+      "team1": [
+        "I. Vilariño Gestoso",
+        "S. Oria"
+      ],
+      "team2": [
+        "J. Martinez",
+        "M. Benitez Lara"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-2",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:50",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed V. Ruiz / F. Gil Morales vs G. Rubio / J. Ruiz Gonzalez 6-3 6-2",
+      "team1": [
+        "V. Ruiz",
+        "F. Gil Morales"
+      ],
+      "team2": [
+        "G. Rubio",
+        "J. Ruiz Gonzalez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Merino Saez / T. Navarro lopez-Barajas vs S. Ruiz Soto / C. Mesa Salazar 5-7 6-4 6-3",
+      "team1": [
+        "M. Merino Saez",
+        "T. Navarro lopez-Barajas"
+      ],
+      "team2": [
+        "S. Ruiz Soto",
+        "C. Mesa Salazar"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:41",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Ramirez Navas / A. Axelsson (Q) vs J. Valdes / G. Collado Losada 60-7 4-6",
+      "team1": [
+        "F. Ramirez Navas",
+        "A. Axelsson (Q)"
+      ],
+      "team2": [
+        "J. Valdes",
+        "G. Collado Losada"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/CHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "60-7",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Goenaga / L. Hernandez Quesada vs A. Olsson / D. Windahl (Q) 6-4 6-2",
+      "team1": [
+        "E. Goenaga",
+        "L. Hernandez Quesada"
+      ],
+      "team2": [
+        "A. Olsson",
+        "D. Windahl (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/SWE.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed D. García / J. Rico vs T. Zapata / J. Jimenez Casas 2-6 4-6",
+      "team1": [
+        "D. García",
+        "J. Rico"
+      ],
+      "team2": [
+        "T. Zapata",
+        "J. Jimenez Casas"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "00:52",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed Á. Mélendez Amaya / F. Dominguez vs A. Cepero / A. Torre 67-7 6-2 6-3",
+      "team1": [
+        "Á. Mélendez Amaya",
+        "F. Dominguez"
+      ],
+      "team2": [
+        "A. Cepero",
+        "A. Torre"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "67-7",
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:11",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Ayats Delgado / P. Garcia Rodrigo vs M. Ortega / M. Del Castillo 2-6 6-4 6-2",
+      "team1": [
+        "A. Ayats Delgado",
+        "P. Garcia Rodrigo"
+      ],
+      "team2": [
+        "M. Ortega",
+        "M. Del Castillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:35",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Pujals Perez / D. Valenzuela (Q) vs L. Vano / L. Peralta Exposito (Q) 6-1 1-6 6-3",
+      "team1": [
+        "S. Pujals Perez",
+        "D. Valenzuela (Q)"
+      ],
+      "team2": [
+        "L. Vano",
+        "L. Peralta Exposito (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "1-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:42",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Perez Ortiz / M. Borrero vs A. Martinez Sanjuan / A. Dominguez Gracia (Q) 6-2 6-3",
+      "team1": [
+        "A. Perez Ortiz",
+        "M. Borrero"
+      ],
+      "team2": [
+        "A. Martinez Sanjuan",
+        "A. Dominguez Gracia (Q)"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:08",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Valdes / G. Collado Losada vs F. Chingotto / A. Galan 2-6 3-6",
+      "team1": [
+        "J. Valdes",
+        "G. Collado Losada"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/CHI.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed J. Munoz / A. Gutierrez vs E. Sanchez Chamero / D. Santigosa Sastre 2-6 2-6",
+      "team1": [
+        "J. Munoz",
+        "A. Gutierrez"
+      ],
+      "team2": [
+        "E. Sanchez Chamero",
+        "D. Santigosa Sastre"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:13",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed P. Cardona / L. Roman Augsburguer vs L. Campagnolo / I. Sager 63-7 5-7",
+      "team1": [
+        "P. Cardona",
+        "L. Roman Augsburguer"
+      ],
+      "team2": [
+        "L. Campagnolo",
+        "I. Sager"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "63-7",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:29",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed C. Orsi / N. Rodriguez Camacho vs M. Barrera De La Fuente / M. Caparros Maldonado 7-67 1-6 3-6",
+      "team1": [
+        "C. Orsi",
+        "N. Rodriguez Camacho"
+      ],
+      "team2": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-67",
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "02:31",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "14",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Zapata / J. Jimenez Casas vs M. Yanguas / J. Nieto Ruiz 2-6 6-3 3-6",
+      "team1": [
+        "T. Zapata",
+        "J. Jimenez Casas"
+      ],
+      "team2": [
+        "M. Yanguas",
+        "J. Nieto Ruiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "6-3",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:36",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed P. Martinez Fortun / L. Manquillo Alarza vs M. Ortega Gallego / A. Alonso De Villa 1-6 1-6",
+      "team1": [
+        "P. Martinez Fortun",
+        "L. Manquillo Alarza"
+      ],
+      "team2": [
+        "M. Ortega Gallego",
+        "A. Alonso De Villa"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:54",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed F. Stupaczuk / J. Lebron vs A. Ayats Delgado / P. Garcia Rodrigo 6-3 6-2",
+      "team1": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team2": [
+        "A. Ayats Delgado",
+        "P. Garcia Rodrigo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:51",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Ruiz Granados / M. Sanchez Aguero vs V. Ruiz / F. Gil Morales 7-5 7-63",
+      "team1": [
+        "A. Ruiz Granados",
+        "M. Sanchez Aguero"
+      ],
+      "team2": [
+        "V. Ruiz",
+        "F. Gil Morales"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-5",
+        "7-63"
+      ],
+      "status": "Completed",
+      "time": "01:38",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Merino Saez / T. Navarro lopez-Barajas vs V. Virseda Sanchez / A. Salazar Bengoechea 4-6 2-6",
+      "team1": [
+        "M. Merino Saez",
+        "T. Navarro lopez-Barajas"
+      ],
+      "team2": [
+        "V. Virseda Sanchez",
+        "A. Salazar Bengoechea"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:21",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed L. Sainz Pelegri / P. Llaguno Zielinski vs S. Bellver Fructuoso / M. Rodriguez Abajo 6-2 6-2",
+      "team1": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team2": [
+        "S. Bellver Fructuoso",
+        "M. Rodriguez Abajo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:59",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Cassetta / J. Gonzalez vs L. Bergamini / F. Navarro 5-7 3-6",
+      "team1": [
+        "M. Cassetta",
+        "J. Gonzalez"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed S. Iacovino / L. Di Giovanni (WC) vs J. Barahona / J. Garcia 0-6 4-6",
+      "team1": [
+        "S. Iacovino",
+        "L. Di Giovanni (WC)"
+      ],
+      "team2": [
+        "J. Barahona",
+        "J. Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "00:49",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "14"
+    },
+    {
+      "raw": "Completed R. Lopez Lopez / A. Lopez Moral (Q) vs L. Lujan Rodriguez / L. Godallier 7-5 1-6 7-62",
+      "team1": [
+        "R. Lopez Lopez",
+        "A. Lopez Moral (Q)"
+      ],
+      "team2": [
+        "L. Lujan Rodriguez",
+        "L. Godallier"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg"
+      ],
+      "score": [
+        "7-5",
+        "1-6",
+        "7-62"
+      ],
+      "status": "Completed",
+      "time": "02:27",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 64",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Fernandez Lancha / E. Jensen Sirvent (Q) vs J. Gonzalez / J. Sanz 2-6 614-7",
+      "team1": [
+        "A. Fernandez Lancha",
+        "E. Jensen Sirvent (Q)"
+      ],
+      "team2": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "614-7"
+      ],
+      "status": "Completed",
+      "time": "01:29",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed T. Icardo Alcorisa / C. Jensen vs A. Perez Ortiz / M. Borrero 6-3 6-4",
+      "team1": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team2": [
+        "A. Perez Ortiz",
+        "M. Borrero"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed J. Velasco Postiguillo / N. Canovas Paredes vs B. Caldera Sanchez / C. Goenaga Garcia 1-6 3-6",
+      "team1": [
+        "J. Velasco Postiguillo",
+        "N. Canovas Paredes"
+      ],
+      "team2": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:20",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed R. Lopez Lopez / A. Lopez Moral (Q) vs A. Osoro Ulrich / M. Calvo 0-6 1-6",
+      "team1": [
+        "R. Lopez Lopez",
+        "A. Lopez Moral (Q)"
+      ],
+      "team2": [
+        "A. Osoro Ulrich",
+        "M. Calvo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "00:50",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "9"
+    },
+    {
+      "raw": "Completed E. Sanchez Chamero / D. Santigosa Sastre vs J. Diestro / J. Esbri 2-6 7-63 4-6",
+      "team1": [
+        "E. Sanchez Chamero",
+        "D. Santigosa Sastre"
+      ],
+      "team2": [
+        "J. Diestro",
+        "J. Esbri"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "7-63",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:48",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed R. Eugenio Barrera / M. Riera vs L. Arruabarrena / J. Bidahorria 6-1 6-3",
+      "team1": [
+        "R. Eugenio Barrera",
+        "M. Riera"
+      ],
+      "team2": [
+        "L. Arruabarrena",
+        "J. Bidahorria"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-1",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:10",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "15",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed M. Huete Hernandez / D. Perino (LL) vs R. Moyano / F. Cabeza Teres 6-3 6-4",
+      "team1": [
+        "M. Huete Hernandez",
+        "D. Perino (LL)"
+      ],
+      "team2": [
+        "R. Moyano",
+        "F. Cabeza Teres"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:48",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed S. Pujals Perez / D. Valenzuela (Q) vs M. Talavan / K. Sharifova 4-6 2-6",
+      "team1": [
+        "S. Pujals Perez",
+        "D. Valenzuela (Q)"
+      ],
+      "team2": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "score": [
+        "4-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed J. Tello / M. Di Nenno vs P. Lijó / J. Belluati 6-3 7-63",
+      "team1": [
+        "J. Tello",
+        "M. Di Nenno"
+      ],
+      "team2": [
+        "P. Lijó",
+        "J. Belluati"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "6-3",
+        "7-63"
+      ],
+      "status": "Completed",
+      "time": "01:17",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Chozas / C. Gutierrez vs J. Martinez / M. Benitez Lara 7-62 3-6 6-4",
+      "team1": [
+        "A. Chozas",
+        "C. Gutierrez"
+      ],
+      "team2": [
+        "J. Martinez",
+        "M. Benitez Lara"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-62",
+        "3-6",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "01:53",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "15",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Nogueira / M. Fassio Goyeneche vs M. Guinart España / V. Iglesias Segador 4-6 4-6",
+      "team1": [
+        "A. Nogueira",
+        "M. Fassio Goyeneche"
+      ],
+      "team2": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:18",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "11"
+    },
+    {
+      "raw": "Completed I. Piotto Albornoz / J. Rico vs I. Jofre / A. Arroyo 68-7 6-3 68-7",
+      "team1": [
+        "I. Piotto Albornoz",
+        "J. Rico"
+      ],
+      "team2": [
+        "I. Jofre",
+        "A. Arroyo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "68-7",
+        "6-3",
+        "68-7"
+      ],
+      "status": "Completed",
+      "time": "02:26",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "12"
+    },
+    {
+      "raw": "Completed E. Goenaga / L. Hernandez Quesada vs F. Guerrero / J. Leal 4-6 66-7",
+      "team1": [
+        "E. Goenaga",
+        "L. Hernandez Quesada"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "66-7"
+      ],
+      "status": "Completed",
+      "time": "01:24",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "13"
+    },
+    {
+      "raw": "Completed L. Martinez Gomez / M. Marrero Marrero vs B. Las Heras / G. Marchetti 6-4 6-4",
+      "team1": [
+        "L. Martinez Gomez",
+        "M. Marrero Marrero"
+      ],
+      "team2": [
+        "B. Las Heras",
+        "G. Marchetti"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-4"
+      ],
+      "status": "Completed",
+      "time": "02:04",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Collombon / A. Martinez vs J. Polo Bautista / N. Aguilar Carrillo 1-6 7-61 6-2",
+      "team1": [
+        "A. Collombon",
+        "A. Martinez"
+      ],
+      "team2": [
+        "J. Polo Bautista",
+        "N. Aguilar Carrillo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "1-6",
+        "7-61",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "02:15",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed E. Alonso / J. Bautista vs Á. Mélendez Amaya / F. Dominguez 6-2 6-3",
+      "team1": [
+        "E. Alonso",
+        "J. Bautista"
+      ],
+      "team2": [
+        "Á. Mélendez Amaya",
+        "F. Dominguez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:05",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs M. Deus / N. Deus 6-2 6-1",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "M. Deus",
+        "N. Deus"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg"
+      ],
+      "score": [
+        "6-2",
+        "6-1"
+      ],
+      "status": "Completed",
+      "time": "00:57",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 32",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed F. Stupaczuk / J. Lebron vs J. Barahona / J. Garcia 6-3 4-6 6-3",
+      "team1": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team2": [
+        "J. Barahona",
+        "J. Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "4-6",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:57",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "14"
+    },
+    {
+      "raw": "Completed M. Barrera De La Fuente / M. Caparros Maldonado vs V. Virseda Sanchez / A. Salazar Bengoechea 6-1 7-5",
+      "team1": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team2": [
+        "V. Virseda Sanchez",
+        "A. Salazar Bengoechea"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-1",
+        "7-5"
+      ],
+      "status": "Completed",
+      "time": "01:22",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs A. Osoro Ulrich / M. Calvo 6-4 6-2",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "A. Osoro Ulrich",
+        "M. Calvo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:02",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "9"
+    },
+    {
+      "raw": "Completed E. Alonso / J. Bautista vs L. Bergamini / F. Navarro 65-7 6-3 1-6",
+      "team1": [
+        "E. Alonso",
+        "J. Bautista"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "65-7",
+        "6-3",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "02:23",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "9",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs J. Diestro / J. Esbri 6-3 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "J. Diestro",
+        "J. Esbri"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:14",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed M. Huete Hernandez / D. Perino (LL) vs F. Chingotto / A. Galan 0-6 2-6",
+      "team1": [
+        "M. Huete Hernandez",
+        "D. Perino (LL)"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ITA.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "0-6",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "00:47",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed R. Eugenio Barrera / M. Riera vs G. Triay Pons / D. Brea Senesi 0-6 0-6",
+      "team1": [
+        "R. Eugenio Barrera",
+        "M. Riera"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "0-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "00:46",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "15",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed L. Martinez Gomez / M. Marrero Marrero vs C. Fernandez Sanchez / B. Gonzalez Fernandez 3-6 0-6",
+      "team1": [
+        "L. Martinez Gomez",
+        "M. Marrero Marrero"
+      ],
+      "team2": [
+        "C. Fernandez Sanchez",
+        "B. Gonzalez Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "0-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Chozas / C. Gutierrez vs M. Yanguas / J. Nieto Ruiz 3-6 5-7",
+      "team1": [
+        "A. Chozas",
+        "C. Gutierrez"
+      ],
+      "team2": [
+        "M. Yanguas",
+        "J. Nieto Ruiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:29",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "15",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed S. Araujo / A. Ustero Prieto vs M. Guinart España / V. Iglesias Segador 66-7 6-4 1-6",
+      "team1": [
+        "S. Araujo",
+        "A. Ustero Prieto"
+      ],
+      "team2": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/POR.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "66-7",
+        "6-4",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "02:18",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "4",
+      "team2Seed": "11"
+    },
+    {
+      "raw": "Completed A. Ruiz Granados / M. Sanchez Aguero vs J. Gonzalez / J. Sanz 4-6 4-6",
+      "team1": [
+        "A. Ruiz Granados",
+        "M. Sanchez Aguero"
+      ],
+      "team2": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:19",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed L. Sainz Pelegri / P. Llaguno Zielinski vs B. Caldera Sanchez / C. Goenaga Garcia 62-7 3-6",
+      "team1": [
+        "L. Sainz Pelegri",
+        "P. Llaguno Zielinski"
+      ],
+      "team2": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "62-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:40",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "10"
+    },
+    {
+      "raw": "Completed J. Tello / M. Di Nenno vs F. Guerrero / J. Leal 65-7 2-6",
+      "team1": [
+        "J. Tello",
+        "M. Di Nenno"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "65-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "01:41",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "7",
+      "team2Seed": "13"
+    },
+    {
+      "raw": "Completed L. Campagnolo / I. Sager vs I. Jofre / A. Arroyo 4-6 5-7",
+      "team1": [
+        "L. Campagnolo",
+        "I. Sager"
+      ],
+      "team2": [
+        "I. Jofre",
+        "A. Arroyo"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "4-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:30",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "",
+      "team2Seed": "12"
+    },
+    {
+      "raw": "Completed T. Icardo Alcorisa / C. Jensen vs M. Talavan / K. Sharifova 6-4 6-3",
+      "team1": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team2": [
+        "M. Talavan",
+        "K. Sharifova"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        ""
+      ],
+      "score": [
+        "6-4",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:39",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": "16"
+    },
+    {
+      "raw": "Completed A. Collombon / A. Martinez vs M. Ortega Gallego / A. Alonso De Villa 3-6 4-6",
+      "team1": [
+        "A. Collombon",
+        "A. Martinez"
+      ],
+      "team2": [
+        "M. Ortega Gallego",
+        "A. Alonso De Villa"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/FRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:20",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Round of 16",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed F. Stupaczuk / J. Lebron vs J. Gonzalez / J. Sanz 6-3 64-7 7-62",
+      "team1": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team2": [
+        "J. Gonzalez",
+        "J. Sanz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "64-7",
+        "7-62"
+      ],
+      "status": "Completed",
+      "time": "02:10",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed I. Jofre / A. Arroyo vs F. Chingotto / A. Galan 62-7 3-6",
+      "team1": [
+        "I. Jofre",
+        "A. Arroyo"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/UAE.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "62-7",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:36",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "12",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs M. Ortega Gallego / A. Alonso De Villa 7-63 5-7 6-2",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "M. Ortega Gallego",
+        "A. Alonso De Villa"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-63",
+        "5-7",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "02:34",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "5"
+    },
+    {
+      "raw": "Completed F. Guerrero / J. Leal vs M. Yanguas / J. Nieto Ruiz 5-7 6-3 7-63",
+      "team1": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team2": [
+        "M. Yanguas",
+        "J. Nieto Ruiz"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "5-7",
+        "6-3",
+        "7-63"
+      ],
+      "status": "Completed",
+      "time": "02:35",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "13",
+      "team2Seed": "4"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs L. Bergamini / F. Navarro 6-4 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "L. Bergamini",
+        "F. Navarro"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/BRA.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "00:58",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "6"
+    },
+    {
+      "raw": "Completed M. Guinart España / V. Iglesias Segador vs M. Barrera De La Fuente / M. Caparros Maldonado 6-3 6-3",
+      "team1": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team2": [
+        "M. Barrera De La Fuente",
+        "M. Caparros Maldonado"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-3",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "01:26",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": ""
+    },
+    {
+      "raw": "Completed T. Icardo Alcorisa / C. Jensen vs G. Triay Pons / D. Brea Senesi 3-6 1-6",
+      "team1": [
+        "T. Icardo Alcorisa",
+        "C. Jensen"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:08",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "8",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed B. Caldera Sanchez / C. Goenaga Garcia vs C. Fernandez Sanchez / B. Gonzalez Fernandez 2-6 3-6",
+      "team1": [
+        "B. Caldera Sanchez",
+        "C. Goenaga Garcia"
+      ],
+      "team2": [
+        "C. Fernandez Sanchez",
+        "B. Gonzalez Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "2-6",
+        "3-6"
+      ],
+      "status": "Completed",
+      "time": "01:09",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Quarterfinals",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "10",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed M. Guinart España / V. Iglesias Segador vs G. Triay Pons / D. Brea Senesi 3-6 1-6",
+      "team1": [
+        "M. Guinart España",
+        "V. Iglesias Segador"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "3-6",
+        "1-6"
+      ],
+      "status": "Completed",
+      "time": "01:00",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "11",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed F. Stupaczuk / J. Lebron vs F. Chingotto / A. Galan 6-4 62-7 2-6",
+      "team1": [
+        "F. Stupaczuk",
+        "J. Lebron"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "6-4",
+        "62-7",
+        "2-6"
+      ],
+      "status": "Completed",
+      "time": "02:09",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "3",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs C. Fernandez Sanchez / B. Gonzalez Fernandez 7-68 6-3",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "C. Fernandez Sanchez",
+        "B. Gonzalez Fernandez"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "7-68",
+        "6-3"
+      ],
+      "status": "Completed",
+      "time": "02:22",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "3"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs F. Guerrero / J. Leal 67-7 6-2 6-2",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "F. Guerrero",
+        "J. Leal"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "67-7",
+        "6-2",
+        "6-2"
+      ],
+      "status": "Completed",
+      "time": "01:47",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "13"
+    },
+    {
+      "raw": "Completed A. Sanchez Fallada / P. Josemaria Martin vs G. Triay Pons / D. Brea Senesi 4-6 4-6",
+      "team1": [
+        "A. Sanchez Fallada",
+        "P. Josemaria Martin"
+      ],
+      "team2": [
+        "G. Triay Pons",
+        "D. Brea Senesi"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "score": [
+        "4-6",
+        "4-6"
+      ],
+      "status": "Completed",
+      "time": "01:51",
+      "timezone": "Europe/Rome",
+      "category": "Women",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    },
+    {
+      "raw": "Completed A. Coello / A. Tapia vs F. Chingotto / A. Galan 3-6 5-7",
+      "team1": [
+        "A. Coello",
+        "A. Tapia"
+      ],
+      "team2": [
+        "F. Chingotto",
+        "A. Galan"
+      ],
+      "team1Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg"
+      ],
+      "team2Flags": [
+        "https://widget.matchscorerlive.com/images/flags/ARG.jpg",
+        "https://widget.matchscorerlive.com/images/flags/ESP.jpg"
+      ],
+      "score": [
+        "3-6",
+        "5-7"
+      ],
+      "status": "Completed",
+      "time": "01:30",
+      "timezone": "Europe/Rome",
+      "category": "Men",
+      "round": "Final",
+      "location": "Italy",
+      "court": "",
+      "team1Seed": "1",
+      "team2Seed": "2"
+    }
+  ],
+  "archivedAt": "2025-11-29T00:22:28.390Z"
+}

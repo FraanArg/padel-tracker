@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { findH2HMatches } from '@/lib/h2h';
+import { getHeadToHead } from '@/lib/stats';
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
@@ -11,8 +11,8 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const matches = await findH2HMatches(team1Names, team2Names);
-        return NextResponse.json({ matches });
+        const stats = getHeadToHead(team1Names, team2Names);
+        return NextResponse.json(stats);
     } catch (error) {
         console.error('Error fetching H2H matches:', error);
         return NextResponse.json({ error: 'Failed to fetch H2H matches' }, { status: 500 });
