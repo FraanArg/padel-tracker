@@ -9,6 +9,9 @@ import { getResultBadgeColor, getResultShort } from '@/lib/utils';
 import RivalryCard from '@/components/RivalryCard';
 import CommonOpponents from '@/components/CommonOpponents';
 
+import { motion } from 'framer-motion';
+import RoundStatsChart from '@/components/RoundStatsChart';
+
 const StatsRadar = dynamic(() => import('@/components/StatsRadar'), { ssr: false });
 
 interface ExtendedProfile extends Player {
@@ -95,36 +98,49 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-4 text-center">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 {/* P1 Stats */}
-                <div className="space-y-6">
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Rank</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">#{data.p1.rank}</div>
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="space-y-4"
+                >
+                    <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-lg shadow-blue-500/5 border border-blue-100 dark:border-blue-500/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+                        <div className="text-xs text-blue-500 uppercase tracking-wider font-bold mb-2">Ranking</div>
+                        <div className="text-4xl font-black text-slate-900 dark:text-white">#{data.p1.rank}</div>
                     </div>
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Points</div>
-                        <div className="text-xl font-bold text-blue-600">{data.p1.points}</div>
+                    <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:scale-[1.02] transition-transform">
+                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-2">Points</div>
+                        <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">{data.p1.points}</div>
                     </div>
-                </div>
+                </motion.div>
 
-                {/* Labels */}
-                <div className="flex flex-col justify-around py-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                    <div className="flex items-center justify-center"><Trophy className="w-4 h-4 mr-2" /> Ranking</div>
-                    <div className="flex items-center justify-center"><Activity className="w-4 h-4 mr-2" /> Points</div>
+                {/* Labels - Hidden on mobile, visible on desktop */}
+                <div className="hidden md:flex flex-col justify-center gap-8 py-4 text-xs font-bold text-slate-300 dark:text-slate-600 uppercase tracking-widest">
+                    <div className="flex items-center justify-center"><Trophy className="w-5 h-5" /></div>
+                    <div className="flex items-center justify-center"><Activity className="w-5 h-5" /></div>
                 </div>
 
                 {/* P2 Stats */}
-                <div className="space-y-6">
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Rank</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">#{data.p2.rank}</div>
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="space-y-4"
+                >
+                    <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-lg shadow-red-500/5 border border-red-100 dark:border-red-500/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                        <div className="absolute top-0 right-0 w-1 h-full bg-red-500"></div>
+                        <div className="text-xs text-red-500 uppercase tracking-wider font-bold mb-2">Ranking</div>
+                        <div className="text-4xl font-black text-slate-900 dark:text-white">#{data.p2.rank}</div>
                     </div>
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Points</div>
-                        <div className="text-xl font-bold text-blue-600">{data.p2.points}</div>
+                    <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:scale-[1.02] transition-transform">
+                        <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-2">Points</div>
+                        <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">{data.p2.points}</div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* H2H Stats */}
@@ -145,18 +161,49 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                             </button>
                         </div>
 
-                        <div className="flex items-center justify-between">
-                            <div className="text-center">
-                                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">{stats.team1Wins}</div>
-                                <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">Wins</div>
+                        <div className="relative py-8 mb-8">
+                            {/* VS Badge */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                                <div className="w-12 h-12 bg-slate-900 dark:bg-white rounded-full flex items-center justify-center border-4 border-white dark:border-[#1a1a1a] shadow-xl">
+                                    <span className="text-white dark:text-slate-900 font-black text-sm">VS</span>
+                                </div>
                             </div>
-                            <div className="flex flex-col items-center px-8">
-                                <div className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-2">Total Matches</div>
-                                <div className="text-2xl font-bold">{stats.totalMatches}</div>
+
+                            <div className="flex items-center justify-between relative z-0">
+                                {/* Team 1 */}
+                                <div className="flex-1 text-center pr-8">
+                                    <div className="text-6xl md:text-8xl font-black text-blue-600 dark:text-blue-500 tracking-tighter mb-2">
+                                        {stats.team1Wins}
+                                    </div>
+                                    <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">Wins</div>
+                                </div>
+
+                                {/* Team 2 */}
+                                <div className="flex-1 text-center pl-8">
+                                    <div className="text-6xl md:text-8xl font-black text-red-500 dark:text-red-500 tracking-tighter mb-2">
+                                        {stats.team2Wins}
+                                    </div>
+                                    <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">Wins</div>
+                                </div>
                             </div>
-                            <div className="text-center">
-                                <div className="text-4xl font-bold text-red-500 dark:text-red-400">{stats.team2Wins}</div>
-                                <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">Wins</div>
+
+                            {/* Win Bar */}
+                            <div className="mt-8 h-4 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden flex relative">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${(stats.team1Wins / stats.totalMatches) * 100}%` }}
+                                    transition={{ duration: 1, ease: "easeOut" }}
+                                    className="h-full bg-blue-500"
+                                />
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${(stats.team2Wins / stats.totalMatches) * 100}%` }}
+                                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                                    className="h-full bg-red-500 ml-auto"
+                                />
+                            </div>
+                            <div className="text-center mt-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                {stats.totalMatches} Total Matches
                             </div>
                         </div>
 
@@ -364,57 +411,16 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                                     <MapPin className="w-4 h-4 text-green-500" />
                                     Round-by-Round Breakdown
                                 </h3>
-                                <div className="bg-slate-50 dark:bg-white/5 rounded-xl overflow-hidden">
-                                    <table className="w-full text-sm">
-                                        <thead>
-                                            <tr className="bg-slate-100 dark:bg-white/10 text-slate-500 dark:text-slate-400">
-                                                <th className="py-3 px-4 text-left font-medium">Round</th>
-                                                <th className="py-3 px-4 text-center font-medium">{data.p1.name}</th>
-                                                <th className="py-3 px-4 text-center font-medium">{data.p2.name}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-slate-100 dark:divide-white/5">
-                                            {['Final', 'Semi-Final', 'Quarter-Final'].map(round => {
-                                                const stat = stats.roundStats?.[round];
-                                                if (!stat) return null;
-                                                return (
-                                                    <tr key={round} className="hover:bg-white dark:hover:bg-white/5 transition-colors">
-                                                        <td className="py-3 px-4 font-medium text-slate-900 dark:text-white">{round}</td>
-                                                        <td className="py-3 px-4 text-center">
-                                                            <span className={`font-bold ${stat.team1Wins > stat.team2Wins ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500'}`}>
-                                                                {stat.team1Wins}
-                                                            </span>
-                                                        </td>
-                                                        <td className="py-3 px-4 text-center">
-                                                            <span className={`font-bold ${stat.team2Wins > stat.team1Wins ? 'text-red-500 dark:text-red-400' : 'text-slate-500'}`}>
-                                                                {stat.team2Wins}
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                );
-                                            })}
-                                            {/* Other Rounds */}
-                                            {Object.keys(stats.roundStats).filter(r => !['Final', 'Semi-Final', 'Quarter-Final'].includes(r)).map(round => {
-                                                const stat = stats.roundStats?.[round];
-                                                if (!stat) return null;
-                                                return (
-                                                    <tr key={round} className="hover:bg-white dark:hover:bg-white/5 transition-colors">
-                                                        <td className="py-3 px-4 font-medium text-slate-900 dark:text-white">{round}</td>
-                                                        <td className="py-3 px-4 text-center">
-                                                            <span className={`font-bold ${stat.team1Wins > stat.team2Wins ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500'}`}>
-                                                                {stat.team1Wins}
-                                                            </span>
-                                                        </td>
-                                                        <td className="py-3 px-4 text-center">
-                                                            <span className={`font-bold ${stat.team2Wins > stat.team1Wins ? 'text-red-500 dark:text-red-400' : 'text-slate-500'}`}>
-                                                                {stat.team2Wins}
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                );
-                                            })}
-                                        </tbody>
-                                    </table>
+                                <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
+                                    <RoundStatsChart
+                                        data={Object.entries(stats.roundStats).map(([round, stat]) => ({
+                                            round,
+                                            team1Wins: stat.team1Wins,
+                                            team2Wins: stat.team2Wins
+                                        }))}
+                                        team1Name={data.p1.name}
+                                        team2Name={data.p2.name}
+                                    />
                                 </div>
                             </div>
                         )}
