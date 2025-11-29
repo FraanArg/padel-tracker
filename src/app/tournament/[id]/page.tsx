@@ -58,7 +58,7 @@ export default async function TournamentPage({
     const tournamentName = data.tournamentName || (data.matches[0]?.tournament?.name || 'Tournament');
 
     return (
-        <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
+        <div className="max-w-5xl mx-auto px-4 py-8 space-y-8">
             {/* Header */}
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -148,14 +148,9 @@ export default async function TournamentPage({
                                             <div key={court} className="space-y-4">
                                                 <div className="flex items-center gap-2">
                                                     <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">{court}</h2>
-                                                    <div className="px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 backdrop-blur-sm border border-slate-200 dark:border-white/10">
-                                                        Path Difficulty: <span className="text-yellow-600 dark:text-yellow-400 font-bold">Hard</span>
-                                                    </div>
-                                                    {/* Assuming tournament object is available in this scope, or passed down */}
-                                                    {/* If tournament.location is not directly available here, you might need to adjust how it's accessed */}
-                                                    {/* For now, using a placeholder or assuming it's accessible */}
-                                                    <div className="px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 backdrop-blur-sm border border-slate-200 dark:border-white/10">
-                                                        {/* {tournament.location} */} Location Info
+                                                    <div className="px-3 py-1 bg-slate-100 dark:bg-white/10 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 backdrop-blur-sm border border-slate-200 dark:border-white/10 flex items-center gap-1.5">
+                                                        <span className="text-base">{getFlag(matchesByCourt[court][0].location)}</span>
+                                                        {matchesByCourt[court][0].location || 'Location TBD'}
                                                     </div>
                                                 </div>
                                                 <div className="space-y-4">
@@ -248,4 +243,32 @@ export default async function TournamentPage({
             <AutoRefresh />
         </div >
     );
+}
+
+function getFlag(location?: string) {
+    if (!location) return '🌍';
+    const lower = location.toLowerCase();
+    if (lower.includes('mexico')) return '🇲🇽';
+    if (lower.includes('spain')) return '🇪🇸';
+    if (lower.includes('italy')) return '🇮🇹';
+    if (lower.includes('france')) return '🇫🇷';
+    if (lower.includes('belgium')) return '🇧🇪';
+    if (lower.includes('qatar')) return '🇶🇦';
+    if (lower.includes('argentina')) return '🇦🇷';
+    if (lower.includes('chile')) return '🇨🇱';
+    if (lower.includes('bahrain')) return '🇧🇭';
+    if (lower.includes('kuwait')) return '🇰🇼';
+    if (lower.includes('uae') || lower.includes('dubai')) return '🇦🇪';
+    if (lower.includes('saudi')) return '🇸🇦';
+    if (lower.includes('sweden')) return '🇸🇪';
+    if (lower.includes('germany')) return '🇩🇪';
+    if (lower.includes('netherlands')) return '🇳🇱';
+    if (lower.includes('egypt')) return '🇪🇬';
+    if (lower.includes('finland')) return '🇫🇮';
+    if (lower.includes('venezuela')) return '🇻🇪';
+    if (lower.includes('paraguay')) return '🇵🇾';
+    if (lower.includes('usa') || lower.includes('united states')) return '🇺🇸';
+    if (lower.includes('uk') || lower.includes('london')) return '🇬🇧';
+    if (lower.includes('portugal')) return '🇵🇹';
+    return '📍';
 }

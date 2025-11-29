@@ -31,7 +31,7 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                 group relative flex flex-col justify-between
                 bg-white/80 dark:bg-[#202020]/80 backdrop-blur-md
                 border border-gray-100 dark:border-white/5
-                rounded-2xl p-5
+                rounded-2xl p-6 md:p-8
                 shadow-sm hover:shadow-md
                 transition-all duration-300 ease-out
                 hover:scale-[1.02] active:scale-[0.98]
@@ -73,12 +73,14 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                             <CalendarPlus className="w-4 h-4" />
                         </button>
                         <div className="flex flex-col items-end">
-                            <span className="text-xs font-bold text-slate-700 dark:text-slate-200 font-mono bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
-                                {userTime || tournamentTime || 'TBD'}
+                            {/* Primary: Tournament Time (Local) */}
+                            <span className="text-sm font-bold text-slate-700 dark:text-slate-200 font-mono bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
+                                {tournamentTime || 'TBD'}
                             </span>
+                            {/* Secondary: User Time (Yours) - Only if different */}
                             {userTime && (
-                                <span className="text-[10px] text-slate-400 mt-0.5 mr-1">
-                                    Loc: {tournamentTime}
+                                <span className="text-[11px] text-slate-400 mt-1 font-medium">
+                                    Your Time: {userTime}
                                 </span>
                             )}
                         </div>
@@ -97,13 +99,13 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                             ))}
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
+                            <span className="text-base md:text-lg font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
                                 {match.team1?.map(getSurname).join(' / ') || 'TBD'}
                             </span>
                         </div>
                     </div>
                     {/* Score T1 */}
-                    <div className="flex space-x-1 font-mono text-lg font-bold text-slate-900 dark:text-white">
+                    <div className="flex space-x-1 font-mono text-xl md:text-2xl font-bold text-slate-900 dark:text-white">
                         {scores.t1.map((s, i) => (
                             <span key={i} className={i === scores.t1.length - 1 ? 'text-black dark:text-white' : 'text-slate-400'}>{s}</span>
                         ))}
@@ -119,13 +121,13 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                             ))}
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
+                            <span className="text-base md:text-lg font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
                                 {match.team2?.map(getSurname).join(' / ') || 'TBD'}
                             </span>
                         </div>
                     </div>
                     {/* Score T2 */}
-                    <div className="flex space-x-1 font-mono text-lg font-bold text-slate-900 dark:text-white">
+                    <div className="flex space-x-1 font-mono text-xl md:text-2xl font-bold text-slate-900 dark:text-white">
                         {scores.t2.map((s, i) => (
                             <span key={i} className={i === scores.t2.length - 1 ? 'text-black dark:text-white' : 'text-slate-400'}>{s}</span>
                         ))}
