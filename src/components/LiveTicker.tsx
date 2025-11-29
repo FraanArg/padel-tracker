@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import { Tournament, Match, convertMatchTime } from '@/lib/padel';
 import { Activity, RefreshCw } from 'lucide-react';
+import ClientTime from './ClientTime';
 
 interface LiveTickerProps {
     tournaments: Tournament[];
@@ -231,18 +232,11 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                             </div>
 
                                             <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-white/10 px-2 py-1 rounded inline-block w-full text-center">
-                                                {(() => {
-                                                    const { local, yours } = convertMatchTime(match.time || '', match.timezone || '');
-                                                    if (!local) return 'Coming up soon';
-                                                    return yours ? (
-                                                        <div className="flex flex-col">
-                                                            <span className="font-bold text-slate-900 dark:text-white">{local} Local</span>
-                                                            <span className="text-blue-600 dark:text-blue-400 font-bold text-[10px]">{yours} Your Time</span>
-                                                        </div>
-                                                    ) : (
-                                                        <span>{local} Local Time</span>
-                                                    );
-                                                })()}
+                                                <ClientTime
+                                                    time={match.time || ''}
+                                                    timezone={match.timezone}
+                                                    format="ticker"
+                                                />
                                             </div>
                                         </div>
                                     ))}
@@ -366,16 +360,11 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                                 <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">Upcoming on {match.court || 'this court'}</span>
                                             </div>
                                             <div className="text-right">
-                                                {(() => {
-                                                    const { local, yours } = convertMatchTime(match.nextMatch.time || '', match.timezone || '');
-                                                    if (!yours) return <span className="text-[10px] text-slate-400 font-mono">{local || 'Followed by'}</span>;
-                                                    return (
-                                                        <div className="flex flex-col items-end leading-tight">
-                                                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{local} Local</span>
-                                                            <span className="text-[10px] text-blue-500 font-bold font-mono">{yours} Your Time</span>
-                                                        </div>
-                                                    );
-                                                })()}
+                                                <ClientTime
+                                                    time={match.nextMatch.time || ''}
+                                                    timezone={match.timezone}
+                                                    format="ticker-footer"
+                                                />
                                             </div>
                                         </div>
                                         <div className="flex items-center justify-between text-xs font-medium text-slate-700 dark:text-slate-300">

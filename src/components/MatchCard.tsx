@@ -1,7 +1,7 @@
 'use client';
 
 import FavoriteButton from './FavoriteButton';
-import { convertMatchTime } from '@/lib/padel';
+import ClientTime from './ClientTime';
 import { downloadICS } from '@/lib/calendar';
 import { CalendarPlus } from 'lucide-react';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
     const isLive = match.status && (match.status.toLowerCase() === 'live' || match.status.includes('Set') || match.status.includes('Game') || match.status.includes('Tie'));
 
     // Time conversion logic
-    const { local: tournamentTime, yours: userTime } = convertMatchTime(match.time || '', match.timezone || '');
+    const tournamentTime = match.time;
 
     const scores = parseScores(match.score);
 
@@ -72,18 +72,11 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                         >
                             <CalendarPlus className="w-4 h-4" />
                         </button>
-                        <div className="flex flex-col items-end">
-                            {/* Primary: Tournament Time (Local) */}
-                            <span className="text-sm font-bold text-slate-700 dark:text-slate-200 font-mono bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
-                                {tournamentTime || 'TBD'}
-                            </span>
-                            {/* Secondary: User Time (Yours) - Only if different */}
-                            {userTime && (
-                                <span className="text-[11px] text-slate-400 mt-1 font-medium">
-                                    Your Time: {userTime}
-                                </span>
-                            )}
-                        </div>
+                        <ClientTime
+                            time={tournamentTime || ''}
+                            timezone={match.timezone}
+                            format="card"
+                        />
                     </div>
                 )}
             </div>
