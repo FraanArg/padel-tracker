@@ -14,7 +14,7 @@ import { H2HResult } from '@/lib/stats';
 import { getResultBadgeColor, getResultShort } from '@/lib/utils';
 import { ArrowLeft } from 'lucide-react';
 import CompareResults from '@/components/CompareResults';
-import Navbar from '@/components/Navbar';
+
 
 interface ExtendedProfile extends Player {
     recentResults?: { tournament: string; round: string }[];
@@ -212,7 +212,7 @@ export default function ComparePage() {
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300">
-            <Navbar />
+
 
             <main className="container mx-auto px-4 py-8 max-w-5xl">
                 <div className="mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
@@ -319,6 +319,40 @@ export default function ComparePage() {
                                 </div>
                             </div>
                         )}
+                        {/* Partner 2 */}
+                        <div className="mt-6">
+                            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
+                            <PlayerSearch
+                                key={p2Partner ? p2Partner.name : `p2-partner-${p2?.name}`}
+                                label="Partner (Optional)"
+                                onSelect={setP2Partner}
+                                selectedPlayer={p2Partner}
+                                placeholder={p2 ? "Select partner..." : "Select player 2 first"}
+                                restrictedList={p2 ? p2Partners : undefined}
+                            />
+                            {p2Partner && (
+                                <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30 animate-in fade-in slide-in-from-top-2">
+                                    {p2Partner.imageUrl ? (
+                                        <Image
+                                            src={p2Partner.imageUrl || '/placeholder.png'}
+                                            alt={p2Partner.name}
+                                            width={40}
+                                            height={40}
+                                            className="rounded-full object-cover mr-3 border border-red-200 dark:border-red-700"
+                                        />
+                                    ) : (
+                                        <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
+                                            {p2Partner.name.charAt(0)}
+                                        </div>
+                                    )}
+                                    <div>
+                                        <div className="font-bold text-slate-900 dark:text-white">{p2Partner.name}</div>
+                                        <div className="text-xs text-slate-500">Rank #{p2Partner.rank}</div>
+                                    </div>
+                                    <button onClick={() => setP2Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
 

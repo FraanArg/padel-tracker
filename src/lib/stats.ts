@@ -28,11 +28,11 @@ export function getAllArchivedMatches(): Match[] {
     // So: const getCachedMatches = unstable_cache(async () => getAllArchivedMatches(), ['all-matches']);
     // But getAllArchivedMatches reads from FS.
     // That works.
-    return _getAllArchivedMatchesSync();
+    return getAllArchivedMatchesSync();
 }
 
 // Internal sync function (renamed from original getAllArchivedMatches if I could, but I'll just use the existing one)
-function _getAllArchivedMatchesSync(): Match[] {
+export function getAllArchivedMatchesSync(): Match[] {
     if (matchesCache && Date.now() - matchesCache.lastLoaded < CACHE_DURATION) {
         return matchesCache.matches;
     }
@@ -80,7 +80,7 @@ function _getAllArchivedMatchesSync(): Match[] {
 export const getAllArchivedMatchesAsync = unstable_cache(
     async () => {
         console.log('Stats: Cache MISS - Reading from FS');
-        return _getAllArchivedMatchesSync();
+        return getAllArchivedMatchesSync();
     },
     ['all-matches-v1'],
     { revalidate: 3600, tags: ['matches'] }
@@ -458,7 +458,13 @@ export interface H2HResult {
 export async function getHeadToHead(team1: string[], team2: string[], year?: number | 'all'): Promise<H2HResult> {
     try {
         console.log(`Stats: getHeadToHead called with team1=[${team1}], team2=[${team2}], year=${year}`);
-        let allMatches = await getAllArchivedMatchesAsync();
+        let allMatches: Match[] = [];
+        try {
+            allMatches = await getAllArchivedMatchesAsync();
+        } catch (e) {
+            console.warn('Stats: getAllArchivedMatchesAsync failed (likely due to missing cache context), falling back to sync:', e);
+            allMatches = getAllArchivedMatchesSync();
+        }
 
         // Filter by year if specified
         if (year && year !== 'all') {
