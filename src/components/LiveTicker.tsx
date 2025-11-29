@@ -2,7 +2,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Tournament, Match, convertMatchTime } from '@/lib/padel';
+import { Tournament, Match } from '@/lib/padel';
+import { convertMatchTime } from '@/lib/date';
 import { Activity, RefreshCw } from 'lucide-react';
 import ClientTime from './ClientTime';
 

@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { convertMatchTime } from '@/lib/padel';
+import { convertMatchTime } from '@/lib/date';
 
 interface ClientTimeProps {
     time: string;
