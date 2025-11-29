@@ -72,9 +72,16 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                         >
                             <CalendarPlus className="w-4 h-4" />
                         </button>
-                        <span className="text-xs font-medium text-slate-500 font-mono bg-slate-100 dark:bg-white/5 px-2 py-1 rounded-md">
-                            {userTime ? `${userTime}` : (tournamentTime || 'TBD')}
-                        </span>
+                        <div className="flex flex-col items-end">
+                            <span className="text-xs font-bold text-slate-700 dark:text-slate-200 font-mono bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
+                                {userTime || tournamentTime || 'TBD'}
+                            </span>
+                            {userTime && (
+                                <span className="text-[10px] text-slate-400 mt-0.5 mr-1">
+                                    Loc: {tournamentTime}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 )}
             </div>
