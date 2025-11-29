@@ -697,6 +697,7 @@ export async function getMatches(url: string, dayUrl?: string) {
         };
 
         let currentHeaderInfo = { category: '', round: '', court: '', time: '' };
+        let lastMatchTimeByCourt: Record<string, string> = {};
         let matchBuffer: any[] = [];
 
         $m('tr').each((_, el) => {
@@ -739,8 +740,20 @@ export async function getMatches(url: string, dayUrl?: string) {
                 const timeMatch = text.match(/(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i);
                 if (timeMatch) {
                     currentHeaderInfo.time = timeMatch[1];
+                    // Update last known time for this court
+                    if (currentHeaderInfo.court) {
+                        lastMatchTimeByCourt[currentHeaderInfo.court] = timeMatch[1];
+                    }
                 } else if (text.toLowerCase().includes('followed by')) {
-                    currentHeaderInfo.time = 'Followed by';
+                    const lastTime = currentHeaderInfo.court ? lastMatchTimeByCourt[currentHeaderInfo.court] : null;
+                    if (lastTime) {
+                        const estTime = addMinutes(lastTime, 90);
+                        currentHeaderInfo.time = `Est. ${estTime}`;
+                        // Update for the next match in chain
+                        lastMatchTimeByCourt[currentHeaderInfo.court] = estTime;
+                    } else {
+                        currentHeaderInfo.time = 'Followed by';
+                    }
                 } else {
                     currentHeaderInfo.time = '';
                 }
@@ -1197,5 +1210,39 @@ export async function getAllMatches(url: string) {
     } catch (error) {
         console.error('Error fetching all matches:', error);
         return { matches: [], days: [], tournamentName: '' };
+    }
+}
+
+function addMinutes(timeStr: string, minutesToAdd: number): string {
+    try {
+        // Normalize whitespace
+        timeStr = timeStr.trim();
+        const match = timeStr.match(/(\d{1,2}):(\d{2})(\s*(?:AM|PM))?/i);
+        if (!match) return timeStr;
+
+        let hours = parseInt(match[1]);
+        const minutes = parseInt(match[2]);
+        const period = match[3] ? match[3].trim().toUpperCase() : null;
+
+        if (period) {
+            if (period === 'PM' && hours !== 12) hours += 12;
+            if (period === 'AM' && hours === 12) hours = 0;
+        }
+
+        const date = new Date();
+        date.setHours(hours, minutes, 0, 0);
+        date.setMinutes(date.getMinutes() + minutesToAdd);
+
+        let newHours = date.getHours();
+        const newMinutes = date.getMinutes();
+
+        // Return in AM/PM format for consistency with UI
+        const newPeriod = newHours >= 12 ? 'PM' : 'AM';
+        if (newHours > 12) newHours -= 12;
+        if (newHours === 0) newHours = 12;
+
+        return `${newHours}:${newMinutes.toString().padStart(2, '0')} ${newPeriod}`;
+    } catch (e) {
+        return timeStr;
     }
 }
