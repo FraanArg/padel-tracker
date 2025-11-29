@@ -1,29 +1,45 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Search, X, User } from 'lucide-react';
 
-interface Player {
-    name: string;
-    rank: string;
-    points: string;
-    country: string;
-    imageUrl?: string;
-}
+import { Player } from '@/lib/padel';
 
 interface PlayerSearchProps {
     label: string;
     onSelect: (player: Player | null) => void;
     selectedPlayer: Player | null;
     placeholder?: string;
+    restrictedList?: Player[];
 }
 
-export default function PlayerSearch({ label, onSelect, selectedPlayer, placeholder }: PlayerSearchProps) {
+export default function PlayerSearch({ label, onSelect, selectedPlayer, placeholder, restrictedList }: PlayerSearchProps) {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<Player[]>([]);
+    const [allPlayers, setAllPlayers] = useState<Player[]>([]);
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
+
+    // Fetch all players on mount ONLY if no restricted list is provided
+    useEffect(() => {
+        if (restrictedList) {
+            setAllPlayers(restrictedList);
+            return;
+        }
+
+        const fetchPlayers = async () => {
+            try {
+                const res = await fetch('/api/players/search?mode=all');
+                const data = await res.json();
+                setAllPlayers(data.players || []);
+            } catch (error) {
+                console.error('Failed to pre-cache players', error);
+            }
+        };
+        fetchPlayers();
+    }, [restrictedList]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -36,27 +52,27 @@ export default function PlayerSearch({ label, onSelect, selectedPlayer, placehol
     }, []);
 
     useEffect(() => {
-        const timer = setTimeout(async () => {
-            if (query.length >= 2) {
-                setLoading(true);
-                try {
-                    const res = await fetch(`/api/players/search?q=${encodeURIComponent(query)}`);
-                    const data = await res.json();
-                    setResults(data.players || []);
-                    setIsOpen(true);
-                } catch (error) {
-                    console.error('Search failed', error);
-                } finally {
-                    setLoading(false);
-                }
-            } else {
-                setResults([]);
-                setIsOpen(false);
-            }
-        }, 300);
+        // If restricted list is present, we might want to show all of them when query is empty but focused
+        // But for filtering logic:
+        if (restrictedList && query.length === 0) {
+            setResults(restrictedList);
+            return;
+        }
 
-        return () => clearTimeout(timer);
-    }, [query]);
+        if (query.length >= 2 || (restrictedList && query.length > 0)) {
+            const lowerQuery = query.toLowerCase();
+            const source = restrictedList || allPlayers;
+            const filtered = source.filter(p =>
+                p.name.toLowerCase().includes(lowerQuery)
+            ).slice(0, 10);
+
+            setResults(filtered);
+            setIsOpen(true);
+        } else {
+            setResults([]);
+            setIsOpen(false);
+        }
+    }, [query, allPlayers, restrictedList]);
 
     if (selectedPlayer) {
         return (
@@ -64,7 +80,13 @@ export default function PlayerSearch({ label, onSelect, selectedPlayer, placehol
                 <label className="block text-sm font-medium text-slate-500 mb-1">{label}</label>
                 <div className="relative flex items-center p-3 bg-white dark:bg-white/5 border border-blue-200 dark:border-blue-500/30 rounded-xl shadow-sm">
                     {selectedPlayer.imageUrl ? (
-                        <img src={selectedPlayer.imageUrl} alt={selectedPlayer.name} className="w-10 h-10 rounded-full object-cover mr-3 border border-gray-100" />
+                        <Image
+                            src={selectedPlayer.imageUrl || '/placeholder.png'}
+                            alt={selectedPlayer.name}
+                            width={40}
+                            height={40}
+                            className="rounded-full object-cover mr-3 border border-gray-100"
+                        />
                     ) : (
                         <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-3">
                             <User className="w-5 h-5 text-blue-500" />
@@ -97,7 +119,14 @@ export default function PlayerSearch({ label, onSelect, selectedPlayer, placehol
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    onFocus={() => query.length >= 2 && setIsOpen(true)}
+                    onFocus={() => {
+                        if (restrictedList) {
+                            setResults(restrictedList);
+                            setIsOpen(true);
+                        } else if (query.length >= 2) {
+                            setIsOpen(true);
+                        }
+                    }}
                     placeholder={placeholder || "Search player..."}
                     className="w-full pl-10 pr-4 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-slate-900 dark:text-white placeholder:text-slate-400"
                 />
@@ -120,7 +149,13 @@ export default function PlayerSearch({ label, onSelect, selectedPlayer, placehol
                             className="w-full flex items-center p-3 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors text-left border-b border-gray-50 dark:border-white/5 last:border-0"
                         >
                             {player.imageUrl ? (
-                                <img src={player.imageUrl} alt={player.name} className="w-8 h-8 rounded-full object-cover mr-3" />
+                                <Image
+                                    src={player.imageUrl || '/placeholder.png'}
+                                    alt={player.name}
+                                    width={32}
+                                    height={32}
+                                    className="rounded-full object-cover mr-3"
+                                />
                             ) : (
                                 <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center mr-3">
                                     <User className="w-4 h-4 text-slate-400" />

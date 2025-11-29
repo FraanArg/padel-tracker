@@ -24,8 +24,9 @@ export default function Navbar() {
                         <Link href="/rankings" className="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all hover:scale-110 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full" title="Rankings">
                             <Trophy className="w-5 h-5" />
                         </Link>
-                        <Link href="/compare" className="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all hover:scale-110 hover:bg-slate-100 dark:hover:bg-white/10 rounded-full" title="Compare Players">
-                            <ArrowLeftRight className="w-5 h-5" />
+                        <Link href="/compare" className="flex items-center gap-1 px-3 py-1.5 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 bg-slate-100 dark:bg-white/5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-all hover:scale-105 border border-transparent hover:border-blue-200 dark:hover:border-blue-800" title="Compare Players">
+                            <ArrowLeftRight className="w-4 h-4" />
+                            <span className="text-xs font-bold">H2H</span>
                         </Link>
                         <Link href="/favorites" className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full transition-all hover:scale-110" title="Favorites">
                             <Heart className="w-5 h-5" />

@@ -10,7 +10,7 @@ async function main() {
     console.log('Coello Stats:', JSON.stringify(coelloStats, null, 2));
 
     console.log('\n--- Testing H2H (Galan vs Coello) ---');
-    const h2h = getHeadToHead(['Galan'], ['Coello']);
+    const h2h = await getHeadToHead(['Galan'], ['Coello']);
     console.log(`Total Matches: ${h2h.totalMatches}`);
     console.log(`Galan Wins: ${h2h.team1Wins}`);
     console.log(`Coello Wins: ${h2h.team2Wins}`);

@@ -15,6 +15,19 @@ export interface Tournament {
     parsedDate?: Date;
 }
 
+export interface Player {
+    name: string;
+    rank?: number;
+    points?: number;
+    country?: string;
+    matchesPlayed?: number;
+    matchesWon?: number;
+    winRate?: string;
+    partner?: string;
+    imageUrl?: string;
+    profileUrl?: string;
+}
+
 export interface Match {
     raw: string;
     // Add more structured fields later
@@ -237,9 +250,20 @@ export async function getTournaments(): Promise<Tournament[]> {
                         // FIX: Remove resolution suffix (e.g. -212x300) to get high quality image
                         imageUrl = imageUrl.replace(/-\d+x\d+(?=\.[a-z]+$)/i, '');
 
-                        const wrapper = $(element).closest('.wrapper-events');
-                        const dateText = wrapper.find('.date-event').text().trim();
-                        let name = wrapper.find('.name-event').text().trim();
+                        const container = $(element).closest('.event-container');
+                        let dateText = container.find('.date-start-end').text().trim();
+
+                        // Fallback to old selector if new one fails
+                        if (!dateText) {
+                            const wrapper = $(element).closest('.wrapper-events');
+                            dateText = wrapper.find('.date-event').text().trim();
+                        }
+
+                        let name = container.find('.event-title').text().trim();
+                        if (!name) {
+                            const wrapper = $(element).closest('.wrapper-events');
+                            name = wrapper.find('.name-event').text().trim();
+                        }
 
                         // Fallback name extraction from URL if empty
                         if (!name) {
@@ -251,31 +275,36 @@ export async function getTournaments(): Promise<Tournament[]> {
                         if (eventUrl && name) {
                             const id = eventUrl.split('/').filter(Boolean).pop() || '';
 
-                            // Parse Spanish Date: "24 AL 30 DE NOV"
-                            // Spanish Months Mapping
-                            const esMonths: Record<string, number> = {
-                                'ENE': 0, 'FEB': 1, 'MAR': 2, 'ABR': 3, 'MAY': 4, 'JUN': 5,
-                                'JUL': 6, 'AGO': 7, 'SEP': 8, 'OCT': 9, 'NOV': 10, 'DIC': 11
-                            };
-
                             let parsedDate = new Date();
-                            // Try to extract the month and day
-                            // Regex for "DD ... DE MMM"
-                            const match = dateText.match(/(\d+).*DE\s+([A-Z]+)/i);
-                            if (match) {
-                                const day = parseInt(match[1]);
-                                const monthStr = match[2].toUpperCase().substring(0, 3);
-                                const month = esMonths[monthStr];
-                                if (month !== undefined) {
-                                    const year = new Date().getFullYear(); // Assume current year
-                                    parsedDate = new Date(year, month, day);
+                            let dateStart = dateText;
+                            let dateEnd = '';
+
+                            // Parse "From DD/MM/YYYY to DD/MM/YYYY"
+                            const rangeMatch = dateText.match(/From\s+(\d{2})\/(\d{2})\/(\d{4})\s+to\s+(\d{2})\/(\d{2})\/(\d{4})/i);
+                            if (rangeMatch) {
+                                const [_, d1, m1, y1, d2, m2, y2] = rangeMatch;
+                                parsedDate = new Date(parseInt(y1), parseInt(m1) - 1, parseInt(d1));
+                                dateStart = `${d1}/${m1}/${y1}`;
+                                dateEnd = `${d2}/${m2}/${y2}`;
+                            } else {
+                                // Try Spanish format fallback: "24 AL 30 DE NOV"
+                                const esMonths: Record<string, number> = {
+                                    'ENE': 0, 'FEB': 1, 'MAR': 2, 'ABR': 3, 'MAY': 4, 'JUN': 5,
+                                    'JUL': 6, 'AGO': 7, 'SEP': 8, 'OCT': 9, 'NOV': 10, 'DIC': 11
+                                };
+                                const match = dateText.match(/(\d+).*DE\s+([A-Z]+)/i);
+                                if (match) {
+                                    const day = parseInt(match[1]);
+                                    const monthStr = match[2].toUpperCase().substring(0, 3);
+                                    const month = esMonths[monthStr];
+                                    if (month !== undefined) {
+                                        const year = new Date().getFullYear();
+                                        parsedDate = new Date(year, month, day);
+                                    }
                                 }
                             }
 
-                            // Determine status based on date
-                            // If end date is in the past, it's 'finished'.
-                            // For now, we trust the /live/ page contains active or very recent events.
-                            // We can use a threshold (e.g., finished less than 2 days ago is still "live" or "recent")
+                            // Determine status
                             const status = 'live';
 
                             tournaments.push({
@@ -283,7 +312,8 @@ export async function getTournaments(): Promise<Tournament[]> {
                                 url: eventUrl,
                                 imageUrl,
                                 id,
-                                dateStart: dateText,
+                                dateStart,
+                                dateEnd,
                                 status,
                                 parsedDate
                             });

@@ -3,8 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { Tournament, Match, convertMatchTime } from '@/lib/padel';
-import { Activity, Trophy, RefreshCw } from 'lucide-react';
-import Link from 'next/link';
+import { Activity, RefreshCw } from 'lucide-react';
 
 interface LiveTickerProps {
     tournaments: Tournament[];
@@ -12,7 +11,7 @@ interface LiveTickerProps {
 
 export default function LiveTicker({ tournaments }: LiveTickerProps) {
     const [matches, setMatches] = useState<Match[]>([]);
-    const [nextScheduled, setNextScheduled] = useState<Match | null>(null);
+    const [nextMatches, setNextMatches] = useState<Match[]>([]);
     const [loading, setLoading] = useState(true);
     const [bestTournament, setBestTournament] = useState<Tournament | null>(null);
     const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
@@ -26,80 +25,6 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         if (n.includes('PLATINUM')) return 1.5;
         return 1;
     };
-
-    useEffect(() => {
-        // 1. Select the "Best" live tournament
-        const live = tournaments.filter(t => t.status === 'live');
-        if (live.length === 0) {
-            setLoading(false);
-            return;
-        }
-
-        // Sort by importance
-        const sorted = [...live].sort((a, b) => getImportance(b.name) - getImportance(a.name));
-        const selected = sorted[0];
-        setBestTournament(selected);
-
-        // 2. Fetch matches
-        const fetchMatches = async () => {
-            try {
-                const res = await fetch(`/api/matches?url=${encodeURIComponent(selected.url)}`);
-                const data = await res.json();
-
-                // Filter for active matches if possible, or just show all "Live" ones
-                // The scraper might return 'live' status matches.
-                // If no status is 'live', maybe show the most recent ones?
-                // Let's show matches that are NOT 'finished' or are 'live'
-                // Filter for strictly active matches
-                // The user wants to remove matches that are "going to be played today" but not "right now"
-                const activeMatches = data.matches.filter((m: Match) => {
-                    const status = m.status?.toLowerCase() || '';
-                    const hasScore = m.score && m.score.length > 0;
-                    const isSetStatus = status.includes('set');
-
-                    // Strict rule: Must have a score OR be in a specific Set.
-                    // We ignore generic "live" status if there is no score, as it often indicates "coverage starting soon".
-                    return hasScore || isSetStatus;
-                });
-
-                setMatches(activeMatches);
-
-                // Find the next scheduled match (not active, not finished)
-                const upcoming = data.matches.find((m: Match) => {
-                    const status = m.status?.toLowerCase() || '';
-                    const isActive = activeMatches.includes(m);
-                    return !isActive && status !== 'finished';
-                });
-                setNextScheduled(upcoming || null);
-
-                setLastUpdated(new Date());
-            } catch (error) {
-                console.error('Error fetching live matches:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchMatches();
-
-        // Poll every 60 seconds
-        const interval = setInterval(fetchMatches, 60000);
-        return () => clearInterval(interval);
-
-    }, [tournaments]);
-
-    if (!bestTournament) return null;
-
-    if (loading) {
-        return (
-            <div className="w-full h-32 bg-gray-100 dark:bg-white/5 rounded-xl animate-pulse flex items-center justify-center mb-8">
-                <div className="text-slate-400 text-sm font-medium flex items-center">
-                    <Activity className="w-4 h-4 mr-2 animate-spin" />
-                    Loading live scores...
-                </div>
-            </div>
-        );
-    }
 
     // Helper to parse name (get surname)
     const getSurname = (fullName: string) => {
@@ -131,6 +56,122 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         return { t1, t2 };
     };
 
+    useEffect(() => {
+        // 1. Select the "Best" live tournament
+        const live = tournaments.filter(t => t.status === 'live');
+        if (live.length === 0) {
+            setLoading(false);
+            return;
+        }
+
+        // Sort by importance
+        const sorted = [...live].sort((a, b) => getImportance(b.name) - getImportance(a.name));
+        const selected = sorted[0];
+        setBestTournament(selected);
+
+        // 2. Fetch matches
+        const fetchMatches = async () => {
+            try {
+                const res = await fetch(`/api/matches?url=${encodeURIComponent(selected.url)}`);
+                const data = await res.json();
+
+                // Filter for strictly active matches
+                const activeMatches = data.matches.filter((m: Match) => {
+                    const status = m.status?.toLowerCase() || '';
+                    const hasScore = m.score && m.score.length > 0;
+                    const isSetStatus = status.includes('set');
+                    return hasScore || isSetStatus;
+                });
+
+                setMatches(activeMatches);
+
+                // Find the next scheduled matches (Earliest Batch Logic)
+                let upcoming = data.matches.filter((m: Match) => {
+                    const status = m.status?.toLowerCase() || '';
+                    const isActive = activeMatches.some((am: Match) =>
+                        JSON.stringify(am.team1) === JSON.stringify(m.team1) &&
+                        JSON.stringify(am.team2) === JSON.stringify(m.team2)
+                    );
+                    return !isActive && status !== 'finished';
+                });
+
+                // HOTFIX: Manually set time for Brea/Triay match if missing
+                // User confirmed it is at 16:00 Local Time (Acapulco)
+                upcoming = upcoming.map((m: Match) => {
+                    const isBrea = m.team1?.some(p => p.includes('Brea')) || m.team2?.some(p => p.includes('Brea'));
+                    const isTriay = m.team1?.some(p => p.includes('Triay')) || m.team2?.some(p => p.includes('Triay'));
+
+                    if (isBrea && isTriay && !m.time) {
+                        return { ...m, time: '16:00' };
+                    }
+                    return m;
+                });
+
+                if (upcoming.length > 0) {
+                    // Sort by time
+                    // Matches with time should come BEFORE matches without time (assuming no time = "followed by" / later)
+                    // But wait, "Coming up soon" might be "Next available".
+                    // However, user specifically said "all others are continuations" of the 16:00 match.
+                    // So we prioritize the one WITH time.
+                    upcoming.sort((a: Match, b: Match) => {
+                        if (a.time && !b.time) return -1;
+                        if (!a.time && b.time) return 1;
+                        return (a.time || '').localeCompare(b.time || '');
+                    });
+
+                    // Get the time of the very first match
+                    const firstTime = upcoming[0].time;
+
+                    // Filter all matches that have this same time
+                    // If firstTime is defined, only show matches with that time.
+                    // If firstTime is undefined (all are "Coming up soon"), show all of them? 
+                    // Or just the first one? User said "if there's more than one... adding horizontally".
+                    // But for this specific case, we expect firstTime to be '16:00'.
+
+                    let batch = [];
+                    if (firstTime) {
+                        batch = upcoming.filter((m: Match) => m.time === firstTime);
+                    } else {
+                        // If no time is available for ANY match, show all "Coming up soon" ones?
+                        // Or just the first one? Let's show all for now, unless user complains.
+                        // But in this specific case, Brea will have time, others won't, so Brea will be first and alone.
+                        batch = upcoming.filter((m: Match) => !m.time);
+                    }
+
+                    setNextMatches(batch);
+                } else {
+                    setNextMatches([]);
+                }
+
+                setLastUpdated(new Date());
+            } catch (error) {
+                console.error('Error fetching live matches:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMatches();
+
+        // Poll every 60 seconds
+        const interval = setInterval(fetchMatches, 60000);
+        return () => clearInterval(interval);
+
+    }, [tournaments]);
+
+    if (!bestTournament) return null;
+
+    if (loading) {
+        return (
+            <div className="w-full h-32 bg-gray-100 dark:bg-white/5 rounded-xl animate-pulse flex items-center justify-center mb-8">
+                <div className="text-slate-400 text-sm font-medium flex items-center">
+                    <Activity className="w-4 h-4 mr-2 animate-spin" />
+                    Loading live scores...
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="mb-8 space-y-3">
             <div className="flex items-center justify-between px-1">
@@ -159,17 +200,39 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                             <p className="text-sm text-slate-500">Matches will appear here as soon as they start.</p>
                         </div>
 
-                        {nextScheduled && (
-                            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/5 w-full max-w-xs mx-auto">
-                                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wider mb-2">Up Next</p>
-                                <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    {nextScheduled.team1?.map(getSurname).join('/')} vs {nextScheduled.team2?.map(getSurname).join('/')}
-                                </div>
-                                <div className="text-xs text-slate-400 mt-1">
-                                    {(() => {
-                                        const { local, yours } = convertMatchTime(nextScheduled.time || '', nextScheduled.timezone || '');
-                                        return yours ? `${local} (${yours})` : (local || 'Coming up');
-                                    })()}
+                        {nextMatches.length > 0 && (
+                            <div className="mt-6 pt-6 border-t border-gray-100 dark:border-white/5 w-full">
+                                <p className="text-[10px] font-bold text-blue-500 uppercase tracking-wider mb-4">Up Next</p>
+
+                                {/* Horizontal Scroll for Up Next Batch */}
+                                <div className="flex overflow-x-auto gap-4 justify-center pb-2">
+                                    {nextMatches.map((match, idx) => (
+                                        <div key={idx} className="flex-none w-64 bg-slate-50 dark:bg-white/5 rounded-lg p-3 text-left border border-gray-100 dark:border-white/5">
+                                            <div className="text-sm font-bold text-slate-900 dark:text-white mb-1 truncate">
+                                                {match.team1?.map(getSurname).join('/')}
+                                            </div>
+                                            <div className="text-xs text-slate-400 mb-1">vs</div>
+                                            <div className="text-sm font-bold text-slate-900 dark:text-white mb-3 truncate">
+                                                {match.team2?.map(getSurname).join('/')}
+                                            </div>
+
+                                            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-white/10 px-2 py-1 rounded inline-block w-full text-center">
+                                                {(() => {
+                                                    const { local, yours } = convertMatchTime(match.time || '', match.timezone || '');
+                                                    if (!local) return 'Coming up soon';
+                                                    return yours ? (
+                                                        <div className="flex flex-col">
+                                                            <span className="font-bold text-slate-900 dark:text-white">{yours}</span>
+                                                            <span className="opacity-75 text-[9px]">Your Time</span>
+                                                            <span className="opacity-50 text-[9px] mt-0.5">{local} Local</span>
+                                                        </div>
+                                                    ) : (
+                                                        <span>{local} Local Time</span>
+                                                    );
+                                                })()}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         )}

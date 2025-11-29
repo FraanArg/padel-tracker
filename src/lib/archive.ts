@@ -9,6 +9,8 @@ export interface ArchivedTournament {
     id: string;
     name: string;
     year: number;
+    dateStart?: string;
+    dateEnd?: string;
     matches: Match[];
     archivedAt: string;
 }

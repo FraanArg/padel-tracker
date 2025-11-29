@@ -1,6 +1,8 @@
 import { getTournaments } from '@/lib/padel';
 import TournamentList from '@/components/TournamentList';
 import TournamentHero from '@/components/TournamentHero';
+import IntroHero from '@/components/IntroHero';
+import LiveTicker from '@/components/LiveTicker';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -34,6 +36,9 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-[#121212] pb-24 safe-area-inset-bottom">
       <div className="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl px-4 pt-6">
+
+        {/* Intro Hero Section */}
+        <IntroHero />
 
         {/* Hero Section */}
         {bestLive && (

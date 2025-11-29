@@ -1,22 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import PlayerSearch from '@/components/PlayerSearch';
-import { ArrowLeftRight, Trophy, TrendingUp, MapPin, Activity, History } from 'lucide-react';
-import StatsRadar from '@/components/StatsRadar';
+import { ArrowLeftRight, Trophy, TrendingUp, MapPin, Activity, History, Zap, Share2 } from 'lucide-react';
+import dynamic from 'next/dynamic';
+const StatsRadar = dynamic(() => import('@/components/StatsRadar'), { ssr: false });
+import RivalryCard from '@/components/RivalryCard';
+import CompareSkeleton from '@/components/skeletons/CompareSkeleton';
 import Link from 'next/link';
+import { Player, Match } from '@/lib/padel';
+import { H2HResult } from '@/lib/stats';
+import { getResultBadgeColor, getResultShort } from '@/lib/utils';
 import { ArrowLeft } from 'lucide-react';
-
-interface Player {
-    name: string;
-    rank: string;
-    points: string;
-    country: string;
-    imageUrl?: string;
-}
+import CompareResults from '@/components/CompareResults';
+import Navbar from '@/components/Navbar';
 
 interface ExtendedProfile extends Player {
-    recentResults?: any[];
+    recentResults?: { tournament: string; round: string }[];
     winRate?: string;
     currentStreak?: number;
     totalMatches?: number;
@@ -28,7 +29,11 @@ interface H2HMatch {
     score?: string[];
     round?: string;
     date?: string;
+    team1?: string[];
+    team2?: string[];
 }
+
+import CommonOpponents from '@/components/CommonOpponents';
 
 export default function ComparePage() {
     const [p1, setP1] = useState<Player | null>(null);
@@ -38,9 +43,60 @@ export default function ComparePage() {
 
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<{ p1: ExtendedProfile, p2: ExtendedProfile } | null>(null);
-    const [stats, setStats] = useState<{ team1Wins: number, team2Wins: number, totalMatches: number } | null>(null);
-    const [h2h, setH2H] = useState<H2HMatch[]>([]);
+    const [stats, setStats] = useState<H2HResult | null>(null);
+    const [h2h, setH2H] = useState<Match[]>([]);
     const [loadingH2H, setLoadingH2H] = useState(false);
+    const rivalryCardRef = useRef<HTMLDivElement>(null);
+
+    const handleDownloadCard = async () => {
+        if (!rivalryCardRef.current) return;
+
+        try {
+            const html2canvas = (await import('html2canvas')).default;
+            const canvas = await html2canvas(rivalryCardRef.current, {
+                backgroundColor: null,
+                scale: 2, // Higher quality
+                logging: false,
+                useCORS: true // For images
+            } as any);
+
+            const link = document.createElement('a');
+            link.download = `rivalry-${data?.p1.name.split(' ')[1] || 'p1'}-vs-${data?.p2.name.split(' ')[1] || 'p2'}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } catch (err) {
+            console.error('Failed to generate rivalry card:', err);
+        }
+    };
+
+    const [p1Partners, setP1Partners] = useState<Player[]>([]);
+    const [p2Partners, setP2Partners] = useState<Player[]>([]);
+
+    const [year, setYear] = useState<number | 'all'>(2025);
+    const [showHistory, setShowHistory] = useState(false);
+
+    // Fetch partners when players change
+    useEffect(() => {
+        if (p1) {
+            fetch(`/api/player/${encodeURIComponent(p1.name)}/partners`)
+                .then(res => res.json())
+                .then(data => setP1Partners(data.partners || []))
+                .catch(err => console.error('Failed to fetch p1 partners', err));
+        } else {
+            setP1Partners([]);
+        }
+    }, [p1]);
+
+    useEffect(() => {
+        if (p2) {
+            fetch(`/api/player/${encodeURIComponent(p2.name)}/partners`)
+                .then(res => res.json())
+                .then(data => setP2Partners(data.partners || []))
+                .catch(err => console.error('Failed to fetch p2 partners', err));
+        } else {
+            setP2Partners([]);
+        }
+    }, [p2]);
 
     const handleCompare = async () => {
         if (!p1 || !p2) return;
@@ -57,7 +113,7 @@ export default function ComparePage() {
             const team2 = [p2.name, p2Partner?.name].filter(Boolean).join(',');
 
             // Fetch profiles (just main players for now for the preview)
-            const res = await fetch(`/api/match/preview?team1=${encodeURIComponent(p1.name)}&team2=${encodeURIComponent(p2.name)}`);
+            const res = await fetch(`/api/match/preview?team1=${encodeURIComponent(p1.name)}&team2=${encodeURIComponent(p2.name)}&year=${year}`);
             const json = await res.json();
 
             if (json.team1 && json.team2) {
@@ -70,17 +126,26 @@ export default function ComparePage() {
             setLoading(false);
 
             // Fetch H2H
-            const h2hRes = await fetch(`/api/match/h2h?team1=${encodeURIComponent(team1)}&team2=${encodeURIComponent(team2)}`);
+            const h2hRes = await fetch(`/api/match/h2h?team1=${encodeURIComponent(team1)}&team2=${encodeURIComponent(team2)}&year=${year}`);
             const h2hJson = await h2hRes.json();
+
             setH2H(h2hJson.matches || []);
             setStats({
-                team1Wins: h2hJson.team1Wins || 0,
-                team2Wins: h2hJson.team2Wins || 0,
-                totalMatches: h2hJson.totalMatches || 0
+                matches: h2hJson.matches || [],
+                team1Wins: h2hJson.team1Wins,
+                team2Wins: h2hJson.team2Wins,
+                totalMatches: h2hJson.totalMatches,
+                firstSetStats: h2hJson.firstSetStats,
+                threeSetStats: h2hJson.threeSetStats,
+                tiebreakStats: h2hJson.tiebreakStats,
+                roundStats: h2hJson.roundStats,
+                totalGamesStats: h2hJson.totalGamesStats,
+                averageMatchLength: h2hJson.averageMatchLength
             });
+            setLoadingH2H(false);
+
         } catch (error) {
-            console.error('Comparison failed', error);
-        } finally {
+            console.error('Failed to fetch comparison data', error);
             setLoading(false);
             setLoadingH2H(false);
         }
@@ -105,74 +170,149 @@ export default function ComparePage() {
         return '-';
     };
 
-    return (
-        <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-            {/* Header */}
-            <div className="flex items-center justify-between">
-                <div>
-                    <Link href="/" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors mb-2">
-                        <ArrowLeft className="w-4 h-4 mr-1" />
-                        Back
-                    </Link>
-                    <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Head to Head</h1>
-                    <p className="text-slate-500 mt-1">Compare players and teams history</p>
-                </div>
-            </div>
+    const handlePlayerSelect = (player: Player | null, playerNum: 1 | 2) => {
+        if (playerNum === 1) {
+            setP1(player);
+            setP1Partner(null); // Reset partner when main player changes
+        } else {
+            setP2(player);
+            setP2Partner(null); // Reset partner when main player changes
+        }
+    };
 
-            {/* Selection Area */}
-            <div className="grid grid-cols-1 md:grid-cols-7 gap-4 items-start">
-                {/* Team 1 */}
-                <div className="md:col-span-3 space-y-4">
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
-                        <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Player 1</label>
-                        <PlayerSearch label="Player 1" onSelect={setP1} selectedPlayer={null} placeholder="Search player..." />
+    const timelineData = useMemo(() => {
+        if (!stats || !data) return [];
+        return stats.matches.map(match => {
+            const p1Name = data.p1.name || '';
+            const isP1Team1 = match.team1?.some(p => p.includes(p1Name)) ?? false;
+            let p1Won = false;
+            if (match.score && match.score.length > 0) {
+                let t1Sets = 0;
+                let t2Sets = 0;
+                match.score.forEach(s => {
+                    const parts = s.replace(/[\(\)]/g, '').trim().split('-');
+                    if (parts.length === 2) {
+                        const g1 = parseInt(parts[0]);
+                        const g2 = parseInt(parts[1]);
+                        if (!isNaN(g1) && !isNaN(g2)) {
+                            if (g1 > g2) t1Sets++;
+                            else if (g2 > g1) t2Sets++;
+                        }
+                    }
+                });
+                if (isP1Team1) {
+                    p1Won = t1Sets > t2Sets;
+                } else {
+                    p1Won = t2Sets > t1Sets;
+                }
+            }
+            return { ...match, p1Won };
+        });
+    }, [stats, data]);
+
+    return (
+        <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+            <Navbar />
+
+            <main className="container mx-auto px-4 py-8 max-w-5xl">
+                <div className="mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
+                    <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">
+                        Head to Head
+                    </h1>
+                    <p className="text-slate-500 dark:text-slate-400 text-lg">
+                        Compare players and analyze their rivalry history
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    {/* Player 1 Search */}
+                    <div className="bg-white dark:bg-white/5 p-6 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-white/20 backdrop-blur-xl">
+                        <PlayerSearch
+                            label="Player 1"
+                            onSelect={(p) => handlePlayerSelect(p, 1)}
+                            selectedPlayer={p1}
+                            placeholder="Search player..."
+                        />
                         {p1 && (
-                            <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
-                                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
-                                    {p1.name.charAt(0)}
-                                </div>
+                            <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30 animate-in fade-in slide-in-from-top-2">
+                                {p1.imageUrl ? (
+                                    <Image
+                                        src={p1.imageUrl || '/placeholder.png'}
+                                        alt={p1.name}
+                                        width={40}
+                                        height={40}
+                                        className="rounded-full object-cover mr-3 border border-blue-200 dark:border-blue-700"
+                                    />
+                                ) : (
+                                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
+                                        {p1.name.charAt(0)}
+                                    </div>
+                                )}
                                 <div>
                                     <div className="font-bold text-slate-900 dark:text-white">{p1.name}</div>
                                     <div className="text-xs text-slate-500">Rank #{p1.rank}</div>
                                 </div>
                             </div>
                         )}
+                        {/* Partner 1 */}
+                        <div className="mt-6">
+                            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
+                            <PlayerSearch
+                                key={p1Partner ? p1Partner.name : `p1-partner-${p1?.name}`}
+                                label="Partner (Optional)"
+                                onSelect={setP1Partner}
+                                selectedPlayer={p1Partner}
+                                placeholder={p1 ? "Select partner..." : "Select player 1 first"}
+                                restrictedList={p1 ? p1Partners : undefined}
+                            />
+                            {p1Partner && (
+                                <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30 animate-in fade-in slide-in-from-top-2">
+                                    {p1Partner.imageUrl ? (
+                                        <Image
+                                            src={p1Partner.imageUrl || '/placeholder.png'}
+                                            alt={p1Partner.name}
+                                            width={40}
+                                            height={40}
+                                            className="rounded-full object-cover mr-3 border border-blue-200 dark:border-blue-700"
+                                        />
+                                    ) : (
+                                        <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
+                                            {p1Partner.name.charAt(0)}
+                                        </div>
+                                    )}
+                                    <div>
+                                        <div className="font-bold text-slate-900 dark:text-white">{p1Partner.name}</div>
+                                        <div className="text-xs text-slate-500">Rank #{p1Partner.rank}</div>
+                                    </div>
+                                    <button onClick={() => setP1Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
-                    {/* Partner 1 */}
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
-                        <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
-                        <PlayerSearch label="Partner (Optional)" onSelect={setP1Partner} selectedPlayer={null} placeholder="Add partner..." />
-                        {p1Partner && (
-                            <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
-                                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
-                                    {p1Partner.name.charAt(0)}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-slate-900 dark:text-white">{p1Partner.name}</div>
-                                    <div className="text-xs text-slate-500">Rank #{p1Partner.rank}</div>
-                                </div>
-                                <button onClick={() => setP1Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-
-                {/* VS */}
-                <div className="hidden md:flex flex-col items-center justify-center h-full pt-12">
-                    <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-black text-slate-300">VS</div>
-                </div>
-
-                {/* Team 2 */}
-                <div className="md:col-span-3 space-y-4">
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
-                        <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Player 2</label>
-                        <PlayerSearch label="Player 2" onSelect={setP2} selectedPlayer={null} placeholder="Search opponent..." />
+                    {/* Player 2 Search */}
+                    <div className="bg-white dark:bg-white/5 p-6 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-white/20 backdrop-blur-xl">
+                        <PlayerSearch
+                            label="Player 2"
+                            onSelect={(p) => handlePlayerSelect(p, 2)}
+                            selectedPlayer={p2}
+                            placeholder="Search opponent..."
+                        />
                         {p2 && (
-                            <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30">
-                                <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
-                                    {p2.name.charAt(0)}
-                                </div>
+                            <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30 animate-in fade-in slide-in-from-top-2">
+                                {p2.imageUrl ? (
+                                    <Image
+                                        src={p2.imageUrl || '/placeholder.png'}
+                                        alt={p2.name}
+                                        width={40}
+                                        height={40}
+                                        className="rounded-full object-cover mr-3 border border-red-200 dark:border-red-700"
+                                    />
+                                ) : (
+                                    <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
+                                        {p2.name.charAt(0)}
+                                    </div>
+                                )}
                                 <div>
                                     <div className="font-bold text-slate-900 dark:text-white">{p2.name}</div>
                                     <div className="text-xs text-slate-500">Rank #{p2.rank}</div>
@@ -180,215 +320,45 @@ export default function ComparePage() {
                             </div>
                         )}
                     </div>
-
-                    {/* Partner 2 */}
-                    <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
-                        <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
-                        <PlayerSearch label="Partner (Optional)" onSelect={setP2Partner} selectedPlayer={null} placeholder="Add partner..." />
-                        {p2Partner && (
-                            <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30">
-                                <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
-                                    {p2Partner.name.charAt(0)}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-slate-900 dark:text-white">{p2Partner.name}</div>
-                                    <div className="text-xs text-slate-500">Rank #{p2Partner.rank}</div>
-                                </div>
-                                <button onClick={() => setP2Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-
-            {/* Compare Button */}
-            <div className="flex justify-center">
-                <button
-                    onClick={handleCompare}
-                    disabled={!p1 || !p2 || loading}
-                    className="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100"
-                >
-                    {loading ? 'Analyzing...' : 'Compare Head to Head'}
-                </button>
-            </div>
-            <Link href="/" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-1" />
-                Back
-            </Link>
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center">
-                <ArrowLeftRight className="w-6 h-6 mr-2 text-blue-500" />
-                Player Comparison
-            </h1>
-            <div className="w-16"></div> {/* Spacer */}
-            <div className="w-16"></div> {/* Spacer */}
-
-            {/* Search Area */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] gap-4 items-center bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
-                <PlayerSearch label="Player 1" onSelect={setP1} selectedPlayer={p1} />
-
-                <div className="flex justify-center pt-6 md:pt-0">
-                    <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-slate-400 font-bold">
-                        VS
-                    </div>
                 </div>
 
-                <PlayerSearch label="Player 2" onSelect={setP2} selectedPlayer={p2} />
-            </div>
-
-            {/* Action Button */}
-            <div className="flex justify-center">
-                <button
-                    onClick={handleCompare}
-                    disabled={!p1 || !p2 || loading}
-                    className={`px-8 py-3 rounded-full font-bold text-white shadow-lg transition-all transform hover:scale-105 active:scale-95 ${!p1 || !p2 ? 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30'
-                        }`}
-                >
-                    {loading ? 'Analyzing...' : 'Compare Players'}
-                </button>
-            </div>
-
-            {/* Results */}
-            {
-                data && (
-                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        {/* Radar Chart Comparison */}
-                        <div className="mb-8">
-                            <StatsRadar
-                                player1Name={data.p1.name}
-                                player2Name={data.p2.name}
-                                stats1={{
-                                    winRate: parseFloat(data.p1.winRate || '0'),
-                                    streak: data.p1.currentStreak || 0,
-                                    titles: data.p1.titles || 0,
-                                    experience: data.p1.totalMatches || 0,
-                                    form: parseFloat(data.p1.winRate || '0')
-                                }}
-                                stats2={{
-                                    winRate: parseFloat(data.p2.winRate || '0'),
-                                    streak: data.p2.currentStreak || 0,
-                                    titles: data.p2.titles || 0,
-                                    experience: data.p2.totalMatches || 0,
-                                    form: parseFloat(data.p2.winRate || '0')
-                                }}
-                            />
-                        </div>
-
-                        {/* Stats Grid */}
-                        <div className="grid grid-cols-3 gap-4 text-center">
-                            {/* P1 Stats */}
-                            <div className="space-y-6">
-                                <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                                    <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Rank</div>
-                                    <div className="text-3xl font-black text-slate-900 dark:text-white">#{data.p1.rank}</div>
-                                </div>
-                                <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                                    <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Points</div>
-                                    <div className="text-xl font-bold text-blue-600">{data.p1.points}</div>
-                                </div>
-                            </div>
-
-                            {/* Labels */}
-                            <div className="flex flex-col justify-around py-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                                <div className="flex items-center justify-center"><Trophy className="w-4 h-4 mr-2" /> Ranking</div>
-                                <div className="flex items-center justify-center"><Activity className="w-4 h-4 mr-2" /> Points</div>
-                            </div>
-
-                            {/* P2 Stats */}
-                            <div className="space-y-6">
-                                <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                                    <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Rank</div>
-                                    <div className="text-3xl font-black text-slate-900 dark:text-white">#{data.p2.rank}</div>
-                                </div>
-                                <div className="bg-white dark:bg-[#202020] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-white/5">
-                                    <div className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-1">Points</div>
-                                    <div className="text-xl font-bold text-blue-600">{data.p2.points}</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Head to Head Stats */}
-                        {stats && (
-                            <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
-                                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center">
-                                    <Activity className="w-5 h-5 mr-2 text-blue-500" />
-                                    Head to Head Record
-                                </h3>
-                                {/* Stats */}
-                                {stats && (
-                                    <div className="grid grid-cols-3 gap-4">
-                                        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-2xl text-center border border-blue-100 dark:border-blue-800/30">
-                                            <div className="text-4xl font-black text-blue-600 dark:text-blue-400">{stats.team1Wins}</div>
-                                            <div className="text-xs font-bold text-blue-400 uppercase tracking-wider mt-1">Wins</div>
-                                        </div>
-                                        <div className="flex flex-col items-center justify-center">
-                                            <div className="text-slate-400 text-sm font-medium mb-2">Total Matches</div>
-                                            <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.totalMatches}</div>
-                                            <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full mt-4 overflow-hidden flex">
-                                                <div className="h-full bg-blue-500" style={{ width: `${stats.totalMatches > 0 ? (stats.team1Wins / stats.totalMatches) * 100 : 0}%` }}></div>
-                                                <div className="h-full bg-red-500" style={{ width: `${stats.totalMatches > 0 ? (stats.team2Wins / stats.totalMatches) * 100 : 0}%` }}></div>
-                                            </div>
-                                        </div>
-                                        <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-2xl text-center border border-red-100 dark:border-red-800/30">
-                                            <div className="text-4xl font-black text-red-600 dark:text-red-400">{stats.team2Wins}</div>
-                                            <div className="text-xs font-bold text-red-400 uppercase tracking-wider mt-1">Wins</div>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        )}
-
-                        {/* Recent Form */}
-                        <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
-                            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center">
-                                <TrendingUp className="w-5 h-5 mr-2 text-blue-500" />
-                                Recent Form
-                            </h3>
-                            <div className="grid grid-cols-2 gap-8">
-                                <div className="text-center">
-                                    <div className="font-bold mb-3 text-slate-900 dark:text-white">{data.p1.name}</div>
-                                    <div className="flex justify-center gap-1 flex-wrap">
-                                        {data.p1.recentResults?.slice(0, 5).map((result, j) => (
-                                            <div
-                                                key={j}
-                                                className={`w-10 h-10 flex items-center justify-center rounded-lg border text-sm font-bold ${getResultBadgeColor(result.round)}`}
-                                                title={`${result.tournament} - ${result.round}`}
-                                            >
-                                                {getResultShort(result.round)}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="font-bold mb-3 text-slate-900 dark:text-white">{data.p2.name}</div>
-                                    <div className="flex justify-center gap-1 flex-wrap">
-                                        {data.p2.recentResults?.slice(0, 5).map((result, j) => (
-                                            <div
-                                                key={j}
-                                                className={`w-10 h-10 flex items-center justify-center rounded-lg border text-sm font-bold ${getResultBadgeColor(result.round)}`}
-                                                title={`${result.tournament} - ${result.round}`}
-                                            >
-                                                {getResultShort(result.round)}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Common Opponents */}
-                        <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
-                            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center">
-                                <ArrowLeftRight className="w-5 h-5 mr-2 text-blue-500" />
-                                Common Opponents Analysis
-                            </h3>
-                            <div className="text-center py-8 text-slate-500 bg-gray-50 dark:bg-white/5 rounded-xl">
-                                <p className="mb-2">Coming Soon</p>
-                                <p className="text-xs">Compare performance against shared rivals like Coello/Tapia or Galan/Chingotto.</p>
-                            </div>
-                        </div>
+                {/* Compare Button & Year Selection */}
+                <div className="flex flex-col items-center gap-4">
+                    <div className="flex items-center gap-2 bg-white dark:bg-[#202020] p-1 rounded-lg border border-slate-100 dark:border-white/5">
+                        {[2025, 2024, 2023, 2022, 'all'].map((y) => (
+                            <button
+                                key={y}
+                                onClick={() => setYear(y as number | 'all')}
+                                className={`px-4 py-2 rounded-md text-sm font-bold transition-colors ${year === y
+                                    ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                                    : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                                    }`}
+                            >
+                                {y === 'all' ? 'All Time' : y}
+                            </button>
+                        ))}
                     </div>
-                )
-            }
+
+                    <button
+                        onClick={handleCompare}
+                        disabled={!p1 || !p2 || loading}
+                        className="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100"
+                    >
+                        {loading ? 'Analyzing...' : 'Compare Head to Head'}
+                    </button>
+                </div>
+
+                {/* Results */}
+                {data && (
+                    <CompareResults
+                        data={data}
+                        stats={stats}
+                        h2h={h2h}
+                        rivalryCardRef={rivalryCardRef}
+                        handleDownloadCard={handleDownloadCard}
+                    />
+                )}
+            </main>
         </div>
     );
 }

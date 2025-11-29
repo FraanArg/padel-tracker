@@ -64,31 +64,35 @@ export default function StatsRadar({ player1Name, player2Name, stats1, stats2 }:
     ];
 
     return (
-        <div className="w-full h-[300px] bg-white dark:bg-[#202020] rounded-2xl p-4 border border-gray-100 dark:border-white/5 shadow-sm">
-            <h3 className="text-center text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tale of the Tape</h3>
+        <div className="w-full h-[350px] bg-white dark:bg-[#202020] rounded-2xl p-6 border border-gray-100 dark:border-white/5 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-red-500 opacity-50"></div>
+            <h3 className="text-center text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Tale of the Tape</h3>
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-                    <PolarGrid stroke="#e2e8f0" />
-                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 'bold' }} />
+                <RadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
+                    <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                    <PolarAngleAxis
+                        dataKey="subject"
+                        tick={{ fill: '#64748b', fontSize: 11, fontWeight: 'bold' }}
+                    />
                     <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                     <Radar
                         name={player1Name}
                         dataKey="A"
                         stroke="#3b82f6"
-                        strokeWidth={2}
+                        strokeWidth={3}
                         fill="#3b82f6"
-                        fillOpacity={0.3}
+                        fillOpacity={0.2}
                     />
                     <Radar
                         name={player2Name}
                         dataKey="B"
                         stroke="#ef4444"
-                        strokeWidth={2}
+                        strokeWidth={3}
                         fill="#ef4444"
-                        fillOpacity={0.3}
+                        fillOpacity={0.2}
                     />
                     <Legend
-                        wrapperStyle={{ paddingTop: '10px', fontSize: '12px' }}
+                        wrapperStyle={{ paddingTop: '20px', fontSize: '12px', fontWeight: 'bold' }}
                         iconType="circle"
                     />
                 </RadarChart>

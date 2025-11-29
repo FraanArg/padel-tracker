@@ -4,14 +4,19 @@ import { getRankings } from '@/lib/padel';
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get('q')?.toLowerCase() || '';
-
-    if (query.length < 2) {
-        return NextResponse.json({ players: [] });
-    }
+    const mode = searchParams.get('mode');
 
     try {
         const { men, women } = await getRankings();
         const allPlayers = [...men, ...women];
+
+        if (mode === 'all') {
+            return NextResponse.json({ players: allPlayers });
+        }
+
+        if (query.length < 2) {
+            return NextResponse.json({ players: [] });
+        }
 
         const filtered = allPlayers.filter(p =>
             p.name.toLowerCase().includes(query)
