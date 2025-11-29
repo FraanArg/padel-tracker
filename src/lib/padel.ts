@@ -33,6 +33,7 @@ export interface Match {
     team1Seed?: string;
     team2Seed?: string;
     tournament?: { name: string };
+    nextMatch?: Match; // The match immediately following this one on the same court
 }
 
 // ... existing code ...
@@ -460,184 +461,204 @@ export async function getMatches(url: string, dayUrl?: string) {
 
         const { timezone, location } = getTournamentMetadata(tournamentName);
 
-        // Iterate over matches by finding the stats link
-        $m('a:contains("MATCH STATS")').each((_, el) => {
-            const statsLink = $m(el);
-            const summaryRow = statsLink.closest('tr');
-            const team2Row = summaryRow.prev();
-            const team1Row = team2Row.prev();
+        // Iterate over all rows to group by court
+        let currentCourtIndex = 0;
+        let currentCourtMatches: Match[] = [];
+        const courtMatchesMap: Record<string, Match[]> = {};
 
-            if (team1Row.length > 0 && team2Row.length > 0) {
-                // Extract players for Team 1
-                let team1Players = team1Row.find('.line-thin').map((_, p) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
-                let team1Flags = team1Row.find('.line-thin').map((_, p) => {
-                    const src = $m(p).parent().find('img').attr('src');
-                    return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
-                }).get();
+        // Helper to process a match block
+        const processMatchBlock = (t1Row: any, t2Row: any, summaryRow: any, headerInfo: any) => {
+            // Extract players for Team 1
+            let team1Players = t1Row.find('.line-thin').map((_: any, p: any) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
+            let team1Flags = t1Row.find('.line-thin').map((_: any, p: any) => {
+                const src = $m(p).parent().find('img').attr('src');
+                return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
+            }).get();
 
-                // Extract players for Team 2
-                let team2Players = team2Row.find('.line-thin').map((_, p) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
-                let team2Flags = team2Row.find('.line-thin').map((_, p) => {
-                    const src = $m(p).parent().find('img').attr('src');
-                    return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
-                }).get();
+            // Extract players for Team 2
+            let team2Players = t2Row.find('.line-thin').map((_: any, p: any) => $m(p).text().replace(/\s+/g, ' ').trim()).get();
+            let team2Flags = t2Row.find('.line-thin').map((_: any, p: any) => {
+                const src = $m(p).parent().find('img').attr('src');
+                return src ? (src.startsWith('http') ? src : `https://widget.matchscorerlive.com${src}`) : '';
+            }).get();
 
-                // Extract seeds
-                let team1Seed = '';
-                let team2Seed = '';
-
-                // Helper to extract seed and clean name
-                const extractSeed = (players: string[]) => {
-                    let seed = '';
-                    const cleanedPlayers = players.map(p => {
-                        const match = p.match(/\((\d+)\)$/);
-                        if (match) {
-                            seed = match[1];
-                            return p.replace(/\s*\(\d+\)$/, '').trim();
-                        }
-                        return p;
-                    });
-                    return { seed, players: cleanedPlayers };
-                };
-
-                const t1Data = extractSeed(team1Players);
-                team1Seed = t1Data.seed;
-                team1Players = t1Data.players;
-
-                const t2Data = extractSeed(team2Players);
-                team2Seed = t2Data.seed;
-                team2Players = t2Data.players;
-
-                if (team1Players.length > 0 || team2Players.length > 0) {
-                    // Scores are usually in the team rows, let's check both or just one
-                    // Often the scores are in the same columns for both rows
-                    const sets1 = team1Row.find('.set').map((_, s) => $m(s).text().trim()).get().filter(s => s && s !== '-');
-                    const sets2 = team2Row.find('.set').map((_, s) => $m(s).text().trim()).get().filter(s => s && s !== '-');
-
-                    // Combine scores? Usually we just want the set scores.
-                    // Let's assume sets1 and sets2 correspond to the score for each team per set.
-                    // e.g. sets1 = ["6", "6"], sets2 = ["4", "2"] -> "6-4 6-2"
-
-                    const formattedScore: string[] = [];
-                    const maxLength = Math.max(sets1.length, sets2.length);
-                    for (let i = 0; i < maxLength; i++) {
-                        const s1 = sets1[i] || '0';
-                        const s2 = sets2[i] || '0';
-                        formattedScore.push(`${s1}-${s2}`);
+            // Extract seeds
+            const extractSeed = (players: string[]) => {
+                let seed = '';
+                const cleanedPlayers = players.map(p => {
+                    const match = p.match(/\((\d+)\)$/);
+                    if (match) {
+                        seed = match[1];
+                        return p.replace(/\s*\(\d+\)$/, '').trim();
                     }
+                    return p;
+                });
+                return { seed, players: cleanedPlayers };
+            };
 
-                    // Parse the status/time container
-                    const statusContainer = summaryRow.find('.live-status-summary');
-                    const statusSpan = statusContainer.find('.text-uppercase');
-                    const status = statusSpan.length ? statusSpan.text().trim() : statusContainer.text().trim();
+            const t1Data = extractSeed(team1Players);
+            const team1Seed = t1Data.seed;
+            team1Players = t1Data.players;
 
-                    // Extract time (look for pattern HH:mm)
-                    let time = '';
-                    // Try to find the time in the text content of the container
-                    const containerText = statusContainer.text();
-                    const timeMatch = containerText.match(/(\d{2}:\d{2})/);
-                    if (timeMatch) {
-                        time = timeMatch[1];
+            const t2Data = extractSeed(team2Players);
+            const team2Seed = t2Data.seed;
+            team2Players = t2Data.players;
+
+            // Scores
+            const sets1 = t1Row.find('.set').map((_: any, s: any) => $m(s).text().trim()).get().filter((s: string) => s && s !== '-');
+            const sets2 = t2Row.find('.set').map((_: any, s: any) => $m(s).text().trim()).get().filter((s: string) => s && s !== '-');
+
+            const formattedScore: string[] = [];
+            const maxLength = Math.max(sets1.length, sets2.length);
+            for (let i = 0; i < maxLength; i++) {
+                const s1 = sets1[i] || '0';
+                const s2 = sets2[i] || '0';
+                formattedScore.push(`${s1}-${s2}`);
+            }
+
+            // Status
+            let status = 'Scheduled';
+            let time = '';
+
+            if (summaryRow && summaryRow.length > 0) {
+                const statusContainer = summaryRow.find('.live-status-summary');
+                const statusSpan = statusContainer.find('.text-uppercase');
+                status = statusSpan.length ? statusSpan.text().trim() : statusContainer.text().trim();
+
+                // Extract time
+                const containerText = statusContainer.text();
+                const timeMatch = containerText.match(/(\d{2}:\d{2})/);
+                if (timeMatch) {
+                    time = timeMatch[1];
+                }
+
+                // Clean status
+                status = status.replace(time, '').replace('🕑', '').trim();
+            }
+
+            if (!status) status = 'Scheduled';
+
+            // Use header info if available
+            let category = headerInfo.category || '';
+            let round = headerInfo.round || '';
+            let court = headerInfo.court || `Court ${currentCourtIndex}`; // Default to numbered court if not found
+
+            const raw = `${status} ${team1Players.join(' / ')} vs ${team2Players.join(' / ')} ${formattedScore.join(' ')}`;
+
+            return {
+                raw: raw.replace(/\s+/g, ' ').trim(),
+                team1: team1Players,
+                team2: team2Players,
+                team1Flags,
+                team2Flags,
+                score: formattedScore,
+                status,
+                time,
+                timezone,
+                category,
+                round,
+                location,
+                court,
+                team1Seed,
+                team2Seed
+            };
+        };
+
+        let currentHeaderInfo = { category: '', round: '', court: '' };
+        let matchBuffer: any[] = [];
+
+        $m('tr').each((_, el) => {
+            const row = $m(el);
+            const text = row.text().replace(/\s+/g, ' ').trim();
+
+            // Check for Header
+            if (row.find('th').length > 0 || row.attr('class')?.includes('header')) {
+                // Parse header
+                if (text.includes('Starting at')) {
+                    currentCourtIndex++;
+                    // Reset matches for new court? 
+                    // Yes, "Starting at" usually implies a new court or a significant break.
+                    // But we need to be careful not to split the same court if it's just a time update.
+                    // However, based on our analysis, "Starting at" repeated implies different courts.
+                }
+
+                // Extract Category/Round
+                if (text.includes('Men')) currentHeaderInfo.category = 'Men';
+                else if (text.includes('Women')) currentHeaderInfo.category = 'Women';
+
+                const rounds = ['Quarter Final', 'Quarterfinals', 'Semi Final', 'Semifinals', 'Round of 16', 'Round of 32', 'Round of 64', 'Final', 'Q1', 'Q2', 'Q3', 'Qualifying'];
+                for (const r of rounds) {
+                    if (text.includes(r)) {
+                        currentHeaderInfo.round = r;
+                        break;
                     }
+                }
 
-                    // Clean up status if it contains the time or icon
-                    let cleanStatus = status.replace(time, '').replace('🕑', '').trim();
-                    if (!cleanStatus) cleanStatus = 'Scheduled';
-
-                    // Extract Category and Round from previous header row
-                    let category = '';
-                    let round = '';
-                    let court = '';
-                    let prevRow = team1Row.prev();
-                    // Look back up to 10 rows to find a header
-                    for (let i = 0; i < 10; i++) {
-                        if (prevRow.length === 0) break;
-                        // Check if it's a header row (often has colspan or th)
-                        if (prevRow.find('th').length > 0 || prevRow.hasClass('header-row')) {
-                            const headerText = prevRow.text().replace(/\s+/g, ' ').trim();
-                            // Example header: "Starting at 4:00 PM Men Q1" or "Men Round of 16"
-
-                            // Try to detect Men/Women
-                            if (headerText.includes('Men')) category = 'Men';
-                            else if (headerText.includes('Women')) category = 'Women';
-
-                            // Try to detect Round
-                            // Common rounds: Q1, Q2, Round of 32, Round of 16, Quarter Final, Semi Final, Final
-                            // Order matters! Check for specific rounds before generic ones (e.g. "Quarter Final" before "Final")
-                            const rounds = ['Quarter Final', 'Quarterfinals', 'Semi Final', 'Semifinals', 'Round of 16', 'Round of 32', 'Round of 64', 'Final', 'Q1', 'Q2', 'Q3', 'Qualifying'];
-                            for (const r of rounds) {
-                                if (headerText.includes(r)) {
-                                    round = r;
-                                    break;
-                                }
-                            }
-
-                            // Try to detect Court
-                            // "Center Court", "Court 1", etc.
-                            const courtMatch = headerText.match(/(Center Court|Court \d+|Grand Stand)/i);
-                            if (courtMatch) {
-                                court = courtMatch[1];
-                            }
-
-                            // Try to detect Time in header (e.g. "Starting at 4:00 PM")
-                            if (!time) {
-                                const timeMatch = headerText.match(/Starting at (\d{1,2}:\d{2})\s*(AM|PM)?/i) || headerText.match(/Not before (\d{1,2}:\d{2})\s*(AM|PM)?/i);
-                                if (timeMatch) {
-                                    let [_, t, period] = timeMatch;
-                                    if (period) {
-                                        // Convert to 24h
-                                        let [h, m] = t.split(':').map(Number);
-                                        if (period.toUpperCase() === 'PM' && h < 12) h += 12;
-                                        if (period.toUpperCase() === 'AM' && h === 12) h = 0;
-                                        time = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
-                                    } else {
-                                        time = t;
-                                    }
-                                }
-                            }
-
-                            // If we found something, stop looking? 
-                            // Sometimes headers are split. Let's assume the closest header is the most relevant.
-                            if (category || round || time || court) break; // Added court to break condition
-                        }
-                        prevRow = prevRow.prev();
-                    }
-
-                    // If no court found in headers, maybe it's in a "court-name" span we missed?
-                    // The debug output showed <span class="court-name">Starting at 4:00 PM</span>
-                    // It seems "court-name" class is used for generic headers too.
-                    // Let's look for a specific Court header further up if we haven't found one?
-                    // Or maybe the court is not always shown in this view.
-
-                    // Let's add a separate loop for Court if we really want it, 
-                    // or just rely on the fact that usually matches are grouped by court.
-                    // For now, let's stick to what we have.
-
-                    const raw = `${cleanStatus} ${team1Players.join(' / ')} vs ${team2Players.join(' / ')} ${formattedScore.join(' ')}`;
-
-                    matches.push({
-                        raw: raw.replace(/\s+/g, ' ').trim(),
-                        team1: team1Players,
-                        team2: team2Players,
-                        team1Flags,
-                        team2Flags,
-                        score: formattedScore,
-                        status: cleanStatus,
-                        time,
-                        timezone,
-                        category,
-                        round,
-                        location,
-                        court,
-                        team1Seed,
-                        team2Seed
-                    });
+                // Check for explicit court name
+                const courtMatch = text.match(/(Center Court|Court \d+|Grand Stand|Pista \d+)/i);
+                if (courtMatch) {
+                    currentHeaderInfo.court = courtMatch[1];
                 } else {
-                    const container = statsLink.closest('div, li');
-                    matches.push({ raw: container.text().replace(/\s+/g, ' ').trim() });
+                    // If no explicit name, use index
+                    currentHeaderInfo.court = `Court ${currentCourtIndex}`;
                 }
             }
+
+            // Check for Match Rows
+            if (row.find('.line-thin').length > 0) {
+                matchBuffer.push(row);
+            } else if (matchBuffer.length === 2) {
+                // We have a complete match (2 teams), check if next row is summary
+                // The current row 'row' might be the summary row if it contains "MATCH STATS" or similar
+                // OR it might be a header for the next match.
+
+                let summaryRow = null;
+                if (text.includes('MATCH STATS') || row.find('.live-status-summary').length > 0) {
+                    summaryRow = row;
+                }
+
+                const match = processMatchBlock(matchBuffer[0], matchBuffer[1], summaryRow, currentHeaderInfo);
+
+                // Add to court group
+                const courtKey = currentHeaderInfo.court;
+                if (!courtMatchesMap[courtKey]) courtMatchesMap[courtKey] = [];
+                courtMatchesMap[courtKey].push(match);
+
+                matchBuffer = [];
+
+                // If we consumed the current row as summary, we shouldn't process it as header
+            } else {
+                // Reset buffer if we hit something else and buffer is not full
+                if (matchBuffer.length > 0) matchBuffer = [];
+            }
         });
+
+        // Post-process matches to link "Next Match"
+        const allMatches: Match[] = [];
+
+        Object.values(courtMatchesMap).forEach(courtMatches => {
+            for (let i = 0; i < courtMatches.length; i++) {
+                const m = courtMatches[i];
+
+                // Check if this match is Live
+                const isLive = m.status?.toLowerCase() === 'live' ||
+                    m.status?.toLowerCase().includes('set') ||
+                    (m.score && m.score.length > 0 && m.status !== 'finished' && m.status !== 'Finished');
+
+                if (isLive) {
+                    // Find the next scheduled match
+                    const next = courtMatches[i + 1];
+                    if (next) {
+                        m.nextMatch = next;
+                    }
+                }
+                allMatches.push(m);
+            }
+        });
+
+        // Replace the old matches array with our new structured one
+        matches.push(...allMatches);
+
 
         const result = {
             matches,

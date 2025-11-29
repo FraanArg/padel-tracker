@@ -120,7 +120,7 @@ export default function ComparePage() {
                 <div className="md:col-span-3 space-y-4">
                     <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
                         <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Player 1</label>
-                        <PlayerSearch onSelect={setP1} placeholder="Search player..." />
+                        <PlayerSearch label="Player 1" onSelect={setP1} selectedPlayer={null} placeholder="Search player..." />
                         {p1 && (
                             <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
                                 <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
@@ -137,7 +137,7 @@ export default function ComparePage() {
                     {/* Partner 1 */}
                     <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
                         <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
-                        <PlayerSearch onSelect={setP1Partner} placeholder="Add partner..." />
+                        <PlayerSearch label="Partner (Optional)" onSelect={setP1Partner} selectedPlayer={null} placeholder="Add partner..." />
                         {p1Partner && (
                             <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
                                 <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
@@ -162,7 +162,7 @@ export default function ComparePage() {
                 <div className="md:col-span-3 space-y-4">
                     <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
                         <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Player 2</label>
-                        <PlayerSearch onSelect={setP2} placeholder="Search opponent..." />
+                        <PlayerSearch label="Player 2" onSelect={setP2} selectedPlayer={null} placeholder="Search opponent..." />
                         {p2 && (
                             <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30">
                                 <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
@@ -179,7 +179,7 @@ export default function ComparePage() {
                     {/* Partner 2 */}
                     <div className="bg-white dark:bg-[#202020] p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-white/5">
                         <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
-                        <PlayerSearch onSelect={setP2Partner} placeholder="Add partner..." />
+                        <PlayerSearch label="Partner (Optional)" onSelect={setP2Partner} selectedPlayer={null} placeholder="Add partner..." />
                         {p2Partner && (
                             <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30">
                                 <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">

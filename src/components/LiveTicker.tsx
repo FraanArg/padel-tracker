@@ -144,20 +144,25 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                     return (
                         <div
                             key={i}
-                            className="flex-none w-[340px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center flex flex-col justify-between"
+                            className="flex-none w-[340px] bg-white dark:bg-[#202020] rounded-xl border border-gray-100 dark:border-white/5 shadow-sm p-4 snap-center flex flex-col justify-between relative overflow-hidden"
                         >
+                            {/* Court Name Badge */}
+                            <div className="absolute top-0 right-0 bg-slate-100 dark:bg-white/10 px-2 py-1 rounded-bl-lg text-[10px] font-bold text-slate-500 dark:text-slate-300 uppercase tracking-wider">
+                                {match.court || 'Court'}
+                            </div>
+
                             <div className="flex justify-between items-start mb-3">
-                                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider pr-16">
                                     {match.round || 'Match'}
                                 </div>
                                 {match.status === 'live' && (
-                                    <div className="px-1.5 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase">
+                                    <div className="px-1.5 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase mr-16">
                                         Live
                                     </div>
                                 )}
                             </div>
 
-                            <div className="flex items-center justify-between">
+                            <div className="flex items-center justify-between mb-4">
                                 {/* Players Column */}
                                 <div className="space-y-3 flex-grow min-w-0 pr-4">
                                     {/* Team 1 */}
@@ -203,14 +208,11 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                 <div className="flex space-x-1">
                                     {t1Scores.map((s1, idx) => {
                                         const s2 = t2Scores[idx];
-                                        // Simple heuristic: bold the higher score
-                                        // Need to handle tiebreaks "7(4)" vs "6"
                                         const n1 = parseInt(s1);
                                         const n2 = parseInt(s2);
                                         const isT1Winning = !isNaN(n1) && !isNaN(n2) && n1 > n2;
                                         const isT2Winning = !isNaN(n1) && !isNaN(n2) && n2 > n1;
 
-                                        // Highlight current set (last one)
                                         const isCurrentSet = idx === t1Scores.length - 1;
                                         const textColor = isCurrentSet
                                             ? "text-slate-900 dark:text-white"
@@ -229,6 +231,25 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                     })}
                                 </div>
                             </div>
+
+                            {/* Next Match Section */}
+                            {match.nextMatch && (
+                                <div className="mt-3 pt-3 border-t border-gray-100 dark:border-white/5">
+                                    <div className="flex items-center justify-between mb-1">
+                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Next Match</span>
+                                        <span className="text-[10px] text-slate-400">{match.nextMatch.time || 'Followed by'}</span>
+                                    </div>
+                                    <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+                                        <div className="flex items-center space-x-1 truncate">
+                                            <span>{match.nextMatch.team1?.map(getSurname).join('/')}</span>
+                                        </div>
+                                        <span className="px-1 text-slate-300">vs</span>
+                                        <div className="flex items-center space-x-1 truncate">
+                                            <span>{match.nextMatch.team2?.map(getSurname).join('/')}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     );
                 })}
