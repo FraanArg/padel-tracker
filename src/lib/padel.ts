@@ -670,6 +670,11 @@ export async function getMatches(url: string, dayUrl?: string) {
             let round = headerInfo.round || '';
             let court = headerInfo.court || `Court ${currentCourtIndex}`; // Default to numbered court if not found
 
+            // If time is missing from summary, try header
+            if (!time && headerInfo.time) {
+                time = headerInfo.time;
+            }
+
             const raw = `${status} ${team1Players.join(' / ')} vs ${team2Players.join(' / ')} ${formattedScore.join(' ')}`;
 
             return {
@@ -691,7 +696,7 @@ export async function getMatches(url: string, dayUrl?: string) {
             };
         };
 
-        let currentHeaderInfo = { category: '', round: '', court: '' };
+        let currentHeaderInfo = { category: '', round: '', court: '', time: '' };
         let matchBuffer: any[] = [];
 
         $m('tr').each((_, el) => {
@@ -728,6 +733,16 @@ export async function getMatches(url: string, dayUrl?: string) {
                 } else {
                     // If no explicit name, use index
                     currentHeaderInfo.court = `Court ${currentCourtIndex}`;
+                }
+
+                // Extract Time from header
+                const timeMatch = text.match(/(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i);
+                if (timeMatch) {
+                    currentHeaderInfo.time = timeMatch[1];
+                } else if (text.toLowerCase().includes('followed by')) {
+                    currentHeaderInfo.time = 'Followed by';
+                } else {
+                    currentHeaderInfo.time = '';
                 }
             }
 
