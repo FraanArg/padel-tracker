@@ -74,7 +74,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
     }, [stats, data]);
 
     return (
-        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[500px]">
+        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-[500px] max-w-5xl mx-auto">
             {/* Radar Chart Comparison */}
             <div className="mb-8">
                 <StatsRadar
@@ -99,7 +99,8 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
 
             {/* Stats Grid */}
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-3xl mx-auto">
                 {/* P1 Stats */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -117,12 +118,6 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">{data.p1.points}</div>
                     </div>
                 </motion.div>
-
-                {/* Labels - Hidden on mobile, visible on desktop */}
-                <div className="hidden md:flex flex-col justify-center gap-8 py-4 text-xs font-bold text-slate-300 dark:text-slate-600 uppercase tracking-widest">
-                    <div className="flex items-center justify-center"><Trophy className="w-5 h-5" /></div>
-                    <div className="flex items-center justify-center"><Activity className="w-5 h-5" /></div>
-                </div>
 
                 {/* P2 Stats */}
                 <motion.div
@@ -145,7 +140,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
 
             {/* H2H Stats */}
             {stats && (
-                <div className="w-full max-w-4xl mt-12">
+                <div className="w-full max-w-4xl mt-12 mx-auto">
                     <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl p-8 shadow-sm border border-slate-100 dark:border-white/5">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-xl font-bold flex items-center justify-center gap-2">
