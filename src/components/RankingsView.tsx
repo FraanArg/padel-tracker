@@ -8,8 +8,10 @@ import Image from 'next/image';
 
 export default function RankingsView({ men, women }: { men: PlayerRanking[], women: PlayerRanking[] }) {
     const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
+    const [limit, setLimit] = useState(20);
 
     const rankings = activeTab === 'men' ? men : women;
+    const visibleRankings = rankings.slice(0, limit);
 
     return (
         <div className="space-y-6">
@@ -53,7 +55,7 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 dark:divide-white/5">
-                            {rankings.map((player, index) => (
+                            {visibleRankings.map((player, index) => (
                                 <tr key={`${player.name}-${index}`} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
                                     <td className="px-6 py-4">
                                         <div className={clsx(
@@ -111,6 +113,20 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
                     </table>
                 </div>
             </div>
-        </div>
+
+
+            {
+                limit < rankings.length && (
+                    <div className="flex justify-center pt-4">
+                        <button
+                            onClick={() => setLimit(prev => prev + 50)}
+                            className="px-6 py-2 bg-white dark:bg-white/10 text-slate-900 dark:text-white font-bold rounded-full shadow-sm hover:bg-gray-50 dark:hover:bg-white/20 transition-colors"
+                        >
+                            Show More
+                        </button>
+                    </div>
+                )
+            }
+        </div >
     );
 }

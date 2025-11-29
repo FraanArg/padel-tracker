@@ -19,6 +19,9 @@ interface PlayerStats {
     titles: number;
     finals: number;
     partners: PartnerStat[];
+    currentStreak: number;
+    maxStreak: number;
+    roundStats: Record<string, { played: number, won: number }>;
 }
 
 interface PlayerProfile {
@@ -167,6 +170,17 @@ export default function PlayerProfilePage() {
                     <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.totalMatches}</div>
                     <div className="text-sm text-slate-500 mt-1">Total Played</div>
                 </div>
+
+                <div className="bg-white dark:bg-[#202020] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-white/5">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                            <Activity className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                        </div>
+                        <span className="text-xs font-medium text-slate-400">Streak</span>
+                    </div>
+                    <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.currentStreak} <span className="text-sm font-normal text-slate-400">/ {stats.maxStreak}</span></div>
+                    <div className="text-sm text-slate-500 mt-1">Current / Max Wins</div>
+                </div>
             </div>
 
             {/* Partner History */}
@@ -214,6 +228,32 @@ export default function PlayerProfilePage() {
                         </div>
 
                         {/* More mini stats can go here */}
+                    </div>
+                </div>
+
+                {/* Round Performance */}
+                <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                        Round Performance
+                    </h3>
+                    <div className="space-y-4">
+                        {Object.entries(stats.roundStats || {}).map(([round, data]) => (
+                            <div key={round}>
+                                <div className="flex justify-between text-sm mb-1">
+                                    <span className="text-slate-500">{round}</span>
+                                    <span className="font-bold text-slate-900 dark:text-white">
+                                        {data.played > 0 ? Math.round((data.won / data.played) * 100) : 0}%
+                                        <span className="text-slate-400 font-normal ml-1">({data.won}/{data.played})</span>
+                                    </span>
+                                </div>
+                                <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div
+                                        className="h-full bg-blue-500 rounded-full"
+                                        style={{ width: `${data.played > 0 ? (data.won / data.played) * 100 : 0}%` }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

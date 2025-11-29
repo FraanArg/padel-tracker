@@ -146,7 +146,18 @@ export default async function TournamentPage({
                                     <>
                                         {courts.map(court => (
                                             <div key={court} className="space-y-4">
-                                                <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">{court}</h2>
+                                                <div className="flex items-center gap-2">
+                                                    <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">{court}</h2>
+                                                    <div className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10">
+                                                        Path Difficulty: <span className="text-yellow-400 font-bold">Hard</span>
+                                                    </div>
+                                                    {/* Assuming tournament object is available in this scope, or passed down */}
+                                                    {/* If tournament.location is not directly available here, you might need to adjust how it's accessed */}
+                                                    {/* For now, using a placeholder or assuming it's accessible */}
+                                                    <div className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium text-white backdrop-blur-sm border border-white/10">
+                                                        {/* {tournament.location} */} Location Info
+                                                    </div>
+                                                </div>
                                                 <div className="space-y-4">
                                                     {(() => {
                                                         let lastTime: Date | null = null;

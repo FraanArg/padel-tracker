@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import PlayerSearch from '@/components/PlayerSearch';
 import { ArrowLeftRight, Trophy, TrendingUp, MapPin, Activity, History } from 'lucide-react';
+import StatsRadar from '@/components/StatsRadar';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
@@ -16,6 +17,10 @@ interface Player {
 
 interface ExtendedProfile extends Player {
     recentResults?: any[];
+    winRate?: string;
+    currentStreak?: number;
+    totalMatches?: number;
+    titles?: number;
 }
 
 interface H2HMatch {
@@ -83,10 +88,10 @@ export default function ComparePage() {
 
     const getResultBadgeColor = (round: string) => {
         const r = round.toLowerCase();
-        if (r.includes('winner') || r.includes('champion')) return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-        if (r.includes('final')) return 'bg-slate-100 text-slate-800 border-slate-200';
-        if (r.includes('semi')) return 'bg-orange-50 text-orange-800 border-orange-100';
-        return 'bg-gray-50 text-gray-600 border-gray-100';
+        if (r.includes('winner') || r.includes('champion')) return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700/30';
+        if (r.includes('final')) return 'bg-slate-100 text-slate-800 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
+        if (r.includes('semi')) return 'bg-orange-50 text-orange-800 border-orange-100 dark:bg-orange-900/20 dark:text-orange-400 dark:border-orange-800/30';
+        return 'bg-gray-50 text-gray-600 border-gray-100 dark:bg-gray-800/50 dark:text-gray-400 dark:border-gray-700/30';
     };
 
     const getResultShort = (round: string) => {
@@ -246,6 +251,28 @@ export default function ComparePage() {
             {
                 data && (
                     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        {/* Radar Chart Comparison */}
+                        <div className="mb-8">
+                            <StatsRadar
+                                player1Name={data.p1.name}
+                                player2Name={data.p2.name}
+                                stats1={{
+                                    winRate: parseFloat(data.p1.winRate || '0'),
+                                    streak: data.p1.currentStreak || 0,
+                                    titles: data.p1.titles || 0,
+                                    experience: data.p1.totalMatches || 0,
+                                    form: parseFloat(data.p1.winRate || '0')
+                                }}
+                                stats2={{
+                                    winRate: parseFloat(data.p2.winRate || '0'),
+                                    streak: data.p2.currentStreak || 0,
+                                    titles: data.p2.titles || 0,
+                                    experience: data.p2.totalMatches || 0,
+                                    form: parseFloat(data.p2.winRate || '0')
+                                }}
+                            />
+                        </div>
+
                         {/* Stats Grid */}
                         <div className="grid grid-cols-3 gap-4 text-center">
                             {/* P1 Stats */}
@@ -348,46 +375,20 @@ export default function ComparePage() {
                             </div>
                         </div>
 
-                        {/* Match History */}
+                        {/* Common Opponents */}
                         <div className="bg-white dark:bg-[#202020] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
                             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center">
-                                <History className="w-5 h-5 mr-2 text-blue-500" />
-                                Head-to-Head History
+                                <ArrowLeftRight className="w-5 h-5 mr-2 text-blue-500" />
+                                Common Opponents Analysis
                             </h3>
-
-                            {loadingH2H ? (
-                                <div className="flex flex-col items-center justify-center py-8 text-sm text-slate-500">
-                                    <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mb-2"></div>
-                                    Checking archives...
-                                </div>
-                            ) : h2h.length > 0 ? (
-                                <div className="space-y-4">
-                                    {h2h.map((m, i) => (
-                                        <div key={i} className="bg-gray-50 dark:bg-white/5 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
-                                            <div className="text-center md:text-left">
-                                                <div className="font-medium text-slate-900 dark:text-white">{m.tournament?.name}</div>
-                                                <div className="text-sm text-slate-500 mt-1 flex items-center">
-                                                    <span className={`px-2 py-0.5 rounded text-xs font-medium ${getResultBadgeColor(m.round || '')} mr-2`}>
-                                                        {m.round}
-                                                    </span>
-                                                    <span>{m.date}</span>
-                                                </div>
-                                            </div>
-                                            <div className="text-right font-mono font-medium text-slate-700 dark:text-slate-300">
-                                                {m.score?.join(' ') || 'Score N/A'}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div className="text-center py-8 text-slate-500 bg-gray-50 dark:bg-white/5 rounded-xl">
-                                    No direct matches found in recent history.
-                                </div>
-                            )}
+                            <div className="text-center py-8 text-slate-500 bg-gray-50 dark:bg-white/5 rounded-xl">
+                                <p className="mb-2">Coming Soon</p>
+                                <p className="text-xs">Compare performance against shared rivals like Coello/Tapia or Galan/Chingotto.</p>
+                            </div>
                         </div>
                     </div>
                 )
             }
-        </div >
+        </div>
     );
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPlayerExtendedProfile } from '@/lib/padel';
+import { getPlayerStats } from '@/lib/stats';
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
@@ -11,9 +12,26 @@ export async function GET(request: NextRequest) {
     }
 
     try {
+        const fetchPlayerData = async (name: string) => {
+            const [profile, stats] = await Promise.all([
+                getPlayerExtendedProfile(name),
+                Promise.resolve(getPlayerStats(name)) // Wrap sync call
+            ]);
+
+            if (!profile) return null;
+
+            return {
+                ...profile,
+                winRate: stats.winRate,
+                currentStreak: stats.currentStreak,
+                totalMatches: stats.totalMatches,
+                titles: stats.titles
+            };
+        };
+
         const [team1Profiles, team2Profiles] = await Promise.all([
-            Promise.all(team1Names.map(name => getPlayerExtendedProfile(name))),
-            Promise.all(team2Names.map(name => getPlayerExtendedProfile(name)))
+            Promise.all(team1Names.map(name => fetchPlayerData(name))),
+            Promise.all(team2Names.map(name => fetchPlayerData(name)))
         ]);
 
         return NextResponse.json({

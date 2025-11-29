@@ -212,6 +212,9 @@ export interface PlayerStats {
     titles: number;
     finals: number;
     partners: { name: string, matches: number }[];
+    currentStreak: number;
+    maxStreak: number;
+    roundStats: Record<string, { played: number, won: number }>;
 }
 
 export function getPlayerStats(playerName: string): PlayerStats {
@@ -274,10 +277,94 @@ export function getPlayerStats(playerName: string): PlayerStats {
     // Finals reached = Titles + Runner-up
     const finalsReached = titles + finals;
 
-    const partners = Array.from(partnerMap.entries())
+    // Sort matches by date (using tournament year/month/date heuristic)
+    const sortedMatches = playerMatches.sort((a, b) => {
+        // Try to use tournament date if available
+        // This requires the match to have the year/month attached or the tournament object
+        // We added 'year' in getAllArchivedMatches
+        const getMatchDate = (m: Match) => {
+            if (m.tournament?.dateStart) return new Date(m.tournament.dateStart).getTime();
+            if ((m as any).year) return new Date((m as any).year, 0, 1).getTime();
+            return 0;
+        };
+        return getMatchDate(a) - getMatchDate(b);
+    });
+
+    // Calculate Streak
+    let currentStreak = 0;
+    let maxStreak = 0;
+    // We need to iterate chronologically
+    sortedMatches.forEach(m => {
+        const t1 = m.team1?.map(n => n.toLowerCase()) || [];
+        const isTeam1 = t1.some(n => n.includes(p) || p.includes(n));
+        const winner = determineWinner(m);
+
+        if (winner) {
+            const won = (isTeam1 && winner === 1) || (!isTeam1 && winner === 2);
+            if (won) {
+                currentStreak++;
+                if (currentStreak > maxStreak) maxStreak = currentStreak;
+            } else {
+                currentStreak = 0;
+            }
+        }
+    });
+
+    // Calculate Round Stats
+    const roundStats: Record<string, { played: number, won: number }> = {};
+    const normalizeRound = (r: string) => {
+        const lower = r.toLowerCase();
+        if (lower.includes('final') && !lower.includes('semi') && !lower.includes('quarter')) return 'Final';
+        if (lower.includes('semi')) return 'Semi Final';
+        if (lower.includes('quarter')) return 'Quarter Final';
+        if (lower.includes('16')) return 'Round of 16';
+        if (lower.includes('32')) return 'Round of 32';
+        return 'Early Rounds';
+    };
+
+    playerMatches.forEach(m => {
+        if (!m.round) return;
+        const round = normalizeRound(m.round);
+        if (!roundStats[round]) roundStats[round] = { played: 0, won: 0 };
+
+        roundStats[round].played++;
+
+        const t1 = m.team1?.map(n => n.toLowerCase()) || [];
+        const isTeam1 = t1.some(n => n.includes(p) || p.includes(n));
+        const winner = determineWinner(m);
+
+        if (winner && ((isTeam1 && winner === 1) || (!isTeam1 && winner === 2))) {
+            roundStats[round].won++;
+        }
+    });
+
+
+    // Calculate Partners
+    const partnersMap: Record<string, number> = {};
+    playerMatches.forEach(m => {
+        const t1 = m.team1?.map(n => n.trim()) || [];
+        const t2 = m.team2?.map(n => n.trim()) || [];
+
+        const pLower = p.toLowerCase();
+        // Strict match if possible, or fuzzy
+        const inTeam1 = t1.some(n => n.toLowerCase().includes(pLower));
+        const inTeam2 = t2.some(n => n.toLowerCase().includes(pLower));
+
+        let partner = '';
+        if (inTeam1) {
+            partner = t1.find(n => !n.toLowerCase().includes(pLower)) || '';
+        } else if (inTeam2) {
+            partner = t2.find(n => !n.toLowerCase().includes(pLower)) || '';
+        }
+
+        if (partner) {
+            partnersMap[partner] = (partnersMap[partner] || 0) + 1;
+        }
+    });
+
+    const partners = Object.entries(partnersMap)
         .map(([name, matches]) => ({ name, matches }))
         .sort((a, b) => b.matches - a.matches);
-
     return {
         totalMatches: playerMatches.length,
         wins,
@@ -285,6 +372,9 @@ export function getPlayerStats(playerName: string): PlayerStats {
         winRate: playerMatches.length > 0 ? ((wins / playerMatches.length) * 100).toFixed(1) + '%' : '0%',
         titles,
         finals: finalsReached,
-        partners
+        partners,
+        currentStreak,
+        maxStreak,
+        roundStats
     };
 }

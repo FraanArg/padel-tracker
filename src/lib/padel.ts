@@ -32,7 +32,7 @@ export interface Match {
     status?: string;
     team1Seed?: string;
     team2Seed?: string;
-    tournament?: { name: string };
+    tournament?: { name: string; dateStart?: string; dateEnd?: string; };
     nextMatch?: Match; // The match immediately following this one on the same court
 }
 
@@ -44,12 +44,17 @@ const TOURNAMENT_METADATA: Record<string, { timezone: string, location: string }
     'SPAIN': { timezone: 'Europe/Madrid', location: 'Spain' },
     'MADRID': { timezone: 'Europe/Madrid', location: 'Madrid, Spain' },
     'BARCELONA': { timezone: 'Europe/Madrid', location: 'Barcelona, Spain' },
+    'SEVILLA': { timezone: 'Europe/Madrid', location: 'Sevilla, Spain' },
+    'MALAGA': { timezone: 'Europe/Madrid', location: 'Malaga, Spain' },
+    'VALLADOLID': { timezone: 'Europe/Madrid', location: 'Valladolid, Spain' },
     'ITALY': { timezone: 'Europe/Rome', location: 'Italy' },
     'ROME': { timezone: 'Europe/Rome', location: 'Rome, Italy' },
     'MILAN': { timezone: 'Europe/Rome', location: 'Milan, Italy' },
     'COMO': { timezone: 'Europe/Rome', location: 'Como, Italy' },
+    'GENOVA': { timezone: 'Europe/Rome', location: 'Genova, Italy' },
     'FRANCE': { timezone: 'Europe/Paris', location: 'France' },
     'PARIS': { timezone: 'Europe/Paris', location: 'Paris, France' },
+    'BORDEAUX': { timezone: 'Europe/Paris', location: 'Bordeaux, France' },
     'BELGIUM': { timezone: 'Europe/Brussels', location: 'Belgium' },
     'BRUSSELS': { timezone: 'Europe/Brussels', location: 'Brussels, Belgium' },
     'ROESELARE': { timezone: 'Europe/Brussels', location: 'Roeselare, Belgium' },
@@ -69,6 +74,7 @@ const TOURNAMENT_METADATA: Record<string, { timezone: string, location: string }
     'SAUDI': { timezone: 'Asia/Riyadh', location: 'Saudi Arabia' },
     'SWEDEN': { timezone: 'Europe/Stockholm', location: 'Sweden' },
     'GERMANY': { timezone: 'Europe/Berlin', location: 'Germany' },
+    'DUSSELDORF': { timezone: 'Europe/Berlin', location: 'Dusseldorf, Germany' },
     'NETHERLANDS': { timezone: 'Europe/Amsterdam', location: 'Netherlands' },
     'ROTTERDAM': { timezone: 'Europe/Amsterdam', location: 'Rotterdam, Netherlands' },
     'EGYPT': { timezone: 'Africa/Cairo', location: 'Egypt' },
@@ -88,6 +94,47 @@ function getTournamentMetadata(tournamentName: string): { timezone?: string, loc
         }
     }
     return {};
+}
+
+export function convertMatchTime(time: string, timezone: string): { local: string, yours: string } {
+    if (!time || !timezone) return { local: time, yours: '' };
+
+    try {
+        const now = new Date();
+        const [hours, minutes] = time.split(':').map(Number);
+        if (isNaN(hours) || isNaN(minutes)) return { local: time, yours: '' };
+
+        // Helper to get offset in minutes for a timezone
+        const getOffset = (tz: string) => {
+            const date = new Date();
+            const str = date.toLocaleString('en-US', { timeZone: tz, timeZoneName: 'longOffset' });
+            const match = str.match(/GMT([+-]\d{2}):?(\d{2})?/);
+            if (!match) return 0;
+            const h = parseInt(match[1], 10);
+            const m = match[2] ? parseInt(match[2], 10) : 0;
+            return h * 60 + (h < 0 ? -m : m);
+        };
+
+        const tournamentOffset = getOffset(timezone);
+        const userOffset = -now.getTimezoneOffset(); // User's local offset in minutes
+
+        // If offsets are same (within 1 min), no need to show "Yours"
+        if (Math.abs(tournamentOffset - userOffset) < 1) {
+            return { local: time, yours: '' };
+        }
+
+        const diffMinutes = userOffset - tournamentOffset;
+
+        const matchDate = new Date();
+        matchDate.setHours(hours, minutes, 0, 0);
+        matchDate.setMinutes(matchDate.getMinutes() + diffMinutes);
+
+        const yours = matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+        return { local: time, yours };
+    } catch (e) {
+        console.error('Error converting time', e);
+        return { local: time, yours: '' };
+    }
 }
 
 export async function getCalendarTournaments(): Promise<Tournament[]> {
@@ -377,6 +424,9 @@ export async function getMatches(url: string, dayUrl?: string) {
         let days: any[] = [];
         let tournamentName = '';
 
+        // Check if this is a "Live Score" tab URL
+        const isLiveTab = url.includes('tab=Live+Score') || url.includes('tab=Live Score');
+
         // Always fetch the event page to get the tournament name and ID
         const { data: eventHtml } = await axios.get(url, {
             headers: { 'User-Agent': USER_AGENT }
@@ -387,26 +437,61 @@ export async function getMatches(url: string, dayUrl?: string) {
         const pageTitle = $event('title').text();
         tournamentName = pageTitle.split(' - ')[0] || 'Tournament';
 
-        $event('[class*="idEvent_"]').each((_, el) => {
-            const classes = $event(el).attr('class')?.split(/\s+/) || [];
-            const idClass = classes.find(c => c.startsWith('idEvent_'));
-            if (idClass) {
-                tournamentId = idClass.replace('idEvent_', '');
-            }
-        });
+        // Try to find the specific Live Score widget ID first if we are on the Live Tab
+        if (isLiveTab) {
+            const liveWidgetDiv = $event('.iframe-livescore');
+            if (liveWidgetDiv.length > 0) {
+                // Check for data-src first (lazy loading)
+                const dataSrc = liveWidgetDiv.attr('data-src');
+                const src = liveWidgetDiv.attr('src');
 
-        // If no specific day requested, we need to find the default (today)
+                if (dataSrc && dataSrc.includes('matchscorerlive')) {
+                    activeDayUrl = dataSrc;
+                    // Extract widget ID from URL if needed, but we have the full URL now
+                    // URL format: https://widget.matchscorerlive.com/screen/tournamentlive/FIP-2025-4801?t=tol
+                } else if (src && src.includes('matchscorerlive')) {
+                    activeDayUrl = src;
+                } else {
+                    // Fallback to ID if URL extraction fails
+                    const id = liveWidgetDiv.attr('id');
+                    if (id) {
+                        widgetId = id;
+                        // Try the tournamentlive endpoint which seems to be the correct one for this view
+                        // We might need the FIP ID, but let's try to find it from the URL we just failed to extract?
+                        // If we are here, we failed to get the URL.
+                        // Let's try to construct it using the tournament ID if we found it elsewhere.
+                    }
+                }
+            }
+        }
+
+        if (!widgetId) {
+            $event('[class*="idEvent_"]').each((_, el) => {
+                const classes = $event(el).attr('class')?.split(/\s+/) || [];
+                const idClass = classes.find(c => c.startsWith('idEvent_'));
+                if (idClass) {
+                    tournamentId = idClass.replace('idEvent_', '');
+                }
+            });
+        }
+
+        // If no specific day requested and we didn't find a direct Live Score widget
         if (!activeDayUrl) {
-            if (!tournamentId) {
+            if (!tournamentId && !widgetId) {
                 return { error: 'Could not find tournament ID' };
             }
 
-            const year = new Date().getFullYear();
-            widgetId = `FIP-${year}-${tournamentId}`;
+            // Fallback to standard OOP view if not explicitly on Live Tab or if Live Tab parsing failed
+            if (!widgetId) {
+                const year = new Date().getFullYear();
+                widgetId = `FIP-${year}-${tournamentId}`;
+            }
 
             // Fetch day 1 to get the list of days
             const initialWidgetUrl = `https://widget.matchscorerlive.com/screen/oopbyday/${widgetId}/1?t=tol`;
+            // ... rest of logic for finding active day
 
+            // If we are here, we are looking for OOP (Order of Play)
             const { data: widgetHtml } = await axios.get(initialWidgetUrl, {
                 validateStatus: () => true
             });
@@ -522,18 +607,30 @@ export async function getMatches(url: string, dayUrl?: string) {
 
             if (summaryRow && summaryRow.length > 0) {
                 const statusContainer = summaryRow.find('.live-status-summary');
+
+                // Try to get text from the first div (usually contains time and status)
+                const infoDiv = statusContainer.find('div').first();
+                let rawStatus = infoDiv.length ? infoDiv.text() : statusContainer.text();
+
+                // Remove the "MATCH STATS" button text if we grabbed the whole container
+                rawStatus = rawStatus.replace('MATCH STATS', '').replace('Match Stats', '');
+
                 const statusSpan = statusContainer.find('.text-uppercase');
-                status = statusSpan.length ? statusSpan.text().trim() : statusContainer.text().trim();
+                status = statusSpan.length ? statusSpan.text().trim() : rawStatus.trim();
 
                 // Extract time
-                const containerText = statusContainer.text();
-                const timeMatch = containerText.match(/(\d{2}:\d{2})/);
+                const timeMatch = rawStatus.match(/(\d{2}:\d{2})/);
                 if (timeMatch) {
                     time = timeMatch[1];
                 }
 
                 // Clean status
-                status = status.replace(time, '').replace('🕑', '').trim();
+                status = status.replace(time, '').replace('🕑', '').replace('Live match', 'Live').trim();
+
+                // If it says "Live", keep it simple
+                if (status.toLowerCase().includes('live')) {
+                    status = 'Live';
+                }
             }
 
             if (!status) status = 'Scheduled';
@@ -642,8 +739,9 @@ export async function getMatches(url: string, dayUrl?: string) {
 
                 // Check if this match is Live
                 const isLive = m.status?.toLowerCase() === 'live' ||
+                    m.status?.toLowerCase().includes('live') ||
                     m.status?.toLowerCase().includes('set') ||
-                    (m.score && m.score.length > 0 && m.status !== 'finished' && m.status !== 'Finished');
+                    (m.score && m.score.length > 0 && !m.status?.toLowerCase().includes('finished'));
 
                 if (isLive) {
                     // Find the next scheduled match
@@ -1050,7 +1148,7 @@ export async function getAllMatches(url: string) {
         // Combine all matches
         const allMatches = results.flatMap(r => ('matches' in r ? r.matches : []));
 
-        return { matches: allMatches, days, tournamentName };
+        return { matches: allMatches, days, tournamentName, tournamentId };
     } catch (error) {
         console.error('Error fetching all matches:', error);
         return { matches: [], days: [], tournamentName: '' };

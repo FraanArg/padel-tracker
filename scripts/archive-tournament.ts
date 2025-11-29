@@ -14,10 +14,7 @@ async function main() {
     try {
         const result = await getAllMatches(url);
 
-        if (result.error) {
-            console.error('Error:', result.error);
-            process.exit(1);
-        }
+
 
         const name = result.tournamentName || 'Unknown Tournament';
         const id = result.tournamentId || 'unknown-id';

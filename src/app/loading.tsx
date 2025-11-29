@@ -1,50 +1,18 @@
-
-import { Skeleton } from "@/components/ui/Skeleton"
-
 export default function Loading() {
     return (
-        <main className="min-h-screen pb-32">
-            <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
-
-                {/* Hero Skeleton */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 md:py-12">
-                    <div className="flex-1 space-y-6 text-center md:text-left w-full">
-                        <Skeleton className="h-12 w-3/4 mx-auto md:mx-0" />
-                        <Skeleton className="h-6 w-full mx-auto md:mx-0" />
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-                            <Skeleton className="h-14 w-40 rounded-full" />
-                            <Skeleton className="h-14 w-40 rounded-full" />
-                        </div>
-                    </div>
-                    <div className="flex-1 flex justify-center w-full max-w-sm">
-                        <Skeleton className="w-72 h-96 rounded-2xl rotate-6" />
-                    </div>
-                </div>
-
-                {/* Live Section Skeleton */}
-                <div className="space-y-6">
-                    <div className="space-y-1 px-2">
-                        <Skeleton className="h-8 w-32" />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                    </div>
-                </div>
-
-                {/* Upcoming Section Skeleton */}
-                <div className="space-y-6">
-                    <div className="space-y-1 px-2">
-                        <Skeleton className="h-8 w-48" />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                        <Skeleton className="w-full aspect-[3/4] rounded-2xl" />
-                    </div>
-                </div>
+        <div className="max-w-4xl mx-auto px-4 py-8 space-y-8 animate-pulse">
+            {/* Header Skeleton */}
+            <div className="space-y-4">
+                <div className="h-4 w-24 bg-gray-200 dark:bg-white/10 rounded"></div>
+                <div className="h-8 w-64 bg-gray-200 dark:bg-white/10 rounded"></div>
             </div>
-        </main>
-    )
+
+            {/* Content Skeleton */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div key={i} className="h-48 bg-gray-100 dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/5"></div>
+                ))}
+            </div>
+        </div>
+    );
 }

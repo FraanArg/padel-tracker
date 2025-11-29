@@ -26,7 +26,7 @@ export default function BottomNav() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="relative flex flex-col items-center justify-center w-full h-full"
+                            className="relative flex flex-col items-center justify-center w-full h-full active:scale-90 transition-transform duration-200"
                         >
                             {isActive && (
                                 <motion.div

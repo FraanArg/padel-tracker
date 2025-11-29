@@ -265,8 +265,8 @@ async function testScraper() {
             const t1Row = matchBuffer[0];
             const t2Row = matchBuffer[1];
 
-            const t1 = t1Row.find('.line-thin').map((_, p) => $m(p).text().trim()).get();
-            const t2 = t2Row.find('.line-thin').map((_, p) => $m(p).text().trim()).get();
+            const t1 = t1Row.find('.line-thin').map((_: number, p: any) => $m(p).text().trim()).get();
+            const t2 = t2Row.find('.line-thin').map((_: number, p: any) => $m(p).text().trim()).get();
 
             // Check for status in this current row (summary)
             let status = 'Scheduled';

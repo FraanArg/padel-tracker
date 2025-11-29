@@ -64,10 +64,7 @@ async function main() {
             try {
                 const result = await getAllMatches(t.url);
 
-                if (result.error) {
-                    console.error(`  Failed: ${result.error}`);
-                    continue;
-                }
+
 
                 const matches = result.matches || [];
                 if (matches.length === 0) {

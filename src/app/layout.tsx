@@ -6,6 +6,8 @@ import BottomNav from "@/components/BottomNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import PageTransition from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/react";
+import CommandPalette from "@/components/CommandPalette";
+import NotificationManager from "@/components/NotificationManager";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +50,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <CommandPalette />
+          <NotificationManager />
           <PageTransition>
             {children}
           </PageTransition>

@@ -1,179 +1,95 @@
-
 'use client';
 
 import { Match } from '@/lib/padel';
-import { cn } from '@/lib/utils';
+import { Trophy } from 'lucide-react';
 
 interface BracketProps {
     matches: Match[];
 }
 
 export default function Bracket({ matches }: BracketProps) {
-    // Helper to normalize round names
-    const normalizeRound = (round: string = '') => {
-        const r = round.toLowerCase();
-        if (r.includes('quarter') || r.includes('cuartos')) return 'QF';
-        if (r.includes('semi')) return 'SF';
-        if (r.includes('final') && !r.includes('quarter') && !r.includes('semi')) return 'F';
-        return 'Other';
-    };
+    // Filter matches by round
+    const finals = matches.filter(m => m.round?.toLowerCase().includes('final') && !m.round?.toLowerCase().includes('semi') && !m.round?.toLowerCase().includes('quarter'));
+    const semis = matches.filter(m => m.round?.toLowerCase().includes('semi'));
+    const quarters = matches.filter(m => m.round?.toLowerCase().includes('quarter'));
 
-    // Group matches by round
-    const rounds = {
-        QF: matches.filter(m => normalizeRound(m.round) === 'QF'),
-        SF: matches.filter(m => normalizeRound(m.round) === 'SF'),
-        F: matches.filter(m => normalizeRound(m.round) === 'F'),
-    };
+    // If no data, don't render
+    if (finals.length === 0 && semis.length === 0 && quarters.length === 0) return null;
 
-    // If no matches in these rounds, show empty state
-    if (rounds.QF.length === 0 && rounds.SF.length === 0 && rounds.F.length === 0) {
+    const renderMatch = (m: Match, isFinal = false) => {
+        const isWinner = m.status === 'finished' || m.score?.some(s => s.includes('6') || s.includes('7')); // Simple heuristic
+
         return (
-            <div className="text-center py-12 bg-gray-50 dark:bg-white/5 rounded-2xl border border-dashed border-gray-200 dark:border-white/10">
-                <p className="text-slate-500 font-medium">Draw not available yet.</p>
-            </div>
-        );
-    }
-
-    return (
-        <div className="overflow-x-auto pb-8">
-            <div className="min-w-[800px] flex justify-between px-4">
-                {/* Quarter Finals */}
-                <RoundColumn title="Quarter Finals" matches={rounds.QF} />
-
-                {/* Connector Column 1 */}
-                <div className="w-16 flex flex-col justify-around py-12">
-                    {/* Visual connectors would go here, simplified for now */}
-                </div>
-
-                {/* Semi Finals */}
-                <RoundColumn title="Semi Finals" matches={rounds.SF} />
-
-                {/* Connector Column 2 */}
-                <div className="w-16 flex flex-col justify-around py-24">
-                </div>
-
-                {/* Final */}
-                <RoundColumn title="Final" matches={rounds.F} isFinal />
-            </div>
-        </div>
-    );
-}
-
-function RoundColumn({ title, matches, isFinal }: { title: string, matches: Match[], isFinal?: boolean }) {
-    return (
-        <div className={cn("flex-1 flex flex-col space-y-8", isFinal ? "justify-center" : "justify-around")}>
-            <h3 className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
-                {title}
-            </h3>
-            <div className={cn("flex flex-col w-full space-y-6", isFinal && "space-y-0")}>
-                {matches.map((match, i) => (
-                    <BracketMatchCard key={i} match={match} />
-                ))}
-                {matches.length === 0 && (
-                    <div className="h-24 rounded-xl border border-dashed border-gray-200 dark:border-white/10 flex items-center justify-center">
-                        <span className="text-xs text-slate-400">TBD</span>
+            <div className={`bg-white dark:bg-[#202020] border ${isFinal ? 'border-yellow-400 dark:border-yellow-600 shadow-lg shadow-yellow-500/10' : 'border-gray-200 dark:border-white/10'} rounded-xl p-3 w-64 flex flex-col gap-2 relative`}>
+                {isFinal && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center shadow-sm">
+                        <Trophy className="w-3 h-3 mr-1" />
+                        CHAMPIONSHIP
                     </div>
                 )}
-            </div>
-        </div>
-    );
-}
+                <div className="flex justify-between items-center text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+                    <span>{m.time || 'TBD'}</span>
+                    <span>{m.court || 'Center Court'}</span>
+                </div>
 
-function BracketMatchCard({ match }: { match: Match }) {
-    // Helper to get surname
-    const getSurname = (fullName: string) => {
-        const parts = fullName.split(' ');
-        if (parts.length > 1) {
-            if (parts[0].endsWith('.') || parts[0].length === 1) {
-                return parts.slice(1).join(' ');
-            }
-            return parts.slice(1).join(' ');
-        }
-        return fullName;
-    };
-
-    // Parse scores
-    const parseScores = (score: string[] | undefined) => {
-        if (!score || score.length === 0) return { t1: [], t2: [] };
-        const t1: string[] = [];
-        const t2: string[] = [];
-        score.forEach(set => {
-            const parts = set.split('-');
-            if (parts.length === 2) {
-                t1.push(parts[0]);
-                t2.push(parts[1]);
-            }
-        });
-        return { t1, t2 };
-    };
-
-    const { t1: t1Scores, t2: t2Scores } = parseScores(match.score);
-
-    return (
-        <div className="bg-white dark:bg-[#202020] rounded-lg border border-gray-200 dark:border-white/10 shadow-sm p-3 w-full relative group hover:border-blue-500 transition-colors">
-            {/* Status Indicator */}
-            {match.status === 'live' && (
-                <div className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full animate-pulse" />
-            )}
-
-            <div className="space-y-2">
                 {/* Team 1 */}
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center space-x-2 overflow-hidden">
-                        {match.team1?.map((p, idx) => (
-                            <div key={idx} className="flex items-center space-x-1">
-                                {match.team1Flags?.[idx] && (
-                                    <img
-                                        src={match.team1Flags[idx]}
-                                        alt="Flag"
-                                        className="w-3 h-2 object-cover rounded-[1px]"
-                                    />
-                                )}
-                                <span className="text-xs font-bold text-slate-900 dark:text-white truncate max-w-[80px]">
-                                    {getSurname(p)}
-                                </span>
-                                {idx < (match.team1?.length || 0) - 1 && <span className="text-slate-400 text-xs">/</span>}
-                            </div>
-                        ))}
+                    <div className="flex items-center gap-2 truncate">
+                        {m.team1Flags?.[0] && <img src={m.team1Flags[0]} className="w-3 h-2 rounded-[1px]" />}
+                        <span className="text-sm font-bold text-slate-900 dark:text-white truncate">{m.team1?.map(n => n.split(' ').pop()).join('/')}</span>
                     </div>
-                    {/* Scores T1 */}
-                    <div className="flex space-x-1 ml-2">
-                        {t1Scores.map((s, i) => (
-                            <span key={i} className={cn("text-xs font-mono", parseInt(s) > parseInt(t2Scores[i]) ? "font-bold text-slate-900 dark:text-white" : "text-slate-400")}>
-                                {s}
-                            </span>
-                        ))}
-                    </div>
+                    {/* Score logic would go here */}
                 </div>
 
                 {/* Team 2 */}
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center space-x-2 overflow-hidden">
-                        {match.team2?.map((p, idx) => (
-                            <div key={idx} className="flex items-center space-x-1">
-                                {match.team2Flags?.[idx] && (
-                                    <img
-                                        src={match.team2Flags[idx]}
-                                        alt="Flag"
-                                        className="w-3 h-2 object-cover rounded-[1px]"
-                                    />
-                                )}
-                                <span className="text-xs font-bold text-slate-900 dark:text-white truncate max-w-[80px]">
-                                    {getSurname(p)}
-                                </span>
-                                {idx < (match.team2?.length || 0) - 1 && <span className="text-slate-400 text-xs">/</span>}
+                    <div className="flex items-center gap-2 truncate">
+                        {m.team2Flags?.[0] && <img src={m.team2Flags[0]} className="w-3 h-2 rounded-[1px]" />}
+                        <span className="text-sm font-bold text-slate-900 dark:text-white truncate">{m.team2?.map(n => n.split(' ').pop()).join('/')}</span>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <div className="overflow-x-auto pb-8">
+            <div className="flex items-center gap-16 min-w-max px-8">
+                {/* Quarter Finals */}
+                {quarters.length > 0 && (
+                    <div className="flex flex-col gap-8 justify-around">
+                        <h3 className="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Quarter Finals</h3>
+                        {quarters.map((m, i) => (
+                            <div key={i} className="relative">
+                                {renderMatch(m)}
+                                {/* Connector to next round */}
+                                <div className="absolute top-1/2 -right-8 w-8 h-[1px] bg-gray-300 dark:bg-white/10"></div>
+                                <div className={`absolute top-1/2 -right-8 w-[1px] bg-gray-300 dark:bg-white/10 ${i % 2 === 0 ? 'h-[calc(50%+2rem)] translate-y-0' : 'h-[calc(50%+2rem)] -translate-y-full'}`}></div>
                             </div>
                         ))}
                     </div>
-                    {/* Scores T2 */}
-                    <div className="flex space-x-1 ml-2">
-                        {t2Scores.map((s, i) => (
-                            <span key={i} className={cn("text-xs font-mono", parseInt(s) > parseInt(t1Scores[i]) ? "font-bold text-slate-900 dark:text-white" : "text-slate-400")}>
-                                {s}
-                            </span>
+                )}
+
+                {/* Semi Finals */}
+                {semis.length > 0 && (
+                    <div className="flex flex-col gap-24 justify-around mt-12">
+                        <h3 className="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Semi Finals</h3>
+                        {semis.map((m, i) => (
+                            <div key={i} className="relative">
+                                {renderMatch(m)}
+                                <div className="absolute top-1/2 -right-8 w-8 h-[1px] bg-gray-300 dark:bg-white/10"></div>
+                            </div>
                         ))}
                     </div>
-                </div>
+                )}
+
+                {/* Final */}
+                {finals.length > 0 && (
+                    <div className="flex flex-col justify-center mt-24">
+                        <h3 className="text-center text-sm font-bold text-yellow-500 uppercase tracking-widest mb-4">The Final</h3>
+                        {finals.map((m, i) => renderMatch(m, true))}
+                    </div>
+                )}
             </div>
         </div>
     );
