@@ -40,13 +40,23 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                 let t1Sets = 0;
                 let t2Sets = 0;
                 match.score.forEach(s => {
-                    const parts = s.replace(/[\(\)]/g, '').trim().split('-');
+                    // Remove parens and whitespace
+                    let clean = s.replace(/[\(\)]/g, '').trim();
+                    const parts = clean.split('-');
+
                     if (parts.length === 2) {
-                        const g1 = parseInt(parts[0]);
-                        const g2 = parseInt(parts[1]);
-                        if (!isNaN(g1) && !isNaN(g2)) {
-                            if (g1 > g2) t1Sets++;
-                            else if (g2 > g1) t2Sets++;
+                        let s1 = parseInt(parts[0]);
+                        let s2 = parseInt(parts[1]);
+
+                        // Handle malformed/tiebreak scores simplified (e.g. 7-612 -> 7-6)
+                        if (s1 > 7 || s2 > 7) {
+                            s1 = parseInt(parts[0][0]);
+                            s2 = parseInt(parts[1][0]);
+                        }
+
+                        if (!isNaN(s1) && !isNaN(s2)) {
+                            if (s1 > s2) t1Sets++;
+                            else if (s2 > s1) t2Sets++;
                         }
                     }
                 });
@@ -122,7 +132,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                 <div className="w-full max-w-4xl mt-12">
                     <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl p-8 shadow-sm border border-slate-100 dark:border-white/5">
                         <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-xl font-bold flex items-center gap-2">
+                            <h2 className="text-xl font-bold flex items-center justify-center gap-2">
                                 <Activity className="w-5 h-5 text-blue-500" />
                                 Head to Head Record
                             </h2>
@@ -167,7 +177,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Big Match Stats */}
                         {stats.bigMatchStats && stats.bigMatchStats.total > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <Trophy className="w-4 h-4 text-yellow-500" />
                                     Major & P1 Performance
                                 </h3>
@@ -201,7 +211,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Visual Timeline */}
                         {stats.matches.length > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <TrendingUp className="w-4 h-4 text-blue-500" />
                                     Match Timeline
                                 </h3>
@@ -241,7 +251,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* First Strike Analysis */}
                         {stats.firstSetStats && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <Zap className="w-4 h-4 text-yellow-500" />
                                     First Strike Analysis
                                 </h3>
@@ -302,7 +312,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Deciding Set Analysis */}
                         {stats.threeSetStats && stats.threeSetStats.total > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <Trophy className="w-4 h-4 text-purple-500" />
                                     Deciding Set Performance
                                 </h3>
@@ -326,7 +336,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Tiebreak Analysis */}
                         {stats.tiebreakStats && stats.tiebreakStats.total > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <Activity className="w-4 h-4 text-orange-500" />
                                     Tiebreak Dominance
                                 </h3>
@@ -350,7 +360,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Round-by-Round Analysis */}
                         {stats.roundStats && Object.keys(stats.roundStats).length > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <MapPin className="w-4 h-4 text-green-500" />
                                     Round-by-Round Breakdown
                                 </h3>
@@ -412,7 +422,7 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         {/* Total Games Dominance */}
                         {stats.totalGamesStats && stats.totalGamesStats.total > 0 && (
                             <div className="mt-8 pt-8 border-t border-slate-100 dark:border-white/5">
-                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-6 flex items-center justify-center gap-2">
                                     <Activity className="w-4 h-4 text-indigo-500" />
                                     Total Games Dominance
                                 </h3>

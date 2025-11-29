@@ -233,27 +233,7 @@ export default function ComparePage() {
                             selectedPlayer={p1}
                             placeholder="Search player..."
                         />
-                        {p1 && (
-                            <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30 animate-in fade-in slide-in-from-top-2">
-                                {p1.imageUrl ? (
-                                    <Image
-                                        src={p1.imageUrl || '/placeholder.png'}
-                                        alt={p1.name}
-                                        width={40}
-                                        height={40}
-                                        className="rounded-full object-cover mr-3 border border-blue-200 dark:border-blue-700"
-                                    />
-                                ) : (
-                                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
-                                        {p1.name.charAt(0)}
-                                    </div>
-                                )}
-                                <div>
-                                    <div className="font-bold text-slate-900 dark:text-white">{p1.name}</div>
-                                    <div className="text-xs text-slate-500">Rank #{p1.rank}</div>
-                                </div>
-                            </div>
-                        )}
+
                         {/* Partner 1 */}
                         <div className="mt-6">
                             <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
@@ -265,28 +245,7 @@ export default function ComparePage() {
                                 placeholder={p1 ? "Select partner..." : "Select player 1 first"}
                                 restrictedList={p1 ? p1Partners : undefined}
                             />
-                            {p1Partner && (
-                                <div className="mt-4 flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30 animate-in fade-in slide-in-from-top-2">
-                                    {p1Partner.imageUrl ? (
-                                        <Image
-                                            src={p1Partner.imageUrl || '/placeholder.png'}
-                                            alt={p1Partner.name}
-                                            width={40}
-                                            height={40}
-                                            className="rounded-full object-cover mr-3 border border-blue-200 dark:border-blue-700"
-                                        />
-                                    ) : (
-                                        <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center font-bold text-blue-600 dark:text-blue-300 mr-3">
-                                            {p1Partner.name.charAt(0)}
-                                        </div>
-                                    )}
-                                    <div>
-                                        <div className="font-bold text-slate-900 dark:text-white">{p1Partner.name}</div>
-                                        <div className="text-xs text-slate-500">Rank #{p1Partner.rank}</div>
-                                    </div>
-                                    <button onClick={() => setP1Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
-                                </div>
-                            )}
+
                         </div>
                     </div>
 
@@ -298,27 +257,7 @@ export default function ComparePage() {
                             selectedPlayer={p2}
                             placeholder="Search opponent..."
                         />
-                        {p2 && (
-                            <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30 animate-in fade-in slide-in-from-top-2">
-                                {p2.imageUrl ? (
-                                    <Image
-                                        src={p2.imageUrl || '/placeholder.png'}
-                                        alt={p2.name}
-                                        width={40}
-                                        height={40}
-                                        className="rounded-full object-cover mr-3 border border-red-200 dark:border-red-700"
-                                    />
-                                ) : (
-                                    <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
-                                        {p2.name.charAt(0)}
-                                    </div>
-                                )}
-                                <div>
-                                    <div className="font-bold text-slate-900 dark:text-white">{p2.name}</div>
-                                    <div className="text-xs text-slate-500">Rank #{p2.rank}</div>
-                                </div>
-                            </div>
-                        )}
+
                         {/* Partner 2 */}
                         <div className="mt-6">
                             <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Partner (Optional)</label>
@@ -330,28 +269,7 @@ export default function ComparePage() {
                                 placeholder={p2 ? "Select partner..." : "Select player 2 first"}
                                 restrictedList={p2 ? p2Partners : undefined}
                             />
-                            {p2Partner && (
-                                <div className="mt-4 flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800/30 animate-in fade-in slide-in-from-top-2">
-                                    {p2Partner.imageUrl ? (
-                                        <Image
-                                            src={p2Partner.imageUrl || '/placeholder.png'}
-                                            alt={p2Partner.name}
-                                            width={40}
-                                            height={40}
-                                            className="rounded-full object-cover mr-3 border border-red-200 dark:border-red-700"
-                                        />
-                                    ) : (
-                                        <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-800 flex items-center justify-center font-bold text-red-600 dark:text-red-300 mr-3">
-                                            {p2Partner.name.charAt(0)}
-                                        </div>
-                                    )}
-                                    <div>
-                                        <div className="font-bold text-slate-900 dark:text-white">{p2Partner.name}</div>
-                                        <div className="text-xs text-slate-500">Rank #{p2Partner.rank}</div>
-                                    </div>
-                                    <button onClick={() => setP2Partner(null)} className="ml-auto text-xs text-red-500 hover:underline">Remove</button>
-                                </div>
-                            )}
+
                         </div>
                     </div>
                 </div>
