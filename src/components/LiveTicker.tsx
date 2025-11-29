@@ -208,12 +208,26 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                 <div className="flex overflow-x-auto gap-4 justify-center pb-2">
                                     {nextMatches.map((match, idx) => (
                                         <div key={idx} className="flex-none w-64 bg-slate-50 dark:bg-white/5 rounded-lg p-3 text-left border border-gray-100 dark:border-white/5">
-                                            <div className="text-sm font-bold text-slate-900 dark:text-white mb-1 truncate">
-                                                {match.team1?.map(getSurname).join('/')}
+                                            <div className="flex items-center space-x-1.5 mb-1 truncate">
+                                                <div className="flex -space-x-1">
+                                                    {match.team1Flags?.map((flag, fIdx) => (
+                                                        <img key={fIdx} src={flag} alt="Flag" className="w-3 h-2.5 object-cover rounded-[1px] shadow-sm ring-1 ring-white dark:ring-white/10" />
+                                                    ))}
+                                                </div>
+                                                <span className="text-sm font-bold text-slate-900 dark:text-white truncate">
+                                                    {match.team1?.map(getSurname).join('/')}
+                                                </span>
                                             </div>
-                                            <div className="text-xs text-slate-400 mb-1">vs</div>
-                                            <div className="text-sm font-bold text-slate-900 dark:text-white mb-3 truncate">
-                                                {match.team2?.map(getSurname).join('/')}
+                                            <div className="text-[10px] text-slate-400 mb-1 pl-1">vs</div>
+                                            <div className="flex items-center space-x-1.5 mb-3 truncate">
+                                                <div className="flex -space-x-1">
+                                                    {match.team2Flags?.map((flag, fIdx) => (
+                                                        <img key={fIdx} src={flag} alt="Flag" className="w-3 h-2.5 object-cover rounded-[1px] shadow-sm ring-1 ring-white dark:ring-white/10" />
+                                                    ))}
+                                                </div>
+                                                <span className="text-sm font-bold text-slate-900 dark:text-white truncate">
+                                                    {match.team2?.map(getSurname).join('/')}
+                                                </span>
                                             </div>
 
                                             <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-white/10 px-2 py-1 rounded inline-block w-full text-center">
@@ -222,9 +236,8 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                                     if (!local) return 'Coming up soon';
                                                     return yours ? (
                                                         <div className="flex flex-col">
-                                                            <span className="font-bold text-slate-900 dark:text-white">{yours}</span>
-                                                            <span className="opacity-75 text-[9px]">Your Time</span>
-                                                            <span className="opacity-50 text-[9px] mt-0.5">{local} Local</span>
+                                                            <span className="font-bold text-slate-900 dark:text-white">{local} Local</span>
+                                                            <span className="text-blue-600 dark:text-blue-400 font-bold text-[10px]">{yours} Your Time</span>
                                                         </div>
                                                     ) : (
                                                         <span>{local} Local Time</span>
@@ -352,12 +365,18 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
                                                 <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">Upcoming on {match.court || 'this court'}</span>
                                             </div>
-                                            <span className="text-[10px] text-slate-400 font-mono">
+                                            <div className="text-right">
                                                 {(() => {
                                                     const { local, yours } = convertMatchTime(match.nextMatch.time || '', match.timezone || '');
-                                                    return yours ? `${local} (${yours})` : (local || 'Followed by');
+                                                    if (!yours) return <span className="text-[10px] text-slate-400 font-mono">{local || 'Followed by'}</span>;
+                                                    return (
+                                                        <div className="flex flex-col items-end leading-tight">
+                                                            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{local} Local</span>
+                                                            <span className="text-[10px] text-blue-500 font-bold font-mono">{yours} Your Time</span>
+                                                        </div>
+                                                    );
                                                 })()}
-                                            </span>
+                                            </div>
                                         </div>
                                         <div className="flex items-center justify-between text-xs font-medium text-slate-700 dark:text-slate-300">
                                             <div className="flex-1 truncate text-right pr-2">
