@@ -537,8 +537,23 @@ export async function getMatches(url: string, dayUrl?: string) {
             team2Players = t2Data.players;
 
             // Scores
-            const sets1 = t1Row.find('.set').map((_: any, s: any) => $m(s).text().trim()).get().filter((s: string) => s && s !== '-');
-            const sets2 = t2Row.find('.set').map((_: any, s: any) => $m(s).text().trim()).get().filter((s: string) => s && s !== '-');
+            // Scores - Handle tiebreaks by adding space
+            const extractScore = (row: any) => {
+                return row.find('.set').map((_: any, s: any) => {
+                    const el = $m(s);
+                    // Check for tiebreak span
+                    const tiebreak = el.find('.tiebreak');
+                    if (tiebreak.length > 0) {
+                        const mainScore = el.contents().filter((_: any, n: any) => n.type === 'text').text().trim();
+                        const tbScore = tiebreak.text().trim();
+                        return `${mainScore}(${tbScore})`;
+                    }
+                    return el.text().trim();
+                }).get().filter((s: string) => s && s !== '-');
+            };
+
+            const sets1 = extractScore(t1Row);
+            const sets2 = extractScore(t2Row);
 
             const formattedScore: string[] = [];
             const maxLength = Math.max(sets1.length, sets2.length);
