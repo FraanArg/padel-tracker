@@ -125,61 +125,122 @@ export default function PlayerProfilePage() {
                 </div>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg shadow-blue-500/20">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-white/20 rounded-lg">
-                            <Activity className="w-5 h-5 text-white" />
+            {/* Health Score Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Win Rate Card - The "Health Score" */}
+                <div className="bg-slate-900 text-white rounded-3xl p-6 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl -mr-10 -mt-10 transition-all group-hover:bg-blue-500/30"></div>
+
+                    <div className="flex justify-between items-start mb-4 relative z-10">
+                        <div className="p-2 bg-white/10 rounded-xl">
+                            <Activity className="w-6 h-6 text-blue-400" />
                         </div>
-                        <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded-full">Win Rate</span>
+                        <div className={`px-3 py-1 rounded-full text-sm font-bold ${parseFloat(stats.winRate) >= 80 ? 'bg-green-500/20 text-green-400' :
+                                parseFloat(stats.winRate) >= 60 ? 'bg-yellow-500/20 text-yellow-400' :
+                                    'bg-red-500/20 text-red-400'
+                            }`}>
+                            {parseFloat(stats.winRate) >= 80 ? 'A+' : parseFloat(stats.winRate) >= 70 ? 'A' : parseFloat(stats.winRate) >= 60 ? 'B' : 'C'}
+                        </div>
                     </div>
-                    <div className="text-3xl font-bold">{stats.winRate}</div>
-                    <div className="text-sm text-blue-100 mt-1">{stats.wins}W - {stats.losses}L</div>
+
+                    <div className="relative z-10">
+                        <div className="text-sm text-slate-400 font-medium mb-1">Win Rate</div>
+                        <div className="flex items-baseline gap-2">
+                            <span className="text-4xl font-black tracking-tight">{stats.winRate}</span>
+                            <span className="text-sm text-slate-400 font-medium">
+                                {stats.wins}W - {stats.losses}L
+                            </span>
+                        </div>
+
+                        {/* Progress Bar */}
+                        <div className="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                            <div
+                                className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"
+                                style={{ width: stats.winRate }}
+                            ></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-[#202020] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-white/5">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                            <Trophy className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
+                {/* Titles Card */}
+                <div className="bg-white dark:bg-[#202020] rounded-3xl p-6 border border-slate-100 dark:border-white/5 relative overflow-hidden group hover:border-yellow-500/50 transition-colors">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-500/10 rounded-full blur-2xl -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                    <div className="flex justify-between items-start mb-4">
+                        <div className="p-2 bg-yellow-100 dark:bg-yellow-900/20 rounded-xl">
+                            <Trophy className="w-6 h-6 text-yellow-600 dark:text-yellow-500" />
                         </div>
-                        <span className="text-xs font-medium text-slate-400">Titles</span>
+                        <div className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-bold text-slate-500">
+                            Titles
+                        </div>
                     </div>
-                    <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.titles}</div>
-                    <div className="text-sm text-slate-500 mt-1">Tournament Wins</div>
+
+                    <div>
+                        <div className="text-sm text-slate-500 font-medium mb-1">Championships</div>
+                        <div className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {stats.titles}
+                        </div>
+                        <div className="text-xs text-slate-400 mt-2 font-medium">
+                            Tournament Wins
+                        </div>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-[#202020] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-white/5">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-                            <Medal className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                {/* Finals Card */}
+                <div className="bg-white dark:bg-[#202020] rounded-3xl p-6 border border-slate-100 dark:border-white/5 relative overflow-hidden group hover:border-purple-500/50 transition-colors">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                    <div className="flex justify-between items-start mb-4">
+                        <div className="p-2 bg-purple-100 dark:bg-purple-900/20 rounded-xl">
+                            <Medal className="w-6 h-6 text-purple-600 dark:text-purple-500" />
                         </div>
-                        <span className="text-xs font-medium text-slate-400">Finals</span>
+                        <div className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-bold text-slate-500">
+                            Finals
+                        </div>
                     </div>
-                    <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.finals}</div>
-                    <div className="text-sm text-slate-500 mt-1">Finals Reached</div>
+
+                    <div>
+                        <div className="text-sm text-slate-500 font-medium mb-1">Finals Reached</div>
+                        <div className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                            {stats.finals}
+                        </div>
+                        <div className="text-xs text-slate-400 mt-2 font-medium">
+                            Runner-up or Winner
+                        </div>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-[#202020] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-white/5">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                            <TrendingUp className="w-5 h-5 text-green-600 dark:text-green-400" />
-                        </div>
-                        <span className="text-xs font-medium text-slate-400">Matches</span>
-                    </div>
-                    <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.totalMatches}</div>
-                    <div className="text-sm text-slate-500 mt-1">Total Played</div>
-                </div>
+                {/* Streak Card */}
+                <div className="bg-white dark:bg-[#202020] rounded-3xl p-6 border border-slate-100 dark:border-white/5 relative overflow-hidden group hover:border-orange-500/50 transition-colors">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-                <div className="bg-white dark:bg-[#202020] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-white/5">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                            <Activity className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                    <div className="flex justify-between items-start mb-4">
+                        <div className="p-2 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                            <TrendingUp className="w-6 h-6 text-orange-600 dark:text-orange-500" />
                         </div>
-                        <span className="text-xs font-medium text-slate-400">Streak</span>
+                        <div className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-bold text-slate-500">
+                            Streak
+                        </div>
                     </div>
-                    <div className="text-3xl font-bold text-slate-900 dark:text-white">{stats.currentStreak} <span className="text-sm font-normal text-slate-400">/ {stats.maxStreak}</span></div>
-                    <div className="text-sm text-slate-500 mt-1">Current / Max Wins</div>
+
+                    <div>
+                        <div className="text-sm text-slate-500 font-medium mb-1">Current Form</div>
+                        <div className="flex items-baseline gap-2">
+                            <span className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">{stats.currentStreak}</span>
+                            <span className="text-sm text-slate-400 font-medium">/ {stats.maxStreak} Max</span>
+                        </div>
+
+                        {/* Mini Progress for Streak */}
+                        <div className="mt-4 flex gap-1 h-1.5">
+                            {[...Array(5)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className={`flex-1 rounded-full ${i < stats.currentStreak ? 'bg-orange-500' : 'bg-slate-100 dark:bg-white/10'
+                                        }`}
+                                ></div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
 

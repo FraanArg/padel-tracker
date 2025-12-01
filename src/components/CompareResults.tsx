@@ -150,53 +150,81 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
             {/* H2H Stats */}
             {stats && (
                 <div className="w-full max-w-4xl mt-12 mx-auto">
-                    <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl p-8 shadow-sm border border-slate-100 dark:border-white/5">
-                        <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-xl font-bold flex items-center justify-center gap-2">
-                                <Activity className="w-5 h-5 text-blue-500" />
-                                Head to Head Record
-                            </h2>
+                    <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-[#1a1a1a] dark:to-[#202020] rounded-3xl p-8 shadow-sm border border-slate-100 dark:border-white/5 relative overflow-hidden">
+                        {/* Decorative Background Elements */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none"></div>
+
+                        <div className="flex items-center justify-between mb-8 relative z-10">
+                            <div className="flex items-center gap-3">
+                                <div className="p-2 bg-white dark:bg-white/10 rounded-xl shadow-sm">
+                                    <Activity className="w-5 h-5 text-blue-500" />
+                                </div>
+                                <div>
+                                    <h2 className="text-lg font-bold text-slate-900 dark:text-white">Head to Head</h2>
+                                    <div className="flex items-center gap-2 mt-1">
+                                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${stats.totalMatches > 10 ? 'bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-400' :
+                                                stats.totalMatches > 5 ? 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400' :
+                                                    'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                                            }`}>
+                                            {stats.totalMatches > 10 ? 'High Intensity' : stats.totalMatches > 5 ? 'Medium Intensity' : 'Developing Rivalry'}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                             <button
                                 onClick={() => setShowHistory(true)}
-                                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-500/10 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-500/20 transition-colors"
+                                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-600 bg-white dark:text-slate-300 dark:bg-white/5 rounded-lg hover:bg-slate-50 dark:hover:bg-white/10 transition-colors shadow-sm border border-slate-100 dark:border-white/5"
                             >
                                 <History className="w-4 h-4" />
-                                View History
+                                History
                             </button>
                         </div>
 
-                        <div className="relative py-8 mb-8">
+                        <div className="relative py-4 mb-8 z-10">
                             {/* VS Badge */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                                 <motion.div
-                                    animate={{ scale: [1, 1.1, 1] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                    className="w-12 h-12 bg-slate-900 dark:bg-white rounded-full flex items-center justify-center border-4 border-white dark:border-[#1a1a1a] shadow-xl"
+                                    animate={{ scale: [1, 1.05, 1] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                    className="w-10 h-10 bg-white dark:bg-[#252525] rounded-full flex items-center justify-center border-4 border-slate-50 dark:border-[#1a1a1a] shadow-lg"
                                 >
-                                    <span className="text-white dark:text-slate-900 font-black text-sm">VS</span>
+                                    <span className="text-slate-900 dark:text-white font-black text-xs">VS</span>
                                 </motion.div>
                             </div>
 
-                            <div className="flex items-center justify-between relative z-0">
+                            <div className="flex items-center justify-between">
                                 {/* Team 1 */}
-                                <div className="flex-1 text-center pr-8">
-                                    <div className="text-6xl md:text-8xl font-black text-blue-600 dark:text-blue-500 tracking-tighter mb-2">
-                                        {stats.team1Wins}
+                                <div className="flex-1 pr-8">
+                                    <div className="bg-white dark:bg-white/5 rounded-2xl p-4 border border-blue-100 dark:border-blue-500/20 shadow-sm relative overflow-hidden group">
+                                        <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+                                        <div className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-1">
+                                            {stats.team1Wins}
+                                        </div>
+                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider flex justify-between items-center">
+                                            <span>Wins</span>
+                                            <span className="text-blue-500">{Math.round((stats.team1Wins / stats.totalMatches) * 100)}%</span>
+                                        </div>
                                     </div>
-                                    <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">Wins</div>
                                 </div>
 
                                 {/* Team 2 */}
-                                <div className="flex-1 text-center pl-8">
-                                    <div className="text-6xl md:text-8xl font-black text-red-500 dark:text-red-500 tracking-tighter mb-2">
-                                        {stats.team2Wins}
+                                <div className="flex-1 pl-8">
+                                    <div className="bg-white dark:bg-white/5 rounded-2xl p-4 border border-red-100 dark:border-red-500/20 shadow-sm relative overflow-hidden group text-right">
+                                        <div className="absolute top-0 right-0 w-1 h-full bg-red-500"></div>
+                                        <div className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-1">
+                                            {stats.team2Wins}
+                                        </div>
+                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider flex justify-between items-center flex-row-reverse">
+                                            <span>Wins</span>
+                                            <span className="text-red-500">{Math.round((stats.team2Wins / stats.totalMatches) * 100)}%</span>
+                                        </div>
                                     </div>
-                                    <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">Wins</div>
                                 </div>
                             </div>
 
                             {/* Win Bar */}
-                            <div className="mt-8 h-4 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden flex relative">
+                            <div className="mt-8 h-3 bg-white dark:bg-white/5 rounded-full overflow-hidden flex relative shadow-inner">
                                 <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: `${(stats.team1Wins / stats.totalMatches) * 100}%` }}
@@ -210,8 +238,8 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                                     className="h-full bg-red-500 ml-auto"
                                 />
                             </div>
-                            <div className="text-center mt-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
-                                {stats.totalMatches} Total Matches
+                            <div className="text-center mt-3 text-xs font-medium text-slate-400">
+                                Based on <span className="font-bold text-slate-900 dark:text-white">{stats.totalMatches}</span> matches
                             </div>
                         </div>
 

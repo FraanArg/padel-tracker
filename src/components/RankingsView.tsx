@@ -6,6 +6,44 @@ import { Trophy, Medal } from 'lucide-react';
 import clsx from 'clsx';
 import Image from 'next/image';
 
+const countryCodeMap: Record<string, string> = {
+    'ARG': 'AR', 'ESP': 'ES', 'ITA': 'IT', 'BRA': 'BR', 'FRA': 'FR',
+    'POR': 'PT', 'SWE': 'SE', 'BEL': 'BE', 'GBR': 'GB', 'GER': 'DE',
+    'NED': 'NL', 'CHI': 'CL', 'MEX': 'MX', 'USA': 'US', 'SUI': 'CH',
+    'AUT': 'AT', 'RUS': 'RU', 'POL': 'PL', 'FIN': 'FI', 'DEN': 'DK'
+};
+
+function getFlagEmoji(country: string) {
+    if (!country) return '🏳️';
+    const code = countryCodeMap[country.toUpperCase()] || country.substring(0, 2).toUpperCase();
+    const codePoints = code
+        .toUpperCase()
+        .split('')
+        .map(char => 127397 + char.charCodeAt(0));
+    return String.fromCodePoint(...codePoints);
+}
+
+function FlagImage({ url, country }: { url?: string, country: string }) {
+    const [error, setError] = useState(false);
+
+    if (error || !url) {
+        return <span className="text-base leading-none" title={country}>{getFlagEmoji(country)}</span>;
+    }
+
+    return (
+        <div className="relative w-4 h-3 rounded-sm overflow-hidden shadow-sm">
+            <Image
+                src={url}
+                alt={country}
+                fill
+                className="object-cover"
+                sizes="16px"
+                onError={() => setError(true)}
+            />
+        </div>
+    );
+}
+
 export default function RankingsView({ men, women }: { men: PlayerRanking[], women: PlayerRanking[] }) {
     const [activeTab, setActiveTab] = useState<'men' | 'women'>('men');
     const [limit, setLimit] = useState(20);
@@ -15,6 +53,7 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
 
     return (
         <div className="space-y-6">
+
             {/* Tabs */}
             <div className="flex justify-center">
                 <div className="bg-slate-100 dark:bg-white/5 p-1 rounded-full inline-flex">
@@ -69,40 +108,32 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
                                         </div>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <div className="flex items-center gap-4">
-                                            {player.imageUrl ? (
-                                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-700">
-                                                    <Image
-                                                        src={player.imageUrl}
-                                                        alt={player.name}
-                                                        fill
-                                                        className="object-cover group-hover:scale-110 transition-transform"
-                                                        sizes="48px"
-                                                    />
-                                                </div>
-                                            ) : (
-                                                <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-2 border-slate-200 dark:border-slate-700">
-                                                    <Trophy className="w-5 h-5 text-slate-400" />
-                                                </div>
-                                            )}
-                                            <div>
-                                                <div className="font-bold text-slate-900 dark:text-white text-base">{player.name}</div>
-                                                <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                                                    {player.flagUrl && (
-                                                        <div className="relative w-4 h-3 rounded-sm overflow-hidden shadow-sm">
-                                                            <Image
-                                                                src={player.flagUrl}
-                                                                alt={player.country}
-                                                                fill
-                                                                className="object-cover"
-                                                                sizes="16px"
-                                                            />
-                                                        </div>
-                                                    )}
-                                                    {player.country}
+                                        <Link href={`/player/${player.name}`} className="block group-hover:translate-x-1 transition-transform">
+                                            <div className="flex items-center gap-4">
+                                                {player.imageUrl ? (
+                                                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-700">
+                                                        <Image
+                                                            src={player.imageUrl}
+                                                            alt={player.name}
+                                                            fill
+                                                            className="object-cover group-hover:scale-110 transition-transform"
+                                                            sizes="48px"
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-2 border-slate-200 dark:border-slate-700">
+                                                        <Trophy className="w-5 h-5 text-slate-400" />
+                                                    </div>
+                                                )}
+                                                <div>
+                                                    <div className="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{player.name}</div>
+                                                    <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                                        <FlagImage url={player.flagUrl} country={player.country} />
+                                                        {player.country}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <div className="font-bold text-slate-900 dark:text-white">{player.points}</div>
