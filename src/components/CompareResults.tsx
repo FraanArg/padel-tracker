@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { Activity, Trophy, TrendingUp, History, Zap, Share2, ArrowLeftRight, MapPin } from 'lucide-react';
+import { Activity, Trophy, TrendingUp, History, Zap, Share2, ArrowLeftRight, MapPin, Link as LinkIcon, Check } from 'lucide-react';
 import { Player, Match } from '@/lib/padel';
 import { H2HResult } from '@/lib/stats';
 import { getResultBadgeColor, getResultShort } from '@/lib/utils';
@@ -32,6 +32,15 @@ interface CompareResultsProps {
 
 export default function CompareResults({ data, stats, h2h, rivalryCardRef, handleDownloadCard }: CompareResultsProps) {
     const [showHistory, setShowHistory] = useState(false);
+    const [copied, setCopied] = useState(false);
+
+    const handleCopyLink = () => {
+        if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }
+    };
 
     const timelineData = useMemo(() => {
         if (!stats) return [];
@@ -159,9 +168,13 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                         <div className="relative py-8 mb-8">
                             {/* VS Badge */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                                <div className="w-12 h-12 bg-slate-900 dark:bg-white rounded-full flex items-center justify-center border-4 border-white dark:border-[#1a1a1a] shadow-xl">
+                                <motion.div
+                                    animate={{ scale: [1, 1.1, 1] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    className="w-12 h-12 bg-slate-900 dark:bg-white rounded-full flex items-center justify-center border-4 border-white dark:border-[#1a1a1a] shadow-xl"
+                                >
                                     <span className="text-white dark:text-slate-900 font-black text-sm">VS</span>
-                                </div>
+                                </motion.div>
                             </div>
 
                             <div className="flex items-center justify-between relative z-0">
@@ -469,6 +482,13 @@ export default function CompareResults({ data, stats, h2h, rivalryCardRef, handl
                                 >
                                     <Share2 className="w-4 h-4" />
                                     Share Card
+                                </button>
+                                <button
+                                    onClick={handleCopyLink}
+                                    className="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-600 transition-colors bg-slate-50 dark:bg-white/5 px-3 py-1.5 rounded-lg ml-2"
+                                >
+                                    {copied ? <Check className="w-4 h-4 text-green-500" /> : <LinkIcon className="w-4 h-4" />}
+                                    {copied ? 'Copied!' : 'Copy Link'}
                                 </button>
                             </div>
 

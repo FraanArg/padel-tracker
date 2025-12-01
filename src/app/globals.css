@@ -56,3 +56,17 @@ body {
 @utility pt-safe {
   padding-top: env(safe-area-inset-top);
 }
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: shine 1.5s infinite;
+}
