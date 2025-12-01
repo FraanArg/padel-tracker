@@ -80,9 +80,10 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                 // Filter for strictly active matches
                 const activeMatches = data.matches.filter((m: Match) => {
                     const status = m.status?.toLowerCase() || '';
+                    const isFinished = status.includes('final') || status.includes('finished') || status.includes('ft');
                     const hasScore = m.score && m.score.length > 0;
-                    const isSetStatus = status.includes('set');
-                    return hasScore || isSetStatus;
+                    const isSetStatus = status.includes('set') || status.includes('live');
+                    return !isFinished && (hasScore || isSetStatus);
                 });
 
                 setMatches(activeMatches);
