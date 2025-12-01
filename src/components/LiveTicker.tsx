@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { Tournament, Match } from '@/lib/padel';
-import { convertMatchTime } from '@/lib/date';
+import { convertMatchTime, TOURNAMENT_METADATA } from '@/lib/date';
 import { Activity, RefreshCw } from 'lucide-react';
 import ClientTime from './ClientTime';
 
@@ -355,25 +355,23 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                 {/* Next Match Section */}
                                 {match.nextMatch && (
                                     <div className="mt-auto pt-3 border-t border-gray-100 dark:border-white/5 bg-slate-50 dark:bg-white/5 -mx-4 -mb-4 px-4 py-3">
-                                        <div className="flex items-center justify-between mb-2">
-                                            <div className="flex items-center space-x-2">
+                                        <div className="flex flex-col items-center justify-center mb-2">
+                                            <div className="flex items-center space-x-2 mb-1">
                                                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
                                                 <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">Upcoming on {match.court || 'this court'}</span>
                                             </div>
-                                            <div className="text-right">
-                                                <ClientTime
-                                                    time={match.nextMatch.time || ''}
-                                                    timezone={match.timezone}
-                                                    format="ticker-footer"
-                                                />
-                                            </div>
+                                            <ClientTime
+                                                time={match.nextMatch.time || ''}
+                                                timezone={match.timezone || TOURNAMENT_METADATA[bestTournament.name.toUpperCase()]?.timezone || TOURNAMENT_METADATA[Object.keys(TOURNAMENT_METADATA).find(k => bestTournament.name.toUpperCase().includes(k)) || '']?.timezone}
+                                                format="ticker-footer"
+                                            />
                                         </div>
-                                        <div className="flex items-center justify-center gap-3 text-xs font-medium text-slate-700 dark:text-slate-300">
-                                            <div className="truncate text-right">
+                                        <div className="flex items-center justify-center gap-3 text-xs font-medium text-slate-700 dark:text-slate-300 w-full">
+                                            <div className="flex-1 truncate text-right">
                                                 {match.nextMatch.team1?.map(getSurname).join('/')}
                                             </div>
-                                            <div className="text-slate-400 text-[10px] font-bold">VS</div>
-                                            <div className="truncate text-left">
+                                            <div className="text-slate-400 text-[10px] font-bold shrink-0">VS</div>
+                                            <div className="flex-1 truncate text-left">
                                                 {match.nextMatch.team2?.map(getSurname).join('/')}
                                             </div>
                                         </div>
