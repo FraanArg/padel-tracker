@@ -248,7 +248,7 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                 </div>
             ) : (
                 /* Horizontal Scroll Container */
-                <div className="flex overflow-x-auto pb-4 gap-3 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+                <div className={`flex overflow-x-auto pb-4 gap-3 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 ${matches.length === 1 ? 'justify-center' : ''}`}>
                     {matches.map((match, i) => {
                         const { t1: t1Scores, t2: t2Scores } = parseScores(match.score);
                         const isLiveStatus = match.status?.toLowerCase() === 'live';

@@ -52,7 +52,14 @@ export function convertMatchTime(time: string, timezone: string): { local: strin
 
     try {
         const now = new Date();
-        const [hours, minutes] = time.split(':').map(Number);
+        // Parse time string handling AM/PM
+        let [hoursStr, minutesStr] = time.split(':');
+        let hours = parseInt(hoursStr);
+        let minutes = parseInt(minutesStr);
+
+        if (time.toLowerCase().includes('pm') && hours !== 12) hours += 12;
+        if (time.toLowerCase().includes('am') && hours === 12) hours = 0;
+
         if (isNaN(hours) || isNaN(minutes)) return { local: time, yours: '' };
 
         // Helper to get offset in minutes for a timezone
