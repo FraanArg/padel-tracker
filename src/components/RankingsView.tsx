@@ -5,6 +5,7 @@ import { PlayerRanking } from '@/lib/padel';
 import { Trophy, Medal } from 'lucide-react';
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const countryCodeMap: Record<string, string> = {
     'ARG': 'AR', 'ESP': 'ES', 'ITA': 'IT', 'BRA': 'BR', 'FRA': 'FR',
