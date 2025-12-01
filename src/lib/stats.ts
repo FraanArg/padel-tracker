@@ -63,7 +63,7 @@ export function getAllArchivedMatchesSync(): Match[] {
                     dateStart: tournament.dateStart,
                     dateEnd: tournament.dateEnd
                 },
-                year: year
+                year: year.toString()
             }));
             allMatches.push(...tournamentMatches);
         } catch (e) {

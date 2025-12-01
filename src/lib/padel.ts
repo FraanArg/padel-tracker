@@ -49,6 +49,11 @@ export interface Match {
     team2Seed?: string;
     tournament?: { name: string; dateStart?: string; dateEnd?: string; };
     nextMatch?: Match; // The match immediately following this one on the same court
+    // Match Stats IDs
+    id?: string;
+    year?: string;
+    tournamentId?: string;
+    organization?: string;
 }
 
 // ... existing code ...
@@ -413,6 +418,7 @@ export async function getMatches(url: string, dayUrl?: string) {
         }
 
         if (!widgetId) {
+            // 1. Try idEvent_ class (existing)
             $event('[class*="idEvent_"]').each((_, el) => {
                 const classes = $event(el).attr('class')?.split(/\s+/) || [];
                 const idClass = classes.find(c => c.startsWith('idEvent_'));
@@ -420,6 +426,25 @@ export async function getMatches(url: string, dayUrl?: string) {
                     tournamentId = idClass.replace('idEvent_', '');
                 }
             });
+
+            // 2. Fallback: Try WordPress body class 'postid-XXXX'
+            if (!tournamentId) {
+                const bodyClasses = $event('body').attr('class')?.split(/\s+/) || [];
+                const postidClass = bodyClasses.find(c => c.startsWith('postid-'));
+                if (postidClass) {
+                    tournamentId = postidClass.replace('postid-', '');
+                }
+            }
+
+            // 3. Fallback: Try article ID 'post-XXXX'
+            if (!tournamentId) {
+                $event('article[id^="post-"]').each((_, el) => {
+                    const id = $event(el).attr('id');
+                    if (id) {
+                        tournamentId = id.replace('post-', '');
+                    }
+                });
+            }
         }
 
         // If no specific day requested and we didn't find a direct Live Score widget
@@ -609,6 +634,19 @@ export async function getMatches(url: string, dayUrl?: string) {
 
             const raw = `${status} ${team1Players.join(' / ')} vs ${team2Players.join(' / ')} ${formattedScore.join(' ')}`;
 
+            // Extract Match Stats IDs
+            // Look for .open class or data attributes on the row or children
+            const extractDataAttr = (row: any, attr: string) => {
+                let val = row.attr(`data-${attr}`);
+                if (!val) val = row.find('.open').attr(`data-${attr}`);
+                return val;
+            };
+
+            const matchId = extractDataAttr(t1Row, 'id');
+            const year = extractDataAttr(t1Row, 'year');
+            const tid = extractDataAttr(t1Row, 'tid');
+            const org = extractDataAttr(t1Row, 'org');
+
             return {
                 raw: raw.replace(/\s+/g, ' ').trim(),
                 team1: team1Players,
@@ -624,7 +662,12 @@ export async function getMatches(url: string, dayUrl?: string) {
                 location,
                 court,
                 team1Seed,
-                team2Seed
+                team2Seed,
+                // Stats IDs
+                id: matchId,
+                year,
+                tournamentId: tid,
+                organization: org
             };
         };
 
@@ -1142,5 +1185,69 @@ export async function getAllMatches(url: string) {
     } catch (error) {
         console.error('Error fetching all matches:', error);
         return { matches: [], days: [], tournamentName: '' };
+    }
+}
+
+export interface MatchStats {
+    team1Name: string;
+    team2Name: string;
+    stats: {
+        label: string;
+        team1Value: string;
+        team2Value: string;
+    }[];
+}
+
+export async function getMatchStats(matchId: string, year: string, tournamentId: string, organization: string): Promise<MatchStats | null> {
+    try {
+        const url = 'https://widget.matchscorerlive.com/screen/getmatchstats?t=tol';
+        const { data } = await axios.post(url, {
+            matchId,
+            year,
+            tournamentId,
+            organization
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'User-Agent': USER_AGENT
+            }
+        });
+
+        const $ = cheerio.load(data);
+
+        // Parse the HTML
+        // Structure is usually a table or list of stats
+        // Based on typical MatchScorerLive layout:
+        // .row with team names
+        // .stat-row with values
+
+        const team1Name = $('.team-name').first().text().trim() || 'Team 1';
+        const team2Name = $('.team-name').last().text().trim() || 'Team 2';
+
+        const stats: MatchStats['stats'] = [];
+
+        $('.stat-row, .row.stat').each((_, el) => {
+            const row = $(el);
+            const label = row.find('.label, .stat-label').text().trim();
+            const values = row.find('.value, .stat-value');
+
+            if (label && values.length >= 2) {
+                stats.push({
+                    label,
+                    team1Value: $(values[0]).text().trim(),
+                    team2Value: $(values[1]).text().trim()
+                });
+            }
+        });
+
+        return {
+            team1Name,
+            team2Name,
+            stats
+        };
+
+    } catch (error) {
+        console.error('Error fetching match stats:', error);
+        return null;
     }
 }
