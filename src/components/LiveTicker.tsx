@@ -366,12 +366,12 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                                 format="ticker-footer"
                                             />
                                         </div>
-                                        <div className="flex items-center justify-center gap-3 text-xs font-medium text-slate-700 dark:text-slate-300 w-full">
-                                            <div className="flex-1 truncate text-right">
+                                        <div className="flex items-center justify-center gap-4 text-xs font-medium text-slate-700 dark:text-slate-300">
+                                            <div className="truncate text-right max-w-[120px]">
                                                 {match.nextMatch.team1?.map(getSurname).join('/')}
                                             </div>
                                             <div className="text-slate-400 text-[10px] font-bold shrink-0">VS</div>
-                                            <div className="flex-1 truncate text-left">
+                                            <div className="truncate text-left max-w-[120px]">
                                                 {match.nextMatch.team2?.map(getSurname).join('/')}
                                             </div>
                                         </div>

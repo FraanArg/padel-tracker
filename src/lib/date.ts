@@ -57,13 +57,47 @@ export function convertMatchTime(time: string, timezone: string): { local: strin
 
         // Helper to get offset in minutes for a timezone
         const getOffset = (tz: string) => {
-            const date = new Date();
-            const str = date.toLocaleString('en-US', { timeZone: tz, timeZoneName: 'longOffset' });
-            const match = str.match(/GMT([+-]\d{2}):?(\d{2})?/);
-            if (!match) return 0;
-            const h = parseInt(match[1], 10);
-            const m = match[2] ? parseInt(match[2], 10) : 0;
-            return h * 60 + (h < 0 ? -m : m);
+            // Hardcoded offsets for common tournament timezones to ensure reliability
+            const hardcodedOffsets: Record<string, number> = {
+                'America/Mexico_City': -360, // UTC-6
+                'Europe/Madrid': 60, // UTC+1 (Winter) - Note: This needs DST logic if strict, but better than 0 failure
+                'Europe/Paris': 60,
+                'Europe/Rome': 60,
+                'Europe/Brussels': 60,
+                'Europe/Berlin': 60,
+                'Europe/Amsterdam': 60,
+                'Europe/Stockholm': 60,
+                'Europe/Helsinki': 120,
+                'Asia/Qatar': 180,
+                'Asia/Dubai': 240,
+                'Asia/Riyadh': 180,
+                'America/Argentina/Buenos_Aires': -180,
+                'America/Santiago': -180, // Varies by DST
+                'America/Caracas': -240,
+                'America/Asuncion': -180, // Varies by DST
+                'Africa/Cairo': 120, // Varies
+            };
+
+            // Try browser calculation first
+            try {
+                const date = new Date();
+                const str = date.toLocaleString('en-US', { timeZone: tz, timeZoneName: 'longOffset' });
+                const match = str.match(/GMT([+-]\d{2}):?(\d{2})?/);
+                if (match) {
+                    const h = parseInt(match[1], 10);
+                    const m = match[2] ? parseInt(match[2], 10) : 0;
+                    return h * 60 + (h < 0 ? -m : m);
+                }
+            } catch (e) {
+                // Fallback
+            }
+
+            // Fallback to hardcoded
+            if (hardcodedOffsets[tz] !== undefined) {
+                return hardcodedOffsets[tz];
+            }
+
+            return 0;
         };
 
         const tournamentOffset = getOffset(timezone);
