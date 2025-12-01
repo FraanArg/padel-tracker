@@ -58,6 +58,30 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         return { t1, t2 };
     };
 
+    // Helper to check if match is finished based on score
+    const isMatchFinished = (score: string[] | undefined) => {
+        if (!score || score.length === 0) return false;
+
+        let t1Sets = 0;
+        let t2Sets = 0;
+
+        score.forEach(set => {
+            const parts = set.split('-');
+            if (parts.length === 2) {
+                const s1 = parseInt(parts[0]);
+                const s2 = parseInt(parts[1]);
+
+                if (!isNaN(s1) && !isNaN(s2)) {
+                    if (s1 > s2 && s1 >= 6) t1Sets++;
+                    if (s2 > s1 && s2 >= 6) t2Sets++;
+                }
+            }
+        });
+
+        // Assuming best of 3
+        return t1Sets === 2 || t2Sets === 2;
+    };
+
     useEffect(() => {
         // 1. Select the "Best" live tournament
         const live = tournaments.filter(t => t.status === 'live');
@@ -80,10 +104,13 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                 // Filter for strictly active matches
                 const activeMatches = data.matches.filter((m: Match) => {
                     const status = m.status?.toLowerCase() || '';
-                    const isFinished = status.includes('final') || status.includes('finished') || status.includes('ft');
+                    const isExplicitlyFinished = status.includes('final') || status.includes('finished') || status.includes('ft');
                     const hasScore = m.score && m.score.length > 0;
                     const isSetStatus = status.includes('set') || status.includes('live');
-                    return !isFinished && (hasScore || isSetStatus);
+                    const hasPlayers = (m.team1 && m.team1.length > 0) && (m.team2 && m.team2.length > 0);
+                    const finishedByScore = isMatchFinished(m.score);
+
+                    return !isExplicitlyFinished && !finishedByScore && hasPlayers && (hasScore || isSetStatus);
                 });
 
                 setMatches(activeMatches);
