@@ -78,11 +78,13 @@ export default function ClientTime({ time, timezone, className = '', showLocal =
     }
 
     // ticker-footer
-    if (!yours) return <span className="text-[10px] text-slate-400 font-mono">{local || 'Followed by'}</span>;
+    const displayYours = yours || local;
     return (
         <div className="flex flex-col items-end leading-tight">
-            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{local} Local</span>
-            <span className="text-[10px] text-blue-500 font-bold font-mono">{yours} Your Time</span>
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">{local || 'Followed by'} {local ? 'Local' : ''}</span>
+            {displayYours && displayYours !== 'Followed by' && (
+                <span className="text-[10px] text-blue-500 font-bold font-mono">{displayYours} Your Time</span>
+            )}
         </div>
     );
 }
