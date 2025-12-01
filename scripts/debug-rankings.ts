@@ -1,30 +1,27 @@
 
+import { getRankings } from '../src/lib/padel';
 import axios from 'axios';
-import * as cheerio from 'cheerio';
 
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+// Increase timeout
+axios.defaults.timeout = 30000;
 
-async function debugRankings() {
-    const url = 'https://www.padelfip.com/ranking-male/';
-    console.log(`Fetching ${url}...`);
-
+async function main() {
+    console.log('Fetching rankings with increased timeout...');
     try {
-        const { data } = await axios.get(url, {
-            headers: { 'User-Agent': USER_AGENT }
+        const { men, women } = await getRankings();
+
+        console.log('\n--- MEN (Top 10) ---');
+        men.slice(0, 10).forEach(p => {
+            console.log(`Rank: ${p.rank} | Name: ${p.name} | Country: "${p.country}" | FlagURL: "${p.flagUrl}"`);
         });
-        const $ = cheerio.load(data);
 
-        const rows = $('table tr');
-        console.log(`Found ${rows.length} rows.`);
-
-        if (rows.length > 0) {
-            const lastRow = rows.last();
-            console.log('Last Row:', lastRow.text().trim());
-        }
-
-    } catch (error) {
-        console.error('Error:', error);
+        console.log('\n--- WOMEN (Top 10) ---');
+        women.slice(0, 10).forEach(p => {
+            console.log(`Rank: ${p.rank} | Name: ${p.name} | Country: "${p.country}" | FlagURL: "${p.flagUrl}"`);
+        });
+    } catch (e) {
+        console.error('Failed again:', e);
     }
 }
 
-debugRankings();
+main();

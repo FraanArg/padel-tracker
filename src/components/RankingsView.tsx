@@ -8,15 +8,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const countryCodeMap: Record<string, string> = {
+    // 3-letter codes
     'ARG': 'AR', 'ESP': 'ES', 'ITA': 'IT', 'BRA': 'BR', 'FRA': 'FR',
     'POR': 'PT', 'SWE': 'SE', 'BEL': 'BE', 'GBR': 'GB', 'GER': 'DE',
     'NED': 'NL', 'CHI': 'CL', 'MEX': 'MX', 'USA': 'US', 'SUI': 'CH',
-    'AUT': 'AT', 'RUS': 'RU', 'POL': 'PL', 'FIN': 'FI', 'DEN': 'DK'
+    'AUT': 'AT', 'RUS': 'RU', 'POL': 'PL', 'FIN': 'FI', 'DEN': 'DK',
+    'UAE': 'AE', 'QAT': 'QA', 'JPN': 'JP', 'CHN': 'CN', 'AUS': 'AU',
+
+    // Full names (English/Spanish/Italian variations just in case)
+    'ARGENTINA': 'AR', 'SPAIN': 'ES', 'ITALY': 'IT', 'BRAZIL': 'BR', 'FRANCE': 'FR',
+    'PORTUGAL': 'PT', 'SWEDEN': 'SE', 'BELGIUM': 'BE', 'GREAT BRITAIN': 'GB', 'GERMANY': 'DE',
+    'NETHERLANDS': 'NL', 'CHILE': 'CL', 'MEXICO': 'MX', 'UNITED STATES': 'US', 'SWITZERLAND': 'CH',
+    'AUSTRIA': 'AT', 'RUSSIA': 'RU', 'POLAND': 'PL', 'FINLAND': 'FI', 'DENMARK': 'DK',
+    'UNITED ARAB EMIRATES': 'AE', 'QATAR': 'QA', 'JAPAN': 'JP', 'CHINA': 'CN', 'AUSTRALIA': 'AU'
 };
 
+function getCountryCode(country: string): string | null {
+    if (!country) return null;
+    const normalized = country.toUpperCase().trim();
+    return countryCodeMap[normalized] || (normalized.length === 2 ? normalized : null);
+}
+
 function getFlagEmoji(country: string) {
-    if (!country) return '🏳️';
-    const code = countryCodeMap[country.toUpperCase()] || country.substring(0, 2).toUpperCase();
+    const code = getCountryCode(country);
+    if (!code) return '🏳️';
     const codePoints = code
         .toUpperCase()
         .split('')
@@ -26,20 +41,25 @@ function getFlagEmoji(country: string) {
 
 function FlagImage({ url, country }: { url?: string, country: string }) {
     const [error, setError] = useState(false);
+    const code = getCountryCode(country);
 
-    if (error || !url) {
+    // Prefer FlagCDN if we have a valid code
+    const flagSrc = code ? `https://flagcdn.com/w40/${code.toLowerCase()}.png` : url;
+
+    if (error || !flagSrc) {
         return <span className="text-base leading-none" title={country}>{getFlagEmoji(country)}</span>;
     }
 
     return (
-        <div className="relative w-4 h-3 rounded-sm overflow-hidden shadow-sm">
+        <div className="relative w-5 h-3.5 rounded-[2px] overflow-hidden shadow-sm bg-slate-100 dark:bg-slate-800">
             <Image
-                src={url}
+                src={flagSrc}
                 alt={country}
                 fill
                 className="object-cover"
-                sizes="16px"
+                sizes="20px"
                 onError={() => setError(true)}
+                unoptimized // FlagCDN is external
             />
         </div>
     );
