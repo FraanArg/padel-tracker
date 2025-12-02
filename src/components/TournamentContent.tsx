@@ -2,8 +2,9 @@
 import { getMatches, getAllMatches, Match } from "@/lib/padel";
 import MatchCard from "@/components/MatchCard";
 import { TournamentBracket } from "@/components/tournament/TournamentBracket";
+import { TournamentStats } from "@/components/tournament/TournamentStats";
 import Link from "next/link";
-import { ArrowLeft, Calendar, GitGraph, List } from "lucide-react";
+import { ArrowLeft, Calendar, GitGraph, List, BarChart } from "lucide-react";
 import AutoRefresh from '@/components/AutoRefresh';
 
 interface TournamentContentProps {
@@ -15,6 +16,7 @@ interface TournamentContentProps {
 export default async function TournamentContent({ id, day, view }: TournamentContentProps) {
     const url = `https://www.padelfip.com/events/${id}/`;
     const isDrawView = view === 'draw';
+    const isStatsView = view === 'stats';
 
     // Fetch data based on view
     let data: {
@@ -25,7 +27,7 @@ export default async function TournamentContent({ id, day, view }: TournamentCon
         error?: string
     };
 
-    if (isDrawView) {
+    if (isDrawView || isStatsView) {
         const result = await getAllMatches(url);
         data = { ...result, matches: result.matches as Match[] };
     } else {
@@ -107,6 +109,13 @@ export default async function TournamentContent({ id, day, view }: TournamentCon
                         >
                             <GitGraph className="w-4 h-4" />
                         </Link>
+                        <Link
+                            href={`/tournament/${id}?view=stats`}
+                            className={`p-2 rounded-md transition-all ${isStatsView ? 'bg-white dark:bg-white/10 shadow-sm text-black dark:text-white' : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'}`}
+                            title="Stats"
+                        >
+                            <BarChart className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
 
@@ -123,6 +132,8 @@ export default async function TournamentContent({ id, day, view }: TournamentCon
 
             {isDrawView ? (
                 <TournamentBracket matches={data.matches} />
+            ) : isStatsView ? (
+                <TournamentStats matches={data.matches} />
             ) : (
                 <>
                     {/* Day Navigation */}

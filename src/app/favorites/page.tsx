@@ -75,9 +75,8 @@ export default function FavoritesPage() {
                 )}
             </div>
 
-            {/* Matches List */}
-            <div>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Upcoming Matches</h2>
+            {/* Matches Feed */}
+            <div className="space-y-8">
                 {loading ? (
                     <div className="flex justify-center py-12">
                         <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
@@ -87,16 +86,44 @@ export default function FavoritesPage() {
                         <p className="text-slate-500 dark:text-slate-400">No matches found for your favorite players.</p>
                     </div>
                 ) : (
-                    <div className="grid gap-4">
-                        {matches.map((match, i) => (
-                            <div key={i} className="relative">
-                                <div className="absolute -top-3 left-4 bg-blue-600 text-white text-xs px-2 py-1 rounded shadow-sm z-10">
-                                    {match.tournament.name}
+                    <>
+                        {/* Upcoming / Live */}
+                        {matches.some(m => m.isLiveOrUpcoming) && (
+                            <div>
+                                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    Upcoming & Live
+                                </h2>
+                                <div className="grid gap-4">
+                                    {matches.filter(m => m.isLiveOrUpcoming).map((match, i) => (
+                                        <div key={`live-${i}`} className="relative">
+                                            <div className="absolute -top-3 left-4 bg-blue-600 text-white text-xs px-2 py-1 rounded shadow-sm z-10">
+                                                {match.tournament?.name || 'Tournament'}
+                                            </div>
+                                            <MatchCard match={match} />
+                                        </div>
+                                    ))}
                                 </div>
-                                <MatchCard match={match} />
                             </div>
-                        ))}
-                    </div>
+                        )}
+
+                        {/* Recent Results */}
+                        {matches.some(m => m.isArchived) && (
+                            <div>
+                                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Recent Results</h2>
+                                <div className="grid gap-4">
+                                    {matches.filter(m => m.isArchived).map((match, i) => (
+                                        <div key={`archived-${i}`} className="relative">
+                                            <div className="absolute -top-3 left-4 bg-slate-600 text-white text-xs px-2 py-1 rounded shadow-sm z-10">
+                                                {match.tournament?.name || 'Tournament'}
+                                            </div>
+                                            <MatchCard match={match} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
         </div>

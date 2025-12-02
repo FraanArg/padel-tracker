@@ -52,7 +52,7 @@ export default function InstallPrompt() {
 
                         <div className="flex items-start gap-4 pr-6">
                             <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
-                                <img src="/icon-192x192.png" alt="App Icon" className="w-full h-full rounded-xl object-cover" onError={(e) => (e.currentTarget.style.display = 'none')} />
+                                <img src="/icons/icon-192x192.png" alt="App Icon" className="w-full h-full rounded-xl object-cover" onError={(e) => (e.currentTarget.style.display = 'none')} />
                             </div>
                             <div>
                                 <h3 className="font-bold text-slate-900 dark:text-white">Install Padel Tracker</h3>

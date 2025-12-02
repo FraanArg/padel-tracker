@@ -2,14 +2,15 @@
 'use client';
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Trophy, Medal, TrendingUp, Users, MapPin, Activity, Calendar } from 'lucide-react';
+import { ArrowLeft, Trophy, Medal, TrendingUp, Users, MapPin, Activity, Calendar, Share2 } from 'lucide-react';
 import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton';
 import { CareerTimeline } from '@/components/player/CareerTimeline';
 import { PartnerHistory } from '@/components/player/PartnerHistory';
 import { StatsDashboard } from '@/components/player/StatsDashboard';
+import PlayerCard from '@/components/player/PlayerCard';
 import { CareerTournament, PlayerStats as IPlayerStats } from '@/lib/stats';
 
 interface PlayerProfile {
@@ -28,6 +29,28 @@ export default function PlayerProfilePage() {
     const [stats, setStats] = useState<IPlayerStats | null>(null);
     const [timeline, setTimeline] = useState<CareerTournament[]>([]);
     const [profile, setProfile] = useState<PlayerProfile | null>(null);
+    const playerCardRef = useRef<HTMLDivElement>(null);
+
+    const handleDownloadCard = async () => {
+        if (!playerCardRef.current || !profile) return;
+
+        try {
+            const html2canvas = (await import('html2canvas')).default;
+            const canvas = await html2canvas(playerCardRef.current, {
+                backgroundColor: null,
+                scale: 2, // Higher quality
+                logging: false,
+                useCORS: true // For images
+            } as any);
+
+            const link = document.createElement('a');
+            link.download = `${profile.name.replace(/\s+/g, '-').toLowerCase()}-card.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } catch (err) {
+            console.error('Failed to generate player card:', err);
+        }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -81,20 +104,30 @@ export default function PlayerProfilePage() {
 
                     {/* Info */}
                     <div className="flex-1 text-center md:text-left space-y-4">
-                        <div>
-                            <Link href="/" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors mb-2">
-                                <ArrowLeft className="w-4 h-4 mr-1" />
-                                Back
-                            </Link>
-                            <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-                                {profile.name}
-                            </h1>
-                            <div className="flex items-center justify-center md:justify-start space-x-4 mt-2 text-slate-500 font-medium">
-                                <span className="flex items-center">
-                                    <MapPin className="w-4 h-4 mr-1" />
-                                    {profile.country}
-                                </span>
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <Link href="/" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors mb-2">
+                                    <ArrowLeft className="w-4 h-4 mr-1" />
+                                    Back
+                                </Link>
+                                <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+                                    {profile.name}
+                                </h1>
+                                <div className="flex items-center justify-center md:justify-start space-x-4 mt-2 text-slate-500 font-medium">
+                                    <span className="flex items-center">
+                                        <MapPin className="w-4 h-4 mr-1" />
+                                        {profile.country}
+                                    </span>
+                                </div>
                             </div>
+
+                            <button
+                                onClick={handleDownloadCard}
+                                className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20"
+                            >
+                                <Share2 className="w-4 h-4" />
+                                Share Card
+                            </button>
                         </div>
 
                         <div className="flex flex-wrap justify-center md:justify-start gap-4">
@@ -109,6 +142,15 @@ export default function PlayerProfilePage() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Hidden Player Card for Generation */}
+            <div className="fixed left-[-9999px] top-[-9999px]">
+                <PlayerCard
+                    ref={playerCardRef}
+                    player={profile}
+                    stats={stats}
+                />
             </div>
 
             {/* Stats Dashboard */}
