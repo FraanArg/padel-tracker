@@ -35,15 +35,15 @@ export function TournamentStats({ matches }: TournamentStatsProps) {
     let totalSets = 0;
     let threeSetMatches = 0;
 
-    matches.forEach(m => {
-        if (!m.score || m.score.length === 0) return;
+    for (const m of matches) {
+        if (!m.score || m.score.length === 0) continue;
 
         let matchGames = 0;
         let matchSets = m.score.length;
         totalSets += matchSets;
         if (matchSets === 3) threeSetMatches++;
 
-        m.score.forEach(setScore => {
+        for (const setScore of m.score) {
             // Clean score "6-4" or "7-6(5)"
             const clean = setScore.replace(/\(.*\)/, '').trim();
             const parts = clean.split('-');
@@ -67,7 +67,7 @@ export function TournamentStats({ matches }: TournamentStatsProps) {
                     }
                 }
             }
-        });
+        }
 
         // Longest/Shortest Match (by games)
         if (!longestMatch || matchGames > longestMatch.games) {
@@ -76,7 +76,7 @@ export function TournamentStats({ matches }: TournamentStatsProps) {
         if (!shortestMatch || (matchGames > 0 && matchGames < shortestMatch.games)) {
             shortestMatch = { match: m, games: matchGames };
         }
-    });
+    }
 
     const formatMatchName = (m: Match) => {
         const t1 = m.team1?.map(p => p.split(' ').pop()).join('/') || 'Team 1';
