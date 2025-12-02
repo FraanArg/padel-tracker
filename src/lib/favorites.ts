@@ -55,7 +55,7 @@ export async function getFavoritesAction() {
         },
     })
 
-    return favorites.map(f => f.playerId)
+    return favorites.map((f: { playerId: string }) => f.playerId)
 }
 
 export async function syncFavoritesAction(localFavorites: { id: string, name: string }[]) {
@@ -72,7 +72,7 @@ export async function syncFavoritesAction(localFavorites: { id: string, name: st
             userId,
         },
     })
-    const dbIds = new Set(dbFavorites.map(f => f.playerId))
+    const dbIds = new Set(dbFavorites.map((f: { playerId: string }) => f.playerId))
 
     // Filter local favorites that are not in DB
     const newFavorites = localFavorites.filter(f => !dbIds.has(f.id))

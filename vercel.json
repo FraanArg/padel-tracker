@@ -2,7 +2,8 @@
     "crons": [
         {
             "path": "/api/cron/check-matches",
-            "schedule": "*/30 * * * *"
+            "schedule": "0 10 * * *"
         }
-    ]
+    ],
+    "installCommand": "npm install --legacy-peer-deps"
 }
