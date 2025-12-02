@@ -137,7 +137,7 @@ export function getPlayerStats(playerName: string, year?: number | 'all'): Playe
     // Filter by year if specified
     if (year && year !== 'all') {
         allMatches = allMatches.filter(m => {
-            if ((m as any).year) return (m as any).year === year;
+            if ((m as any).year) return (m as any).year == year;
             if (m.tournament?.dateStart) {
                 return new Date(m.tournament.dateStart).getFullYear() === year;
             }
@@ -372,7 +372,7 @@ export async function getHeadToHead(team1: string[], team2: string[], year?: num
         if (year && year !== 'all') {
             allMatches = allMatches.filter(m => {
                 // Try to get year from match object or tournament date
-                if ((m as any).year) return (m as any).year === year;
+                if ((m as any).year) return (m as any).year == year;
                 if (m.tournament?.dateStart) {
                     return new Date(m.tournament.dateStart).getFullYear() === year;
                 }
