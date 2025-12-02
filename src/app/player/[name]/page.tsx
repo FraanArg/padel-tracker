@@ -1,29 +1,16 @@
 
 'use client';
 
+
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Trophy, Medal, TrendingUp, Users, MapPin, Activity } from 'lucide-react';
+import { ArrowLeft, Trophy, Medal, TrendingUp, Users, MapPin, Activity, Calendar } from 'lucide-react';
 import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton';
-
-interface PartnerStat {
-    name: string;
-    matches: number;
-}
-
-interface PlayerStats {
-    totalMatches: number;
-    wins: number;
-    losses: number;
-    winRate: string;
-    titles: number;
-    finals: number;
-    partners: PartnerStat[];
-    currentStreak: number;
-    maxStreak: number;
-    roundStats: Record<string, { played: number, won: number }>;
-}
+import { CareerTimeline } from '@/components/player/CareerTimeline';
+import { PartnerHistory } from '@/components/player/PartnerHistory';
+import { StatsDashboard } from '@/components/player/StatsDashboard';
+import { CareerTournament, PlayerStats as IPlayerStats } from '@/lib/stats';
 
 interface PlayerProfile {
     name: string;
@@ -38,7 +25,8 @@ export default function PlayerProfilePage() {
     const name = decodeURIComponent(params.name as string);
 
     const [loading, setLoading] = useState(true);
-    const [stats, setStats] = useState<PlayerStats | null>(null);
+    const [stats, setStats] = useState<IPlayerStats | null>(null);
+    const [timeline, setTimeline] = useState<CareerTournament[]>([]);
     const [profile, setProfile] = useState<PlayerProfile | null>(null);
 
     useEffect(() => {
@@ -47,6 +35,7 @@ export default function PlayerProfilePage() {
                 const res = await fetch(`/api/player/${encodeURIComponent(name)}/stats`);
                 const json = await res.json();
                 if (json.stats) setStats(json.stats);
+                if (json.timeline) setTimeline(json.timeline);
                 if (json.profile) setProfile(json.profile);
             } catch (e) {
                 console.error('Failed to fetch player data', e);
@@ -121,6 +110,9 @@ export default function PlayerProfilePage() {
                     </div>
                 </div>
             </div>
+
+            {/* Stats Dashboard */}
+            <StatsDashboard stats={stats} />
 
             {/* Health Score Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -241,80 +233,56 @@ export default function PlayerProfilePage() {
                 </div>
             </div>
 
-            {/* Partner History */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-2 bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                        <Users className="w-5 h-5 mr-2 text-blue-500" />
-                        Partner History
-                    </h3>
-                    <div className="space-y-4">
-                        {stats.partners.map((partner, i) => (
-                            <div key={i} className="flex items-center justify-between p-4 bg-slate-50 dark:bg-white/5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors">
-                                <div className="flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500">
-                                        {i + 1}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Left Column: Career Timeline */}
+                <div className="lg:col-span-2 space-y-8">
+                    <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
+                            <Calendar className="w-5 h-5 mr-2 text-blue-500" />
+                            Career Timeline
+                        </h3>
+                        <CareerTimeline timeline={timeline} />
+                    </div>
+
+                    <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
+                            <Users className="w-5 h-5 mr-2 text-blue-500" />
+                            Partner History
+                        </h3>
+                        <PartnerHistory partners={stats.partners} />
+                    </div>
+                </div>
+
+                {/* Right Column: Round Stats & Performance */}
+                <div className="space-y-8">
+                    {/* Round Performance */}
+                    <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                            Round Performance
+                        </h3>
+                        <div className="space-y-4">
+                            {Object.entries(stats.roundStats || {}).map(([round, data]) => (
+                                <div key={round}>
+                                    <div className="flex justify-between text-sm mb-1">
+                                        <span className="text-slate-500">{round}</span>
+                                        <span className="font-bold text-slate-900 dark:text-white">
+                                            {data.played > 0 ? Math.round((data.won / data.played) * 100) : 0}%
+                                            <span className="text-slate-400 font-normal ml-1">({data.won}/{data.played})</span>
+                                        </span>
                                     </div>
-                                    <span className="font-medium text-slate-900 dark:text-white">{partner.name}</span>
+                                    <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                        <div
+                                            className="h-full bg-blue-500 rounded-full"
+                                            style={{ width: `${data.played > 0 ? (data.won / data.played) * 100 : 0}%` }}
+                                        />
+                                    </div>
                                 </div>
-                                <div className="flex items-center space-x-2">
-                                    <span className="text-2xl font-bold text-slate-900 dark:text-white">{partner.matches}</span>
-                                    <span className="text-xs text-slate-500 uppercase font-medium">Matches</span>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Placeholder for Recent Form or other stats */}
-                <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
-                        Performance
-                    </h3>
-                    <div className="space-y-6">
-                        <div>
-                            <div className="flex justify-between text-sm mb-2">
-                                <span className="text-slate-500">Win Rate</span>
-                                <span className="font-bold text-slate-900 dark:text-white">{stats.winRate}</span>
-                            </div>
-                            <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div
-                                    className="h-full bg-blue-500 rounded-full"
-                                    style={{ width: stats.winRate }}
-                                />
-                            </div>
+                            ))}
                         </div>
-
-                        {/* More mini stats can go here */}
-                    </div>
-                </div>
-
-                {/* Round Performance */}
-                <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
-                        Round Performance
-                    </h3>
-                    <div className="space-y-4">
-                        {Object.entries(stats.roundStats || {}).map(([round, data]) => (
-                            <div key={round}>
-                                <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-slate-500">{round}</span>
-                                    <span className="font-bold text-slate-900 dark:text-white">
-                                        {data.played > 0 ? Math.round((data.won / data.played) * 100) : 0}%
-                                        <span className="text-slate-400 font-normal ml-1">({data.won}/{data.played})</span>
-                                    </span>
-                                </div>
-                                <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                    <div
-                                        className="h-full bg-blue-500 rounded-full"
-                                        style={{ width: `${data.played > 0 ? (data.won / data.played) * 100 : 0}%` }}
-                                    />
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>
         </div>
     );
 }
+

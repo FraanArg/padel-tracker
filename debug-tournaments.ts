@@ -1,38 +1,18 @@
 
-import { getTournaments } from './src/lib/padel';
+import { getAllTournaments } from './src/lib/archive';
 
-async function debug() {
-    console.log('Fetching tournaments...');
-    const tournaments = await getTournaments();
-
+function debugTournaments() {
+    console.log("Fetching all tournaments...");
+    const tournaments = getAllTournaments();
     console.log(`Found ${tournaments.length} tournaments.`);
 
-    const mexico = tournaments.filter(t =>
-        t.name.toUpperCase().includes('MEXICO') ||
-        t.name.toUpperCase().includes('ACAPULCO') ||
-        t.name.toUpperCase().includes('MAJOR')
-    );
+    if (tournaments.length > 0) {
+        console.log("First Tournament:", JSON.stringify(tournaments[0], null, 2));
+    }
 
-    console.log('--- Potential Mexico/Major Tournaments ---');
-    mexico.forEach(t => {
-        console.log({
-            name: t.name,
-            status: t.status,
-            dateStart: t.dateStart,
-            parsedDate: t.parsedDate,
-            url: t.url
-        });
-    });
-
-    console.log('--- All Live Tournaments ---');
-    const live = tournaments.filter(t => t.status === 'live');
-    live.forEach(t => {
-        console.log({
-            name: t.name,
-            status: t.status,
-            dateStart: t.dateStart
-        });
-    });
+    // Check for 2024 tournaments
+    const t2024 = tournaments.filter(t => t.year === 2024);
+    console.log(`Found ${t2024.length} tournaments for 2024.`);
 }
 
-debug();
+debugTournaments();

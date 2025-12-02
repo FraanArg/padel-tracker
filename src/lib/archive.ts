@@ -122,6 +122,16 @@ export function listArchivedTournaments(): string[] {
     return fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json'));
 }
 
+export function getAllTournaments(): ArchivedTournament[] {
+    const files = listArchivedTournaments();
+    const tournaments: ArchivedTournament[] = [];
+    for (const file of files) {
+        const t = loadTournament(file);
+        if (t) tournaments.push(t);
+    }
+    return tournaments;
+}
+
 function normalizeName(name: string): string {
     return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }

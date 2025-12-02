@@ -789,3 +789,138 @@ export function getPartners(playerName: string): string[] {
 
     return Array.from(partners).sort();
 }
+
+export interface CareerTournament {
+    id: string;
+    name: string;
+    year: number;
+    date: string;
+    result: string;
+    partner: string;
+}
+
+export interface PlayerCareerStats {
+    stats: PlayerStats;
+    timeline: CareerTournament[];
+}
+
+export async function getPlayerCareerStats(playerName: string): Promise<PlayerCareerStats> {
+    // Get aggregate stats
+    const stats = getPlayerStats(playerName, 'all');
+
+    // Get all matches to build timeline
+    let allMatches: Match[] = [];
+    try {
+        allMatches = await getAllArchivedMatchesAsync();
+    } catch (e) {
+        allMatches = getAllArchivedMatchesSync();
+    }
+
+    const p = playerName.toLowerCase();
+
+    // Group matches by tournament
+    const tournamentMap = new Map<string, Match[]>();
+
+    allMatches.forEach(m => {
+        if (!m.team1 || !m.team2) return;
+        const found = m.team1.some(n => namesMatch(n, p)) || m.team2.some(n => namesMatch(n, p));
+        if (found) {
+            // Use tournament ID or name as key
+            const key = m.tournamentId || m.tournament?.name || 'unknown';
+            if (!tournamentMap.has(key)) {
+                tournamentMap.set(key, []);
+            }
+            tournamentMap.get(key)!.push(m);
+        }
+    });
+
+    const timeline: CareerTournament[] = [];
+
+    tournamentMap.forEach((matches, key) => {
+        if (matches.length === 0) return;
+
+        // Sort matches by round/date to find the "last" match (which determines result)
+        // Actually, we just need to find the best result.
+        // If they won the final, result is Winner.
+        // If they lost the final, result is Finalist.
+        // Otherwise, it's the round of the match they lost.
+
+        // Let's find the match where they lost, or the final if they won.
+        let lastMatch = matches[0];
+        let result = 'Participant';
+        let partner = 'Unknown';
+
+        // Determine partner from first match (usually same partner for whole tournament)
+        const m0 = matches[0];
+        const isTeam1 = m0.team1?.some(n => namesMatch(n, p));
+        const myTeam = isTeam1 ? m0.team1 : m0.team2;
+        if (myTeam) {
+            const foundPartner = myTeam.find(n => !namesMatch(n, p));
+            if (foundPartner) partner = foundPartner;
+        }
+
+        // Determine Result
+        let wonTournament = false;
+        let lostMatch: Match | null = null;
+
+        matches.forEach(m => {
+            const isT1 = m.team1?.some(n => namesMatch(n, p));
+            const winner = determineWinner(m);
+
+            if (winner) {
+                const won = (isT1 && winner === 1) || (!isT1 && winner === 2);
+                if (won) {
+                    if (m.round && (m.round.toLowerCase() === 'final' || m.round.toLowerCase() === 'f')) {
+                        wonTournament = true;
+                    }
+                } else {
+                    lostMatch = m;
+                }
+            }
+        });
+
+        if (wonTournament) {
+            result = 'Winner';
+        } else if (lostMatch && (lostMatch as Match).round) {
+            const r = (lostMatch as Match).round!.toLowerCase();
+            if (r.includes('final') && !r.includes('semi') && !r.includes('quarter')) result = 'Finalist';
+            else if (r.includes('semi')) result = 'Semi-Finalist';
+            else if (r.includes('quarter')) result = 'Quarter-Finalist';
+            else if (r.includes('16')) result = 'Round of 16';
+            else if (r.includes('32')) result = 'Round of 32';
+            else result = (lostMatch as Match).round!; // Fallback
+        } else {
+            // If no lost match found (maybe data incomplete), use the round of the last match played
+            const last = matches[matches.length - 1];
+            if (last.round) result = last.round;
+        }
+
+        // Get Metadata
+        const t = matches[0].tournament;
+        const year = (matches[0] as any).year ? parseInt((matches[0] as any).year) : new Date().getFullYear();
+
+        timeline.push({
+            id: matches[0].tournamentId || key,
+            name: t?.name || key,
+            year: year,
+            date: t?.dateStart || '',
+            result,
+            partner
+        });
+    });
+
+    // Sort timeline descending by date
+    timeline.sort((a, b) => {
+        if (a.year !== b.year) return b.year - a.year;
+        // Try to parse date
+        const da = new Date(a.date).getTime();
+        const db = new Date(b.date).getTime();
+        if (!isNaN(da) && !isNaN(db)) return db - da;
+        return 0;
+    });
+
+    return {
+        stats,
+        timeline
+    };
+}
