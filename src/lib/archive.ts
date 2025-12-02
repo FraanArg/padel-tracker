@@ -16,12 +16,12 @@ export interface ArchivedTournament {
     archivedAt: string;
 }
 
-export function saveTournament(id: string, name: string, matches: Match[]) {
+export function saveTournament(id: string, name: string, matches: Match[], year: number = new Date().getFullYear()) {
     if (!fs.existsSync(DATA_DIR)) {
         fs.mkdirSync(DATA_DIR, { recursive: true });
     }
 
-    const year = new Date().getFullYear();
+    // const year = new Date().getFullYear(); // Removed hardcoded year
     // Create a slug from the name for the filename
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     const filename = `${slug}-${year}.json`;
