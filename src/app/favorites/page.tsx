@@ -1,33 +1,27 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useFavorites } from '@/context/FavoritesContext';
 import Link from 'next/link';
 import { ArrowLeft, Star, Loader2 } from 'lucide-react';
 import MatchCard from '@/components/MatchCard';
 
 export default function FavoritesPage() {
-    const [favorites, setFavorites] = useState<string[]>([]);
+    const { favorites, toggleFavorite } = useFavorites();
     const [matches, setMatches] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Load favorites from local storage
-        const stored = localStorage.getItem('padel-favorites');
-        if (stored) {
-            const favs = JSON.parse(stored);
-            setFavorites(favs);
-
-            if (favs.length > 0) {
-                fetchMatches(favs);
-            } else {
-                setLoading(false);
-            }
+        if (favorites.length > 0) {
+            fetchMatches(favorites);
         } else {
+            setMatches([]);
             setLoading(false);
         }
-    }, []);
+    }, [favorites]);
 
     const fetchMatches = async (favs: string[]) => {
+        setLoading(true);
         try {
             const res = await fetch('/api/matches/search', {
                 method: 'POST',
@@ -44,16 +38,7 @@ export default function FavoritesPage() {
     };
 
     const removeFavorite = (player: string) => {
-        const newFavs = favorites.filter(f => f !== player);
-        setFavorites(newFavs);
-        localStorage.setItem('padel-favorites', JSON.stringify(newFavs));
-        setMatches(matches.filter(m => {
-            const allPlayers = [...(m.team1 || []), ...(m.team2 || [])];
-            return allPlayers.some(p => {
-                const pName = p.toLowerCase();
-                return newFavs.some(fav => pName.includes(fav.toLowerCase()));
-            });
-        }));
+        toggleFavorite(player, player);
     };
 
     return (

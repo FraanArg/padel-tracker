@@ -1,11 +1,11 @@
-
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Tournament, Match } from '@/lib/padel';
 import { convertMatchTime, TOURNAMENT_METADATA } from '@/lib/date';
 import { Activity, RefreshCw } from 'lucide-react';
 import ClientTime from './ClientTime';
+import MatchCardSkeleton from './skeletons/MatchCardSkeleton';
 
 interface LiveTickerProps {
     tournaments: Tournament[];
@@ -82,6 +82,76 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         return t1Sets === 2 || t2Sets === 2;
     };
 
+    const fetchMatches = useCallback(async () => {
+        if (!bestTournament) return;
+
+        try {
+            const res = await fetch(`/api/matches?url=${encodeURIComponent(bestTournament.url)}`);
+            const data = await res.json();
+
+            // Filter for strictly active matches
+            const activeMatches = data.matches.filter((m: Match) => {
+                const status = m.status?.toLowerCase() || '';
+                const isExplicitlyFinished = status.includes('final') || status.includes('finished') || status.includes('ft');
+                const hasScore = m.score && m.score.length > 0;
+                const isSetStatus = status.includes('set') || status.includes('live');
+                const hasPlayers = (m.team1 && m.team1.length > 0) && (m.team2 && m.team2.length > 0);
+                const finishedByScore = isMatchFinished(m.score);
+
+                return !isExplicitlyFinished && !finishedByScore && hasPlayers && (hasScore || isSetStatus);
+            });
+
+            setMatches(activeMatches);
+
+            // Find the next scheduled matches (Earliest Batch Logic)
+            let upcoming = data.matches.filter((m: Match) => {
+                const status = m.status?.toLowerCase() || '';
+                const isActive = activeMatches.some((am: Match) =>
+                    JSON.stringify(am.team1) === JSON.stringify(m.team1) &&
+                    JSON.stringify(am.team2) === JSON.stringify(m.team2)
+                );
+                return !isActive && status !== 'finished';
+            });
+
+            // HOTFIX: Manually set time for Brea/Triay match if missing
+            upcoming = upcoming.map((m: Match) => {
+                const isBrea = m.team1?.some(p => p.includes('Brea')) || m.team2?.some(p => p.includes('Brea'));
+                const isTriay = m.team1?.some(p => p.includes('Triay')) || m.team2?.some(p => p.includes('Triay'));
+
+                if (isBrea && isTriay && !m.time) {
+                    return { ...m, time: '16:00' };
+                }
+                return m;
+            });
+
+            if (upcoming.length > 0) {
+                upcoming.sort((a: Match, b: Match) => {
+                    if (a.time && !b.time) return -1;
+                    if (!a.time && b.time) return 1;
+                    return (a.time || '').localeCompare(b.time || '');
+                });
+
+                const firstTime = upcoming[0].time;
+                let batch = [];
+                if (firstTime) {
+                    batch = upcoming.filter((m: Match) => m.time === firstTime);
+                } else {
+                    batch = upcoming.filter((m: Match) => !m.time);
+                }
+
+                setNextMatches(batch);
+            } else {
+                setNextMatches([]);
+            }
+
+            setLastUpdated(new Date());
+        } catch (error) {
+            console.error('Error fetching live matches:', error);
+        } finally {
+            setLoading(false);
+        }
+    }, [bestTournament, isMatchFinished]); // Add isMatchFinished to dependencies
+
     useEffect(() => {
         // 1. Select the "Best" live tournament
         const live = tournaments.filter(t => t.status === 'live');
@@ -94,116 +164,80 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
         const sorted = [...live].sort((a, b) => getImportance(b.name) - getImportance(a.name));
         const selected = sorted[0];
         setBestTournament(selected);
-
-        // 2. Fetch matches
-        const fetchMatches = async () => {
-            try {
-                const res = await fetch(`/api/matches?url=${encodeURIComponent(selected.url)}`);
-                const data = await res.json();
-
-                // Filter for strictly active matches
-                const activeMatches = data.matches.filter((m: Match) => {
-                    const status = m.status?.toLowerCase() || '';
-                    const isExplicitlyFinished = status.includes('final') || status.includes('finished') || status.includes('ft');
-                    const hasScore = m.score && m.score.length > 0;
-                    const isSetStatus = status.includes('set') || status.includes('live');
-                    const hasPlayers = (m.team1 && m.team1.length > 0) && (m.team2 && m.team2.length > 0);
-                    const finishedByScore = isMatchFinished(m.score);
-
-                    return !isExplicitlyFinished && !finishedByScore && hasPlayers && (hasScore || isSetStatus);
-                });
-
-                setMatches(activeMatches);
-
-                // Find the next scheduled matches (Earliest Batch Logic)
-                let upcoming = data.matches.filter((m: Match) => {
-                    const status = m.status?.toLowerCase() || '';
-                    const isActive = activeMatches.some((am: Match) =>
-                        JSON.stringify(am.team1) === JSON.stringify(m.team1) &&
-                        JSON.stringify(am.team2) === JSON.stringify(m.team2)
-                    );
-                    return !isActive && status !== 'finished';
-                });
-
-                // HOTFIX: Manually set time for Brea/Triay match if missing
-                // User confirmed it is at 16:00 Local Time (Acapulco)
-                upcoming = upcoming.map((m: Match) => {
-                    const isBrea = m.team1?.some(p => p.includes('Brea')) || m.team2?.some(p => p.includes('Brea'));
-                    const isTriay = m.team1?.some(p => p.includes('Triay')) || m.team2?.some(p => p.includes('Triay'));
-
-                    if (isBrea && isTriay && !m.time) {
-                        return { ...m, time: '16:00' };
-                    }
-                    return m;
-                });
-
-                if (upcoming.length > 0) {
-                    // Sort by time
-                    // Matches with time should come BEFORE matches without time (assuming no time = "followed by" / later)
-                    // But wait, "Coming up soon" might be "Next available".
-                    // However, user specifically said "all others are continuations" of the 16:00 match.
-                    // So we prioritize the one WITH time.
-                    upcoming.sort((a: Match, b: Match) => {
-                        if (a.time && !b.time) return -1;
-                        if (!a.time && b.time) return 1;
-                        return (a.time || '').localeCompare(b.time || '');
-                    });
-
-                    // Get the time of the very first match
-                    const firstTime = upcoming[0].time;
-
-                    // Filter all matches that have this same time
-                    // If firstTime is defined, only show matches with that time.
-                    // If firstTime is undefined (all are "Coming up soon"), show all of them? 
-                    // Or just the first one? User said "if there's more than one... adding horizontally".
-                    // But for this specific case, we expect firstTime to be '16:00'.
-
-                    let batch = [];
-                    if (firstTime) {
-                        batch = upcoming.filter((m: Match) => m.time === firstTime);
-                    } else {
-                        // If no time is available for ANY match, show all "Coming up soon" ones?
-                        // Or just the first one? Let's show all for now, unless user complains.
-                        // But in this specific case, Brea will have time, others won't, so Brea will be first and alone.
-                        batch = upcoming.filter((m: Match) => !m.time);
-                    }
-
-                    setNextMatches(batch);
-                } else {
-                    setNextMatches([]);
-                }
-
-                setLastUpdated(new Date());
-            } catch (error) {
-                console.error('Error fetching live matches:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchMatches();
-
-        // Poll every 60 seconds
-        const interval = setInterval(fetchMatches, 60000);
-        return () => clearInterval(interval);
-
     }, [tournaments]);
+
+    useEffect(() => {
+        if (bestTournament) {
+            fetchMatches();
+            const interval = setInterval(fetchMatches, 60000);
+            return () => clearInterval(interval);
+        }
+    }, [bestTournament, fetchMatches]);
+
+    const [isRefreshing, setIsRefreshing] = useState(false);
+    const [pullStart, setPullStart] = useState(0);
+    const [pullDistance, setPullDistance] = useState(0);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (window.scrollY === 0) {
+            setPullStart(e.touches[0].clientY);
+        }
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (pullStart > 0 && window.scrollY === 0) {
+            const touchY = e.touches[0].clientY;
+            const diff = touchY - pullStart;
+            if (diff > 0) {
+                setPullDistance(Math.min(diff, 100)); // Cap at 100px
+            }
+        }
+    };
+
+    const handleTouchEnd = async () => {
+        if (pullDistance > 60) { // Threshold
+            setIsRefreshing(true);
+            if (bestTournament) { // Only refresh if there's a selected tournament
+                await fetchMatches(); // Re-fetch
+            }
+            setIsRefreshing(false);
+        }
+        setPullStart(0);
+        setPullDistance(0);
+    };
 
     if (!bestTournament) return null;
 
     if (loading) {
         return (
-            <div className="w-full h-32 bg-gray-100 dark:bg-white/5 rounded-xl animate-pulse flex items-center justify-center mb-8">
-                <div className="text-slate-400 text-sm font-medium flex items-center">
-                    <Activity className="w-4 h-4 mr-2 animate-spin" />
-                    Loading live scores...
+            <div className="mb-8 space-y-3">
+                <div className="w-48 h-6 bg-slate-200 dark:bg-white/10 rounded animate-pulse mb-2"></div>
+                <div className="flex overflow-x-auto pb-4 gap-3 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+                    {[1, 2, 3].map(i => (
+                        <div key={i} className="flex-none w-[340px]">
+                            <MatchCardSkeleton />
+                        </div>
+                    ))}
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="mb-8 space-y-3">
+        <div
+            className="mb-8 space-y-3 relative"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+        >
+            {/* Pull Indicator */}
+            <div
+                className="absolute left-1/2 -translate-x-1/2 -top-10 transition-transform duration-200 flex items-center justify-center w-8 h-8 bg-white dark:bg-[#202020] rounded-full shadow-md z-10"
+                style={{ transform: `translate(-50%, ${pullDistance > 0 ? pullDistance / 2 : 0}px)` }}
+            >
+                <RefreshCw className={`w-4 h-4 text-blue-500 ${isRefreshing ? 'animate-spin' : ''}`} style={{ transform: `rotate(${pullDistance * 2}deg)` }} />
+            </div>
+
             <div className="flex items-center justify-between px-1">
                 <div className="flex items-center space-x-2">
                     <span className="relative flex h-3 w-3">
@@ -297,13 +331,13 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                     </div>
                                     {isLiveStatus && (
                                         <div className="flex flex-col items-end">
-                                            <div className="px-1.5 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold uppercase mb-1">
+                                            <div className="px-1.5 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded text-[10px] font-bold uppercase mb-1">
                                                 Live
                                             </div>
                                             {/* Pulse Bar - Mocked for visual */}
                                             <div className="flex gap-0.5">
                                                 {[1, 2, 3].map(i => (
-                                                    <div key={i} className={`w-1 h-3 rounded-full ${i === 3 ? 'bg-red-500 animate-pulse' : 'bg-red-200'}`}></div>
+                                                    <div key={i} className={`w-1 h-3 rounded-full ${i === 3 ? 'bg-red-500 animate-pulse' : 'bg-red-200 dark:bg-red-900/50'}`}></div>
                                                 ))}
                                             </div>
                                         </div>

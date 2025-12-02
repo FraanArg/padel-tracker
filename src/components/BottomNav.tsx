@@ -1,12 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import SmartLink from './SmartLink';
 import { usePathname } from 'next/navigation';
 import { Home, Trophy, ArrowLeftRight, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useHaptic } from '@/hooks/useHaptic';
 
 export default function BottomNav() {
     const pathname = usePathname();
+    const { trigger } = useHaptic();
 
     const navItems = [
         { href: '/', label: 'Home', icon: Home },
@@ -23,9 +26,10 @@ export default function BottomNav() {
                     const Icon = item.icon;
 
                     return (
-                        <Link
+                        <SmartLink
                             key={item.href}
                             href={item.href}
+                            onClick={() => trigger()}
                             className="relative flex flex-col items-center justify-center w-full h-full active:scale-90 transition-transform duration-200"
                         >
                             {isActive && (
@@ -41,7 +45,7 @@ export default function BottomNav() {
                             <span className={`text-[10px] font-medium mt-0.5 ${isActive ? 'text-blue-500' : 'text-slate-400'}`}>
                                 {item.label}
                             </span>
-                        </Link>
+                        </SmartLink>
                     );
                 })}
             </div>

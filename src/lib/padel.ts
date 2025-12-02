@@ -3,58 +3,11 @@ import axios from 'axios';
 
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 import { TOURNAMENT_METADATA, convertMatchTime, addMinutes } from './date';
+import { getArchivedTournamentMatches } from './archive';
 
+import { Tournament, Player, Match } from './types';
+export type { Tournament, Player, Match };
 export { TOURNAMENT_METADATA, convertMatchTime, addMinutes };
-export interface Tournament {
-    name: string;
-    url: string;
-    imageUrl: string;
-    id: string;
-    dateStart?: string;
-    dateEnd?: string;
-    status?: 'live' | 'upcoming' | 'finished';
-    month?: string;
-    parsedDate?: Date;
-}
-
-export interface Player {
-    name: string;
-    rank?: number;
-    points?: number;
-    country?: string;
-    matchesPlayed?: number;
-    matchesWon?: number;
-    winRate?: string;
-    partner?: string;
-    imageUrl?: string;
-    profileUrl?: string;
-}
-
-export interface Match {
-    raw: string;
-    // Add more structured fields later
-    time?: string;
-    timezone?: string;
-    category?: string;
-    round?: string;
-    location?: string;
-    court?: string;
-    team1?: string[];
-    team2?: string[];
-    team1Flags?: string[];
-    team2Flags?: string[];
-    score?: string[];
-    status?: string;
-    team1Seed?: string;
-    team2Seed?: string;
-    tournament?: { name: string; dateStart?: string; dateEnd?: string; };
-    nextMatch?: Match; // The match immediately following this one on the same court
-    // Match Stats IDs
-    id?: string;
-    year?: string;
-    tournamentId?: string;
-    organization?: string;
-}
 
 // ... existing code ...
 
@@ -75,7 +28,8 @@ function getTournamentMetadata(tournamentName: string): { timezone?: string, loc
 export async function getCalendarTournaments(): Promise<Tournament[]> {
     try {
         const { data } = await axios.get('https://www.padelfip.com/calendar/', {
-            headers: { 'User-Agent': USER_AGENT }
+            headers: { 'User-Agent': USER_AGENT },
+            timeout: 5000
         });
         const $ = cheerio.load(data);
         const tournaments: Tournament[] = [];
@@ -158,7 +112,8 @@ export async function getTournaments(): Promise<Tournament[]> {
             (async () => {
                 try {
                     const { data } = await axios.get('https://www.padelfip.com/live/', {
-                        headers: { 'User-Agent': USER_AGENT }
+                        headers: { 'User-Agent': USER_AGENT },
+                        timeout: 5000
                     });
                     const $ = cheerio.load(data);
                     const tournaments: Tournament[] = [];
@@ -381,7 +336,8 @@ export async function getMatches(url: string, dayUrl?: string) {
 
         // Always fetch the event page to get the tournament name and ID
         const { data: eventHtml } = await axios.get(url, {
-            headers: { 'User-Agent': USER_AGENT }
+            headers: { 'User-Agent': USER_AGENT },
+            timeout: 10000
         });
         const $event = cheerio.load(eventHtml);
 
@@ -790,6 +746,20 @@ export async function getMatches(url: string, dayUrl?: string) {
         // Replace the old matches array with our new structured one
         matches.push(...allMatches);
 
+        // Fallback to Archive if no matches found
+        if (matches.length === 0) {
+            // Try searching by name or ID
+            const query = tournamentName || tournamentId || '';
+            if (query) {
+                console.log(`Live fetch returned 0 matches. Checking archive for "${query}"...`);
+                const archived = getArchivedTournamentMatches(query);
+                if (archived.length > 0) {
+                    console.log(`Found ${archived.length} archived matches.`);
+                    matches.push(...archived);
+                }
+            }
+        }
+
 
         const result = {
             matches,
@@ -812,6 +782,26 @@ export async function getMatches(url: string, dayUrl?: string) {
         } else {
             console.error('Error fetching matches:', error);
         }
+
+        // Fallback to Archive on error
+        try {
+            // Extract name from URL
+            const urlParts = url.split('/').filter(Boolean);
+            const slug = urlParts[urlParts.length - 1];
+            const name = slug ? slug.replace(/-/g, ' ').toUpperCase() : '';
+
+            if (name) {
+                console.log(`Error fetching live. Checking archive for "${name}"...`);
+                const archived = getArchivedTournamentMatches(name);
+                if (archived.length > 0) {
+                    console.log(`Found ${archived.length} archived matches.`);
+                    return { matches: archived, days: [], tournamentId: '', widgetId: '', activeDayUrl: '', tournamentName: name };
+                }
+            }
+        } catch (e) {
+            console.error('Archive fallback failed:', e);
+        }
+
         return { error: 'Failed to fetch matches' };
     }
 }
@@ -943,8 +933,8 @@ export async function getRankings(): Promise<{ men: PlayerRanking[], women: Play
 
     try {
         const [menResponse, womenResponse] = await Promise.all([
-            axios.get('https://www.padelfip.com/ranking-male/', { headers: { 'User-Agent': USER_AGENT } }),
-            axios.get('https://www.padelfip.com/ranking-female/', { headers: { 'User-Agent': USER_AGENT } })
+            axios.get('https://www.padelfip.com/ranking-male/', { headers: { 'User-Agent': USER_AGENT }, timeout: 5000 }),
+            axios.get('https://www.padelfip.com/ranking-female/', { headers: { 'User-Agent': USER_AGENT }, timeout: 5000 })
         ]);
 
         const processRankings = async (data: any, gender: 'male' | 'female') => {

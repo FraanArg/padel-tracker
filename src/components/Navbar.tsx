@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Trophy, Star, Heart, ArrowLeftRight } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { UserMenu } from './auth/UserMenu';
 
 export default function Navbar() {
     return (
@@ -32,8 +33,9 @@ export default function Navbar() {
                             <Heart className="w-5 h-5" />
                         </Link>
                     </div>
-                    <div className="pl-2 border-l border-slate-200 dark:border-white/10 ml-2">
+                    <div className="pl-2 border-l border-slate-200 dark:border-white/10 ml-2 flex items-center gap-2">
                         <ThemeToggle />
+                        <UserMenu />
                     </div>
                 </div>
             </div>

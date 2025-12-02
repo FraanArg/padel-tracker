@@ -1,118 +1,20 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { Match } from './padel';
-import { ArchivedTournament } from './archive';
-
-const DATA_DIR = path.join(process.cwd(), 'data', 'tournaments');
-
-// Cache for all matches to avoid reading files on every request
-let matchesCache: { matches: Match[], lastLoaded: number } | null = null;
-const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes
-
-import { unstable_cache } from 'next/cache';
+import { Match } from './types';
+import { getAllArchivedMatchesSync, getAllArchivedMatchesAsync, getDebugInfo } from './archive';
+export { getAllArchivedMatchesSync, getAllArchivedMatchesAsync, getDebugInfo };
 
 // ... existing imports ...
 
 // Keep synchronous version for scripts/legacy
 export function getAllArchivedMatches(): Match[] {
-    // ... existing implementation ...
-    if (matchesCache && Date.now() - matchesCache.lastLoaded < CACHE_DURATION) {
-        return matchesCache.matches;
-    }
-    // ... (logic to read files) ...
-    // I will copy the logic or just keep the existing function as is, 
-    // but I need to duplicate the logic for the async version or wrap it.
-    // Actually, I can wrap the sync function in the async one?
-    // Yes, unstable_cache expects a function that returns a Promise.
-    // So: const getCachedMatches = unstable_cache(async () => getAllArchivedMatches(), ['all-matches']);
-    // But getAllArchivedMatches reads from FS.
-    // That works.
     return getAllArchivedMatchesSync();
 }
 
-// Internal sync function (renamed from original getAllArchivedMatches if I could, but I'll just use the existing one)
-export function getAllArchivedMatchesSync(): Match[] {
-    if (matchesCache && Date.now() - matchesCache.lastLoaded < CACHE_DURATION) {
-        return matchesCache.matches;
-    }
-
-    if (!fs.existsSync(DATA_DIR)) {
-        console.log(`Stats: DATA_DIR not found at ${DATA_DIR}`);
-        return [];
-    }
-
-    const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json'));
-    // console.log(`Stats: Loading ${files.length} tournament files from ${DATA_DIR}`);
-    const allMatches: Match[] = [];
-
-    for (const file of files) {
-        try {
-            const content = fs.readFileSync(path.join(DATA_DIR, file), 'utf-8');
-            const tournament: ArchivedTournament = JSON.parse(content);
-            let year = tournament.year;
-            const nameYearMatch = tournament.name.match(/\b(20\d{2})\b/);
-            if (nameYearMatch) {
-                year = parseInt(nameYearMatch[1]);
-            }
-
-            const tournamentMatches = tournament.matches.map(m => ({
-                ...m,
-                tournament: m.tournament || {
-                    name: tournament.name,
-                    dateStart: tournament.dateStart,
-                    dateEnd: tournament.dateEnd
-                },
-                year: year.toString()
-            }));
-            allMatches.push(...tournamentMatches);
-        } catch (e) {
-            console.error(`Failed to load ${file}:`, e);
-        }
-    }
-
-    // console.log(`Stats: Loaded ${allMatches.length} total matches`);
-    matchesCache = { matches: allMatches, lastLoaded: Date.now() };
-    return allMatches;
-}
-
-// Async cached version
-export const getAllArchivedMatchesAsync = unstable_cache(
-    async () => {
-        console.log('Stats: Cache MISS - Reading from FS');
-        return getAllArchivedMatchesSync();
-    },
-    ['all-matches-v1'],
-    { revalidate: 3600, tags: ['matches'] }
-);
 
 
 
-export function getDebugInfo(playerName?: string) {
-    const info: any = {
-        cacheExists: !!matchesCache,
-        matchesCount: matchesCache ? matchesCache.matches.length : 0,
-        dataDir: DATA_DIR,
-        filesCount: fs.existsSync(DATA_DIR) ? fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json')).length : 0
-    };
-
-    if (playerName && matchesCache) {
-        const p = playerName.toLowerCase();
-        const matches = matchesCache.matches.filter(m => {
-            if (!m.team1 || !m.team2) return false;
-            const t1 = m.team1.map(n => n.toLowerCase());
-            const t2 = m.team2.map(n => n.toLowerCase());
-            return t1.some(n => n.includes(p) || p.includes(n)) || t2.some(n => n.includes(p) || p.includes(n));
-        });
-        info.playerSearch = {
-            term: p,
-            found: matches.length,
-            sampleMatch: matches.length > 0 ? matches[0] : null
-        };
-    }
-
-    return info;
-}
 
 export interface H2HResult {
     matches: Match[];

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SmartLink from './SmartLink';
 import { Trophy } from 'lucide-react';
 import Image from 'next/image';
 
@@ -13,7 +14,7 @@ export default function TournamentCard({ tournament }: { tournament: any }) {
     const isLive = tournament.status === 'live';
 
     return (
-        <Link href={`/tournament/${tournament.id}`} className="group block h-full">
+        <SmartLink href={`/tournament/${tournament.id}`} className="group block h-full">
             <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] shadow-sm transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] active:scale-95 active:shadow-inner">
                 {/* Image Background */}
                 <div className="absolute inset-0 bg-gray-100 dark:bg-gray-800">
@@ -70,6 +71,6 @@ export default function TournamentCard({ tournament }: { tournament: any }) {
                     </div>
                 </div>
             </div>
-        </Link>
+        </SmartLink>
     );
 }

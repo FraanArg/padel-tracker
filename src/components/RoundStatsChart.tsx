@@ -58,7 +58,7 @@ export default function RoundStatsChart({ data, team1Name, team2Name }: RoundSta
                             dataKey="round"
                             type="category"
                             width={100}
-                            tick={{ fill: '#64748b', fontSize: 11, fontWeight: 'bold' }}
+                            tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 'bold' }}
                             interval={0}
                         />
                         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'transparent' }} />

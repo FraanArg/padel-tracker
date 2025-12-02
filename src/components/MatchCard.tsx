@@ -41,7 +41,7 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                     rounded-3xl overflow-hidden
                     shadow-sm hover:shadow-xl hover:border-blue-500/20 dark:hover:border-blue-500/20
                     transition-all duration-300 ease-out
-                    hover:-translate-y-1
+                    hover:-translate-y-1 active:scale-[0.98] cursor-pointer
                 `}
             >
                 {/* Header Section */}
@@ -84,8 +84,15 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                                         e.stopPropagation();
                                         setIsStatsOpen(true);
                                     }}
-                                    className="p-1.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors"
+                                    className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors"
                                     title="View Stats"
+                                    onMouseEnter={() => {
+                                        // Prefetch stats
+                                        fetch(`/api/match/${match.id}/stats?year=${match.year}&tournamentId=${match.tournamentId}&organization=${match.organization}`, { priority: 'low' });
+                                    }}
+                                    onTouchStart={() => {
+                                        fetch(`/api/match/${match.id}/stats?year=${match.year}&tournamentId=${match.tournamentId}&organization=${match.organization}`, { priority: 'low' });
+                                    }}
                                 >
                                     <BarChart2 className="w-4 h-4" />
                                 </button>

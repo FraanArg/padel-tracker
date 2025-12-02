@@ -8,6 +8,9 @@ import PageTransition from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/react";
 import CommandPalette from "@/components/CommandPalette";
 import NotificationManager from "@/components/NotificationManager";
+import { SessionProvider } from "@/components/auth/SessionProvider";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import InstallPrompt from "@/components/pwa/InstallPrompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,21 +46,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <CommandPalette />
-          <NotificationManager />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <BottomNav />
-          <Analytics />
-        </ThemeProvider>
+        <SessionProvider>
+          <FavoritesProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Navbar />
+              <CommandPalette />
+              <NotificationManager />
+              <InstallPrompt />
+              <PageTransition>
+                {children}
+              </PageTransition>
+              <BottomNav />
+              <Analytics />
+            </ThemeProvider>
+          </FavoritesProvider>
+        </SessionProvider>
       </body>
     </html>
   );

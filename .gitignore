@@ -44,3 +44,5 @@ next-env.d.ts
 *.html
 debug-widget.ts
 archive-log.txt
+
+/src/generated/prisma

@@ -301,7 +301,9 @@ export default function ComparePage() {
                 </div>
 
                 {/* Results */}
-                {data && (
+                {loading ? (
+                    <CompareSkeleton />
+                ) : data ? (
                     <CompareResults
                         data={data}
                         stats={stats}
@@ -309,7 +311,7 @@ export default function ComparePage() {
                         rivalryCardRef={rivalryCardRef}
                         handleDownloadCard={handleDownloadCard}
                     />
-                )}
+                ) : null}
             </main>
         </div>
     );

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import SmartLink from './SmartLink';
 import { Tournament } from '@/lib/padel';
 import { MapPin, Calendar, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -56,7 +57,7 @@ export default function TournamentHero({ tournament }: TournamentHeroProps) {
     };
 
     return (
-        <Link
+        <SmartLink
             href={`/tournament/${tournament.id}`}
             className="block relative w-full h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl group isolation-isolate bg-gray-900"
             style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
@@ -117,6 +118,6 @@ export default function TournamentHero({ tournament }: TournamentHeroProps) {
                     </div>
                 </motion.div>
             </div>
-        </Link>
+        </SmartLink>
     );
 }

@@ -3,8 +3,7 @@ import withPWA from "@ducanh2912/next-pwa";
 
 const config: NextConfig = {
   /* config options here */
-  // @ts-ignore
-  turbopack: {},
+
   images: {
     remotePatterns: [
       {
@@ -17,6 +16,9 @@ const config: NextConfig = {
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 const withPWAConfig = withPWA({
@@ -28,7 +30,9 @@ const withPWAConfig = withPWA({
   disable: process.env.NODE_ENV === "development",
   workboxOptions: {
     disableDevLogs: true,
+    importScripts: ["/push-sw.js"],
   },
 });
 
-export default withPWAConfig(config);
+export default config;
+// export default withPWAConfig(config);

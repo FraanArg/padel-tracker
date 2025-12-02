@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Trophy, Medal, TrendingUp, Users, MapPin, Activity } from 'lucide-react';
+import ProfileSkeleton from '@/components/skeletons/ProfileSkeleton';
 
 interface PartnerStat {
     name: string;
@@ -58,11 +59,7 @@ export default function PlayerProfilePage() {
     }, [name]);
 
     if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            </div>
-        );
+        return <ProfileSkeleton />;
     }
 
     if (!stats || !profile) {
@@ -136,8 +133,8 @@ export default function PlayerProfilePage() {
                             <Activity className="w-6 h-6 text-blue-400" />
                         </div>
                         <div className={`px-3 py-1 rounded-full text-sm font-bold ${parseFloat(stats.winRate) >= 80 ? 'bg-green-500/20 text-green-400' :
-                                parseFloat(stats.winRate) >= 60 ? 'bg-yellow-500/20 text-yellow-400' :
-                                    'bg-red-500/20 text-red-400'
+                            parseFloat(stats.winRate) >= 60 ? 'bg-yellow-500/20 text-yellow-400' :
+                                'bg-red-500/20 text-red-400'
                             }`}>
                             {parseFloat(stats.winRate) >= 80 ? 'A+' : parseFloat(stats.winRate) >= 70 ? 'A' : parseFloat(stats.winRate) >= 60 ? 'B' : 'C'}
                         </div>
