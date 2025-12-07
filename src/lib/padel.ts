@@ -752,7 +752,7 @@ export async function getMatches(url: string, dayUrl?: string) {
             const query = tournamentName || tournamentId || '';
             if (query) {
                 console.log(`Live fetch returned 0 matches. Checking archive for "${query}"...`);
-                const archived = getArchivedTournamentMatches(query);
+                const archived = await getArchivedTournamentMatches(query);
                 if (archived.length > 0) {
                     console.log(`Found ${archived.length} archived matches.`);
                     matches.push(...archived);
@@ -792,7 +792,7 @@ export async function getMatches(url: string, dayUrl?: string) {
 
             if (name) {
                 console.log(`Error fetching live. Checking archive for "${name}"...`);
-                const archived = getArchivedTournamentMatches(name);
+                const archived = await getArchivedTournamentMatches(name);
                 if (archived.length > 0) {
                     console.log(`Found ${archived.length} archived matches.`);
                     return { matches: archived, days: [], tournamentId: '', widgetId: '', activeDayUrl: '', tournamentName: name };

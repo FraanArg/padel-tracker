@@ -116,3 +116,93 @@ model NotificationLog {
 
   @@index([userId, matchId])
 }
+
+// ============================================
+// Tournament & Match Data Models
+// ============================================
+
+model Tournament {
+  id          String    @id @default(cuid())
+  externalId  String    @unique  // e.g., "qatar-major-2024"
+  name        String
+  year        Int
+  category    String?   // Major, P1, P2
+  location    String?
+  dateStart   DateTime?
+  dateEnd     DateTime?
+  imageUrl    String?
+  status      String?   // live, upcoming, finished
+  
+  matches     Match[]
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  @@index([year])
+  @@index([dateStart])
+  @@index([name])
+}
+
+model Match {
+  id            String      @id @default(cuid())
+  externalId    String?     // From scraper if available
+  tournamentId  String
+  tournament    Tournament  @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  
+  round         String?     // Final, Semi-Final, Quarter-Final, etc.
+  court         String?
+  category      String?     // Men, Women
+  status        String?     // live, finished, scheduled
+  
+  team1Player1  String
+  team1Player2  String?
+  team2Player1  String
+  team2Player2  String?
+  
+  team1Seed     String?
+  team2Seed     String?
+  
+  team1Flag1    String?
+  team1Flag2    String?
+  team2Flag1    String?
+  team2Flag2    String?
+  
+  score         String?     // JSON array stored as string: ["6-4", "7-5"]
+  
+  scheduledTime DateTime?
+  timezone      String?
+  
+  year          Int
+  
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  @@index([tournamentId])
+  @@index([team1Player1])
+  @@index([team1Player2])
+  @@index([team2Player1])
+  @@index([team2Player2])
+  @@index([year])
+  @@index([round])
+}
+
+model Player {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  country     String?
+  countryCode String?
+  countryFlag String?
+  imageUrl    String?
+  
+  currentRank Int?
+  peakRank    Int?
+  points      Int?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([slug])
+  @@index([currentRank])
+}
+

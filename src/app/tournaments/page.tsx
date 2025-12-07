@@ -4,8 +4,8 @@ import { TournamentCalendar } from '@/components/tournament/TournamentCalendar';
 
 export const revalidate = 3600;
 
-export default function TournamentsPage() {
-    const tournaments = getAllTournaments();
+export default async function TournamentsPage() {
+    const tournaments = await getAllTournaments();
 
     // Convert to summary format
     const summary = tournaments.map(t => ({
@@ -23,3 +23,4 @@ export default function TournamentsPage() {
         </div>
     );
 }
+
