@@ -17,7 +17,7 @@ const config: NextConfig = {
     ],
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 };
 
@@ -34,5 +34,5 @@ const withPWAConfig = withPWA({
   },
 });
 
-export default config;
-// export default withPWAConfig(config);
+// export default config;
+export default withPWAConfig(config);

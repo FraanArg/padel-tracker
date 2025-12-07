@@ -41,8 +41,19 @@ yarn-error.log*
 next-env.d.ts
 
 # Debug dumps
-*.html
-debug-widget.ts
+debug-*.ts
+debug_*.txt
+debug_*.html
+*.dump.html
 archive-log.txt
+response*.json
+calendar-dump.html
+player.html
+premier.html
+rankings.html
+riyadh.html
+tournaments.html
+widget-dump.html
+wiki_season.html
 
 /src/generated/prisma

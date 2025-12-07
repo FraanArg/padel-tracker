@@ -5,10 +5,16 @@ import { useFavorites } from '@/context/FavoritesContext';
 import Link from 'next/link';
 import { ArrowLeft, Star, Loader2 } from 'lucide-react';
 import MatchCard from '@/components/MatchCard';
+import { Match } from '@/lib/types';
+
+interface FavoriteMatch extends Match {
+    isLiveOrUpcoming?: boolean;
+    isArchived?: boolean;
+}
 
 export default function FavoritesPage() {
     const { favorites, toggleFavorite } = useFavorites();
-    const [matches, setMatches] = useState<any[]>([]);
+    const [matches, setMatches] = useState<FavoriteMatch[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

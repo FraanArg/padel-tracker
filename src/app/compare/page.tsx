@@ -72,7 +72,11 @@ export default function ComparePage() {
     const [p1Partners, setP1Partners] = useState<Player[]>([]);
     const [p2Partners, setP2Partners] = useState<Player[]>([]);
 
-    const [year, setYear] = useState<number | 'all'>(2025);
+    // Generate years dynamically based on current year
+    const currentYear = new Date().getFullYear();
+    const availableYears = [...Array(4)].map((_, i) => currentYear - i);
+
+    const [year, setYear] = useState<number | 'all'>(currentYear);
     const [showHistory, setShowHistory] = useState(false);
 
     // Fetch partners when players change
@@ -150,26 +154,6 @@ export default function ComparePage() {
             setLoadingH2H(false);
         }
     };
-
-    const getResultBadgeColor = (round: string) => {
-        const r = round.toLowerCase();
-        if (r.includes('winner') || r.includes('champion')) return 'bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-700/30';
-        if (r.includes('final')) return 'bg-slate-100 text-slate-800 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700';
-        if (r.includes('semi')) return 'bg-orange-50 text-orange-800 border-orange-100 dark:bg-orange-900/20 dark:text-orange-400 dark:border-orange-800/30';
-        return 'bg-gray-50 text-gray-600 border-gray-100 dark:bg-gray-800/50 dark:text-gray-400 dark:border-gray-700/30';
-    };
-
-    const getResultShort = (round: string) => {
-        const r = round.toLowerCase();
-        if (r.includes('winner')) return 'W';
-        if (r.includes('final')) return 'F';
-        if (r.includes('semi')) return 'SF';
-        if (r.includes('quarter')) return 'QF';
-        if (r.includes('16')) return 'R16';
-        if (r.includes('32')) return 'R32';
-        return '-';
-    };
-
     const handlePlayerSelect = (player: Player | null, playerNum: 1 | 2) => {
         if (playerNum === 1) {
             setP1(player);
@@ -277,7 +261,7 @@ export default function ComparePage() {
                 {/* Compare Button & Year Selection */}
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex items-center gap-2 bg-white dark:bg-[#202020] p-1 rounded-lg border border-slate-100 dark:border-white/5">
-                        {[2025, 2024, 2023, 2022, 'all'].map((y) => (
+                        {[...availableYears, 'all' as const].map((y) => (
                             <button
                                 key={y}
                                 onClick={() => setYear(y as number | 'all')}
