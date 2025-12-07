@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef, useMemo } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import PlayerSearch from '@/components/PlayerSearch';
 import { ArrowLeftRight, Trophy, TrendingUp, MapPin, Activity, History, Zap, Share2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
@@ -36,10 +37,14 @@ interface H2HMatch {
 import CommonOpponents from '@/components/CommonOpponents';
 
 export default function ComparePage() {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+
     const [p1, setP1] = useState<Player | null>(null);
     const [p1Partner, setP1Partner] = useState<Player | null>(null);
     const [p2, setP2] = useState<Player | null>(null);
     const [p2Partner, setP2Partner] = useState<Player | null>(null);
+    const [urlLoaded, setUrlLoaded] = useState(false);
 
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<{ p1: ExtendedProfile, p2: ExtendedProfile } | null>(null);
@@ -79,7 +84,40 @@ export default function ComparePage() {
     const [year, setYear] = useState<number | 'all'>(currentYear);
     const [showHistory, setShowHistory] = useState(false);
 
-    // Fetch partners when players change
+    // Load players from URL params on mount
+    useEffect(() => {
+        const p1Param = searchParams.get('p1');
+        const p2Param = searchParams.get('p2');
+        const yearParam = searchParams.get('year');
+
+        if (p1Param) {
+            setP1({ name: decodeURIComponent(p1Param) } as Player);
+        }
+        if (p2Param) {
+            setP2({ name: decodeURIComponent(p2Param) } as Player);
+        }
+        if (yearParam) {
+            setYear(yearParam === 'all' ? 'all' : parseInt(yearParam));
+        }
+
+        setUrlLoaded(true);
+    }, [searchParams]);
+
+    // Auto-compare when loaded from URL
+    useEffect(() => {
+        if (urlLoaded && p1 && p2 && !data && !loading) {
+            handleCompare();
+        }
+    }, [urlLoaded, p1, p2]);
+
+    // Update URL when comparison is made
+    const updateUrl = (player1: Player, player2: Player, selectedYear: number | 'all') => {
+        const params = new URLSearchParams();
+        params.set('p1', player1.name);
+        params.set('p2', player2.name);
+        params.set('year', selectedYear.toString());
+        router.replace(`/compare?${params.toString()}`, { scroll: false });
+    };
     useEffect(() => {
         if (p1) {
             fetch(`/api/player/${encodeURIComponent(p1.name)}/partners`)
@@ -110,6 +148,9 @@ export default function ComparePage() {
         setData(null);
         setH2H([]);
         setStats(null);
+
+        // Update URL for sharing
+        updateUrl(p1, p2, year);
 
         try {
             // Build query params

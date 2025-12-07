@@ -92,11 +92,24 @@ export interface PlayerStats {
     winRate: string;
     titles: number;
     finals: number;
-    partners: { name: string, matches: number }[];
+    partners: { name: string, matches: number, wins: number, winRate: string }[];
     currentStreak: number;
     maxStreak: number;
     roundStats: Record<string, { played: number, won: number }>;
     recentMatches?: any[];
+    clutchStats: {
+        threeSetWins: number;
+        threeSetLosses: number;
+        threeSetWinRate: string;
+        tiebreakWins: number;
+        tiebreakLosses: number;
+        tiebreakWinRate: string;
+        clutchScore: number; // 0-100 rating
+    };
+    goldenSets: {
+        won: number;
+        lost: number;
+    };
 }
 
 // Helper to normalize names for comparison
@@ -269,9 +282,8 @@ export function getPlayerStats(playerName: string, year?: number | 'all'): Playe
     });
 
 
-
-    // Calculate Partners
-    const partnersMap: Record<string, number> = {};
+    // Calculate Partners with win rates
+    const partnersData: Record<string, { matches: number, wins: number }> = {};
     playerMatches.forEach(m => {
         const t1 = m.team1?.map(n => n.trim()) || [];
         const t2 = m.team2?.map(n => n.trim()) || [];
@@ -288,13 +300,106 @@ export function getPlayerStats(playerName: string, year?: number | 'all'): Playe
         }
 
         if (partner) {
-            partnersMap[partner] = (partnersMap[partner] || 0) + 1;
+            if (!partnersData[partner]) {
+                partnersData[partner] = { matches: 0, wins: 0 };
+            }
+            partnersData[partner].matches++;
+
+            // Check if won
+            const winner = determineWinner(m);
+            if (winner && ((inTeam1 && winner === 1) || (inTeam2 && winner === 2))) {
+                partnersData[partner].wins++;
+            }
         }
     });
 
-    const partners = Object.entries(partnersMap)
-        .map(([name, matches]) => ({ name, matches }))
+    const partners = Object.entries(partnersData)
+        .map(([name, data]) => ({
+            name,
+            matches: data.matches,
+            wins: data.wins,
+            winRate: data.matches > 0 ? ((data.wins / data.matches) * 100).toFixed(1) + '%' : '0%'
+        }))
         .sort((a, b) => b.matches - a.matches);
+
+    // Calculate Clutch Stats (3-set matches, tiebreaks)
+    let threeSetWins = 0;
+    let threeSetLosses = 0;
+    let tiebreakWins = 0;
+    let tiebreakLosses = 0;
+    let goldenSetsWon = 0;
+    let goldenSetsLost = 0;
+
+    playerMatches.forEach(m => {
+        const isTeam1 = m.team1?.some(n => namesMatch(n, playerName));
+        const winner = determineWinner(m);
+        const playerWon = winner && ((isTeam1 && winner === 1) || (!isTeam1 && winner === 2));
+
+        if (!m.score) return;
+
+        // 3-set match tracking
+        if (m.score.length === 3) {
+            if (playerWon) {
+                threeSetWins++;
+            } else if (winner) {
+                threeSetLosses++;
+            }
+        }
+
+        // Tiebreak and golden set tracking per set
+        m.score.forEach(setScore => {
+            let clean = setScore.replace(/[\(\)]/g, '').trim();
+            const parts = clean.split('-');
+            if (parts.length !== 2) return;
+
+            let s1 = parseInt(parts[0]);
+            let s2 = parseInt(parts[1]);
+
+            // Handle malformed scores
+            if (s1 > 7 || s2 > 7) {
+                s1 = parseInt(parts[0][0]);
+                s2 = parseInt(parts[1][0]);
+            }
+
+            if (isNaN(s1) || isNaN(s2)) return;
+
+            // Tiebreak detection (7-6 or 6-7)
+            if ((s1 === 7 && s2 === 6) || (s1 === 6 && s2 === 7)) {
+                const tbWinner = s1 > s2 ? 1 : 2;
+                const playerWonTB = (isTeam1 && tbWinner === 1) || (!isTeam1 && tbWinner === 2);
+                if (playerWonTB) {
+                    tiebreakWins++;
+                } else {
+                    tiebreakLosses++;
+                }
+            }
+
+            // Golden set detection (6-0 or 0-6)
+            if ((s1 === 6 && s2 === 0) || (s1 === 0 && s2 === 6)) {
+                const setWinner = s1 > s2 ? 1 : 2;
+                const playerWonSet = (isTeam1 && setWinner === 1) || (!isTeam1 && setWinner === 2);
+                if (playerWonSet) {
+                    goldenSetsWon++;
+                } else {
+                    goldenSetsLost++;
+                }
+            }
+        });
+    });
+
+    // Calculate clutch score (0-100)
+    const threeSetTotal = threeSetWins + threeSetLosses;
+    const tiebreakTotal = tiebreakWins + tiebreakLosses;
+
+    let clutchScore = 50; // Base score
+    if (threeSetTotal > 0) {
+        clutchScore += ((threeSetWins / threeSetTotal) - 0.5) * 30;
+    }
+    if (tiebreakTotal > 0) {
+        clutchScore += ((tiebreakWins / tiebreakTotal) - 0.5) * 20;
+    }
+    clutchScore = Math.max(0, Math.min(100, Math.round(clutchScore)));
+
     return {
         totalMatches: playerMatches.length,
         wins,
@@ -306,7 +411,20 @@ export function getPlayerStats(playerName: string, year?: number | 'all'): Playe
         currentStreak,
         maxStreak,
         roundStats,
-        recentMatches
+        recentMatches,
+        clutchStats: {
+            threeSetWins,
+            threeSetLosses,
+            threeSetWinRate: threeSetTotal > 0 ? ((threeSetWins / threeSetTotal) * 100).toFixed(1) + '%' : '0%',
+            tiebreakWins,
+            tiebreakLosses,
+            tiebreakWinRate: tiebreakTotal > 0 ? ((tiebreakWins / tiebreakTotal) * 100).toFixed(1) + '%' : '0%',
+            clutchScore
+        },
+        goldenSets: {
+            won: goldenSetsWon,
+            lost: goldenSetsLost
+        }
     };
 }
 export interface CommonOpponentStats {

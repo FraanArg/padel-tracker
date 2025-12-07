@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import FavoriteButton from './FavoriteButton';
 import ClientTime from './ClientTime';
 import { downloadICS } from '@/lib/calendar';
-import { CalendarPlus, MapPin, Clock, BarChart2 } from 'lucide-react';
+import { CalendarPlus, MapPin, Clock, BarChart2, ChevronDown, Swords } from 'lucide-react';
 import Link from 'next/link';
 import MatchPreview from './MatchPreview';
 import MatchStatsModal from './MatchStatsModal';
@@ -16,6 +17,7 @@ interface MatchProps {
 
 export default function MatchCard({ match, tournamentId }: MatchProps) {
     const [isStatsOpen, setIsStatsOpen] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     // Check if live
     const isLive = match.status && (match.status.toLowerCase() === 'live' || match.status.includes('Set') || match.status.includes('Game') || match.status.includes('Tie'));
@@ -24,6 +26,7 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
     const tournamentTime = match.time;
 
     const scores = parseScores(match.score);
+    const winner = determineWinner(scores);
 
     const handleAddToCalendar = () => {
         downloadICS(match);
@@ -31,9 +34,13 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
 
     const hasStats = !!match.id && !!match.year && !!match.tournamentId && !!match.organization;
 
+    // Mock H2H data (in real app, would fetch this)
+    const h2hRecord = match.h2h || null; // e.g., { team1: 3, team2: 2 }
+
     return (
         <>
-            <div
+            <motion.div
+                layout
                 className={`
                     group relative flex flex-col
                     bg-white dark:bg-[#1a1a1a]
@@ -63,52 +70,54 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                         </div>
                     </div>
 
-                    {isLive ? (
-                        <div className="flex items-center space-x-1.5 px-2.5 py-1 bg-red-500/10 rounded-full border border-red-500/20">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                            </span>
-                            <span className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">Live</span>
-                        </div>
-                    ) : (
-                        <div className="flex items-center space-x-2">
-                            <ClientTime
-                                time={tournamentTime || ''}
-                                timezone={match.timezone}
-                                format="card"
-                            />
-                            {hasStats && (
+                    <div className="flex items-center gap-2">
+                        {/* H2H Chip */}
+                        {h2hRecord && (
+                            <div className="flex items-center gap-1 px-2 py-1 bg-purple-50 dark:bg-purple-500/20 rounded-lg border border-purple-200 dark:border-purple-500/30">
+                                <Swords className="w-3 h-3 text-purple-500" />
+                                <span className="text-[10px] font-bold text-purple-700 dark:text-purple-400">
+                                    H2H {h2hRecord.team1}-{h2hRecord.team2}
+                                </span>
+                            </div>
+                        )}
+
+                        {isLive ? (
+                            <div className="flex items-center space-x-1.5 px-2.5 py-1 bg-red-500/10 rounded-full border border-red-500/20">
+                                <span className="live-dot" />
+                                <span className="text-[10px] font-bold text-red-600 dark:text-red-400 uppercase tracking-wider">Live</span>
+                            </div>
+                        ) : (
+                            <>
+                                <ClientTime
+                                    time={tournamentTime || ''}
+                                    timezone={match.timezone}
+                                    format="card"
+                                />
+                                {hasStats && (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsStatsOpen(true);
+                                        }}
+                                        className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors btn-interactive"
+                                        title="View Stats"
+                                    >
+                                        <BarChart2 className="w-4 h-4" />
+                                    </button>
+                                )}
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        setIsStatsOpen(true);
+                                        handleAddToCalendar();
                                     }}
-                                    className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors"
-                                    title="View Stats"
-                                    onMouseEnter={() => {
-                                        // Prefetch stats
-                                        fetch(`/api/match/${match.id}/stats?year=${match.year}&tournamentId=${match.tournamentId}&organization=${match.organization}`, { priority: 'low' });
-                                    }}
-                                    onTouchStart={() => {
-                                        fetch(`/api/match/${match.id}/stats?year=${match.year}&tournamentId=${match.tournamentId}&organization=${match.organization}`, { priority: 'low' });
-                                    }}
+                                    className="p-1.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors btn-interactive"
+                                    title="Add to Calendar"
                                 >
-                                    <BarChart2 className="w-4 h-4" />
+                                    <CalendarPlus className="w-4 h-4" />
                                 </button>
-                            )}
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleAddToCalendar();
-                                }}
-                                className="p-1.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors"
-                                title="Add to Calendar"
-                            >
-                                <CalendarPlus className="w-4 h-4" />
-                            </button>
-                        </div>
-                    )}
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 {/* Content Section */}
@@ -122,17 +131,21 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                                 ))}
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-lg font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
+                                <span className={`text-lg font-bold leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors ${winner === 1 ? 'text-slate-900 dark:text-white' : 'text-slate-500'}`}>
                                     {match.team1?.map(getSurname).join(' / ') || 'TBD'}
                                 </span>
                                 {match.team1Seed && <span className="text-xs text-slate-400 font-medium">Seed {match.team1Seed}</span>}
                             </div>
                         </div>
-                        {/* Score T1 */}
-                        <div className="flex space-x-2 font-mono text-2xl font-bold text-slate-900 dark:text-white">
-                            {scores.t1.map((s, i) => (
-                                <span key={i} className={`w-8 text-center ${i === scores.t1.length - 1 ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-                                    {s}
+                        {/* Score with heatmap */}
+                        <div className="flex space-x-1.5 font-mono text-xl font-bold">
+                            {scores.sets.map((set, i) => (
+                                <span
+                                    key={i}
+                                    className={`w-7 h-7 flex items-center justify-center rounded-lg text-sm ${set.t1Won ? 'score-win' : set.t2Won ? 'score-loss' : 'text-slate-400'
+                                        } ${winner === 1 ? 'font-bold' : ''}`}
+                                >
+                                    {set.t1}
                                 </span>
                             ))}
                         </div>
@@ -150,23 +163,80 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                                 ))}
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-lg font-bold text-slate-900 dark:text-white leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors">
+                                <span className={`text-lg font-bold leading-tight group-hover/team:text-blue-600 dark:group-hover/team:text-blue-400 transition-colors ${winner === 2 ? 'text-slate-900 dark:text-white' : 'text-slate-500'}`}>
                                     {match.team2?.map(getSurname).join(' / ') || 'TBD'}
                                 </span>
                                 {match.team2Seed && <span className="text-xs text-slate-400 font-medium">Seed {match.team2Seed}</span>}
                             </div>
                         </div>
-                        {/* Score T2 */}
-                        <div className="flex space-x-2 font-mono text-2xl font-bold text-slate-900 dark:text-white">
-                            {scores.t2.map((s, i) => (
-                                <span key={i} className={`w-8 text-center ${i === scores.t2.length - 1 ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-                                    {s}
+                        {/* Score with heatmap */}
+                        <div className="flex space-x-1.5 font-mono text-xl font-bold">
+                            {scores.sets.map((set, i) => (
+                                <span
+                                    key={i}
+                                    className={`w-7 h-7 flex items-center justify-center rounded-lg text-sm ${set.t2Won ? 'score-win' : set.t1Won ? 'score-loss' : 'text-slate-400'
+                                        } ${winner === 2 ? 'font-bold' : ''}`}
+                                >
+                                    {set.t2}
                                 </span>
                             ))}
                         </div>
                     </div>
                 </div>
-            </div>
+
+                {/* Expandable Stats Section */}
+                {scores.sets.length > 0 && (
+                    <>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsExpanded(!isExpanded);
+                            }}
+                            className="w-full py-2 border-t border-slate-100 dark:border-white/5 flex items-center justify-center gap-1 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                        >
+                            <span>{isExpanded ? 'Hide' : 'Show'} set details</span>
+                            <motion.div
+                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <ChevronDown className="w-4 h-4" />
+                            </motion.div>
+                        </button>
+
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-hidden border-t border-slate-100 dark:border-white/5"
+                                >
+                                    <div className="p-4 bg-slate-50 dark:bg-white/5">
+                                        <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                                            <div className="font-bold text-slate-500">Set</div>
+                                            <div className="font-bold text-slate-500">{match.team1?.map(getSurname).join('/') || 'T1'}</div>
+                                            <div className="font-bold text-slate-500">{match.team2?.map(getSurname).join('/') || 'T2'}</div>
+
+                                            {scores.sets.map((set, i) => (
+                                                <>
+                                                    <div key={`set-${i}`} className="font-medium text-slate-400">Set {i + 1}</div>
+                                                    <div key={`t1-${i}`} className={`font-bold ${set.t1Won ? 'text-green-600' : 'text-slate-400'}`}>
+                                                        {set.t1}{set.tb1 ? <span className="text-[10px]">({set.tb1})</span> : ''}
+                                                    </div>
+                                                    <div key={`t2-${i}`} className={`font-bold ${set.t2Won ? 'text-green-600' : 'text-slate-400'}`}>
+                                                        {set.t2}{set.tb2 ? <span className="text-[10px]">({set.tb2})</span> : ''}
+                                                    </div>
+                                                </>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </>
+                )}
+            </motion.div>
 
             {hasStats && (
                 <MatchStatsModal
@@ -187,34 +257,67 @@ function getSurname(name: string) {
     return name.split(' ').pop() || name;
 }
 
-function parseScores(score: string[] | undefined) {
-    if (!score || score.length === 0) return { t1: [], t2: [] };
+interface SetScore {
+    t1: string;
+    t2: string;
+    t1Won: boolean;
+    t2Won: boolean;
+    tb1?: string;
+    tb2?: string;
+}
 
-    const t1: string[] = [];
-    const t2: string[] = [];
+function parseScores(score: string[] | undefined): { sets: SetScore[] } {
+    if (!score || score.length === 0) return { sets: [] };
 
-    score.forEach(set => {
-        // Handle "6-4" or "6-6(5)" or "6(5)-7"
-        // We want to extract the main numbers.
-        // If there is a tiebreak, we might want to show it?
-        // For now, let's just extract the main set score to keep the big numbers clean.
-        // The user said "just showing the (5) next to chingotto/galan is fine".
-        // But in this card layout, we have big numbers.
-        // Maybe we can append the tiebreak score small?
-        // Let's stick to main numbers for the big display for now to avoid clutter.
+    const sets: SetScore[] = [];
 
-        const parts = set.split('-');
-        if (parts.length >= 2) {
-            // Remove tiebreak info from the main number for the big display
-            const s1 = parts[0].replace(/\(.*\)/, '').trim();
-            const s2 = parts[1].replace(/\(.*\)/, '').trim();
-            t1.push(s1);
-            t2.push(s2);
+    score.forEach(setStr => {
+        // Handle "6-4" or "7-6(5)" or "6(5)-7(7)"
+        const tbMatch1 = setStr.match(/(\d+)\((\d+)\)-(\d+)(?:\((\d+)\))?/);
+        const tbMatch2 = setStr.match(/(\d+)-(\d+)\((\d+)\)/);
+
+        let t1: number, t2: number, tb1: string | undefined, tb2: string | undefined;
+
+        if (tbMatch1) {
+            t1 = parseInt(tbMatch1[1]);
+            tb1 = tbMatch1[2];
+            t2 = parseInt(tbMatch1[3]);
+            tb2 = tbMatch1[4];
+        } else if (tbMatch2) {
+            t1 = parseInt(tbMatch2[1]);
+            t2 = parseInt(tbMatch2[2]);
+            tb2 = tbMatch2[3];
         } else {
-            t1.push('-');
-            t2.push('-');
+            const parts = setStr.replace(/\(.*?\)/g, '').split('-');
+            t1 = parseInt(parts[0]) || 0;
+            t2 = parseInt(parts[1]) || 0;
         }
+
+        sets.push({
+            t1: t1.toString(),
+            t2: t2.toString(),
+            t1Won: t1 > t2,
+            t2Won: t2 > t1,
+            tb1,
+            tb2
+        });
     });
 
-    return { t1, t2 };
+    return { sets };
+}
+
+function determineWinner(scores: { sets: SetScore[] }): 1 | 2 | null {
+    if (scores.sets.length === 0) return null;
+
+    let t1Sets = 0;
+    let t2Sets = 0;
+
+    scores.sets.forEach(set => {
+        if (set.t1Won) t1Sets++;
+        if (set.t2Won) t2Sets++;
+    });
+
+    if (t1Sets > t2Sets) return 1;
+    if (t2Sets > t1Sets) return 2;
+    return null;
 }

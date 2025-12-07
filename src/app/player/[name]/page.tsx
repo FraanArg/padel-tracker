@@ -11,6 +11,8 @@ import { CareerTimeline } from '@/components/player/CareerTimeline';
 import { PartnerHistory } from '@/components/player/PartnerHistory';
 import { StatsDashboard } from '@/components/player/StatsDashboard';
 import PlayerCard from '@/components/player/PlayerCard';
+import ClutchMeter from '@/components/player/ClutchMeter';
+import PartnerChemistry from '@/components/player/PartnerChemistry';
 import { CareerTournament, PlayerStats as IPlayerStats } from '@/lib/stats';
 
 interface PlayerProfile {
@@ -297,6 +299,22 @@ export default function PlayerProfilePage() {
 
                 {/* Right Column: Round Stats & Performance */}
                 <div className="space-y-8">
+                    {/* Clutch Performance */}
+                    {stats.clutchStats && (
+                        <ClutchMeter
+                            clutchStats={stats.clutchStats}
+                            goldenSets={stats.goldenSets}
+                        />
+                    )}
+
+                    {/* Partner Chemistry */}
+                    {stats.partners && stats.partners.length > 0 && (
+                        <PartnerChemistry
+                            partners={stats.partners}
+                            playerName={profile.name}
+                        />
+                    )}
+
                     {/* Round Performance */}
                     <div className="bg-white dark:bg-[#202020] rounded-3xl shadow-sm border border-slate-100 dark:border-white/5 p-8">
                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
