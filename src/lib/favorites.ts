@@ -1,10 +1,14 @@
 "use server"
 
 import { auth } from "@/auth"
-import { prisma } from "@/lib/prisma"
+import { prisma, isDatabaseAvailable } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 
 export async function toggleFavoriteAction(playerId: string, playerName: string) {
+    if (!isDatabaseAvailable || !prisma) {
+        throw new Error("Database not available")
+    }
+
     const session = await auth()
     if (!session?.user?.id) {
         throw new Error("Unauthorized")
@@ -41,6 +45,10 @@ export async function toggleFavoriteAction(playerId: string, playerName: string)
 }
 
 export async function getFavoritesAction() {
+    if (!isDatabaseAvailable || !prisma) {
+        return []
+    }
+
     const session = await auth()
     if (!session?.user?.id) {
         return []
@@ -59,6 +67,10 @@ export async function getFavoritesAction() {
 }
 
 export async function syncFavoritesAction(localFavorites: { id: string, name: string }[]) {
+    if (!isDatabaseAvailable || !prisma) {
+        return
+    }
+
     const session = await auth()
     if (!session?.user?.id) {
         return
@@ -87,3 +99,4 @@ export async function syncFavoritesAction(localFavorites: { id: string, name: st
         })
     }
 }
+

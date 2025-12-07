@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma"
+import { prisma, isDatabaseAvailable } from "@/lib/prisma"
 import { sendNotification } from "@/lib/notifications"
 import { getTournaments, getMatches, Match } from "@/lib/padel"
 import { NextResponse } from "next/server"
@@ -14,6 +14,13 @@ interface MatchNotification {
 
 export async function GET(req: Request) {
     try {
+        // Database required for this endpoint
+        if (!isDatabaseAvailable || !prisma) {
+            return NextResponse.json({
+                message: 'Database not configured - notifications disabled'
+            });
+        }
+
         // Verify cron secret in production
         const authHeader = req.headers.get('authorization');
         if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
