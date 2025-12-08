@@ -2,6 +2,279 @@
   "id": "milano-p1-2024",
   "name": "Milano P1",
   "year": 2024,
-  "matches": [],
-  "archivedAt": "2025-12-02T16:08:10.913Z"
+  "matches": [
+    {
+      "raw": "Federico Chingotto/Agustin Tapia vs Coki Nieto/Lucas Bergamini 6-1 5-6 5-6",
+      "team1": [
+        "Federico Chingotto",
+        "Agustin Tapia"
+      ],
+      "team2": [
+        "Coki Nieto",
+        "Lucas Bergamini"
+      ],
+      "score": [
+        "6-1",
+        "5-6",
+        "5-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Alex Arroyo/Jorge Nieto vs Francisco Navarro/Sanyo Gutierrez 6-4 7-6",
+      "team1": [
+        "Alex Arroyo",
+        "Jorge Nieto"
+      ],
+      "team2": [
+        "Francisco Navarro",
+        "Sanyo Gutierrez"
+      ],
+      "score": [
+        "6-4",
+        "7-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Alejandro Galan/Arturo Coello vs Paquito Navarro/Franco Stupaczuk 5-6 7-5 7-5",
+      "team1": [
+        "Alejandro Galan",
+        "Arturo Coello"
+      ],
+      "team2": [
+        "Paquito Navarro",
+        "Franco Stupaczuk"
+      ],
+      "score": [
+        "5-6",
+        "7-5",
+        "7-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Martin Di Nenno/Juan Lebron vs Alejandro Ruiz/Francisco Gil 5-5 7-5 5-5",
+      "team1": [
+        "Martin Di Nenno",
+        "Juan Lebron"
+      ],
+      "team2": [
+        "Alejandro Ruiz",
+        "Francisco Gil"
+      ],
+      "score": [
+        "5-5",
+        "7-5",
+        "5-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Coki Nieto/Lucas Bergamini vs Alex Arroyo/Jorge Nieto 7-5 6-1",
+      "team1": [
+        "Coki Nieto",
+        "Lucas Bergamini"
+      ],
+      "team2": [
+        "Alex Arroyo",
+        "Jorge Nieto"
+      ],
+      "score": [
+        "7-5",
+        "6-1"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Alejandro Galan/Arturo Coello vs Alejandro Ruiz/Francisco Gil 7-5 6-1",
+      "team1": [
+        "Alejandro Galan",
+        "Arturo Coello"
+      ],
+      "team2": [
+        "Alejandro Ruiz",
+        "Francisco Gil"
+      ],
+      "score": [
+        "7-5",
+        "6-1"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Coki Nieto/Lucas Bergamini vs Alejandro Galan/Arturo Coello 7-6 6-2",
+      "team1": [
+        "Coki Nieto",
+        "Lucas Bergamini"
+      ],
+      "team2": [
+        "Alejandro Galan",
+        "Arturo Coello"
+      ],
+      "score": [
+        "7-6",
+        "6-2"
+      ],
+      "round": "Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Virginia Riera/Paula Josemaria vs Veronica Virseda/Delfi Brea 7-5 6-0",
+      "team1": [
+        "Virginia Riera",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Veronica Virseda",
+        "Delfi Brea"
+      ],
+      "score": [
+        "7-5",
+        "6-0"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Lucia Sainz/Carolina Navarro vs Beatriz Gonzalez/Ari Sanchez 5-7 7-6 6-3",
+      "team1": [
+        "Lucia Sainz",
+        "Carolina Navarro"
+      ],
+      "team2": [
+        "Beatriz Gonzalez",
+        "Ari Sanchez"
+      ],
+      "score": [
+        "5-7",
+        "7-6",
+        "6-3"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Marta Marrero/Cata Tenorio vs Tamara Icardo/Patty Llaguno 5-6 7-5 7-6",
+      "team1": [
+        "Marta Marrero",
+        "Cata Tenorio"
+      ],
+      "team2": [
+        "Tamara Icardo",
+        "Patty Llaguno"
+      ],
+      "score": [
+        "5-6",
+        "7-5",
+        "7-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Claudia Fernandez/Gemma Triay vs Sofia Arauxo/Marta Ortega 6-0 6-4",
+      "team1": [
+        "Claudia Fernandez",
+        "Gemma Triay"
+      ],
+      "team2": [
+        "Sofia Arauxo",
+        "Marta Ortega"
+      ],
+      "score": [
+        "6-0",
+        "6-4"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Virginia Riera/Paula Josemaria vs Lucia Sainz/Carolina Navarro 7-5 6-1",
+      "team1": [
+        "Virginia Riera",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Lucia Sainz",
+        "Carolina Navarro"
+      ],
+      "score": [
+        "7-5",
+        "6-1"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Marta Marrero/Cata Tenorio vs Claudia Fernandez/Gemma Triay 6-4 7-6",
+      "team1": [
+        "Marta Marrero",
+        "Cata Tenorio"
+      ],
+      "team2": [
+        "Claudia Fernandez",
+        "Gemma Triay"
+      ],
+      "score": [
+        "6-4",
+        "7-6"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Virginia Riera/Paula Josemaria vs Marta Marrero/Cata Tenorio 7-6 5-5 5-7",
+      "team1": [
+        "Virginia Riera",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Marta Marrero",
+        "Cata Tenorio"
+      ],
+      "score": [
+        "7-6",
+        "5-5",
+        "5-7"
+      ],
+      "round": "Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    }
+  ],
+  "archivedAt": "2025-12-08T00:52:45.564Z"
 }

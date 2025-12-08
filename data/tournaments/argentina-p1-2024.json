@@ -2,6 +2,283 @@
   "id": "argentina-p1-2024",
   "name": "Argentina P1",
   "year": 2024,
-  "matches": [],
-  "archivedAt": "2025-12-02T16:08:10.912Z"
+  "matches": [
+    {
+      "raw": "Juan Lebron/Sanyo Gutierrez vs Franco Stupaczuk/Francisco Gil 6-0 6-3",
+      "team1": [
+        "Juan Lebron",
+        "Sanyo Gutierrez"
+      ],
+      "team2": [
+        "Franco Stupaczuk",
+        "Francisco Gil"
+      ],
+      "score": [
+        "6-0",
+        "6-3"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Alejandro Ruiz/Fernando Belasteguin vs Alejandro Galan/Coki Nieto 6-0 5-5 7-5",
+      "team1": [
+        "Alejandro Ruiz",
+        "Fernando Belasteguin"
+      ],
+      "team2": [
+        "Alejandro Galan",
+        "Coki Nieto"
+      ],
+      "score": [
+        "6-0",
+        "5-5",
+        "7-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Federico Chingotto/Alex Arroyo vs Mike Yanguas/Martin Di Nenno 5-7 6-1 7-6",
+      "team1": [
+        "Federico Chingotto",
+        "Alex Arroyo"
+      ],
+      "team2": [
+        "Mike Yanguas",
+        "Martin Di Nenno"
+      ],
+      "score": [
+        "5-7",
+        "6-1",
+        "7-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Jorge Nieto/Javi Garrido vs Miguel Lamperti/Francisco Navarro 7-6 5-5 6-3",
+      "team1": [
+        "Jorge Nieto",
+        "Javi Garrido"
+      ],
+      "team2": [
+        "Miguel Lamperti",
+        "Francisco Navarro"
+      ],
+      "score": [
+        "7-6",
+        "5-5",
+        "6-3"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Juan Lebron/Sanyo Gutierrez vs Alejandro Ruiz/Fernando Belasteguin 5-7 5-5",
+      "team1": [
+        "Juan Lebron",
+        "Sanyo Gutierrez"
+      ],
+      "team2": [
+        "Alejandro Ruiz",
+        "Fernando Belasteguin"
+      ],
+      "score": [
+        "5-7",
+        "5-5"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Federico Chingotto/Alex Arroyo vs Jorge Nieto/Javi Garrido 7-5 7-6",
+      "team1": [
+        "Federico Chingotto",
+        "Alex Arroyo"
+      ],
+      "team2": [
+        "Jorge Nieto",
+        "Javi Garrido"
+      ],
+      "score": [
+        "7-5",
+        "7-6"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Alejandro Ruiz/Fernando Belasteguin vs Federico Chingotto/Alex Arroyo 6-3 5-6 5-6",
+      "team1": [
+        "Alejandro Ruiz",
+        "Fernando Belasteguin"
+      ],
+      "team2": [
+        "Federico Chingotto",
+        "Alex Arroyo"
+      ],
+      "score": [
+        "6-3",
+        "5-6",
+        "5-6"
+      ],
+      "round": "Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Patty Llaguno/Beatriz Gonzalez vs Veronica Virseda/Paula Josemaria 7-6 5-5 5-7",
+      "team1": [
+        "Patty Llaguno",
+        "Beatriz Gonzalez"
+      ],
+      "team2": [
+        "Veronica Virseda",
+        "Paula Josemaria"
+      ],
+      "score": [
+        "7-6",
+        "5-5",
+        "5-7"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Delfi Brea/Tamara Icardo vs Cata Tenorio/Lucia Sainz 5-5 6-4 7-5",
+      "team1": [
+        "Delfi Brea",
+        "Tamara Icardo"
+      ],
+      "team2": [
+        "Cata Tenorio",
+        "Lucia Sainz"
+      ],
+      "score": [
+        "5-5",
+        "6-4",
+        "7-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Gemma Triay/Marta Ortega vs Marta Marrero/Claudia Fernandez 6-1 5-5 6-2",
+      "team1": [
+        "Gemma Triay",
+        "Marta Ortega"
+      ],
+      "team2": [
+        "Marta Marrero",
+        "Claudia Fernandez"
+      ],
+      "score": [
+        "6-1",
+        "5-5",
+        "6-2"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Ari Sanchez/Virginia Riera vs Carolina Navarro/Sofia Arauxo 7-5 7-6",
+      "team1": [
+        "Ari Sanchez",
+        "Virginia Riera"
+      ],
+      "team2": [
+        "Carolina Navarro",
+        "Sofia Arauxo"
+      ],
+      "score": [
+        "7-5",
+        "7-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Veronica Virseda/Paula Josemaria vs Delfi Brea/Tamara Icardo 5-7 6-2 7-6",
+      "team1": [
+        "Veronica Virseda",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Delfi Brea",
+        "Tamara Icardo"
+      ],
+      "score": [
+        "5-7",
+        "6-2",
+        "7-6"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Gemma Triay/Marta Ortega vs Ari Sanchez/Virginia Riera 7-5 5-5 5-6",
+      "team1": [
+        "Gemma Triay",
+        "Marta Ortega"
+      ],
+      "team2": [
+        "Ari Sanchez",
+        "Virginia Riera"
+      ],
+      "score": [
+        "7-5",
+        "5-5",
+        "5-6"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Veronica Virseda/Paula Josemaria vs Ari Sanchez/Virginia Riera 5-5 6-4 7-5",
+      "team1": [
+        "Veronica Virseda",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Ari Sanchez",
+        "Virginia Riera"
+      ],
+      "score": [
+        "5-5",
+        "6-4",
+        "7-5"
+      ],
+      "round": "Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    }
+  ],
+  "archivedAt": "2025-12-08T00:52:45.562Z"
 }

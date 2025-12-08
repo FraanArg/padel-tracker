@@ -2,6 +2,280 @@
   "id": "mexico-major-2022",
   "name": "Mexico Major",
   "year": 2022,
-  "matches": [],
-  "archivedAt": "2025-12-02T16:10:53.322Z"
+  "matches": [
+    {
+      "raw": "Coki Nieto/Agustin Tapia vs Fernando Belasteguin/Martin Di Nenno 7-6 6-0",
+      "team1": [
+        "Coki Nieto",
+        "Agustin Tapia"
+      ],
+      "team2": [
+        "Fernando Belasteguin",
+        "Martin Di Nenno"
+      ],
+      "score": [
+        "7-6",
+        "6-0"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Mike Yanguas/Juan Lebron vs Sanyo Gutierrez/Franco Stupaczuk 7-5 5-6 6-1",
+      "team1": [
+        "Mike Yanguas",
+        "Juan Lebron"
+      ],
+      "team2": [
+        "Sanyo Gutierrez",
+        "Franco Stupaczuk"
+      ],
+      "score": [
+        "7-5",
+        "5-6",
+        "6-1"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Alejandro Ruiz/Miguel Lamperti vs Javi Garrido/Paquito Navarro 6-1 5-5 6-2",
+      "team1": [
+        "Alejandro Ruiz",
+        "Miguel Lamperti"
+      ],
+      "team2": [
+        "Javi Garrido",
+        "Paquito Navarro"
+      ],
+      "score": [
+        "6-1",
+        "5-5",
+        "6-2"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Arturo Coello/Alejandro Galan vs Federico Chingotto/Francisco Gil 6-0 6-1",
+      "team1": [
+        "Arturo Coello",
+        "Alejandro Galan"
+      ],
+      "team2": [
+        "Federico Chingotto",
+        "Francisco Gil"
+      ],
+      "score": [
+        "6-0",
+        "6-1"
+      ],
+      "round": "Quarter Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Coki Nieto/Agustin Tapia vs Mike Yanguas/Juan Lebron 6-1 5-7 7-6",
+      "team1": [
+        "Coki Nieto",
+        "Agustin Tapia"
+      ],
+      "team2": [
+        "Mike Yanguas",
+        "Juan Lebron"
+      ],
+      "score": [
+        "6-1",
+        "5-7",
+        "7-6"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Alejandro Ruiz/Miguel Lamperti vs Arturo Coello/Alejandro Galan 7-5 6-3",
+      "team1": [
+        "Alejandro Ruiz",
+        "Miguel Lamperti"
+      ],
+      "team2": [
+        "Arturo Coello",
+        "Alejandro Galan"
+      ],
+      "score": [
+        "7-5",
+        "6-3"
+      ],
+      "round": "Semi Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Coki Nieto/Agustin Tapia vs Alejandro Ruiz/Miguel Lamperti 5-5 7-6 5-6",
+      "team1": [
+        "Coki Nieto",
+        "Agustin Tapia"
+      ],
+      "team2": [
+        "Alejandro Ruiz",
+        "Miguel Lamperti"
+      ],
+      "score": [
+        "5-5",
+        "7-6",
+        "5-6"
+      ],
+      "round": "Final",
+      "category": "Men",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Cata Tenorio/Paula Josemaria vs Veronica Virseda/Beatriz Gonzalez 7-5 7-5",
+      "team1": [
+        "Cata Tenorio",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Veronica Virseda",
+        "Beatriz Gonzalez"
+      ],
+      "score": [
+        "7-5",
+        "7-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 1"
+    },
+    {
+      "raw": "Sofia Arauxo/Tamara Icardo vs Patty Llaguno/Marta Marrero 7-5 5-5 7-6",
+      "team1": [
+        "Sofia Arauxo",
+        "Tamara Icardo"
+      ],
+      "team2": [
+        "Patty Llaguno",
+        "Marta Marrero"
+      ],
+      "score": [
+        "7-5",
+        "5-5",
+        "7-6"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 2"
+    },
+    {
+      "raw": "Marta Ortega/Virginia Riera vs Delfi Brea/Gemma Triay 5-5 5-7",
+      "team1": [
+        "Marta Ortega",
+        "Virginia Riera"
+      ],
+      "team2": [
+        "Delfi Brea",
+        "Gemma Triay"
+      ],
+      "score": [
+        "5-5",
+        "5-7"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 3"
+    },
+    {
+      "raw": "Lucia Sainz/Carolina Navarro vs Ari Sanchez/Claudia Fernandez 7-5 7-5",
+      "team1": [
+        "Lucia Sainz",
+        "Carolina Navarro"
+      ],
+      "team2": [
+        "Ari Sanchez",
+        "Claudia Fernandez"
+      ],
+      "score": [
+        "7-5",
+        "7-5"
+      ],
+      "round": "Quarter Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Court 4"
+    },
+    {
+      "raw": "Cata Tenorio/Paula Josemaria vs Sofia Arauxo/Tamara Icardo 7-5 7-5",
+      "team1": [
+        "Cata Tenorio",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Sofia Arauxo",
+        "Tamara Icardo"
+      ],
+      "score": [
+        "7-5",
+        "7-5"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Delfi Brea/Gemma Triay vs Lucia Sainz/Carolina Navarro 7-5 5-6 6-0",
+      "team1": [
+        "Delfi Brea",
+        "Gemma Triay"
+      ],
+      "team2": [
+        "Lucia Sainz",
+        "Carolina Navarro"
+      ],
+      "score": [
+        "7-5",
+        "5-6",
+        "6-0"
+      ],
+      "round": "Semi Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    },
+    {
+      "raw": "Cata Tenorio/Paula Josemaria vs Delfi Brea/Gemma Triay 5-5 6-3 7-6",
+      "team1": [
+        "Cata Tenorio",
+        "Paula Josemaria"
+      ],
+      "team2": [
+        "Delfi Brea",
+        "Gemma Triay"
+      ],
+      "score": [
+        "5-5",
+        "6-3",
+        "7-6"
+      ],
+      "round": "Final",
+      "category": "Women",
+      "status": "finished",
+      "court": "Center Court"
+    }
+  ],
+  "archivedAt": "2025-12-08T00:52:45.577Z"
 }
