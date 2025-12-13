@@ -6,6 +6,8 @@ import { Trophy, Medal } from 'lucide-react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+import SegmentedControl from './ui/SegmentedControl';
+import StickyHeader from './ui/StickyHeader';
 
 const countryCodeMap: Record<string, string> = {
     // 3-letter codes
@@ -72,36 +74,25 @@ export default function RankingsView({ men, women }: { men: PlayerRanking[], wom
     const rankings = activeTab === 'men' ? men : women;
     const visibleRankings = rankings.slice(0, limit);
 
+    const tabOptions = [
+        { value: 'men', label: 'Men' },
+        { value: 'women', label: 'Women' },
+    ];
+
     return (
         <div className="space-y-6">
 
-            {/* Tabs */}
-            <div className="flex justify-center">
-                <div className="bg-slate-100 dark:bg-white/5 p-1 rounded-full inline-flex">
-                    <button
-                        onClick={() => setActiveTab('men')}
-                        className={clsx(
-                            "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                            activeTab === 'men'
-                                ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
-                                : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                        )}
-                    >
-                        Men
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('women')}
-                        className={clsx(
-                            "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                            activeTab === 'women'
-                                ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm"
-                                : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                        )}
-                    >
-                        Women
-                    </button>
+            {/* Sticky Segmented Control */}
+            <StickyHeader>
+                <div className="flex justify-center">
+                    <SegmentedControl
+                        options={tabOptions}
+                        value={activeTab}
+                        onChange={(value) => setActiveTab(value as 'men' | 'women')}
+                        size="md"
+                    />
                 </div>
-            </div>
+            </StickyHeader>
 
             {/* Rankings List */}
             <div className="bg-white dark:bg-[#202020] rounded-2xl shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden">
