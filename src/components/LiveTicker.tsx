@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { Tournament, Match } from '@/lib/padel';
-import { convertMatchTime, TOURNAMENT_METADATA } from '@/lib/date';
+import { getTimezoneForTournament } from '@/lib/date';
 import { Activity, RefreshCw } from 'lucide-react';
 import ClientTime from './ClientTime';
 import MatchCardSkeleton from './skeletons/MatchCardSkeleton';
@@ -297,7 +297,7 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                             <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono bg-white dark:bg-white/10 px-2 py-1 rounded inline-block w-full text-center">
                                                 <ClientTime
                                                     time={match.time || ''}
-                                                    timezone={match.timezone}
+                                                    timezone={match.timezone || getTimezoneForTournament(bestTournament.name)}
                                                     format="ticker"
                                                 />
                                             </div>
@@ -424,7 +424,7 @@ export default function LiveTicker({ tournaments }: LiveTickerProps) {
                                             </div>
                                             <ClientTime
                                                 time={match.nextMatch.time || ''}
-                                                timezone={match.timezone || TOURNAMENT_METADATA[bestTournament.name.toUpperCase()]?.timezone || TOURNAMENT_METADATA[Object.keys(TOURNAMENT_METADATA).find(k => bestTournament.name.toUpperCase().includes(k)) || '']?.timezone}
+                                                timezone={match.timezone || getTimezoneForTournament(bestTournament.name)}
                                                 format="ticker-footer"
                                             />
                                         </div>

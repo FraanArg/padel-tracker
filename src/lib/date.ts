@@ -1,5 +1,9 @@
 
 export const TOURNAMENT_METADATA: Record<string, { timezone: string, location: string }> = {
+    // Premier Padel Finals - always in Barcelona (Qatar Airways is just sponsor)
+    'PREMIER PADEL FINALS': { timezone: 'Europe/Madrid', location: 'Barcelona, Spain' },
+    'PADEL FINALS': { timezone: 'Europe/Madrid', location: 'Barcelona, Spain' },
+    'FINALS BARCELONA': { timezone: 'Europe/Madrid', location: 'Barcelona, Spain' },
     'MEXICO': { timezone: 'America/Mexico_City', location: 'Acapulco, Mexico' },
     'ACAPULCO': { timezone: 'America/Mexico_City', location: 'Acapulco, Mexico' },
     'SPAIN': { timezone: 'Europe/Madrid', location: 'Spain' },
@@ -46,6 +50,22 @@ export const TOURNAMENT_METADATA: Record<string, { timezone: string, location: s
     'PARAGUAY': { timezone: 'America/Asuncion', location: 'Paraguay' },
     'ASUNCION': { timezone: 'America/Asuncion', location: 'Asuncion, Paraguay' }
 };
+
+// Helper to get timezone for a tournament name
+// Sorts keys by length (longest first) to ensure specific names like "PREMIER PADEL FINALS" match before generic ones like "QATAR"
+export function getTimezoneForTournament(tournamentName: string): string | undefined {
+    const upperName = tournamentName.toUpperCase();
+
+    // Sort keys by length descending so longer/more specific keys match first
+    const sortedKeys = Object.keys(TOURNAMENT_METADATA).sort((a, b) => b.length - a.length);
+
+    for (const key of sortedKeys) {
+        if (upperName.includes(key)) {
+            return TOURNAMENT_METADATA[key].timezone;
+        }
+    }
+    return undefined;
+}
 
 export function convertMatchTime(time: string, timezone: string): { local: string, yours: string } {
     if (!time || !timezone) return { local: time, yours: '' };
