@@ -59,7 +59,7 @@ export default function TournamentHero({ tournament }: TournamentHeroProps) {
     return (
         <SmartLink
             href={`/tournament/${tournament.id}`}
-            className="block relative w-full h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl group isolation-isolate bg-gray-900"
+            className="block relative w-full h-[280px] md:h-[400px] rounded-2xl overflow-hidden mb-8 shadow-lg group isolation-isolate bg-gray-900"
             style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
         >
             {/* Background Layer */}

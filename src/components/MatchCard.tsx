@@ -45,8 +45,8 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                     group relative flex flex-col
                     bg-white dark:bg-[#1a1a1a]
                     border border-slate-200 dark:border-white/5
-                    rounded-3xl overflow-hidden
-                    shadow-sm hover:shadow-xl hover:border-blue-500/20 dark:hover:border-blue-500/20
+                    rounded-2xl overflow-hidden
+                    shadow-sm hover:shadow-lg hover:border-blue-500/20 dark:hover:border-blue-500/20
                     transition-all duration-300 ease-out
                     hover:-translate-y-1 active:scale-[0.98] cursor-pointer
                 `}
