@@ -99,10 +99,11 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                                             e.stopPropagation();
                                             setIsStatsOpen(true);
                                         }}
-                                        className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors btn-interactive"
+                                        className="p-2.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-xl transition-colors btn-interactive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                                         title="View Stats"
+                                        aria-label="View match statistics"
                                     >
-                                        <BarChart2 className="w-4 h-4" />
+                                        <BarChart2 className="w-5 h-5" />
                                     </button>
                                 )}
                                 <button
@@ -110,10 +111,11 @@ export default function MatchCard({ match, tournamentId }: MatchProps) {
                                         e.stopPropagation();
                                         handleAddToCalendar();
                                     }}
-                                    className="p-1.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-colors btn-interactive"
+                                    className="p-2.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-xl transition-colors btn-interactive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                                     title="Add to Calendar"
+                                    aria-label="Add match to calendar"
                                 >
-                                    <CalendarPlus className="w-4 h-4" />
+                                    <CalendarPlus className="w-5 h-5" />
                                 </button>
                             </>
                         )}
