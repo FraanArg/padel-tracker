@@ -57,3 +57,7 @@ widget-dump.html
 wiki_season.html
 
 /src/generated/prisma
+
+# Database
+*.db
+dev.db

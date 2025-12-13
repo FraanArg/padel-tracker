@@ -6,7 +6,7 @@ import GitHub from "next-auth/providers/github"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     // adapter: PrismaAdapter(prisma),
-    secret: process.env.AUTH_SECRET || "temporary-secret-for-build",
+    secret: process.env.AUTH_SECRET,
     providers: [
         Google,
         GitHub

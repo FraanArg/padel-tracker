@@ -115,11 +115,16 @@ export function convertMatchTime(time: string, timezone: string): { local: strin
             return { local: time, yours: '' };
         }
 
-        const diffMinutes = userOffset - tournamentOffset;
+        // To convert tournament time to user time:
+        // If tournament is UTC+1 (60 min) and user is UTC-3 (-180 min),
+        // user time = tournament time - (tournamentOffset - userOffset)
+        // = tournament time - (60 - (-180)) = tournament time - 240 min
+        // So 12:30 PM Barcelona becomes 8:30 AM Argentina
+        const diffMinutes = tournamentOffset - userOffset;
 
         const matchDate = new Date();
         matchDate.setHours(hours, minutes, 0, 0);
-        matchDate.setMinutes(matchDate.getMinutes() + diffMinutes);
+        matchDate.setMinutes(matchDate.getMinutes() - diffMinutes);
 
         const yours = matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
         return { local: time, yours };
